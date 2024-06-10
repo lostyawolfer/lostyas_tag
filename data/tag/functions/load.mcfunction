@@ -1,3 +1,5 @@
+## this runs whenever the server is started or whenever i do /reload
+
 bossbar add version ""
 bossbar set minecraft:version max 1
 bossbar set minecraft:version visible true

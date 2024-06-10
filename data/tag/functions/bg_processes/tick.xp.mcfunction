@@ -1,10 +1,13 @@
-#execute as @a[scores={hunger=..19}] at @s run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 1
+# condition for getting xp
 execute as @a[scores={hunger=..19}] if score @s playtime matches 10.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk] at @s run scoreboard players operation @s xp.recieve = @s playtime
 execute as @a[scores={hunger=..19}] if score @s playtime matches 10.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk] at @s run scoreboard players operation @s xp.recieve /= 10 consts
 execute as @a[scores={hunger=..19}] if score @s playtime matches 10.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk] at @s run playsound entity.player.levelup player @s ~ ~ ~ .1 2
 execute as @a[scores={hunger=..19}] at @s run effect give @s minecraft:hunger 1 40 true
 execute as @a[scores={hunger=..19}] at @s run effect give @s minecraft:saturation 2 0 true
-
+# i use hunger as a way to get xp bc it is universal.
+# if a person is moving enough etc its gonna consume hunger, the more moving the more hunger is being used
+# and it's also pretty painful to try and get any other method to work. yea you can count how much the player walked/ran/jumped but who cares man
+# i maybe will rewrite this soon but rn just live with the fact that it works on hunger
 
 
 
