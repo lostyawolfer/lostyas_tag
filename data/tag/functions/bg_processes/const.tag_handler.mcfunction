@@ -3,7 +3,7 @@
 execute as @a[scores={tag.recieve=1..},tag=!tagger] at @s if entity @a[tag=tagger,scores={tag.give_out=1..},distance=..10,limit=1] run tag @a[tag=tagger,scores={tag.give_out=1..},distance=..10,limit=1,sort=random] add tag.give_out
 execute as @a[scores={tag.give_out=1..},tag=!tagger] at @s unless entity @a[tag=!tagger,scores={tag.recieve=1..},distance=..10,limit=1] run scoreboard players reset @s tag.give_out
 #  Reciever
-execute as @a[scores={tag.recieve=1..},tag=!tagger] at @s if entity @a[tag=tagger,scores={tag.give_out=1..},distance=..10,limit=1] run function tag:tag_recieve
+execute as @a[scores={tag.recieve=1..},tag=!tagger] at @s if entity @a[tag=tagger,scores={tag.give_out=1..},distance=..10,limit=1] run function tag:misc/tag_recieve
 execute as @a[scores={tag.recieve=1..},tag=!tagger] at @s unless entity @a[tag=tagger,scores={tag.give_out=1..},distance=..10,limit=1] run scoreboard players reset @s tag.recieve
 execute as @a[scores={tag.recieve=1..},tag=tagger] at @s run scoreboard players reset @s tag.recieve
 
@@ -19,7 +19,7 @@ execute as @a[scores={aftertagger_invincibility=0}] run scoreboard players reset
 
 
 #  if admin power (just gave the tagger tag)
-execute as @a[tag=tagger] unless score @s tag.recieve.admin matches 0.. run function tag:tag_recieve_admin
+execute as @a[tag=tagger] unless score @s tag.recieve.admin matches 0.. run function tag:misc/tag_recieve_admin
 execute as @a[tag=tagger] unless score @s tag.recieve.admin matches 0.. run scoreboard players add @s tag.recieve.admin 0
 execute as @a[tag=!tagger] if score @s tag.recieve.admin matches 0.. run scoreboard players reset @s tag.recieve.admin
 

@@ -124,7 +124,7 @@ weather clear
 
 
 execute store result score totalplayercount event if entity @a
-execute if score totalplayercount event < totalplayercount.old event run function tag:reset_sidebar
+execute if score totalplayercount event < totalplayercount.old event run function tag:misc/reset_sidebar
 execute store result score totalplayercount.old event if entity @a
 
 

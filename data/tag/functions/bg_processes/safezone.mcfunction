@@ -55,6 +55,7 @@ execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s r
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run stopsound @s ambient
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run playsound safezone_start ambient @s ~ ~ ~ 0.5 1
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run function safezone:play
+# safezone is a datapack created by note block studio
 #execute as @a[tag = safezoned, tag = !safezoned2] at @s run playsound music_disc.cat master @s ~ ~ ~ 200 1
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run tag @s remove afk
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run tag @s add safezoned2

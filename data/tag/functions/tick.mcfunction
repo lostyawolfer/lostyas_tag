@@ -39,4 +39,4 @@ function tag:abilities/0main
 
 kill @e[type=tnt_minecart]
 
-execute as @a[tag=!played_ALPHA] at @s run function tag:intro
+execute as @a[tag=!played_ALPHA] at @s run function tag:misc/intro
