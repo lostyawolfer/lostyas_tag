@@ -1,7 +1,7 @@
 ## explanation for file suffixes
 # ==================
 # normal = thing is viewed normal
-# thousand = thing is viewed in format x.xk
+# thousand = thing is viewed in format xx.xk; used if the value is more than 10k
 # ==================
 # _nn = normal-normal = playtime normal, best normal
 # _nt = normal-thousand = playtime normal, best thousand
