@@ -5,7 +5,7 @@
 function tag:bg_processes/tick.misc
 
 function tag:bg_processes/tick.safezone
-function tag:bg_processes/tick.special_block_handler
+function tag:bg_processes/tick.special_blocks
 function tag:bg_processes/tick.version
 function tag:bg_processes/tick.beacon
 function tag:bg_processes/tick.xp
@@ -26,6 +26,7 @@ function tag:bg_processes/tp_back/tick.tp_player_to_stand
 
 function tag:effects/levitation
 function tag:effects/throw
+function tag:effects/throw_small
 function tag:effects/glow
 function tag:effects/invis
 function tag:effects/speed
