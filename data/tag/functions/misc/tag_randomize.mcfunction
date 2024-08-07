@@ -41,11 +41,11 @@ execute if score cnt tag.random_counter matches 1..3 if score time tag.random_co
 execute if score cnt tag.random_counter matches 1..3 if score time tag.random_counter matches 0 run scoreboard players remove cnt tag.random_counter 1
 
 execute if score cnt tag.random_counter matches 0 if score time tag.random_counter matches 20.. as @a at @s run playsound ui.button.click master @s ~ ~ ~ .1 2
-execute if score cnt tag.random_counter matches 0 if score time tag.random_counter matches 20.. as @r run function tag:tag_recieve_random
+execute if score cnt tag.random_counter matches 0 if score time tag.random_counter matches 20.. as @r run function tag:misc/tag_recieve_random
 execute if score cnt tag.random_counter matches 0 if score time tag.random_counter matches 20.. run scoreboard players reset cnt tag.random_counter
 
 
 
 
 scoreboard players add time tag.random_counter 1
-execute if score cnt tag.random_counter matches 0.. run schedule function tag:tag_randomize 1t
+execute if score cnt tag.random_counter matches 0.. run schedule function tag:misc/tag_randomize 1t

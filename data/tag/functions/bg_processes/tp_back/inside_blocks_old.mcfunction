@@ -1,10 +1,10 @@
-scoreboard players set @s tp_outmap_anim 21
+scoreboard players set @s tp_inside_anim 21
 damage @s 1 sweet_berry_bush
 
 execute as @s[scores={tp.id=1}] at @e[tag=tp, type=armor_stand, scores={tp.id=1}] run tp @s ~ ~-255 ~
 execute as @s[scores={tp.id=2}] at @e[tag=tp, type=armor_stand, scores={tp.id=2}] run tp @s ~ ~-255 ~
 execute as @s[scores={tp.id=3}] at @e[tag=tp, type=armor_stand, scores={tp.id=3}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=4}] at @e[tag=tp, type=armor_stand, scores={tp.id=4}] run tp @s ~ ~-255 ~
+execute as @s[scores={tp.id=3}] at @e[tag=tp, type=armor_stand, scores={tp.id=4}] run tp @s ~ ~-255 ~
 execute as @s[scores={tp.id=5}] at @e[tag=tp, type=armor_stand, scores={tp.id=5}] run tp @s ~ ~-255 ~
 execute as @s[scores={tp.id=6}] at @e[tag=tp, type=armor_stand, scores={tp.id=6}] run tp @s ~ ~-255 ~
 execute as @s[scores={tp.id=7}] at @e[tag=tp, type=armor_stand, scores={tp.id=7}] run tp @s ~ ~-255 ~
@@ -18,7 +18,5 @@ execute as @s[scores={tp.id=14}] at @e[tag=tp, type=armor_stand, scores={tp.id=1
 execute as @s[scores={tp.id=15}] at @e[tag=tp, type=armor_stand, scores={tp.id=15}] run tp @s ~ ~-255 ~
 execute as @s[scores={tp.id=16}] at @e[tag=tp, type=armor_stand, scores={tp.id=16}] run tp @s ~ ~-255 ~
 
-execute as @s[scores={tp.id=0}] run spreadplayers 0 0 0 60 under 90 false @s
-
-particle block sandstone ~ ~.2 ~ .2 .2 .2 0 20 normal @s
-particle block sandstone ~ ~1 ~ .2 .4 .2 0 40 normal @a[distance=0.01..]
+particle sonic_boom ~ ~.2 ~ .2 .2 .2 0 20 normal @s
+particle sonic_boom ~ ~1 ~ .2 .4 .2 0 40 normal @a[distance=0.01..]

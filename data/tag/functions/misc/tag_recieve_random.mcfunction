@@ -4,7 +4,7 @@ scoreboard players set @s tag.recieve.admin 1
 execute if entity @s[tag=invincible.one_time] run tag @s remove invincible.one_time
 execute unless entity @s[tag=invincible, tag=!afk] run particle block gold_block ~ ~1 ~ .3 .6 .3 0 50
 execute unless entity @a[tag=invincible, tag=!afk] run title @a[team = !menu_tagger, team = !menu] subtitle [{"translate":"tag.subtitle.tag_by.random1","color":"#AA00AA"},{"translate":"tag.subtitle.tag_by.random2","color":"#FF00FF","bold":true}]
-execute unless entity @s[tag=invincible, tag=!afk] run title @a[team = !menu_tagger, team = !menu] title [{"selector":"@s","color":"#FFFF00","bold":true},{"translate":"tag.title.new_tagged","color":"gold","bold":false}]
+execute unless entity @s[tag=invincible, tag=!afk] run title @a[team = !menu_tagger, team = !menu] title [{"selector":"@s","color":"gold","bold":true},{"translate":"tag.title.new_tagged","color":"aqua","bold":false}]
 execute unless entity @s[tag=invincible, tag=!afk] run title @s[team = !menu_tagger, team = !menu] title [{"translate":"tag.title.you_tagged","color":"red","bold":true}]
 execute unless entity @s[tag=invincible, tag=!afk] run damage @s 1
 execute unless entity @s[tag=invincible, tag=!afk] run title @a[tag = !menu_tagger, tag = !menu] times 0 20 3
@@ -16,7 +16,7 @@ execute unless entity @s[tag=invincible, tag=!afk] run playsound minecraft:entit
 #execute unless entity @s[tag=invincible, tag=!afk] run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 1 1.5
 execute unless entity @s[tag=invincible, tag=!afk] run scoreboard players set @s[scores={playtime=..-1}] playtime 0
 execute unless entity @s[tag=invincible, tag=!afk] run function tag:tag_lightning
-execute unless entity @s[tag=invincible, tag=!afk] run tellraw @a[team = !menu_tagger, team = !menu] [{"text":"🔥 ","color":"light_purple"},{"selector":"@s","color":"aqua","bold":false},{"translate":"tag.chat.random","color":"aqua"}]
+execute unless entity @s[tag=invincible, tag=!afk] run tellraw @a[team = !menu_tagger, team = !menu] [{"text":"🔥 ","color":"light_purple"},{"selector":"@s","color":"gold","bold":true},{"translate":"tag.chat.random","color":"aqua"}]
 execute unless entity @s[tag=invincible, tag=!afk] run title @a[team = !menu_tagger, team = !menu] times 0 20 3
 execute unless entity @s[tag=invincible, tag=!afk] run tag @s add tagger
 

@@ -35,7 +35,13 @@ execute unless entity @s[tag=tag.recieve.mantled] unless entity @s[tag=invincibl
 execute as @a[tag=tag.give_out] at @s unless entity @a[tag=tag.recieve.mantled] unless entity @a[tag=invincible] run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 5
 execute as @a[tag=tag.give_out] at @s unless entity @a[tag=tag.recieve.mantled] unless entity @a[tag=invincible] run title @a[team = !menu_tagger, team = !menu] subtitle [{"translate":"tag.subtitle.tag_by1","color":"#00AAAA"},{"selector":"@s","color":"#00FFFF","bold":true},{"translate":"tag.subtitle.tag_by2"}]
 execute as @a[tag=tag.give_out] at @s unless entity @a[tag=tag.recieve.mantled] unless entity @a[tag=invincible] run title @s[team = !menu_tagger, team = !menu] subtitle [{"translate":"tag.subtitle.tag_by1","color":"#00AA00"},{"translate":"tag.subtitle.you","color":"#00FF00","bold":true},{"translate":"tag.subtitle.tag_by2"}]
+
+execute as @a[tag=tag.give_out] at @s unless entity @a[tag=tag.recieve.mantled] unless entity @a[tag=invincible] run team leave @s
+execute as @a[tag=tag.give_out] at @s unless entity @a[tag=tag.recieve.mantled] unless entity @a[tag=invincible] run team leave @a[tag=tag.recieve]
 execute as @a[tag=tag.give_out] at @s unless entity @a[tag=tag.recieve.mantled] unless entity @a[tag=invincible] run tellraw @a[team = !menu_tagger, team = !menu] [{"text":"🔥 ","color":"gold"},{"selector":"@s","color":"aqua","bold":false},{"translate":"tag.chat","color":"aqua"},{"text":"","color":"yellow"},{"selector":"@a[tag=tag.recieve]","color":"gold","bold":true}]
+execute as @a[tag=tag.give_out] at @s unless entity @a[tag=tag.recieve.mantled] unless entity @a[tag=invincible] run team join x.player.glow @s
+execute as @a[tag=tag.give_out] at @s unless entity @a[tag=tag.recieve.mantled] unless entity @a[tag=invincible] run team join a.tagger.white @a[tag=tag.recieve]
+
 execute as @a[tag=tag.give_out] at @s unless entity @a[tag=tag.recieve.mantled] unless entity @a[tag=invincible] run title @a[team = !menu_tagger, team = !menu] times 0 20 3
 execute as @a[tag=tag.give_out] at @s unless entity @a[tag=tag.recieve.mantled] unless entity @a[tag=invincible] run scoreboard players set @s effect.glow 20
 execute as @a[tag=tag.give_out] at @s unless entity @s[tag=tag.recieve.mantled] unless entity @s[tag=invincible, tag=!afk] run scoreboard players set @s[scores={tagger_timer=10..40}] playtime.title.trigger -3

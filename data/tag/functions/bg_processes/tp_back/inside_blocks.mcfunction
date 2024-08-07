@@ -1,22 +1,30 @@
-scoreboard players set @s tp_inside_anim 21
-damage @s 1 sweet_berry_bush
+damage @s 1 sweet_berry_bush by @s
+scoreboard players add @s inside_blocks 1
 
-execute as @s[scores={tp.id=1}] at @e[tag=tp, type=armor_stand, scores={tp.id=1}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=2}] at @e[tag=tp, type=armor_stand, scores={tp.id=2}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=3}] at @e[tag=tp, type=armor_stand, scores={tp.id=3}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=3}] at @e[tag=tp, type=armor_stand, scores={tp.id=4}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=5}] at @e[tag=tp, type=armor_stand, scores={tp.id=5}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=6}] at @e[tag=tp, type=armor_stand, scores={tp.id=6}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=7}] at @e[tag=tp, type=armor_stand, scores={tp.id=7}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=8}] at @e[tag=tp, type=armor_stand, scores={tp.id=8}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=9}] at @e[tag=tp, type=armor_stand, scores={tp.id=9}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=10}] at @e[tag=tp, type=armor_stand, scores={tp.id=10}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=11}] at @e[tag=tp, type=armor_stand, scores={tp.id=11}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=12}] at @e[tag=tp, type=armor_stand, scores={tp.id=12}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=13}] at @e[tag=tp, type=armor_stand, scores={tp.id=13}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=14}] at @e[tag=tp, type=armor_stand, scores={tp.id=14}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=15}] at @e[tag=tp, type=armor_stand, scores={tp.id=15}] run tp @s ~ ~-255 ~
-execute as @s[scores={tp.id=16}] at @e[tag=tp, type=armor_stand, scores={tp.id=16}] run tp @s ~ ~-255 ~
 
-particle sonic_boom ~ ~.2 ~ .2 .2 .2 0 20 normal @s
-particle sonic_boom ~ ~1 ~ .2 .4 .2 0 40 normal @a[distance=0.01..]
+execute as @a[scores={inside_blocks=50..}] at @s run function tag:bg_processes/tp_back/outside_map
+execute as @a[scores={inside_blocks=50..}] at @s run scoreboard players reset @s tp_outmap_anim
+execute as @a[scores={inside_blocks=50}] at @s run scoreboard players set @s tp_inside_anim 21
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160..}] at @s run spreadplayers ~ ~ 0 1 under 90 false @s
+execute as @a[scores={inside_blocks=160}] at @s run scoreboard players reset @s tp_inside_anim
+execute as @a[scores={inside_blocks=160}] at @s run scoreboard players set @s tp_inside_anim2 21

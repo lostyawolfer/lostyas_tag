@@ -1,5 +1,4 @@
-## Glowing effect
-#  (like when you are tagged)
+## Invisibility effect
 
 
 execute as @a[scores={effect.invis=1..}, tag = !safezoned] at @s run effect give @s minecraft:invisibility 1 0 true

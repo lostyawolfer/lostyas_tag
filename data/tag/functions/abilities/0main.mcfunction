@@ -1,7 +1,8 @@
 execute as @a unless score @s ab.id matches 0.. run scoreboard players set @s ab.id 0
 
 
-
+scoreboard players reset @a[gamemode=!spectator] test
+scoreboard players set @a[scores={test=200..}] ab.use_ms 0
 
 
 execute as @a[scores={ab.id=1}] at @s run function tag:abilities/1

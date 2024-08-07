@@ -96,9 +96,9 @@ scoreboard players enable @a rescue
 
 execute as @a[scores={fall=..749}] at @s run scoreboard players set @s fall 0
 execute as @a[scores={fall=1000..2499}, nbt={OnGround:1b}] at @s run particle cloud ~ ~ ~ .3 0 .3 .2 25
-execute as @a[scores={fall=750..2499}, nbt={OnGround:1b}, predicate=!tag:sneaking] at @s unless block ~ ~-1 ~ beacon run damage @s 1 minecraft:generic
-execute as @a[scores={fall=2500..}, nbt={OnGround:1b}, predicate=!tag:sneaking] at @s unless block ~ ~-1 ~ beacon run damage @s 1 minecraft:generic by @r[tag=!tagger]
-execute as @a[scores={fall=2500..}, nbt={OnGround:1b}, predicate=tag:sneaking] at @s unless block ~ ~-1 ~ beacon run damage @s 1 minecraft:generic
+execute as @a[scores={fall=750..2499}, nbt={OnGround:1b}, predicate=!tag:sneaking] at @s unless block ~ ~-1 ~ beacon unless score @s effect.down matches -5.. run damage @s 1 minecraft:generic
+execute as @a[scores={fall=2500..}, nbt={OnGround:1b}, predicate=!tag:sneaking] at @s unless block ~ ~-1 ~ beacon unless score @s effect.down matches -5.. run damage @s 1 minecraft:generic by @p[tag=!tagger]
+execute as @a[scores={fall=2500..}, nbt={OnGround:1b}, predicate=tag:sneaking] at @s unless block ~ ~-1 ~ beacon unless score @s effect.down matches -5.. run damage @s 1 minecraft:generic
 execute as @a[scores={fall=2500..}, nbt={OnGround:1b}] at @s run particle cloud ~ ~ ~ .3 0 .3 .3 50
 execute as @a[scores={fall=1400..}] at @s if entity @a[distance=..5, scores={fall=..1399}, nbt={OnGround:1b}] run scoreboard players set @s[tag=!tagger,tag=!afk,tag=!safezoned,gamemode=adventure] playtime.title.trigger 7
 execute as @a[scores={fall=1400..}] at @s if entity @a[distance=..5, scores={fall=..1399}, nbt={OnGround:1b}] run scoreboard players add @s[tag=!tagger,tag=!afk,tag=!safezoned,gamemode=adventure] playtime 5
@@ -131,10 +131,13 @@ execute store result score totalplayercount.old event if entity @a
 
 execute store result score playercount event if entity @a[gamemode=adventure, tag=!safezoned, tag=!afk]
 execute if score playercount event matches 2.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk, gamemode=adventure] run scoreboard players add glow event 1
+execute if score glow event matches 2000.. run title @a times 5 20 40
 execute if score glow event matches 2000.. run title @a[tag = !tagger] title {"translate":"event.glowing.title","color":"#00FFFF"}
 execute if score glow event matches 2000.. run title @a[tag = tagger] title {"translate":"event.glowing.title","color":"#00FFFF"}
+execute if score glow event matches 2000.. run tellraw @a {"translate":"⚠ Подсветка! Всех видно сквозь стены!","color":"aqua"}
 execute if score glow event matches 2000.. run title @a[tag = !tagger] subtitle {"translate":"event.glowing.subtitle","color":"#00FFFF"}
 execute if score glow event matches 2000.. run title @a[tag = tagger] subtitle {"translate":"event.glowing.subtitle_tag","color":"gold"}
+execute if score glow event matches 2000.. as @a at @s run playsound glowing master @s ~ ~ ~
 execute if score glow event matches 2000.. run scoreboard players set @a[tag = !tagger, gamemode=adventure, tag=!safezoned] effect.glow 100
 execute if score glow event matches 2000.. run scoreboard players set @a[tag = tagger, gamemode=adventure, tag=!safezoned] effect.glow 100
 execute if score glow event matches 2000.. run scoreboard players set glow event 0
@@ -145,7 +148,7 @@ execute as @e[type=item, nbt={Age:0s, PickupDelay:40s}] run data merge entity @s
 
 
 
-#execute as @a[scores={afk.timer=600..}, tag=!afk] run tellraw @a [{"text":"⏳ ","color":"yellow"},{"selector":"@s"}," теперь AFK"]
+execute as @a[scores={afk.timer=600..}, tag=!afk] run tellraw @s [{"text":"⏳ Ты AFK!","color":"yellow"}]
 tag @a[scores={afk.timer=600..}] add afk
 scoreboard players set @a[scores={afk.timer=600..}] afk.timer 0
 execute as @a[tag=afk, gamemode=adventure] unless score @s effect.invis matches 1.. at @s run particle dust 1 1 0 1 ~ ~1 ~ .2 .4 .2 0 3 normal @a[distance=.1..]
@@ -154,7 +157,7 @@ execute as @a[scores={afk.timer=..0}, tag=afk] run scoreboard players remove @s[
 execute as @a[scores={afk.timer=..-1}, tag=afk] run scoreboard players add @s[scores={stat.speed2=0..9}] afk.timer 1
 execute as @a[scores={afk.timer=1..}, tag=afk] run scoreboard players set @s afk.timer 0
 
-#execute as @a[scores={afk.timer=..-30}, tag=afk] run tellraw @a [{"text":"⌛ ","color":"yellow"},{"selector":"@s"}," больше не AFK"]
+execute as @a[scores={afk.timer=..-30}, tag=afk] run tellraw @s [{"text":"⌛ Ты больше не AFK!","color":"yellow"}]
 tag @a[scores={afk.timer=..-30}] remove afk
 scoreboard players set @a[scores={afk.timer=..-30}] afk.timer 0
 
@@ -192,6 +195,9 @@ execute as @a[nbt={OnGround:0b}, scores={stat.speed2=300..}, gamemode=adventure]
 execute as @a at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run scoreboard players add @s near_heartbeat 1
 execute as @a at @s unless entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run scoreboard players reset @s near_heartbeat
 
+
+execute as @a[scores={near_heartbeat=10}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run function tag:tp_back/stopmusic
+execute as @a[scores={near_heartbeat=16}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run function tag:tp_back/stopmusic
 
 execute as @a[scores={near_heartbeat=10}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=21..30] run playsound block.note_block.basedrum ambient @s ~ ~ ~
 execute as @a[scores={near_heartbeat=16}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=21..30] run playsound block.note_block.basedrum ambient @s ~ ~ ~

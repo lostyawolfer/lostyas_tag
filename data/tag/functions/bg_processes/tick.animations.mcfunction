@@ -11,16 +11,77 @@ execute if score notifanim notifanim matches 9 run bossbar set minecraft:notif.n
 execute if score notifanim notifanim matches 10 run bossbar set minecraft:notif.no_save_position name {"translate":"no_save_position.notif","color":"#555555"}
 
 
-execute if score notifanim notifanim matches 0 run team modify x.player.glow color aqua
+
+
+# gray out the name if there are no taggers
+execute if entity @a[tag=tagger] run team modify x.player color aqua
+execute unless entity @a[tag=tagger] run team modify x.player color gray
+
+execute if entity @a[tag=tagger] if score notifanim notifanim matches 0 run team modify x.player.glow color aqua
+execute unless entity @a[tag=tagger] if score notifanim notifanim matches 0 run team modify x.player.glow color gray
 execute if score notifanim notifanim matches 2 run team modify x.player.glow color white
-execute if score notifanim notifanim matches 4 run team modify x.player.glow color aqua
+execute if entity @a[tag=tagger] if score notifanim notifanim matches 4 run team modify x.player.glow color aqua
+execute unless entity @a[tag=tagger] if score notifanim notifanim matches 4 run team modify x.player.glow color gray
 execute if score notifanim notifanim matches 6 run team modify x.player.glow color white
-execute if score notifanim notifanim matches 8 run team modify x.player.glow color aqua
+execute if entity @a[tag=tagger] if score notifanim notifanim matches 8 run team modify x.player.glow color aqua
+execute unless entity @a[tag=tagger] if score notifanim notifanim matches 8 run team modify x.player.glow color gray
 execute if score notifanim notifanim matches 10 run team modify x.player.glow color white
-execute if score notifanim notifanim matches 12 run team modify x.player.glow color aqua
+execute if entity @a[tag=tagger] if score notifanim notifanim matches 12 run team modify x.player.glow color aqua
+execute unless entity @a[tag=tagger] if score notifanim notifanim matches 12 run team modify x.player.glow color gray
 execute if score notifanim notifanim matches 14 run team modify x.player.glow color white
-execute if score notifanim notifanim matches 16 run team modify x.player.glow color aqua
+execute if entity @a[tag=tagger] if score notifanim notifanim matches 16 run team modify x.player.glow color aqua
+execute unless entity @a[tag=tagger] if score notifanim notifanim matches 16 run team modify x.player.glow color gray
 execute if score notifanim notifanim matches 18 run team modify x.player.glow color white
+
+
+
+
+execute if score notifanim notifanim matches 0 run team modify a.tagger.crouch suffix {"text": "↓", "color": "#FFFF55"}
+execute if score notifanim notifanim matches 10 run team modify a.tagger.crouch suffix {"text": "↓", "color": "#BCBC3F"}
+
+execute if score notifanim notifanim matches 0 run team modify a.tagger.yellow.crouch suffix {"text": "↓", "color": "#FFFF55"}
+execute if score notifanim notifanim matches 10 run team modify a.tagger.yellow suffix {"text": "↓", "color": "#BCBC3F"}
+
+execute if score notifanim notifanim matches 0 run team modify a.tagger.white.crouch suffix {"text": "↓", "color": "#FFFF55"}
+execute if score notifanim notifanim matches 10 run team modify a.tagger.white.crouch suffix {"text": "↓", "color": "#BCBC3F"}
+
+
+execute if score notifanim notifanim matches 0 run team modify a.tagger.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 2 run team modify a.tagger.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 4 run team modify a.tagger.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 6 run team modify a.tagger.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 8 run team modify a.tagger.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 10 run team modify a.tagger.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 12 run team modify a.tagger.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 14 run team modify a.tagger.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 16 run team modify a.tagger.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 18 run team modify a.tagger.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+
+execute if score notifanim notifanim matches 0 run team modify a.tagger.yellow.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 2 run team modify a.tagger.yellow.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 4 run team modify a.tagger.yellow.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 6 run team modify a.tagger.yellow.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 8 run team modify a.tagger.yellow.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 10 run team modify a.tagger.yellow.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 12 run team modify a.tagger.yellow.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 14 run team modify a.tagger.yellow.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 16 run team modify a.tagger.yellow.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 18 run team modify a.tagger.yellow.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+
+execute if score notifanim notifanim matches 0 run team modify a.tagger.white.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 2 run team modify a.tagger.white.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 4 run team modify a.tagger.white.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 6 run team modify a.tagger.white.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 8 run team modify a.tagger.white.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 10 run team modify a.tagger.white.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 12 run team modify a.tagger.white.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 14 run team modify a.tagger.white.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+execute if score notifanim notifanim matches 16 run team modify a.tagger.white.glow suffix {"text": "⚠", "color": "#CCCC22"}
+execute if score notifanim notifanim matches 18 run team modify a.tagger.white.glow suffix {"text": "⚠", "color": "#FFFFFF"}
+
+
+
+
 
 
 scoreboard players add notifanim notifanim 1

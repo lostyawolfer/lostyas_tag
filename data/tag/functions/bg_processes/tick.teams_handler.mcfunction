@@ -1,9 +1,7 @@
 ## player
 team join x.player @a[team = !x.player, tag = !safezoned, tag = !tagger, gamemode = adventure]
 
-# gray out the name if there are no taggers
-execute if entity @a[tag=tagger] run team modify x.player color aqua
-execute unless entity @a[tag=tagger] run team modify x.player color gray
+
 
 
 
@@ -16,9 +14,14 @@ execute as @a[team=!a.tagger.white, tag=!safezoned, tag=tagger, predicate=!tag:s
 execute as @a[team=!a.tagger.yellow, tag=!safezoned, tag=tagger, predicate=!tag:sneaking, scores={tagger_timer=3}, gamemode = adventure] at @s run team join a.tagger.yellow
 execute as @a[team=!a.tagger, tag=!safezoned, tag=tagger, predicate=!tag:sneaking, scores={tagger_timer=4..}, gamemode = adventure] at @s run team join a.tagger
 # sneaking
-execute as @a[team=!a.tagger.white.crouch, tag=!safezoned, tag=tagger, predicate=tag:sneaking, scores={tagger_timer=1..2}, gamemode = adventure] at @s run team join a.tagger.white.crouch
-execute as @a[team=!a.tagger.yellow.crouch, tag=!safezoned, tag=tagger, predicate=tag:sneaking, scores={tagger_timer=3}, gamemode = adventure] at @s run team join a.tagger.yellow.crouch
-execute as @a[team=!a.tagger.crouch, tag=!safezoned, tag=tagger, predicate=tag:sneaking, scores={tagger_timer=4..}, gamemode = adventure] at @s run team join a.tagger.crouch
+execute as @a[team=!a.tagger.white.crouch, tag=!safezoned, tag=tagger, predicate=tag:sneaking, scores={tagger_timer=1..2}, gamemode = adventure] unless score @s effect.glow matches 0.. at @s run team join a.tagger.white.crouch
+execute as @a[team=!a.tagger.yellow.crouch, tag=!safezoned, tag=tagger, predicate=tag:sneaking, scores={tagger_timer=3}, gamemode = adventure] unless score @s effect.glow matches 0.. at @s run team join a.tagger.yellow.crouch
+execute as @a[team=!a.tagger.crouch, tag=!safezoned, tag=tagger, predicate=tag:sneaking, scores={tagger_timer=4..}, gamemode = adventure] unless score @s effect.glow matches 0.. at @s run team join a.tagger.crouch
+# glowing while sneaking
+execute as @a[team=a.tagger.white.crouch, tag=!safezoned, tag=tagger, predicate=tag:sneaking, scores={tagger_timer=1..2}, gamemode = adventure] if score @s effect.glow matches 0.. at @s run team join a.tagger.white.glow
+execute as @a[team=a.tagger.yellow.crouch, tag=!safezoned, tag=tagger, predicate=tag:sneaking, scores={tagger_timer=3}, gamemode = adventure] if score @s effect.glow matches 0.. at @s run team join a.tagger.yellow.glow
+execute as @a[team=a.tagger.crouch, tag=!safezoned, tag=tagger, predicate=tag:sneaking, scores={tagger_timer=4..}, gamemode = adventure] if score @s effect.glow matches 0.. at @s run team join a.tagger.glow
+
 # counter
 scoreboard players set @a[tag=!tagger, scores={tagger_timer=1..}, gamemode=!adventure] tagger_timer 0
 
@@ -55,7 +58,7 @@ team join y.safezone.tagger @a[tag = tagger, tag=safezoned, team=!y.safezone.tag
 
 
 
-## Other gamemodes
+## other gamemodes
 # creative
 # set team
 team join z.creative @a[team = !z.creative, tag = !tagger, gamemode=creative]

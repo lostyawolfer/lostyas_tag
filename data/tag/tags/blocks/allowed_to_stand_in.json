@@ -11,9 +11,13 @@
 
         "grass",
         "tall_grass",
-        "dandelion",
-        "poppy",
-        "allium",
+        "#flowers",
+        "#flower_pots",
+        "bamboo",
+        "glow_lichen",
+        "dead_bush",
+        "lightning_rod",
+        "daylight_detector",
 
         "#slabs",
         "#stairs",
@@ -32,6 +36,7 @@
         "#banners",
 
         "iron_bars",
+        "chain",
 
         "player_head",
         "creeper_head",
@@ -39,7 +44,6 @@
         "skeleton_skull",
         "wither_skeleton_skull",
         "dragon_head",
-        "flower_pot",
 
         "cobweb",
         "snow",
@@ -61,8 +65,15 @@
         "scaffolding",
         "chest",
         "trapped_chest",
+        "ender_chest",
+        "anvil",
+        "grindstone",
+        "lectern",
+        "brewing_stand",
+        "end_rod",
         "tripwire",
         "tripwire_hook",
+        "stonecutter",
 
         "redstone_wire",
         "repeater",
