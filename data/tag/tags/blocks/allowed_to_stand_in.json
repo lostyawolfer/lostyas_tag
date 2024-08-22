@@ -13,6 +13,7 @@
         "tall_grass",
         "#flowers",
         "#flower_pots",
+        "fern",
         "bamboo",
         "glow_lichen",
         "dead_bush",
@@ -34,6 +35,7 @@
         "#buttons",
         "#all_signs",
         "#banners",
+        "#wool_carpets",
 
         "iron_bars",
         "chain",

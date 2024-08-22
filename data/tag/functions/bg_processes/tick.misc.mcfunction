@@ -174,9 +174,6 @@ execute as @e[type=ender_pearl] at @s run particle glow ~ ~ ~ .1 .1 .1 .075 5
 
 
 #execute as @a[scores={stat.speed.prev=170..}] if score @s stat.speed2 matches 1..75 run damage @s 0.0001
-execute as @a[scores={stat.speed.prev=170..}] if score @s stat.speed2 matches 1..75 run playsound entity.zombie.attack_wooden_door player @a ~ ~ ~
-execute as @a[scores={stat.speed.prev=170..}] if score @s stat.speed2 matches 1..75 run particle block stone ~ ~1.5 ~ .3 .3 .3 0 100
-
 
 execute as @a[nbt={OnGround:0b}, scores={stat.speed2=150..}, gamemode=adventure] unless score @s effect.invis matches 1.. at @s run particle minecraft:white_ash ~ ~1 ~ .1 .4 .1 1 25
 execute as @a[nbt={OnGround:0b}, scores={stat.speed2=250..}, gamemode=adventure] unless score @s effect.invis matches 1.. at @s run particle minecraft:white_ash ~ ~1 ~ .2 .4 .2 1 25

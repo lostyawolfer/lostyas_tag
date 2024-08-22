@@ -27,7 +27,6 @@ execute unless entity @s[tag=tag.recieve.mantled] unless entity @s[tag=invincibl
 #execute unless entity @s[tag=tag.recieve.mantled] unless entity @s[tag=invincible, tag=!afk] run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 1 1.5
 execute unless entity @s[tag=tag.recieve.mantled] unless entity @s[tag=invincible, tag=!afk] run scoreboard players set @s playtime 0
 execute unless entity @s[tag=tag.recieve.mantled] unless entity @s[tag=invincible, tag=!afk] run scoreboard players set @s[scores={playtime=..-1}] playtime 0
-execute unless entity @s[tag=tag.recieve.mantled] unless entity @s[tag=invincible, tag=!afk] run function tag:tag_lightning
 execute unless entity @s[tag=tag.recieve.mantled] unless entity @s[tag=invincible, tag=!afk] run tag @s add tagger
 
 

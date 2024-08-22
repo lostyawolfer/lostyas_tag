@@ -15,7 +15,7 @@ execute unless entity @s[tag=invincible, tag=!afk] run playsound minecraft:entit
 #execute unless entity @s[tag=invincible, tag=!afk] run scoreboard players set @s playtime.title.trigger -4
 #execute unless entity @s[tag=invincible, tag=!afk] run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 1 1.5
 execute unless entity @s[tag=invincible, tag=!afk] run scoreboard players set @s[scores={playtime=..-1}] playtime 0
-execute unless entity @s[tag=invincible, tag=!afk] run function tag:tag_lightning
+execute unless entity @s[tag=invincible, tag=!afk] run function tag:misc/tag_lightning
 execute unless entity @s[tag=invincible, tag=!afk] run tellraw @a[team = !menu_tagger, team = !menu] [{"text":"🔥 ","color":"light_purple"},{"selector":"@s","color":"gold","bold":true},{"translate":"tag.chat.random","color":"aqua"}]
 execute unless entity @s[tag=invincible, tag=!afk] run title @a[team = !menu_tagger, team = !menu] times 0 20 3
 execute unless entity @s[tag=invincible, tag=!afk] run tag @s add tagger

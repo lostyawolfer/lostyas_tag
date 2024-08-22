@@ -41,8 +41,12 @@ execute as @a[scores={afk.timer=1..}, tag=!afk] run scoreboard players remove @s
 
 
 ## speed stat
-execute as @a run scoreboard players operation @s stat.speed.prev = @s stat.speed2
 
+
+execute as @a run scoreboard players operation @s stat.speed.prev = @s stat.speed2
+execute as @a run scoreboard players operation @s stat.speed.half = @s stat.speed2
+execute as @a run scoreboard players operation @s stat.speed.half *= 2 consts
+execute as @a[scores={stat.speed.flag=2}] run scoreboard players set @s stat.speed.prev 0
 
 execute as @a[scores={stat.speed2=1..}] run scoreboard players set @s stat.speed2 0
 
@@ -61,7 +65,25 @@ execute as @a[scores={walk5=1..}] run scoreboard players set @s walk5 0
 execute as @a[scores={walk4=0..}, nbt={OnGround:0b}] run scoreboard players operation @s stat.speed2 = @s walk4
 execute as @a[scores={walk4=1..}] run scoreboard players set @s walk4 0
 
-execute as @a[scores={stat.speed2=999..}, nbt={OnGround:1b}] run scoreboard players set @s stat.speed2 999
+
+# execute as @a[scores={stat.speed.flag=4..}] run scoreboard players operation @s stat.speed2 /= 2 consts
+# execute as @a[scores={stat.speed.flag=1..3}] run scoreboard players add @s stat.speed.flag 1
+# execute as @a[scores={stat.speed.flag=4..}] run scoreboard players reset @s stat.speed.flag
+
+
+# #execute as @a[scores={stat.speed.prev=7..}] if score @s stat.speed2 matches 0 if score @s stat.speed.flag matches 0.. run tellraw Lostya [{"selector":"@s"}, " is having the speed bug"]
+
+# execute as @a[scores={stat.speed.prev=7..}] if score @s stat.speed2 matches 0 if score @s stat.speed.flag matches 0.. run scoreboard players operation @s stat.speed2 /= 2 consts
+# execute as @a[scores={stat.speed.prev=7..}] if score @s stat.speed2 matches 0 if score @s stat.speed.flag matches 0.. run scoreboard players set @s stat.speed.flag 1
+# execute as @a[scores={stat.speed.prev=7..}] if score @s stat.speed2 matches 0 unless score @s stat.speed.flag matches 0.. run scoreboard players set @s stat.speed.flag 1
+# execute as @a[scores={stat.speed.prev=7..}] if score @s stat.speed2 matches 0 run scoreboard players operation @s stat.speed2 = @s stat.speed.prev
+
+# execute as @a[scores={stat.speed.prev=7..}] if score @s stat.speed2 = @s stat.speed.half run scoreboard players operation @s stat.speed2 = @s stat.speed.prev
+
+
+
+
+execute as @a[scores={stat.speed2=999..}] run scoreboard players set @s stat.speed2 999
 
 
 
