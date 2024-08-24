@@ -5,9 +5,12 @@ scoreboard players set @s tag.recieve.admin 1
 execute if entity @s[tag=invincible.one_time] run tag @s add tag.recieve.mantled
 execute if entity @s[tag=invincible.one_time] run particle block light_blue_stained_glass ~ ~1 ~ .3 .6 .3 0 100
 execute if entity @s[tag=invincible.one_time] run particle block diamond_block ~ ~1 ~ .3 .6 .3 0 50
-execute if entity @s[tag=invincible.one_time] run particle end_rod ~ ~1 ~ .3 .6 .3 .1 50
+execute if entity @s[tag=invincible.one_time] run particle soul_fire_flame ~ ~1 ~ .3 .6 .3 .07 10
+execute if entity @s[tag=invincible.one_time] run playsound block.amethyst_block.break player @a
+execute if entity @s[tag=invincible.one_time] run playsound minecraft:block.beacon.deactivate player @a ~ ~ ~ 1 1.5
 execute if entity @s[tag=invincible.one_time] run playsound entity.guardian.death_land player @a ~ ~ ~
 execute if entity @s[tag=invincible.one_time] run playsound block.glass.break player @a ~ ~ ~
+execute if entity @s[tag=invincible.one_time] run scoreboard players set @s ab.use_s 0
 execute if entity @s[tag=invincible.one_time] run title @s times 0 10 40
 #execute if entity @s[tag=invincible.one_time] run title @s title {"text":"Мантия сбита!","color":"red","bold":true}
 execute if entity @s[tag=invincible.one_time] run scoreboard players set @s[tag=ab.active.mantle] ab.use_s 0

@@ -13,8 +13,8 @@ scoreboard players add @a[tag=tagger] tagger_timer 1
 
 # make a holy mantle user invincible for a little while after (not) getting tagged
 # this is to prevent people double-clicking to bypass holy mantle ability
-execute as @a[tag=invincible.one_time,scores={aftertagger_invincibility=1..}] run scoreboard players remove @s aftertagger_invincibility 1
-execute as @a[tag=invincible.one_time,scores={aftertagger_invincibility=0}] run tag @s remove invincible.one_time
+execute as @a[tag=invincible.one_time, scores={aftertagger_invincibility=1..}] run scoreboard players remove @s aftertagger_invincibility 1
+execute as @a[tag=invincible.one_time, scores={aftertagger_invincibility=0}] run tag @s remove invincible.one_time
 execute as @a[scores={aftertagger_invincibility=0}] run scoreboard players reset @s aftertagger_invincibility
 
 

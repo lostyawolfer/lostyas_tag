@@ -14,8 +14,14 @@ kill @e[type=minecraft:eye_of_ender]
 execute as @a at @s run attribute @s minecraft:generic.attack_speed base set 99999
 execute as @e[type=ender_pearl] run data merge entity @s {Glowing:1b}
 team join pearl @e[type=ender_pearl]
-execute as @a[tag=invincible.one_time] at @s run particle dust 0 1 1 1 ~ ~1 ~ .3 .5 .3 0 3
-execute as @a[tag=invincible] at @s run particle dust 0 .5 1 1 ~ ~1 ~ .2 .4 .2 0 1
+execute as @a[tag=invincible.one_time] at @s run particle dust 0 .5 1 1 ~ ~1 ~ .3 .5 .3 0 3
+execute as @a[tag=invincible.one_time] at @s if score notifanim notifanim matches 14 run playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ .5 0
+execute as @a[tag=invincible.one_time] at @s if score notifanim notifanim matches 3 run playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ .5 1.5
+execute as @a[tag=invincible.one_time] at @s if score notifanim notifanim matches 4 run playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ .5 1.7
+execute as @a[tag=invincible.one_time] at @s if score notifanim notifanim matches 16 run playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ .5 2
+execute as @a[tag=invincible.one_time] at @s if score notifanim notifanim matches 7 run playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ .5 0.8
+execute as @a[tag=invincible.one_time] at @s unless score notifanim notifanim matches 3..4 unless score notifanim notifanim matches 7 unless score notifanim notifanim matches 14 unless score notifanim notifanim matches 16 run playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ .5
+execute as @a[tag=invincible] at @s run particle dust 0 1 .5 1 ~ ~1 ~ .2 .4 .2 0 1
 execute as @e[tag=frozen,type=!armor_stand] at @s run tp @s @s
 execute as @e[tag=frozen,type=!armor_stand] at @s run tp @s ~ ~ ~
 execute as @e[tag=frozen,type=!armor_stand] at @s run particle electric_spark ~ ~.3 ~ .2 .2 .2 0 2
