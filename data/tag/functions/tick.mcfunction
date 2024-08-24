@@ -37,6 +37,9 @@ function tag:bg_processes/tp_back/tick.check_for_stands
 function tag:bg_processes/tp_back/tick.tp_stand_to_player
 function tag:bg_processes/tp_back/tick.tp_player_to_stand
 
+function tag:events/glow
+function tag:events/major.air_raid
+
 function tag:abilities/0main
 
 kill @e[type=tnt_minecart]

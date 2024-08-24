@@ -35,12 +35,13 @@ execute as @a[tag=safezoned, tag=tagger, predicate=tag:sneaking] at @s run score
 # cosmetics
 execute as @a[tag=tagger, gamemode = adventure] at @s if entity @a[distance=.01..] run particle dust 1 .5 0 1 ~ ~2 ~ 5 5 5 0 1 normal @s
 execute as @a[tag=tagger, gamemode = adventure] at @s if entity @a[distance=.01..] run item replace entity @s armor.head with carved_pumpkin
-execute as @a[tag=!safezoned, tag=tagger, gamemode=adventure] at @s unless score @s nbs_runsong matches 0.. if entity @a[distance=.01..] run function run_song:play
+execute as @a[tag=!safezoned, tag=tagger, gamemode=adventure] at @s unless score @s nbs_runsong matches 0.. if entity @a[distance=.01..] unless score game event.current_major_event matches 1.. run function run_song:play
 
 # remove cosmetics from non-taggers
 execute as @a[tag=!tagger] at @s run item replace entity @s armor.head with air
 execute as @a[gamemode=!adventure] at @s run item replace entity @s armor.head with air
 execute as @a[tag=!safezoned, tag=tagger, gamemode=adventure] at @s if score @s nbs_runsong matches 0.. unless entity @a[distance=.01..] run function run_song:stop
+execute if score game event.current_major_event matches 1.. as @a run function run_song:stop
 execute as @a[tag=safezoned] if score @s nbs_runsong matches 0.. run function run_song:stop
 execute as @a[tag=!tagger] if score @s nbs_runsong matches 0.. run function run_song:stop
 execute as @a[gamemode=!adventure] if score @s nbs_runsong matches 0.. run function run_song:stop
