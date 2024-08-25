@@ -5,7 +5,9 @@
 #  Activation
 execute as @s[scores={ab.use=1..}] run execute store result score @s ab.cd_s run scoreboard players get 2 ab.times.cd
 execute as @s[scores={ab.use=1..}] run execute store result score @s ab.use_s run scoreboard players get 2 ab.times.use
-execute as @s[scores={ab.use=1..}] run playsound minecraft:entity.warden.sonic_boom player @a
+execute as @s[scores={ab.use=1..}] run playsound minecraft:entity.warden.sonic_boom player @a ~ ~ ~ 2 1
+execute as @s[scores={ab.use=1..}] run stopsound @s player minecraft:entity.warden.sonic_boom
+execute as @s[scores={ab.use=1..}] run playsound minecraft:entity.warden.sonic_boom master @s ~ ~ ~ 10 1
 execute as @s[scores={ab.use=1..}] run particle minecraft:sonic_boom ~ ~1 ~ 0 .5 0 0 3
 execute as @s[scores={ab.use=1..}] run scoreboard players set @s ab.use 0
 

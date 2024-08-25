@@ -6,13 +6,13 @@
 
 
 ## Cooldown
-execute as @a[gamemode=!creative] as @s[scores={t.has=0}] as @s[scores={t.cd.s=2}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:2,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 2
-execute as @a[gamemode=!creative] as @s[scores={t.has=0}] as @s[scores={t.cd.s=3}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:3,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 3
-execute as @a[gamemode=!creative] as @s[scores={t.has=0}] as @s[scores={t.cd.s=4}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:4,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 4
-execute as @a[gamemode=!creative] as @s[scores={t.has=0}] as @s[scores={t.cd.s=5}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:5,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 5
-execute as @a[gamemode=!creative] as @s[scores={t.has=0}] as @s[scores={t.cd.s=6}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:6,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 6
-execute as @a[gamemode=!creative] as @s[scores={t.has=0}] as @s[scores={t.cd.s=7}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:7,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 7
-execute as @a[gamemode=!creative] as @s[scores={t.has=0}] as @s[scores={t.cd.s=16..}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:16,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 1
+execute as @a[gamemode=!creative] as @s[scores={current_menu_page=0}] as @s[scores={t.has=0}] as @s[scores={t.cd.s=2}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:2,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 2
+execute as @a[gamemode=!creative] as @s[scores={current_menu_page=0}] as @s[scores={t.has=0}] as @s[scores={t.cd.s=3}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:3,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 3
+execute as @a[gamemode=!creative] as @s[scores={current_menu_page=0}] as @s[scores={t.has=0}] as @s[scores={t.cd.s=4}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:4,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 4
+execute as @a[gamemode=!creative] as @s[scores={current_menu_page=0}] as @s[scores={t.has=0}] as @s[scores={t.cd.s=5}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:5,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 5
+execute as @a[gamemode=!creative] as @s[scores={current_menu_page=0}] as @s[scores={t.has=0}] as @s[scores={t.cd.s=6}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:6,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 6
+execute as @a[gamemode=!creative] as @s[scores={current_menu_page=0}] as @s[scores={t.has=0}] as @s[scores={t.cd.s=7}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:7,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 7
+execute as @a[gamemode=!creative] as @s[scores={current_menu_page=0}] as @s[scores={t.has=0}] as @s[scores={t.cd.s=16..}] run item replace entity @s container.6 with minecraft:brick{Tag:["game"],CustomModelData:16,display:{Name:'[{"translate":"goat_horn.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 1
 
 
 
@@ -33,7 +33,7 @@ execute as @a[gamemode=!creative] as @s[scores={current_menu_page=0}] as @s[scor
 execute as @a[scores={t.has=1}] at @s if entity @s[scores={t.anim=..3}] run scoreboard players add @s t.anim 1
 execute as @a[scores={t.has=0}] at @s run scoreboard players set @s t.anim 0
 
-execute as @a[gamemode=!creative] unless score @s t.id matches 1..8 run item replace entity @s container.6 with minecraft:nether_brick{Tag:["game"],CustomModelData:4,display:{Name:'[{"translate":"goat_horn.item.none","color":"#FF0000","bold":true,"italic":false}]'}}
+execute as @a[gamemode=!creative] as @s[scores={current_menu_page=0}] unless score @s t.id matches 1..8 run item replace entity @s container.6 with minecraft:nether_brick{Tag:["game"],CustomModelData:4,display:{Name:'[{"translate":"goat_horn.item.none","color":"#FF0000","bold":true,"italic":false}]'}}
 
 execute as @a[gamemode=!creative] as @s[scores={current_menu_page=0}] as @s[scores={t.has=1}] as @s[scores={t.id=1}] as @s[scores={t.anim=1}] run item replace entity @s container.6 with minecraft:goat_horn{Tag:["game"],CustomModelData:4,display:{Name:'[{"translate":"goat_horn.item","color":"#FFFFFF","bold":true,"italic":false}]'}, instrument: "minecraft:call_goat_horn"}
 execute as @a[gamemode=!creative] as @s[scores={current_menu_page=0}] as @s[scores={t.has=1}] as @s[scores={t.id=1}] as @s[scores={t.anim=2}] run item replace entity @s container.6 with minecraft:goat_horn{Tag:["game"],CustomModelData:3,display:{Name:'[{"translate":"goat_horn.item","color":"#EEEEE0","bold":true,"italic":false}]'}, instrument: "minecraft:call_goat_horn"}

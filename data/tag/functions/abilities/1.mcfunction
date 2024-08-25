@@ -4,7 +4,7 @@
 
 #  Activation & Work
 execute as @s[scores={ab.use=1..}] run execute store result score @s ab.cd_s run scoreboard players get 1 ab.times.cd
-execute as @s[scores={ab.use=1..}] run scoreboard players set @s effect.throw 3
+execute as @s[scores={ab.use=1..}] run scoreboard players set @s effect.throw 4
 execute as @s[scores={ab.use=1..}] run particle snowflake ~ ~1 ~ .3 .5 .3 .05 50
 execute as @s[scores={ab.use=1..}] run particle explosion_emitter ~ ~1 ~
 execute as @s[scores={ab.use=1..}] run playsound entity.generic.explode player @a ~ ~ ~ .5 2
