@@ -12,8 +12,8 @@ execute unless score game event.current_major_event matches 1 if entity @e[type=
 
 
 execute if score playercount event matches 2.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk, gamemode=adventure] run scoreboard players add air_raid event 1
-execute if score air_raid event matches 10000.. run scoreboard players set game event.current_major_event 1
-execute if score air_raid event matches 10000.. run scoreboard players set air_raid event 0
+execute if score air_raid event matches 30000.. run scoreboard players set game event.current_major_event 1
+execute if score air_raid event matches 30000.. run scoreboard players set air_raid event 0
 
 
 

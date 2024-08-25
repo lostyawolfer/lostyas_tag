@@ -9,6 +9,7 @@ function tag:effects/glow
 function tag:effects/invis
 function tag:effects/speed
 function tag:effects/down
+function tag:effects/freeze
 
 function tag:items/pearl
 function tag:items/tagger_stick
@@ -16,6 +17,7 @@ function tag:items/ability
 function tag:items/effect
 function tag:items/passive
 function tag:items/taunt
+function tag:items/menu
 
 function tag:bg_processes/tick.misc
 

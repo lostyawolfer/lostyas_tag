@@ -1,0 +1,1 @@
+execute as @a[gamemode=adventure] run item replace entity @s container.8 with minecraft:warped_fungus_on_a_stick{Tag:["game"],display:{Name:'[{"translate":"тут типа должно быть меню но это плейсхолдер","color":"dark_gray","italic":false}]'}}
