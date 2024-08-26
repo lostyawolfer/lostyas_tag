@@ -1,7 +1,10 @@
 # condition for getting xp
 execute as @a[scores={hunger=..19}] if score @s playtime matches 10.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk] at @s run scoreboard players operation @s xp.recieve = @s playtime
 execute as @a[scores={hunger=..19}] if score @s playtime matches 10.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk] at @s run scoreboard players operation @s xp.recieve /= 10 consts
-execute as @a[scores={hunger=..19}] if score @s playtime matches 10.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk] at @s run playsound entity.player.levelup player @s ~ ~ ~ .1 2
+execute as @a[scores={hunger=..19}] if score @s playtime matches 10.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk] at @s run playsound entity.player.levelup player @s ~ ~ ~ .5 2
+execute as @a[scores={hunger=..19}] if score @s playtime matches 10.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk] at @s run title @s times 0 20 3
+execute as @a[scores={hunger=..19}] if score @s playtime matches 10.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk] at @s run title @s title ""
+execute as @a[scores={hunger=..19}] if score @s playtime matches 10.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk] at @s run title @s subtitle [{"text":"+", "color":"#55FF00"},{"score":{"name": "@s", "objective": "xp.recieve"}},{"text":" xp points"}]
 execute as @a[scores={hunger=..19}] at @s run effect give @s minecraft:hunger 1 40 true
 execute as @a[scores={hunger=..19}] at @s run effect give @s minecraft:saturation 2 0 true
 # i use hunger as a way to get xp bc it is universal.
