@@ -5,7 +5,7 @@
 execute as @a[tag=!tagger] at @s run clear @s minecraft:blaze_rod{Tag:["game"]}
 execute as @a[gamemode=!adventure] at @s run clear @s minecraft:blaze_rod{Tag:["game"]}
 
-execute as @a[tag=!tagger] at @s run clear @s minecraft:stick{Tag:["game"]}
+execute as @a[tag=!tagger] at @s unless score @s ab.p.id matches 7 run clear @s minecraft:stick{Tag:["game"]}
 execute as @a[gamemode=!adventure] at @s run clear @s minecraft:stick{Tag:["game"]}
 
 

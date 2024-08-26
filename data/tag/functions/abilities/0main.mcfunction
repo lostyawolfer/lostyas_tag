@@ -2,7 +2,8 @@ execute as @a unless score @s ab.id matches 0.. run scoreboard players set @s ab
 
 
 scoreboard players reset @a[gamemode=!spectator] test
-scoreboard players set @a[scores={test=200..}] ab.use_ms 0
+execute as @a[scores={test=200..}] unless entity @s[scores={ab.p.id=6}] run scoreboard players set @s ab.use_ms 0
+execute as @a[scores={test=350..}] if entity @s[scores={ab.p.id=6}] run scoreboard players set @s ab.use_ms 0
 
 
 execute as @a[scores={ab.id=1}] at @s run function tag:abilities/1

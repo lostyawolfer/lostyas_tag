@@ -43,6 +43,7 @@ function tag:events/glow
 function tag:events/major.air_raid
 
 function tag:abilities/0main
+function tag:passives/0main
 
 kill @e[type=tnt_minecart]
 

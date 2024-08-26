@@ -1,0 +1,7 @@
+execute if score @s ab.id matches 1 run tellraw @a [{"text":"⚠ ", "color":"dark_purple"}, {"selector":"@s"}, {"text":" сменил способность на "},{"text":"Любитель ракет", "bold": true},"!"]
+execute if score @s ab.id matches 2 run tellraw @a [{"text":"⚠ ", "color":"dark_purple"}, {"selector":"@s"}, {"text":" сменил способность на "},{"text":"Суперскорость", "bold": true},"!"]
+execute if score @s ab.id matches 3 run tellraw @a [{"text":"⚠ ", "color":"dark_purple"}, {"selector":"@s"}, {"text":" сменил способность на "},{"text":"Святую мантию", "bold": true},"!"]
+execute if score @s ab.id matches 4 run tellraw @a [{"text":"⚠ ", "color":"dark_purple"}, {"selector":"@s"}, {"text":" сменил способность на "},{"text":"Невидимость", "bold": true},"!"]
+execute if score @s ab.id matches 5 run tellraw @a [{"text":"⚠ ", "color":"dark_purple"}, {"selector":"@s"}, {"text":" сменил способность на "},{"text":"Подсветку", "bold": true},"!"]
+execute if score @s ab.id matches 6 run tellraw @a [{"text":"⚠ ", "color":"dark_purple"}, {"selector":"@s"}, {"text":" сменил способность на "},{"text":"Цикл 2.6", "bold": true},"!"]
+execute if score @s ab.id matches 7 run tellraw @a [{"text":"⚠ ", "color":"dark_purple"}, {"selector":"@s"}, {"text":" сменил способность на "},{"text":"Тёмные исскувства", "bold": true},"!"]

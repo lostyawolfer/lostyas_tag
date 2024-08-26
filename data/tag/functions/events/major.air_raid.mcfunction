@@ -48,10 +48,10 @@ execute if score game event.current_major_event matches 1 if score timer event.c
 execute if score game event.current_major_event matches 1 if score timer event.current_major_event matches ..999 run scoreboard players set game event.current_major_event 0
 
 execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid] at @p run spreadplayers ~ ~ 0 17.5 false @s
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=50..}] at @s as @a[distance=..2, tag=!tagger, tag=!safezoned, gamemode=adventure] at @s run function tag:events/major.air_raid.lightning
+execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=50..}] at @s as @a[distance=..2, tag=!tagger, tag=!safezoned, gamemode=adventure, tag=!air_raid_invulnerable] at @s run function tag:events/major.air_raid.lightning
 
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=50..}] at @s if entity @a[distance=..2, tag=!tagger, tag=!safezoned, gamemode=adventure] run scoreboard players set @s event.current_major_event 0
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid] at @s unless entity @a[distance=..2, tag=!tagger] run scoreboard players add @s event.current_major_event 1
+execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=50..}] at @s if entity @a[distance=..2, tag=!tagger, tag=!safezoned, gamemode=adventure, tag=!air_raid_invulnerable] run scoreboard players set @s event.current_major_event 0
+execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid] at @s unless entity @a[distance=..2, tag=!tagger, tag=!air_raid_invulnerable] run scoreboard players add @s event.current_major_event 1
 
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=230..}] at @s unless entity @a[distance=..2, tag=!tagger, tag=!safezoned, gamemode=adventure] run summon lightning_bolt ~ ~ ~
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=230..}] at @s unless entity @a[distance=..2, tag=!tagger, tag=!safezoned, gamemode=adventure] run scoreboard players set @s event.current_major_event 0
+execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=230..}] at @s unless entity @a[distance=..3, tag=!tagger, tag=!safezoned, gamemode=adventure, tag=!air_raid_invulnerable] run summon lightning_bolt ~ ~ ~
+execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=230..}] at @s unless entity @a[distance=..3, tag=!tagger, tag=!safezoned, gamemode=adventure, tag=!air_raid_invulnerable] run scoreboard players set @s event.current_major_event 0

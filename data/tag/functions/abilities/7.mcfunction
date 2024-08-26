@@ -4,8 +4,10 @@
 
 #  Activation
 execute as @s[scores={ab.use=1..}] run execute store result score @s ab.cd_s run scoreboard players get 7 ab.times.cd
-execute as @s[scores={ab.use=1..}] run scoreboard players set @s ab.use_s 1
-execute as @s[scores={ab.use=1..}] run scoreboard players set @s ab.use_ms 15
+execute as @s[scores={ab.use=1..}] unless entity @s[scores={ab.p.id=6}] run scoreboard players set @s ab.use_s 1
+execute as @s[scores={ab.use=1..}] unless entity @s[scores={ab.p.id=6}] run scoreboard players set @s ab.use_ms 15
+execute as @s[scores={ab.use=1..}] as @s[scores={ab.p.id=6}] run scoreboard players set @s ab.use_s 2
+execute as @s[scores={ab.use=1..}] as @s[scores={ab.p.id=6}] run scoreboard players set @s ab.use_ms 10
 execute as @s[scores={ab.use=1..}] run particle dragon_breath ~ ~1 ~ .3 .5 .3 0 50
 execute as @s[scores={ab.use=1..}] run playsound entity.enderman.teleport player @a
 execute as @s[scores={ab.use=1..}] run tag @s add ab.active.7
