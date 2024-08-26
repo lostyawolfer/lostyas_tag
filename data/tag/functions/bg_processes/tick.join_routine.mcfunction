@@ -6,7 +6,7 @@ execute if score joined joined matches -2.. run bossbar set joined players @a
 execute unless score joined joined matches -2.. run bossbar set joined visible false
 
 # teleport to nearest safezone
-execute as @a[tag=!joined.sound, tag=!safezoned] at @s run tp @s @e[type=armor_stand,tag=spawn,sort=nearest,limit=1]
+execute as @a[tag=!joined.sound, tag=!safezoned] in minecraft:lt_playground at @s run tp @s @e[type=armor_stand,tag=spawn,sort=nearest,limit=1]
 
 # get an id for teleporting player back from outside the map
 execute as @a[tag=!joined.sound] at @s run function tag:bg_processes/tp_back/get_id
@@ -30,5 +30,5 @@ execute as @a[tag=!joined.sound] at @s run stopsound @s
 execute as @a[tag=!joined.sound] at @s run gamemode adventure @s
 
 # spawning armor stands cosmetics
-execute as @e[type=armor_stand, tag=spawn] at @s positioned ~ ~ ~ run particle dust_color_transition 1 1 0 1 .75 1 .5 ~ ~ ~ .2 0 .2 0 1
-execute as @e[type=armor_stand, tag=spawn] at @s positioned ~ ~-1.3 ~ positioned ^ ^ ^.3 run particle dust_color_transition 0 0 1 .5 0 0 1 ~ ~1.3 ~ 0 0 0 0 1
+# execute as @e[type=armor_stand, tag=spawn] at @s positioned ~ ~ ~ run particle dust_color_transition 1 1 0 1 .75 1 .5 ~ ~ ~ .2 0 .2 0 1
+# execute as @e[type=armor_stand, tag=spawn] at @s positioned ~ ~-1.3 ~ positioned ^ ^ ^.3 run particle dust_color_transition 0 0 1 .5 0 0 1 ~ ~1.3 ~ 0 0 0 0 1
