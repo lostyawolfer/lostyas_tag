@@ -1,7 +1,7 @@
 execute as @a[gamemode=adventure] unless score @s current_menu_page matches 0.. run scoreboard players set @s current_menu_page 0
 execute as @a store result score @s xp.amount run xp query @s levels
 
-execute as @a[gamemode=adventure] as @s[scores={current_menu_page=0}] run item replace entity @s container.8 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.main_menu"], CustomModelData: 1, display:{Name:'[{"translate":"Меню","color":"white","italic":false}]'}}
+execute as @a[gamemode=adventure] as @s[scores={current_menu_page=0}] run item replace entity @s container.8 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.main_menu"], CustomModelData: 1, display:{Name:'[{"translate":"menu.item","color":"gray", "bold": true,"italic":false}]'}}
 
 
 execute as @a[gamemode=adventure, scores={menu.use=1..}] unless data entity @s {SelectedItem: {tag: {Tag: ["menu.taunt_select.confirmed"]}}} unless data entity @s {SelectedItem: {tag: {Tag: ["menu.ability_select.confirmed"]}}} unless data entity @s {SelectedItem: {tag: {Tag: ["menu.passive_select.confirmed"]}}} run scoreboard players set @s menu.selecting 0
@@ -216,14 +216,14 @@ execute as @a[scores={menu.use=1..}] run scoreboard players set @s menu.use 0
 
 
 ## all menus
-execute as @a[gamemode=adventure] as @s[scores={current_menu_page=1}] run item replace entity @s container.8 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.close_menu"], CustomModelData: 2, display:{Name:'[{"translate":"Выйти из меню","color":"white","italic":false}]'}}
-execute as @a[gamemode=adventure] as @s[scores={current_menu_page=2..}] run item replace entity @s container.8 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.main_menu"], CustomModelData: 3, display:{Name:'[{"translate":"Вернуться в главное меню","color":"white","italic":false}]'}}
+execute as @a[gamemode=adventure] as @s[scores={current_menu_page=1}] run item replace entity @s container.8 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.close_menu"], CustomModelData: 2, display:{Name:'[{"translate":"menu.item.close","color":"gray", "bold": true,"italic":false}]'}}
+execute as @a[gamemode=adventure] as @s[scores={current_menu_page=2..}] run item replace entity @s container.8 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.main_menu"], CustomModelData: 3, display:{Name:'[{"translate":"menu.item.back","color":"red", "bold": true,"italic":false}]'}}
 
 
 ## main menu
-execute as @a[gamemode=adventure] as @s[scores={current_menu_page=1}] run item replace entity @s container.0 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.ability_select.p1"], CustomModelData: 4, display:{Name:'[{"translate":"Выбор активной способности","color":"white","italic":false}]'}}
-execute as @a[gamemode=adventure] as @s[scores={current_menu_page=1}] run item replace entity @s container.1 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.passive_select.p1"], CustomModelData: 11, display:{Name:'[{"translate":"Выбор пассивной способности","color":"white","italic":false}]'}}
-execute as @a[gamemode=adventure] as @s[scores={current_menu_page=1}] run item replace entity @s container.2 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.taunt_select.p1"], CustomModelData: 18, display:{Name:'[{"translate":"Выбор козьего рога","color":"white","italic":false}]'}}
+execute as @a[gamemode=adventure] as @s[scores={current_menu_page=1}] run item replace entity @s container.0 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.ability_select.p1"], CustomModelData: 4, display:{Name:'[{"translate":"menu.item.ability_select","color":"yellow","italic":false}]'}}
+execute as @a[gamemode=adventure] as @s[scores={current_menu_page=1}] run item replace entity @s container.1 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.passive_select.p1"], CustomModelData: 11, display:{Name:'[{"translate":"menu.item.passive_select","color":"gold","italic":false}]'}}
+execute as @a[gamemode=adventure] as @s[scores={current_menu_page=1}] run item replace entity @s container.2 with minecraft:warped_fungus_on_a_stick{Tag:["game", "menu.taunt_select.p1"], CustomModelData: 18, display:{Name:'[{"translate":"menu.item.taunt_select","color":"gray","italic":false}]'}}
 
 
 
