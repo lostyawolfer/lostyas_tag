@@ -18,6 +18,14 @@ execute as @s[scores={ab.use=1..}] run scoreboard players set @s ab.use 0
 execute as @s[scores={ab.use_s=1..}] run gamemode spectator @s
 #execute as @s[scores={ab.use_s=1..}] run attribute @s generic.flying_speed base set
 
+scoreboard players reset @a[tag=!ab.active.7] test
+execute as @s[scores={test=200..}] unless entity @s[scores={ab.p.id=6}] run scoreboard players set @s ab.use_ms 0
+execute as @s[scores={test=350..}] if entity @s[scores={ab.p.id=6}] run scoreboard players set @s ab.use_ms 0
+
+execute as @s[tag=ab.active.7] if entity @a[distance=..0.01, gamemode=!spectator] run scoreboard players set @s ab.use_ms 0
+execute as @s[tag=ab.active.7] if entity @a[distance=..0.01, gamemode=!spectator] run function tag:bg_processes/tp_back/outside_map
+
+
 #  Visual effects
 execute as @s[scores={ab.use_s=1..}] run particle dust_color_transition .5 0 .5 1 0 0 0 ~ ~1 ~ .3 .5 .3 .1 30
 

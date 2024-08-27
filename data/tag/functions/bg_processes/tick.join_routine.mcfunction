@@ -6,7 +6,7 @@ execute if score joined joined matches -2.. run bossbar set joined players @a
 execute unless score joined joined matches -2.. run bossbar set joined visible false
 
 # teleport to nearest safezone
-execute as @a[tag=!joined.sound, tag=!safezoned] in minecraft:lt_playground at @s run tp @s @e[type=armor_stand,tag=spawn,sort=nearest,limit=1]
+execute as @a[tag=!joined.sound, tag=!safezoned] in minecraft:lt_playground at @s run tp @s @e[type=armor_stand,tag=spawn,sort=nearest,limit=1,distance=..200]
 
 # get an id for teleporting player back from outside the map
 execute as @a[tag=!joined.sound] at @s run function tag:bg_processes/tp_back/get_id
