@@ -1,6 +1,8 @@
 ## everything here runs every single minecraft tick
 # lag guaranteed. immense amounts of it. but who cares
 
+function tag:passives/0main
+function tag:abilities/0main
 
 function tag:effects/levitation
 function tag:effects/throw
@@ -41,9 +43,6 @@ function tag:bg_processes/tp_back/tick.tp_player_to_stand
 
 function tag:events/glow
 function tag:events/major.air_raid
-
-function tag:abilities/0main
-function tag:passives/0main
 
 kill @e[type=tnt_minecart]
 

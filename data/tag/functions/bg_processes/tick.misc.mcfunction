@@ -141,16 +141,16 @@ execute as @e[type=item, nbt={Age:0s, PickupDelay:40s}] run data merge entity @s
 
 
 
-execute as @a[scores={afk.timer=600..}, tag=!afk] run tellraw @s [{"text":"⏳ Ты AFK!","color":"yellow"}]
-tag @a[scores={afk.timer=600..}] add afk
-scoreboard players set @a[scores={afk.timer=600..}] afk.timer 0
+execute as @a[scores={afk.timer=1200..}, tag=!afk] run tellraw @s [{"translate":"chat.afk.enter","color":"yellow"}]
+tag @a[scores={afk.timer=1200..}] add afk
+scoreboard players set @a[scores={afk.timer=1200..}] afk.timer 0
 execute as @a[tag=afk, gamemode=adventure] unless score @s effect.invis matches 1.. at @s run particle dust 1 1 0 1 ~ ~1 ~ .2 .4 .2 0 3 normal @a[distance=.1..]
 
 execute as @a[scores={afk.timer=..0}, tag=afk] run scoreboard players remove @s[scores={stat.speed2=10..}] afk.timer 2
 execute as @a[scores={afk.timer=..-1}, tag=afk] run scoreboard players add @s[scores={stat.speed2=0..9}] afk.timer 1
 execute as @a[scores={afk.timer=1..}, tag=afk] run scoreboard players set @s afk.timer 0
 
-execute as @a[scores={afk.timer=..-30}, tag=afk] run tellraw @s [{"text":"⌛ Ты больше не AFK!","color":"yellow"}]
+execute as @a[scores={afk.timer=..-30}, tag=afk] run tellraw @s [{"translate":"chat.afk.exit","color":"yellow"}]
 tag @a[scores={afk.timer=..-30}] remove afk
 scoreboard players set @a[scores={afk.timer=..-30}] afk.timer 0
 

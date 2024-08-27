@@ -30,13 +30,13 @@ execute as @a run scoreboard players operation @s playtime.best2.kdec /= 100 con
 
 
 ## afk timer
-execute as @a[scores={afk.timer=..600}, tag=!afk] run scoreboard players add @a[scores={stat.speed2=0..9}] afk.timer 1
-execute as @a[scores={afk.timer=64..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=10..}] afk.timer 32
-execute as @a[scores={afk.timer=32..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=10..}] afk.timer 8
-execute as @a[scores={afk.timer=16..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=10..}] afk.timer 4
-execute as @a[scores={afk.timer=4..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=10..}] afk.timer 2
-execute as @a[scores={afk.timer=2..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=10..}] afk.timer 1
-execute as @a[scores={afk.timer=1..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=10..}] afk.timer 1
+execute as @a[scores={afk.timer=..1199}, tag=!afk] run scoreboard players add @a[scores={stat.speed2=0..3}] afk.timer 1
+execute as @a[scores={afk.timer=64..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=4..}] afk.timer 32
+execute as @a[scores={afk.timer=32..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=4..}] afk.timer 8
+execute as @a[scores={afk.timer=16..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=4..}] afk.timer 4
+execute as @a[scores={afk.timer=4..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=4..}] afk.timer 2
+execute as @a[scores={afk.timer=2..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=4..}] afk.timer 1
+execute as @a[scores={afk.timer=1..}, tag=!afk] run scoreboard players remove @s[scores={stat.speed2=4..}] afk.timer 1
 
 
 
