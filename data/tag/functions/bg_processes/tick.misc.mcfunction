@@ -12,9 +12,9 @@ gamemode adventure @a[gamemode=survival]
 clear @a minecraft:end_crystal
 kill @e[type=minecraft:eye_of_ender]
 execute as @a at @s run attribute @s minecraft:generic.attack_speed base set 99999
-execute as @e[type=ender_pearl] run data merge entity @s {Glowing:1b}
+execute as @e[type=ender_pearl] unless score game event.current_major_event matches 2 run data merge entity @s {Glowing:1b}
 team join pearl @e[type=ender_pearl]
-execute as @a[tag=invincible.one_time] at @s run particle dust 0 .5 1 1 ~ ~1 ~ .3 .5 .3 0 3
+execute as @a[tag=invincible.one_time] at @s run particle dust .5 .4 1 1 ~ ~1 ~ .3 .5 .3 0 3
 execute as @a[tag=invincible.one_time] at @s if score notifanim notifanim matches 14 run playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ .5 0
 execute as @a[tag=invincible.one_time] at @s if score notifanim notifanim matches 3 run playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ .5 1.5
 execute as @a[tag=invincible.one_time] at @s if score notifanim notifanim matches 4 run playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ .5 1.7
@@ -131,6 +131,8 @@ weather clear
 
 execute store result score totalplayercount event if entity @a
 execute if score totalplayercount event < totalplayercount.old event run function tag:misc/reset_sidebar
+execute if score totalplayercount event < totalplayercount.old event as @a at @s run playsound minecraft:block.respawn_anchor.deplete master @s ~ ~ ~ 99999 2
+execute if score totalplayercount event < totalplayercount.old event as @a at @s run playsound minecraft:block.bell.use master @s ~ ~ ~ 99999 1.5
 execute store result score totalplayercount.old event if entity @a
 
 
@@ -163,7 +165,7 @@ scoreboard players set @a[scores={afk.timer=..-30}] afk.timer 0
 
 
 
-execute as @e[type=ender_pearl] at @s run particle glow ~ ~ ~ .1 .1 .1 .075 5
+execute as @e[type=ender_pearl] at @s unless score game event.current_major_event matches 2 run particle glow ~ ~ ~ .1 .1 .1 .075 5
 
 
 #execute as @a[scores={stat.speed.prev=170..}] if score @s stat.speed2 matches 1..75 run damage @s 0.0001

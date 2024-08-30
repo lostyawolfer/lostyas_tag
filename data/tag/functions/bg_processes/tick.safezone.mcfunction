@@ -52,10 +52,10 @@ execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s r
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run attribute @s generic.armor base set 255
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run attribute @s generic.armor_toughness base set 255
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run playsound ui.toast.in master @s ~ ~ ~ 100 2
-execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run stopsound @s music
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run stopsound @s ambient
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run playsound safezone_start ambient @s ~ ~ ~ 0.5 1
-execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run function safezone:play
+execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s unless score game event.current_major_event matches 1.. run function safezone:play
+execute as @a[gamemode = !spectator, tag = safezoned] at @s if score game event.current_major_event matches 1.. run function safezone:stop
 # safezone namespace is used in an external datapack created by note block studio
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run tag @s remove afk
 execute as @a[gamemode = !spectator, tag = safezoned, tag = !safezoned2] at @s run tag @s add safezoned2
@@ -70,10 +70,9 @@ execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s r
 execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s run attribute @s generic.armor base set 0
 execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s run attribute @s generic.armor_toughness base set 0
 execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s run playsound ui.toast.out master @s ~ ~ ~ 100 2
-execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s run stopsound @s music
 execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s run stopsound @s ambient
 execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s run playsound safezone_stop ambient @s ~ ~ ~ 0.5 1
-execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s run function safezone:pause
+execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s run function safezone:stop
 execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s run team join player @s[team=z_safezoned]
 execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s run team join tagger @s[team=z_safezoned_tagger]
 execute as @a[gamemode = !spectator, tag = !safezoned, tag = safezoned2] at @s run tag @s remove afk
@@ -85,7 +84,7 @@ execute as @a[gamemode = spectator, tag = safezoned, tag = safezoned2] at @s run
 execute as @a[gamemode = spectator, tag = safezoned, tag = safezoned2] at @s run stopsound @s music
 execute as @a[gamemode = spectator, tag = safezoned, tag = safezoned2] at @s run stopsound @s ambient
 execute as @a[gamemode = spectator, tag = safezoned, tag = safezoned2] at @s run playsound safezone_stop ambient @s ~ ~ ~ 0.5 1
-execute as @a[gamemode = spectator, tag = safezoned, tag = safezoned2] at @s run function safezone:pause
+execute as @a[gamemode = spectator, tag = safezoned, tag = safezoned2] at @s run function safezone:stop
 execute as @a[gamemode = spectator, tag = safezoned, tag = safezoned2] at @s run tag @s remove afk
 execute as @a[gamemode = spectator, tag = safezoned, tag = safezoned2] at @s run tag @s remove safezoned2
 

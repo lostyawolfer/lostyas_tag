@@ -20,7 +20,7 @@ execute as @s[scores={ab.use_s=1..}] run gamemode spectator @s
 
 scoreboard players reset @a[tag=!ab.active.7] test
 execute as @s[scores={test=200..}] unless entity @s[scores={ab.p.id=6}] run scoreboard players set @s ab.use_ms 0
-execute as @s[scores={test=350..}] if entity @s[scores={ab.p.id=6}] run scoreboard players set @s ab.use_ms 0
+execute as @s[scores={test=450..}] if entity @s[scores={ab.p.id=6}] run scoreboard players set @s ab.use_ms 0
 
 execute as @s[tag=ab.active.7] if entity @a[distance=..0.01, gamemode=!spectator] run scoreboard players set @s ab.use_ms 0
 execute as @s[tag=ab.active.7] if entity @a[distance=..0.01, gamemode=!spectator] run function tag:bg_processes/tp_back/outside_map

@@ -11,7 +11,7 @@ execute unless score game event.current_major_event matches 1 if entity @e[type=
 
 
 
-execute if score playercount event matches 2.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk, gamemode=adventure] run scoreboard players add air_raid event 1
+execute if score playercount event matches 2.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk, gamemode=adventure] unless score game event.current_major_event matches 1.. run scoreboard players add air_raid event 1
 execute if score air_raid event matches 30000.. run scoreboard players set game event.current_major_event 1
 execute if score air_raid event matches 30000.. run scoreboard players set air_raid event 0
 
@@ -20,9 +20,9 @@ execute if score air_raid event matches 30000.. run scoreboard players set air_r
 
 
 
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run title @a times 20 40 30
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run title @a title {"translate": "event.air_raid.title", "color":"red", "bold": true}
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run title @a subtitle {"translate": "event.air_raid.subtitle", "color":"gray", "bold": true}
+#execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run title @a times 20 40 30
+#execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run title @a title {"translate": "event.air_raid.title", "color":"red", "bold": true}
+#execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run title @a subtitle {"translate": "event.air_raid.subtitle", "color":"gray", "bold": true}
 execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run tellraw @a {"translate": "event.air_raid.chat", "color":"red"}
 execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run tellraw @a {"translate": "event.air_raid.chat.description", "color":"gray"}
 execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] as @a at @s run function proceed_to_the_nearest_shelter:play
@@ -41,6 +41,7 @@ execute if score game event.current_major_event matches 1 as @e[type=armor_stand
 
 execute if score game event.current_major_event matches 1 as @a run function tag:bg_processes/stopmusic
 execute if score game event.current_major_event matches 1 as @a at @s run particle crimson_spore ~ ~5 ~ 10 10 10 0 100 normal @s
+#execute if score game event.current_major_event matches 1 as @a at @s run scoreboard players add @s xp.recieve 1
 execute if score game event.current_major_event matches 1 run bossbar set event players @a
 execute if score game event.current_major_event matches 1 if score timer event.current_major_event matches 1000.. run scoreboard players remove timer event.current_major_event 20
 execute if score game event.current_major_event matches 1 if score timer event.current_major_event matches 1000.. as @a run scoreboard players add timer event.current_major_event 1

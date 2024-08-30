@@ -1,54 +1,71 @@
-execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=air_raid] run tellraw @a {"translate": "event.air_raid.end.chat", "color":"green"}
-execute unless score game event.current_major_event matches 1 if entity @e[type=armor_stand, tag=air_raid] as @a run function proceed_to_the_nearest_shelter:stop
-execute unless score game event.current_major_event matches 1 if entity @e[type=armor_stand, tag=air_raid] as @a run function win_sound:play
-execute unless score game event.current_major_event matches 1 if entity @e[type=armor_stand, tag=air_raid] as @a run bossbar set event visible false
-execute unless score game event.current_major_event matches 1 if entity @e[type=armor_stand, tag=air_raid] as @a run bossbar set event value 0
-execute unless score game event.current_major_event matches 1 if entity @e[type=armor_stand, tag=air_raid] as @a at @s run worldborder warning distance 0
-execute unless score game event.current_major_event matches 1 if entity @e[type=armor_stand, tag=air_raid] run kill @e[type=armor_stand, tag=air_raid]
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run tellraw @a {"translate": "event.blackout.end.chat", "color":"green"}
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run time set 23400t
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run time set 23400t
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run time set 23400t
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run time set 23400t
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run time set 23400t
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run time set 23400t
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a run function win_sound:play
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a at @s run playsound block.beacon.activate master @s ~ ~ ~ 99999 1
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a at @s run stopsound @s music blackout_bg
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a run bossbar set event visible false
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a run bossbar set event value 0
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run kill @e[type=armor_stand, tag=blackout_start]
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run kill @e[type=armor_stand, tag=blackout]
 
 
 
-execute if score playercount event matches 2.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk, gamemode=adventure] run scoreboard players add blackout event 1
-execute if score blackout event matches 5000.. run scoreboard players set game event.current_major_event 2
-execute if score blackout event matches 5000.. run scoreboard players set blackout event 0
+execute if score playercount event matches 2.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk, gamemode=adventure] unless score game event.current_major_event matches 1.. run scoreboard players add blackout event 1
+execute if score blackout event matches 50000.. run scoreboard players set game event.current_major_event 2
+execute if score blackout event matches 50000.. run scoreboard players set blackout event 0
+
+
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches -1.. unless entity @e[type=armor_stand, tag=blackout_start] run scoreboard players set animation event.current_major_event 20
+
+
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 1.. run scoreboard players remove animation event.current_major_event 1
+
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 12 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect give @s blindness 3 0 true
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 12 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 99999 0.7
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 9 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect clear @s blindness
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 9 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 99999 0.8
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 6 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect give @s blindness 3 0 true
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 6 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 99999 1
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 5 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect clear @s blindness
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 5 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 99999 1.2
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 3 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect give @s blindness 3 0 true
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 3 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect give @s darkness 10 0 true
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 3 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 99999 1.4
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 2 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect clear @s blindness
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 2 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 99999 1.5
+
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.beacon.deactivate master @s ~ ~ ~ 99999 1
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.glass.break master @s ~ ~ ~ 99999 0
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound blackout master @s ~ ~ ~ 0.3 1
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound blackout_bg music @s ~ ~ ~ 1 1
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=blackout_start] run scoreboard players set animation event.current_major_event -1
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches -1 run summon armor_stand ~ ~ ~ {Tags:[blackout_start], Invulnerable: 1b, Invisible: 1b}
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches -1 run scoreboard players reset animation event.current_major_event
+
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. unless entity @e[type=armor_stand, tag=blackout] run tellraw @a {"translate": "event.blackout.chat", "color":"dark_purple"}
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. unless entity @e[type=armor_stand, tag=blackout] run tellraw @a {"translate": "event.blackout.chat.description", "color":"gray"}
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. unless entity @e[type=armor_stand, tag=blackout] as @a at @s run scoreboard players set timer event.current_major_event 55000
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. unless entity @e[type=armor_stand, tag=blackout] as @a at @s run bossbar set event max 55000
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. unless entity @e[type=armor_stand, tag=blackout] as @a at @s run bossbar set event color purple
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. unless entity @e[type=armor_stand, tag=blackout] as @a at @s run bossbar set event visible true
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. unless entity @e[type=armor_stand, tag=blackout] as @a at @s run bossbar set event name [{"translate":"event.blackout.bossbar","color":"dark_purple"}," ",{"translate":"event.blackout.bossbar.description","color":"gray"}]
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. unless entity @e[type=armor_stand, tag=blackout] as @a at @s run time set midnight
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. unless entity @e[type=armor_stand, tag=blackout] run summon armor_stand ~ ~ ~ {Tags:[blackout], Invulnerable: 1b, Invisible: 1b}
 
 
 
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. as @a run function tag:bg_processes/stopmusic
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. run bossbar set event players @a
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches 1000.. run scoreboard players remove timer event.current_major_event 40
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches 1000.. as @a unless score playercount event matches 7.. run scoreboard players add timer event.current_major_event 5
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches 1000.. if score playercount event matches 7.. run scoreboard players add timer event.current_major_event 38
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches 1000.. store result bossbar event value run scoreboard players get timer event.current_major_event
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches ..999 run scoreboard players set game event.current_major_event 0
 
-
-
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run title @a times 20 40 30
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run title @a title {"translate": "event.air_raid.title", "color":"red", "bold": true}
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run title @a subtitle {"translate": "event.air_raid.subtitle", "color":"gray", "bold": true}
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run tellraw @a {"translate": "event.air_raid.chat", "color":"red"}
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] run tellraw @a {"translate": "event.air_raid.chat.description", "color":"gray"}
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] as @a at @s run function proceed_to_the_nearest_shelter:play
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] as @a at @s run scoreboard players set timer event.current_major_event 65000
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] as @a at @s run bossbar set event max 65000
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] as @a at @s run bossbar set event color red
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] as @a at @s run bossbar set event visible true
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] as @a at @s run bossbar set event name [{"translate":"event.air_raid.bossbar","color":"red"}," ",{"translate":"event.air_raid.bossbar.description","color":"gray"}]
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] as @a at @s run worldborder warning distance 999999999
-execute if score game event.current_major_event matches 1 unless entity @e[type=armor_stand, tag=air_raid] as @a at @s run summon armor_stand ~ ~ ~ {Tags:[air_raid, air_raid_start], Invulnerable: 1b, Invisible: 1b}
-
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid_start] run scoreboard players set @s event.current_major_event -200
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid_start] run tag @s remove air_raid_start
-
-
-
-execute if score game event.current_major_event matches 1 as @a run function tag:bg_processes/stopmusic
-execute if score game event.current_major_event matches 1 as @a at @s run particle crimson_spore ~ ~5 ~ 10 10 10 0 100 normal @s
-execute if score game event.current_major_event matches 1 run bossbar set event players @a
-execute if score game event.current_major_event matches 1 if score timer event.current_major_event matches 1000.. run scoreboard players remove timer event.current_major_event 20
-execute if score game event.current_major_event matches 1 if score timer event.current_major_event matches 1000.. as @a run scoreboard players add timer event.current_major_event 1
-execute if score game event.current_major_event matches 1 if score timer event.current_major_event matches 1000.. store result bossbar event value run scoreboard players get timer event.current_major_event
-execute if score game event.current_major_event matches 1 if score timer event.current_major_event matches ..999 run scoreboard players set game event.current_major_event 0
-
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid] at @p run spreadplayers ~ ~ 0 17.5 false @s
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=50..}] at @s as @a[distance=..2, tag=!tagger, tag=!safezoned, gamemode=adventure] at @s run function tag:events/major.air_raid.lightning
-
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=50..}] at @s if entity @a[distance=..2, tag=!tagger, tag=!safezoned, gamemode=adventure] run scoreboard players set @s event.current_major_event 0
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid] at @s unless entity @a[distance=..2, tag=!tagger] run scoreboard players add @s event.current_major_event 1
-
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=230..}] at @s unless entity @a[distance=..2, tag=!tagger, tag=!safezoned, gamemode=adventure] run summon lightning_bolt ~ ~ ~
-execute if score game event.current_major_event matches 1 as @e[type=armor_stand, tag=air_raid, scores={event.current_major_event=230..}] at @s unless entity @a[distance=..2, tag=!tagger, tag=!safezoned, gamemode=adventure] run scoreboard players set @s event.current_major_event 0
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. run scoreboard players set @a effect.glow 0
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches 1200.. run effect give @a darkness 2 0 true
