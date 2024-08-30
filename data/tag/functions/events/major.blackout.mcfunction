@@ -16,8 +16,8 @@ execute unless score game event.current_major_event matches 2 if entity @e[type=
 
 
 execute if score playercount event matches 2.. if entity @a[tag=tagger, tag=!safezoned, tag=!afk, gamemode=adventure] unless score game event.current_major_event matches 1.. run scoreboard players add blackout event 1
-execute if score blackout event matches 50000.. run scoreboard players set game event.current_major_event 2
-execute if score blackout event matches 50000.. run scoreboard players set blackout event 0
+execute if score blackout event matches 15000.. run scoreboard players set game event.current_major_event 2
+execute if score blackout event matches 15000.. run scoreboard players set blackout event 0
 
 
 execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches -1.. unless entity @e[type=armor_stand, tag=blackout_start] run scoreboard players set animation event.current_major_event 20
@@ -25,10 +25,10 @@ execute if score game event.current_major_event matches 2 unless score animation
 
 execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 1.. run scoreboard players remove animation event.current_major_event 1
 
-execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 12 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect give @s blindness 3 0 true
-execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 12 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 99999 0.7
-execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 9 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect clear @s blindness
-execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 9 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 99999 0.8
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 16 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect give @s blindness 3 0 true
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 16 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 99999 0.7
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 10 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect clear @s blindness
+execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 10 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 99999 0.8
 execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 6 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect give @s blindness 3 0 true
 execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 6 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 99999 1
 execute if score game event.current_major_event matches 2 if score animation event.current_major_event matches 5 unless entity @e[type=armor_stand, tag=blackout_start] as @a at @s run effect clear @s blindness
@@ -59,11 +59,12 @@ execute if score game event.current_major_event matches 2 unless score animation
 
 
 
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. as @a at @s run particle mycelium ~ ~5 ~ 10 10 10 0 100 normal @s
 execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. as @a run function tag:bg_processes/stopmusic
 execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. run bossbar set event players @a
 execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches 1000.. run scoreboard players remove timer event.current_major_event 40
-execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches 1000.. as @a unless score playercount event matches 7.. run scoreboard players add timer event.current_major_event 5
-execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches 1000.. if score playercount event matches 7.. run scoreboard players add timer event.current_major_event 38
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches 1000.. as @a unless score playercount event matches 5.. run scoreboard players add timer event.current_major_event 8
+execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches 1000.. if score playercount event matches 5.. run scoreboard players add timer event.current_major_event 38
 execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches 1000.. store result bossbar event value run scoreboard players get timer event.current_major_event
 execute if score game event.current_major_event matches 2 unless score animation event.current_major_event matches 1.. if score timer event.current_major_event matches ..999 run scoreboard players set game event.current_major_event 0
 
