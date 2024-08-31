@@ -1,5 +1,5 @@
 ##     Invisibility
-#     Makes you run fast
+#     Makes you invisible
 
 
 #  Activation
@@ -13,6 +13,7 @@ execute as @s[scores={ab.use=1..}] run scoreboard players set @s ab.use 0
 
 #  Work
 execute as @s[scores={ab.use_s=1..}] run scoreboard players set @s effect.invis 2
+execute as @s[scores={ab.use_s=1..}] run scoreboard players set @s effect.glow 0
 
 
 
