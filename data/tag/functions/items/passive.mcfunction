@@ -3,6 +3,8 @@
 execute as @a[gamemode=adventure] as @s[scores={current_menu_page=0}] unless entity @s[scores={ab.p.id=1..}] run item replace entity @s container.5 with minecraft:gunpowder{Tag:["game"],display:{Name:'[{"translate":"passive.item.none","color":"#FF0000","italic":false,"bold": true}]'}}
 execute as @a[gamemode=adventure] as @s[scores={current_menu_page=0}] as @s[scores={ab.p.id=1..}] unless entity @s[scores={ab.p.active=1}] run item replace entity @s container.5 with minecraft:ink_sac{Tag:["game"],display:{Name:'[{"translate":"passive.item.inactive","color":"gray","italic":false}]'}}
 
+#execute as @a[gamemode=adventure] as @s[scores={ab.p.id=1..}] as @s[scores={ab.p.active=1..}] unless score @s effect.invis matches 1.. at @s run particle small_flame ~ ~.6 ~ .2 0 .2 0 1
+
 execute as @a[gamemode=adventure] as @s[scores={current_menu_page=0}] as @s[scores={ab.p.id=1..}] as @s[scores={ab.p.active=1}] run item replace entity @s container.5 with minecraft:glowstone_dust{Tag:["game"],display:{Name:'[{"translate":"passive.item.active","color":"#FFBC5E","italic":false,"bold": true}]'}} 1
 execute as @a[gamemode=adventure] as @s[scores={current_menu_page=0}] as @s[scores={ab.p.id=1..}] as @s[scores={ab.p.active=2}] run item replace entity @s container.5 with minecraft:glowstone_dust{Tag:["game"],display:{Name:'[{"translate":"passive.item.active","color":"#FFBC5E","italic":false,"bold": true}]'}} 2
 execute as @a[gamemode=adventure] as @s[scores={current_menu_page=0}] as @s[scores={ab.p.id=1..}] as @s[scores={ab.p.active=3}] run item replace entity @s container.5 with minecraft:glowstone_dust{Tag:["game"],display:{Name:'[{"translate":"passive.item.active","color":"#FFBC5E","italic":false,"bold": true}]'}} 3
