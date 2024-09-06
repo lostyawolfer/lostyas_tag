@@ -3,20 +3,20 @@ execute as @a[gamemode=adventure] at @s if block ~ ~ ~ #tag:forbidden_to_stand_o
 execute as @a[gamemode=adventure, predicate=tag:under] at @s run function tag:bg_processes/tp_back/outside_map
 execute as @a[gamemode=adventure, predicate=tag:over] at @s run function tag:bg_processes/tp_back/outside_map
 
-execute as @a[gamemode=adventure] at @s unless block ~ ~ ~ #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
+execute as @a[gamemode=adventure] at @s unless block ~ ~ ~ #tag:allowed_to_stand_in unless block ~ ~1 ~ #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
 
 
-execute as @a[gamemode=adventure] at @s unless block ~.29 ~ ~ #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
-execute as @a[gamemode=adventure] at @s unless block ~-.29 ~ ~ #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
+execute as @a[gamemode=adventure] at @s unless block ~.3 ~ ~ #tag:allowed_to_stand_in unless block ~.3 ~1 ~ #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
+execute as @a[gamemode=adventure] at @s unless block ~-.3 ~ ~ #tag:allowed_to_stand_in unless block ~-.3 ~1 ~ #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
 
-execute as @a[gamemode=adventure] at @s unless block ~.29 ~ ~.29 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
-execute as @a[gamemode=adventure] at @s unless block ~-.29 ~ ~.29 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
+execute as @a[gamemode=adventure] at @s unless block ~.3 ~ ~.3 #tag:allowed_to_stand_in unless block ~.3 ~1 ~.3 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
+execute as @a[gamemode=adventure] at @s unless block ~-.3 ~ ~.3 #tag:allowed_to_stand_in unless block ~-.3 ~1 ~.3 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
 
-execute as @a[gamemode=adventure] at @s unless block ~.29 ~ ~-.29 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
-execute as @a[gamemode=adventure] at @s unless block ~-.29 ~ ~-.29 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
+execute as @a[gamemode=adventure] at @s unless block ~.3 ~ ~-.3 #tag:allowed_to_stand_in unless block ~.3 ~1 ~-.3 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
+execute as @a[gamemode=adventure] at @s unless block ~-.3 ~ ~-.3 #tag:allowed_to_stand_in unless block ~-.3 ~1 ~-.3 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
 
-execute as @a[gamemode=adventure] at @s unless block ~ ~ ~.29 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
-execute as @a[gamemode=adventure] at @s unless block ~ ~ ~.29 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
+execute as @a[gamemode=adventure] at @s unless block ~ ~ ~.3 #tag:allowed_to_stand_in unless block ~ ~1 ~.3 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
+execute as @a[gamemode=adventure] at @s unless block ~ ~ ~.3 #tag:allowed_to_stand_in unless block ~ ~1 ~.3 #tag:allowed_to_stand_in run function tag:bg_processes/tp_back/inside_blocks
 
 
 execute as @a[gamemode=adventure] at @s unless block ~ ~ ~ #tag:allowed_to_stand_in if block ~ ~ ~ #tag:lenient_standing_limit run function tag:bg_processes/tp_back/inside_blocks_lenient

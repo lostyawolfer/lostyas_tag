@@ -13,24 +13,72 @@ execute if score notifanim notifanim matches 10 run bossbar set minecraft:notif.
 
 
 
-# gray out the name if there are no taggers
-execute if entity @a[tag=tagger] run team modify x.player color aqua
-execute unless entity @a[tag=tagger] run team modify x.player color gray
+# gray out the name if in social space
+execute unless score game_type consts matches -10 run team modify x.player color aqua
+execute if score game_type consts matches -10 run team modify x.player color gray
+execute if score game_type consts matches -10 run tag @a remove tagger
 
-execute if entity @a[tag=tagger] if score notifanim notifanim matches 0 run team modify x.player.glow color aqua
-execute unless entity @a[tag=tagger] if score notifanim notifanim matches 0 run team modify x.player.glow color gray
+
+execute if score game_type consts matches -10 run team modify a.tagger color gray
+execute if score game_type consts matches -1..1 run team modify a.tagger color gold
+execute if score game_type consts matches 2 run team modify a.tagger color dark_green
+execute if score game_type consts matches 3 run team modify a.tagger color red
+execute if score game_type consts matches 4 run team modify a.tagger color gold
+execute if score game_type consts matches 5 run team modify a.tagger color yellow
+
+execute if score game_type consts matches -10 run team modify a.tagger.crouch color gray
+execute if score game_type consts matches -1..1 run team modify a.tagger.crouch color gold
+execute if score game_type consts matches 2 run team modify a.tagger.crouch color dark_green
+execute if score game_type consts matches 3 run team modify a.tagger.crouch color red
+execute if score game_type consts matches 4 run team modify a.tagger.crouch color gold
+execute if score game_type consts matches 5 run team modify a.tagger.crouch color yellow
+
+
+execute if score game_type consts matches -10 run team modify a.tagger.yellow color gray
+execute if score game_type consts matches -1..1 run team modify a.tagger.yellow color yellow
+execute if score game_type consts matches 2 run team modify a.tagger.yellow color green
+execute if score game_type consts matches 3 run team modify a.tagger.yellow color gold
+execute if score game_type consts matches 4 run team modify a.tagger.yellow color yellow
+execute if score game_type consts matches 5 run team modify a.tagger.yellow color yellow
+
+execute if score game_type consts matches -10 run team modify a.tagger.yellow.crouch color gray
+execute if score game_type consts matches -1..1 run team modify a.tagger.yellow.crouch color yellow
+execute if score game_type consts matches 2 run team modify a.tagger.yellow.crouch color green
+execute if score game_type consts matches 3 run team modify a.tagger.yellow.crouch color gold
+execute if score game_type consts matches 4 run team modify a.tagger.yellow.crouch color yellow
+execute if score game_type consts matches 5 run team modify a.tagger.yellow.crouch color yellow
+
+execute if score game_type consts matches -10 run team modify a.tagger.yellow.glow color gray
+execute if score game_type consts matches -1..1 run team modify a.tagger.yellow.glow color yellow
+execute if score game_type consts matches 2 run team modify a.tagger.yellow.glow color green
+execute if score game_type consts matches 3 run team modify a.tagger.yellow.glow color gold
+execute if score game_type consts matches 4 run team modify a.tagger.yellow.glow color yellow
+execute if score game_type consts matches 5 run team modify a.tagger.yellow.glow color yellow
+
+
+execute if score game_type consts matches -10 run team modify a.tagger.glow color gray
+execute if score game_type consts matches -1..1 run team modify a.tagger.glow color gold
+execute if score game_type consts matches 2 run team modify a.tagger.glow color dark_green
+execute if score game_type consts matches 3 run team modify a.tagger.glow color red
+execute if score game_type consts matches 4 run team modify a.tagger.glow color gold
+execute if score game_type consts matches 5 run team modify a.tagger.glow color yellow
+
+
+
+execute unless score game_type consts matches -10 if score notifanim notifanim matches 0 run team modify x.player.glow color aqua
+execute if score game_type consts matches -10 if score notifanim notifanim matches 0 run team modify x.player.glow color gray
 execute if score notifanim notifanim matches 2 run team modify x.player.glow color white
-execute if entity @a[tag=tagger] if score notifanim notifanim matches 4 run team modify x.player.glow color aqua
-execute unless entity @a[tag=tagger] if score notifanim notifanim matches 4 run team modify x.player.glow color gray
+execute unless score game_type consts matches -10 if score notifanim notifanim matches 4 run team modify x.player.glow color aqua
+execute if score game_type consts matches -10 if score notifanim notifanim matches 4 run team modify x.player.glow color gray
 execute if score notifanim notifanim matches 6 run team modify x.player.glow color white
-execute if entity @a[tag=tagger] if score notifanim notifanim matches 8 run team modify x.player.glow color aqua
-execute unless entity @a[tag=tagger] if score notifanim notifanim matches 8 run team modify x.player.glow color gray
+execute unless score game_type consts matches -10 if score notifanim notifanim matches 8 run team modify x.player.glow color aqua
+execute if score game_type consts matches -10 if score notifanim notifanim matches 8 run team modify x.player.glow color gray
 execute if score notifanim notifanim matches 10 run team modify x.player.glow color white
-execute if entity @a[tag=tagger] if score notifanim notifanim matches 12 run team modify x.player.glow color aqua
-execute unless entity @a[tag=tagger] if score notifanim notifanim matches 12 run team modify x.player.glow color gray
+execute unless score game_type consts matches -10 if score notifanim notifanim matches 12 run team modify x.player.glow color aqua
+execute if score game_type consts matches -10 if score notifanim notifanim matches 12 run team modify x.player.glow color gray
 execute if score notifanim notifanim matches 14 run team modify x.player.glow color white
-execute if entity @a[tag=tagger] if score notifanim notifanim matches 16 run team modify x.player.glow color aqua
-execute unless entity @a[tag=tagger] if score notifanim notifanim matches 16 run team modify x.player.glow color gray
+execute unless score game_type consts matches -10 if score notifanim notifanim matches 16 run team modify x.player.glow color aqua
+execute if score game_type consts matches -10 if score notifanim notifanim matches 16 run team modify x.player.glow color gray
 execute if score notifanim notifanim matches 18 run team modify x.player.glow color white
 
 

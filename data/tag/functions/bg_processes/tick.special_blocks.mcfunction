@@ -14,22 +14,16 @@ execute as @a[gamemode=adventure] at @s if block ~ ~-1 ~ minecraft:jigsaw run tp
 
 ## Beacon
 # sound
-execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon unless score game event.current_major_event matches 2 run playsound minecraft:entity.firework_rocket.blast master @a ~ ~ ~
-execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon unless score game event.current_major_event matches 2 run playsound minecraft:entity.firework_rocket.launch master @a ~ ~ ~
+execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon unless score @s effect.invis matches 1.. run playsound minecraft:entity.firework_rocket.blast master @a ~ ~ ~
+execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon if score @s effect.invis matches 1.. run playsound minecraft:entity.firework_rocket.blast master @a ~ ~ ~ .5 .7
+execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon unless score @s effect.invis matches 1.. run playsound minecraft:entity.firework_rocket.launch master @a ~ ~ ~
 # flash
-execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon unless score game event.current_major_event matches 2 run particle minecraft:flash ~ ~ ~
-execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon unless score game event.current_major_event matches 2 run particle minecraft:end_rod ~ ~.5 ~ .5 0 .5 0 75
+execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon unless score @s effect.invis matches 1.. run particle minecraft:flash ~ ~ ~
+execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon if score @s effect.invis matches 1.. run particle minecraft:flash ~ ~ ~ 0 0 0 0 1 normal @a
+execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon unless score @s effect.invis matches 1.. run particle minecraft:end_rod ~ ~.5 ~ .5 0 .5 0 75
 # jump
-execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon unless score game event.current_major_event matches 2 run scoreboard players set @s effect.throw 3
-execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon unless score game event.current_major_event matches 2 run tp @s ~ ~1.5 ~
-## blackout event
-execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon if score game event.current_major_event matches 2 run playsound minecraft:entity.firework_rocket.blast master @a ~ ~ ~
-execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon if score game event.current_major_event matches 2 run playsound minecraft:block.glass.break master @a ~ ~ ~
-# flash
-execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon if score game event.current_major_event matches 2 run particle block glass ~ ~ ~ .3 .1 .3 0 50
-execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon if score game event.current_major_event matches 2 run particle minecraft:flash ~ ~ ~
-# jump
-execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon if score game event.current_major_event matches 2 run tp @s ~ ~3 ~
+execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon run scoreboard players set @s effect.throw 3
+execute as @a[gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:beacon run tp @s ~ ~1.5 ~
 
 
 

@@ -184,25 +184,41 @@ execute as @a[nbt={OnGround:0b}, scores={stat.speed2=300..}, gamemode=adventure]
 
 
 
-execute as @a at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run scoreboard players add @s near_heartbeat 1
-execute as @a at @s unless entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run scoreboard players reset @s near_heartbeat
+execute as @a[gamemode=adventure, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run scoreboard players add @s near_heartbeat 1
+execute as @a[gamemode=adventure, tag=!safezoned] at @s unless entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run scoreboard players reset @s near_heartbeat
 
 
-execute as @a[scores={near_heartbeat=10}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run function tag:tp_back/stopmusic
-execute as @a[scores={near_heartbeat=16}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run function tag:tp_back/stopmusic
+execute as @a[scores={near_heartbeat=10}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run function tag:tp_back/stopmusic
+execute as @a[scores={near_heartbeat=16}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..30] run function tag:tp_back/stopmusic
 
-execute as @a[scores={near_heartbeat=10}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=21..30] run playsound block.note_block.basedrum ambient @s ~ ~ ~
-execute as @a[scores={near_heartbeat=16}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=21..30] run playsound block.note_block.basedrum ambient @s ~ ~ ~
-execute as @a[scores={near_heartbeat=50..}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=21..30] run scoreboard players set @s near_heartbeat 0
+execute as @a[scores={near_heartbeat=10}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=21..30] run playsound block.note_block.basedrum ambient @s ~ ~ ~
+execute as @a[scores={near_heartbeat=16}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=21..30] run playsound block.note_block.basedrum ambient @s ~ ~ ~
+execute as @a[scores={near_heartbeat=50..}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=21..30] run scoreboard players set @s near_heartbeat 0
 
-execute as @a[scores={near_heartbeat=10}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=11..20] run playsound block.note_block.basedrum ambient @s ~ ~ ~
-execute as @a[scores={near_heartbeat=16}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=11..20] run playsound block.note_block.basedrum ambient @s ~ ~ ~
-execute as @a[scores={near_heartbeat=30..}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=11..20] run scoreboard players set @s near_heartbeat 0
+execute as @a[scores={near_heartbeat=10}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=11..20] run playsound block.note_block.basedrum ambient @s ~ ~ ~
+execute as @a[scores={near_heartbeat=16}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=11..20] run playsound block.note_block.basedrum ambient @s ~ ~ ~
+execute as @a[scores={near_heartbeat=30..}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=11..20] run scoreboard players set @s near_heartbeat 0
 
-execute as @a[scores={near_heartbeat=5}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=6..10] run playsound block.note_block.basedrum ambient @s ~ ~ ~
-execute as @a[scores={near_heartbeat=8}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=6..10] run playsound block.note_block.basedrum ambient @s ~ ~ ~
-execute as @a[scores={near_heartbeat=20..}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=6..10] run scoreboard players set @s near_heartbeat 0
+execute as @a[scores={near_heartbeat=5}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=6..10] run playsound block.note_block.basedrum ambient @s ~ ~ ~
+execute as @a[scores={near_heartbeat=8}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=6..10] run playsound block.note_block.basedrum ambient @s ~ ~ ~
+execute as @a[scores={near_heartbeat=20..}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=6..10] run scoreboard players set @s near_heartbeat 0
 
-execute as @a[scores={near_heartbeat=5}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..5] run playsound block.note_block.basedrum ambient @s ~ ~ ~
-execute as @a[scores={near_heartbeat=7}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..5] run playsound block.note_block.basedrum ambient @s ~ ~ ~
-execute as @a[scores={near_heartbeat=10..}, tag=!tagger, tag=!afk, tag=!safezoned] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..5] run scoreboard players set @s near_heartbeat 0
+execute as @a[scores={near_heartbeat=5}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..5] run playsound block.note_block.basedrum ambient @s ~ ~ ~
+execute as @a[scores={near_heartbeat=7}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..5] run playsound block.note_block.basedrum ambient @s ~ ~ ~
+execute as @a[scores={near_heartbeat=10..}, tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] at @s if entity @a[tag=tagger, tag=!safezoned, tag=!afk, distance=..5] run scoreboard players set @s near_heartbeat 0
+
+
+
+
+
+
+
+scoreboard players remove timer consts 1
+execute if score timer consts matches ..999 run scoreboard players set timer consts 0
+
+execute store result bossbar minecraft:a_version value run scoreboard players get timer consts
+execute if score timer consts matches 1000.. run bossbar set minecraft:a_version color yellow
+execute unless score timer consts matches 1000.. run bossbar set minecraft:a_version color white
+
+#execute if score timer consts matches 1001 run scoreboard players set @a effect.freeze 99999
+#execute if score timer consts matches 1001 run spreadplayers 0 0 50 50 under 80 false @a
