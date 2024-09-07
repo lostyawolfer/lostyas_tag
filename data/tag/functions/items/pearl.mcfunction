@@ -127,4 +127,4 @@ execute as @a[scores={p_has=0}, gamemode=adventure] at @s run clear @s minecraft
 
 
 
-execute as @a[scores={p_cd_s=1..}] unless entity @a[tag=tagger] run scoreboard players remove @s p_cd_s 1
+execute as @a[scores={p_cd_s=1..}] if score game_type consts matches -11..-10 run scoreboard players remove @s p_cd_s 1

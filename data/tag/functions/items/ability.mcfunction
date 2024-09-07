@@ -260,4 +260,4 @@ execute as @a[scores={current_menu_page=0}] as @s[scores={ab.has=1}] as @s[score
 # Clear from people who shouldn't have it (anti-bypass)
 execute as @a[scores={ab.has=0}, gamemode=adventure] at @s run clear @s minecraft:carrot_on_a_stick{Tag:["game"]}
 
-execute as @a[scores={ab.cd_s=1..}] unless entity @a[tag=tagger] run scoreboard players remove @s ab.cd_s 1
+execute as @a[scores={ab.cd_s=1..}] if score game_type consts matches -11..-10 run scoreboard players remove @s ab.cd_s 1

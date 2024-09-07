@@ -213,12 +213,84 @@ execute as @a[scores={near_heartbeat=10..}, tag=!tagger, tag=!afk, tag=!safezone
 
 
 
+
+
 scoreboard players remove timer consts 1
-execute if score timer consts matches ..999 run scoreboard players set timer consts 0
+execute if score timer consts matches 1..530 run scoreboard players set timer consts 0
+
+
+execute if score timer consts matches 540 as @a at @s run playsound round.countdown_1 master @s ~ ~ ~ 1 1
+execute if score timer consts matches 537 as @a at @s run title @a times 0 15 3
+execute if score timer consts matches 537 as @a at @s run title @a title {"text":"1","color":"red"}
+execute if score timer consts matches 560 as @a at @s run playsound round.countdown_2 master @s ~ ~ ~ 1 1
+execute if score timer consts matches 557 as @a at @s run title @a times 0 15 3
+execute if score timer consts matches 557 as @a at @s run title @a title {"text":"2","color":"red"}
+execute if score timer consts matches 580 as @a at @s run playsound round.countdown_3 master @s ~ ~ ~ 1 1
+execute if score timer consts matches 577 as @a at @s run title @a times 0 15 3
+execute if score timer consts matches 577 as @a at @s run title @a title {"text":"3","color":"red"}
+execute if score timer consts matches 600 as @a at @s run playsound round.countdown_4 master @s ~ ~ ~ 1 1
+execute if score timer consts matches 597 as @a at @s run title @a times 0 15 3
+execute if score timer consts matches 597 as @a at @s run title @a title {"text":"4","color":"gold"}
+execute if score timer consts matches 620 as @a at @s run playsound round.countdown_5 master @s ~ ~ ~ 1 1
+execute if score timer consts matches 617 as @a at @s run title @a times 0 15 3
+execute if score timer consts matches 617 as @a at @s run title @a title {"text":"5","color":"gold"}
+execute if score timer consts matches 640 as @a at @s run playsound round.countdown_6 master @s ~ ~ ~ 1 1
+execute if score timer consts matches 637 as @a at @s run title @a times 0 15 3
+execute if score timer consts matches 637 as @a at @s run title @a title {"text":"6","color":"gold"}
+execute if score timer consts matches 660 as @a at @s run playsound round.countdown_7 master @s ~ ~ ~ 1 1
+execute if score timer consts matches 657 as @a at @s run title @a times 0 15 3
+execute if score timer consts matches 657 as @a at @s run title @a title {"text":"7","color":"yellow"}
+execute if score timer consts matches 680 as @a at @s run playsound round.countdown_8 master @s ~ ~ ~ 1 1
+execute if score timer consts matches 677 as @a at @s run title @a times 0 15 3
+execute if score timer consts matches 677 as @a at @s run title @a title {"text":"8","color":"yellow"}
+execute if score timer consts matches 700 as @a at @s run playsound round.countdown_9 master @s ~ ~ ~ 1 1
+execute if score timer consts matches 697 as @a at @s run title @a times 0 15 3
+execute if score timer consts matches 697 as @a at @s run title @a title {"text":"9","color":"yellow"}
+execute if score timer consts matches 720 as @a at @s run playsound round.countdown_10 master @s ~ ~ ~ 1 1
+execute if score timer consts matches 717 as @a at @s run title @a times 0 15 3
+execute if score timer consts matches 717 as @a at @s run title @a title {"text":"10","color":"yellow"}
+
+execute if score timer consts matches 760 as @a at @s run title @a times 30 20 3
+execute if score timer consts matches 760 as @a at @s run title @a title {"text":"Раунд закончится через...","color":"gray"}
+
+
+execute if score timer consts matches 1077 as @a at @s run title @a times 10 30 10
+execute if score timer consts matches 1077 as @a at @s run title @a title {"text":"Вечная подсветка","color":"aqua"}
+execute if score timer consts matches 1077 as @a at @s run title @a subtitle {"text":"Все постоянно подсвечиваются!","color":"dark_aqua"}
+
+execute if score timer consts matches 1120 as @a at @s run title @a times 3 30 10
+execute if score timer consts matches 1120 as @a at @s run title @a title {"text":"30 секунд","color":"yellow"}
+execute if score timer consts matches 1120 as @a at @s run title @a subtitle {"text":"до окончания раунда","color":"gray"}
+execute if score timer consts matches -10..1120 as @a at @s run scoreboard players set glow event 0
+execute if score timer consts matches -10..1120 as @a at @s run scoreboard players set @a effect.glow 2
+execute if score timer consts matches 1120 as @a at @s run playsound round.30_sec music @s ~ ~ ~ 1 1
+execute if score timer consts matches 1120 as @a at @s run playsound round.warn master @s ~ ~ ~ 1 1.19
+
+
+execute if score timer consts matches 1677 as @a at @s run title @a times 10 30 10
+execute if score timer consts matches 1677 as @a at @s run title @a title {"text":"2х ускорение","color":"gold"}
+execute if score timer consts matches 1677 as @a at @s run title @a subtitle {"text":"на восстановление способности и пёрла","color":"yellow"}
+
+execute if score timer consts matches 1720 as @a at @s run title @a times 3 30 10
+execute if score timer consts matches 1720 as @a at @s run title @a title {"text":"60 секунд","color":"light_purple"}
+execute if score timer consts matches 1720 as @a at @s run title @a subtitle {"text":"до окончания раунда","color":"gray"}
+execute if score timer consts matches -10..1720 as @a[gamemode=adventure, tag=!safezoned] at @s run scoreboard players remove @a ab.cd_ms 1
+execute if score timer consts matches -10..1720 as @a[gamemode=adventure, tag=!safezoned] at @s run scoreboard players remove @a p_cd_ms 1
+execute if score timer consts matches 1720 as @a at @s run playsound round.60_sec music @s ~ ~ ~ 1 1
+execute if score timer consts matches 1720 as @a at @s run playsound round.warn master @s ~ ~ ~ 1 1
+
+execute if score timer consts matches -10..1750 as @a at @s run scoreboard players set game event.current_major_event 0
+execute if score timer consts matches -10..1750 as @a at @s run scoreboard players set blackout event 0
+execute if score timer consts matches -10..1750 as @a at @s run scoreboard players set air_raid event 0
+
+
 
 execute store result bossbar minecraft:a_version value run scoreboard players get timer consts
-execute if score timer consts matches 1000.. run bossbar set minecraft:a_version color yellow
-execute unless score timer consts matches 1000.. run bossbar set minecraft:a_version color white
+execute if score timer consts matches 500.. run bossbar set minecraft:a_version color yellow
+execute if score timer consts matches ..-10 run bossbar set minecraft:a_version color white
+execute if score timer consts matches -10 as @a at @s run playsound ui.toast.challenge_complete master @s ~ ~ ~ 1 1
+#execute if score timer consts matches -10 as @a at @s run summon lightning_bolt
+#execute if score timer consts matches -10 as @a at @s run gamemode spectator @s
 
 #execute if score timer consts matches 1001 run scoreboard players set @a effect.freeze 99999
 #execute if score timer consts matches 1001 run spreadplayers 0 0 50 50 under 80 false @a
