@@ -4,8 +4,6 @@
 
 
 
-
-
 ## Cooldown
 #  Pos: default
 execute as @a[scores={current_menu_page=0}, gamemode=!creative] as @s[scores={p_has=0}] as @s[scores={p_cd_s=2}] run item replace entity @s container.2 with minecraft:heart_of_the_sea{Tag:["game"],CustomModelData:2,display:{Name:'[{"translate":"pearl.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 2
@@ -121,10 +119,12 @@ execute as @a[scores={p_use=1..}] run scoreboard players set @s p_use 0
 
 
 
-# Clear from people who shouldn't have it (anti-bypass)
-execute as @a[scores={p_has=0}, gamemode=adventure] at @s run clear @s minecraft:ender_pearl{Tag:["game"]}
-
 
 
 
 execute as @a[scores={p_cd_s=1..}] if score game_type consts matches -11..-10 run scoreboard players remove @s p_cd_s 1
+
+
+# Clear from people who shouldn't have it (anti-bypass)
+execute as @a[scores={p_has=0}, gamemode=adventure] at @s run clear @s minecraft:ender_pearl{Tag:["game"]}
+

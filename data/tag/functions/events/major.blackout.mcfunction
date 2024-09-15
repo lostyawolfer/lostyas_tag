@@ -1,10 +1,4 @@
-execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run tellraw @a "time set night"
-execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a run time set night
-execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run tellraw @a "time set 23400t"
-execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a run time set 23400t
-execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a run time set 23400t
-execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a run time set 23400t
-execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a run time set 23400t
+execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a at @s run time set 23400t
 execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] run tellraw @a {"translate": "event.blackout.end.chat", "color":"green"}
 execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a run function win_sound:play
 execute unless score game event.current_major_event matches 2 if entity @e[type=armor_stand, tag=blackout] as @a at @s run playsound block.beacon.activate master @s ~ ~ ~ 99999 1

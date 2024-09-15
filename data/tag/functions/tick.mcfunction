@@ -8,15 +8,6 @@ function tag:events/major.blackout
 function tag:passives/0main
 function tag:abilities/0main
 
-function tag:effects/levitation
-function tag:effects/throw
-function tag:effects/throw_small
-function tag:effects/glow
-function tag:effects/invis
-function tag:effects/speed
-function tag:effects/down
-function tag:effects/freeze
-
 function tag:items/pearl
 function tag:items/tagger_stick
 function tag:items/ability
@@ -26,6 +17,15 @@ function tag:items/taunt
 function tag:items/menu
 
 function tag:bg_processes/tick.misc
+
+function tag:effects/levitation
+function tag:effects/throw
+function tag:effects/throw_small
+function tag:effects/glow
+function tag:effects/invis
+function tag:effects/speed
+function tag:effects/down
+function tag:effects/freeze
 
 function tag:bg_processes/tick.safezone
 function tag:bg_processes/tick.special_blocks
