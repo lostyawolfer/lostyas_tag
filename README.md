@@ -1,11 +1,15 @@
 ![logo alpha](https://github.com/lostyawolfer/lostyas_tag/assets/76567738/f17ea42a-0d5c-4c98-8b39-d61e48bb532c)
+# ⚠️⚠️⚠️ THE GAME IS IN UNPLAYABLE STATE
+as of 5 dec 2024 i ONLY STARTED porting everything and THERE IS NO CODE AT ALL.
+if you download right now you will just have a WORLD TO BUILD IN.
+the maps are ported over to 1.21.3. no code present.
 ### minecraft: 1.21.3 // core: papermc 1.21.3 #80
 a minigame about chasing people around. this is an early alpha, most of the stuff requires admin interaction to happen
 
 pls contribute i write code like garbage
 
 
-## build instructions
+# build instructions
 after cloning the repo,
 1. launch bindownload.py with python3
 2. open cmd in the folder that you cloned the repo into

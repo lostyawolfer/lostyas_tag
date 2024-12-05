@@ -1,0 +1,1 @@
+scoreboard objectives add disable_message trigger
