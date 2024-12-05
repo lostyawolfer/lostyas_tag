@@ -1,4 +1,4 @@
-![logo alpha](https://github.com/lostyawolfer/lostyas_tag/assets/76567738/f17ea42a-0d5c-4c98-8b39-d61e48bb532c)
+![logo alpha](logo_alpha.png)
 # ⚠️⚠️⚠️ THE GAME IS IN AN UNPLAYABLE STATE
 as of 6 dec 2024 i ONLY STARTED porting everything and THERE IS (almost) NO CODE AT ALL.
 if you download right now you will just have a WORLD TO BUILD IN.
