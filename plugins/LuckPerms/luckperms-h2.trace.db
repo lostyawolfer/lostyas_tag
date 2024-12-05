@@ -1,0 +1,176 @@
+2023-07-10 17:44:27 database: flush
+org.h2.message.DbException: GeneralError
+	at org.h2.message.DbException.convert(DbException.java:350)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2780)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3123)
+	Suppressed: java.lang.OutOfMemoryError: Java heap space
+Caused by: java.sql.SQLException: GeneralError
+	... 5 more
+Caused by: [CIRCULAR REFERENCE: java.lang.OutOfMemoryError: Java heap space]
+2023-07-10 17:44:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "GeneralError"
+General error: "GeneralError" [50000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.engine.Database.close(Database.java:1426)
+	at org.h2.engine.Database.removeSession(Database.java:1381)
+	at org.h2.engine.Session.close(Session.java:904)
+	at org.h2.jdbc.JdbcConnection.close(JdbcConnection.java:456)
+	at me.lucko.luckperms.common.storage.implementation.sql.connection.file.NonClosableConnection.shutdown(NonClosableConnection.java:61)
+	at me.lucko.luckperms.common.storage.implementation.sql.connection.file.FlatfileConnectionFactory.shutdown(FlatfileConnectionFactory.java:81)
+	at me.lucko.luckperms.common.storage.implementation.sql.connection.file.H2ConnectionFactory.shutdown(H2ConnectionFactory.java:40)
+	at me.lucko.luckperms.common.storage.implementation.sql.SqlStorage.shutdown(SqlStorage.java:227)
+	at me.lucko.luckperms.common.storage.Storage.shutdown(Storage.java:125)
+	at me.lucko.luckperms.common.plugin.AbstractLuckPermsPlugin.disable(AbstractLuckPermsPlugin.java:275)
+	at me.lucko.luckperms.bukkit.LPBukkitBootstrap.onDisable(LPBukkitBootstrap.java:193)
+	at LuckPerms-Bukkit-5.4.40.jar//me.lucko.luckperms.bukkit.loader.BukkitLoaderPlugin.onDisable(BukkitLoaderPlugin.java:56)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:281)
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugin(PaperPluginInstanceManager.java:224)
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugins(PaperPluginInstanceManager.java:148)
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.disablePlugins(PaperPluginManagerImpl.java:92)
+	at org.bukkit.plugin.SimplePluginManager.disablePlugins(SimplePluginManager.java:528)
+	at org.bukkit.craftbukkit.v1_19_R3.CraftServer.disablePlugins(CraftServer.java:500)
+	at net.minecraft.server.MinecraftServer.t(MinecraftServer.java:960)
+	at net.minecraft.server.dedicated.DedicatedServer.t(DedicatedServer.java:844)
+	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1240)
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:325)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.message.DbException: GeneralError
+	at org.h2.message.DbException.convert(DbException.java:350)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2780)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3123)
+	Suppressed: java.lang.OutOfMemoryError: Java heap space
+Caused by: java.sql.SQLException: GeneralError
+	... 5 more
+Caused by: [CIRCULAR REFERENCE: java.lang.OutOfMemoryError: Java heap space]
+2024-02-28 14:11:44 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: Writing to nio:M:/серверы/tag/plugins/LuckPerms/luckperms-h2.mv.db failed; length 32768 at 53248 [1.4.199/2]"
+General error: "java.lang.IllegalStateException: Writing to nio:M:/серверы/tag/plugins/LuckPerms/luckperms-h2.mv.db failed; length 32768 at 53248 [1.4.199/2]" [50000-199]
+2024-03-02 07:52:27 database: flush
+org.h2.message.DbException: OutOfMemoryError
+	at org.h2.message.DbException.<clinit>(DbException.java:64)
+	at org.h2.message.TraceObject.<clinit>(TraceObject.java:108)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.ensureClassInitialized(MethodHandleAccessorFactory.java:300)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.newConstructorAccessor(MethodHandleAccessorFactory.java:103)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newConstructorAccessor(ReflectionFactory.java:236)
+	at java.base/java.lang.reflect.Constructor.acquireConstructorAccessor(Constructor.java:546)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:496)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at me.lucko.luckperms.common.storage.implementation.sql.connection.file.H2ConnectionFactory.createConnection(H2ConnectionFactory.java:68)
+	at me.lucko.luckperms.common.storage.implementation.sql.connection.file.FlatfileConnectionFactory.getConnection(FlatfileConnectionFactory.java:72)
+	at me.lucko.luckperms.common.storage.implementation.sql.connection.file.H2ConnectionFactory.getConnection(H2ConnectionFactory.java:40)
+	at me.lucko.luckperms.common.storage.implementation.sql.SqlStorage.init(SqlStorage.java:169)
+	at me.lucko.luckperms.common.storage.Storage.init(Storage.java:117)
+	at me.lucko.luckperms.common.storage.StorageFactory.getInstance(StorageFactory.java:88)
+	at me.lucko.luckperms.common.plugin.AbstractLuckPermsPlugin.enable(AbstractLuckPermsPlugin.java:182)
+	at me.lucko.luckperms.bukkit.LPBukkitBootstrap.onEnable(LPBukkitBootstrap.java:177)
+	at LuckPerms-Bukkit-5.4.40.jar//me.lucko.luckperms.bukkit.loader.BukkitLoaderPlugin.onEnable(BukkitLoaderPlugin.java:51)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279)
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:189)
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:104)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:507)
+	at org.bukkit.craftbukkit.v1_19_R3.CraftServer.enablePlugin(CraftServer.java:569)
+	at org.bukkit.craftbukkit.v1_19_R3.CraftServer.enablePlugins(CraftServer.java:480)
+	at net.minecraft.server.dedicated.DedicatedServer.e(DedicatedServer.java:310)
+	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1120)
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:325)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLException: OutOfMemoryError
+	at org.h2.message.DbException.<clinit>(DbException.java:62)
+	... 28 more
+Caused by: java.lang.OutOfMemoryError
+	... 29 more
+2024-08-06 17:51:40 database: flush
+org.h2.message.DbException: GeneralError
+	at org.h2.message.DbException.convert(DbException.java:350)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2780)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3123)
+	Suppressed: java.lang.OutOfMemoryError: Java heap space
+Caused by: java.sql.SQLException: GeneralError
+	... 5 more
+Caused by: [CIRCULAR REFERENCE: java.lang.OutOfMemoryError: Java heap space]
+2024-08-06 17:51:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "GeneralError"
+General error: "GeneralError" [50000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.engine.Database.close(Database.java:1426)
+	at org.h2.engine.Database.removeSession(Database.java:1381)
+	at org.h2.engine.Session.close(Session.java:904)
+	at org.h2.jdbc.JdbcConnection.close(JdbcConnection.java:456)
+	at me.lucko.luckperms.common.storage.implementation.sql.connection.file.NonClosableConnection.shutdown(NonClosableConnection.java:61)
+	at me.lucko.luckperms.common.storage.implementation.sql.connection.file.FlatfileConnectionFactory.shutdown(FlatfileConnectionFactory.java:81)
+	at me.lucko.luckperms.common.storage.implementation.sql.connection.file.H2ConnectionFactory.shutdown(H2ConnectionFactory.java:40)
+	at me.lucko.luckperms.common.storage.implementation.sql.SqlStorage.shutdown(SqlStorage.java:227)
+	at me.lucko.luckperms.common.storage.Storage.shutdown(Storage.java:125)
+	at me.lucko.luckperms.common.plugin.AbstractLuckPermsPlugin.disable(AbstractLuckPermsPlugin.java:275)
+	at me.lucko.luckperms.bukkit.LPBukkitBootstrap.onDisable(LPBukkitBootstrap.java:193)
+	at LuckPerms-Bukkit-5.4.40.jar//me.lucko.luckperms.bukkit.loader.BukkitLoaderPlugin.onDisable(BukkitLoaderPlugin.java:56)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:281)
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugin(PaperPluginInstanceManager.java:224)
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugins(PaperPluginInstanceManager.java:148)
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.disablePlugins(PaperPluginManagerImpl.java:92)
+	at org.bukkit.plugin.SimplePluginManager.disablePlugins(SimplePluginManager.java:528)
+	at org.bukkit.craftbukkit.v1_19_R3.CraftServer.disablePlugins(CraftServer.java:500)
+	at net.minecraft.server.MinecraftServer.t(MinecraftServer.java:960)
+	at net.minecraft.server.dedicated.DedicatedServer.t(DedicatedServer.java:844)
+	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1240)
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:325)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.message.DbException: GeneralError
+	at org.h2.message.DbException.convert(DbException.java:350)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2780)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3123)
+	Suppressed: java.lang.OutOfMemoryError: Java heap space
+Caused by: java.sql.SQLException: GeneralError
+	... 5 more
+Caused by: [CIRCULAR REFERENCE: java.lang.OutOfMemoryError: Java heap space]
+2024-08-06 18:02:42 database: flush
+org.h2.message.DbException: Ошибка нехватки памяти
+Out of memory. [90108-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:341)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2780)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3123)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Ошибка нехватки памяти
+Out of memory. [90108-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 6 more
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.iterator(ConcurrentHashMap.java:4743)
+	at org.h2.mvstore.MVStore.hasUnsavedChanges(MVStore.java:1789)
+	at org.h2.mvstore.MVStore.hasUnsavedChangesInternal(MVStore.java:1803)
+	at org.h2.mvstore.MVStore.store(MVStore.java:1176)
+	at org.h2.mvstore.MVStore.tryCommit(MVStore.java:1135)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2763)
+	... 1 more
+2024-08-08 19:09:52 database: flush
+org.h2.message.DbException: Ошибка нехватки памяти
+Out of memory. [90108-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:341)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2780)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3123)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Ошибка нехватки памяти
+Out of memory. [90108-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 6 more
+Caused by: java.lang.OutOfMemoryError: Java heap space

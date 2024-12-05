@@ -1,0 +1,110 @@
+###                       Ability activator
+##     Customizable with /trigger settings.setpos.active_ability
+
+# Clear from people who shouldn't have it (anti-bypass)
+execute as @a[scores={ab.has=0}, gamemode=adventure] at @s run clear @s minecraft:carrot_on_a_stick{Tag:["game"]}
+
+
+
+
+## Cooldown counter
+execute as @a[gamemode=adventure,scores={ab.cd_ms=1..}] as @s[scores={ab.cd_s=1..}] as @s[scores={ab.use_s=..0}] run scoreboard players remove @s ab.cd_ms 1
+execute as @a unless entity @s[scores={ab.cd_s=..0},gamemode=adventure] run scoreboard players set @s ab.has 0
+execute as @a if entity @s[scores={ab.cd_s=..0},gamemode=adventure] if entity @s[scores={ab.use_s=..0}] run scoreboard players set @s ab.has 1
+
+execute as @a[scores={ab.cd_ms=..0}] as @s[scores={ab.use_s=..0}] run scoreboard players remove @s ab.cd_s 1
+execute as @a[scores={ab.cd_ms=..0}] run scoreboard players set @s ab.cd_ms 20
+execute as @a[scores={ab.anim=1}] at @s run playsound minecraft:block.note_block.pling master @s
+
+execute as @a[scores={ab.use_s=1..}] run scoreboard players set @s[gamemode=adventure,scores={ab.cd_s=0}] ab.cd_ms 1
+execute as @a[scores={ab.use_s=1..}] run scoreboard players set @s[gamemode=adventure,scores={ab.cd_s=0}] ab.cd_s 1
+
+scoreboard players set @a[gamemode=creative] ab.cd_ms 20
+scoreboard players set @a[gamemode=creative] ab.cd_s 0
+
+execute as @a[gamemode=adventure,scores={ab.use_ms=1..}] as @s[scores={ab.use_s=1..}] run scoreboard players remove @s ab.use_ms 1
+execute as @a[scores={ab.use_ms=..0}] run scoreboard players remove @s ab.use_s 1
+execute as @a[scores={ab.use_ms=..0}] run scoreboard players set @s ab.use_ms 20
+
+
+
+
+## Cooldown
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=1}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 1
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=2}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 2
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=3}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 3
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=4}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 4
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=5}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 5
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=6}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 6
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=7}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 7
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=8}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 8
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=9}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 9
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=10}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 10
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=11}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 11
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=12}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 12
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=13}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 13
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=14}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 14
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=15}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 15
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=16}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 16
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=17}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 17
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=18}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 18
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=19}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 19
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=20}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 20
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=21}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 21
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=22}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 22
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=23}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 23
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=24}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 24
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=25}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 25
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=26}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 26
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=27}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 27
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=28}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 28
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=29}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 29
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=30}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 30
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=31}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 31
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=32}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 32
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=33}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 33
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=34}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 34
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=35}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 35
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=36}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 36
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=37}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 37
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=38}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 38
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=39}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 39
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=40..}] as @s[scores={ab.use_s=..0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 40
+
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.use_s=1}] run item replace entity @s container.1 with minecraft:lime_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.using","color":"#33FF00","bold":true,"italic":false}]'}} 1
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.use_s=2}] run item replace entity @s container.1 with minecraft:lime_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.using","color":"#33FF00","bold":true,"italic":false}]'}} 2
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.use_s=3}] run item replace entity @s container.1 with minecraft:lime_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.using","color":"#33FF00","bold":true,"italic":false}]'}} 3
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.use_s=4}] run item replace entity @s container.1 with minecraft:lime_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.using","color":"#33FF00","bold":true,"italic":false}]'}} 4
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.use_s=5}] run item replace entity @s container.1 with minecraft:lime_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.using","color":"#33FF00","bold":true,"italic":false}]'}} 5
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.use_s=6}] run item replace entity @s container.1 with minecraft:lime_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.using","color":"#33FF00","bold":true,"italic":false}]'}} 6
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.use_s=7}] run item replace entity @s container.1 with minecraft:lime_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.using","color":"#33FF00","bold":true,"italic":false}]'}} 7
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.use_s=8}] run item replace entity @s container.1 with minecraft:lime_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.using","color":"#33FF00","bold":true,"italic":false}]'}} 8
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.use_s=9}] run item replace entity @s container.1 with minecraft:lime_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.using","color":"#33FF00","bold":true,"italic":false}]'}} 9
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.use_s=10}] run item replace entity @s container.1 with minecraft:lime_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.using","color":"#33FF00","bold":true,"italic":false}]'}} 10
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.use_s=11..}] run item replace entity @s container.1 with minecraft:lime_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.using","color":"#33FF00","bold":true,"italic":false}]'}}
+
+
+
+
+## Pre-recover animation
+#  Pos: default
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=1}] as @s[scores={ab.use_s=..0}] as @s[scores={ab.cd_ms=3}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],CustomModelData:-3,display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 1
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=1}] as @s[scores={ab.use_s=..0}] as @s[scores={ab.cd_ms=2}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],CustomModelData:-2,display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 1
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=1}] as @s[scores={ab.use_s=..0}] as @s[scores={ab.cd_ms=1}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],CustomModelData:-1,display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 1
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=1}] as @s[scores={ab.use_s=..0}] as @s[scores={ab.cd_ms=4..}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],display:{Name:'[{"translate":"ability.item.cd","color":"#999999","strikethrough":true,"italic":false}]'}} 1
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=0}] as @s[scores={ab.cd_s=1}] as @s[scores={ab.use_s=..0}] as @s[scores={ab.cd_ms=0}] run item replace entity @s container.1 with minecraft:gray_dye{Tag:["game"],CustomModelData:4,display:{Name:'[{"translate":"ability.item.cd","color":"#CCCCCC","strikethrough":true,"italic":false}]'}} 1
+
+
+
+
+## Recover animation
+#  Timer
+execute as @a[scores={ab.has=1}] at @s if entity @s[scores={ab.anim=..3}] run scoreboard players add @s ab.anim 1
+execute as @a[scores={ab.has=0}] at @s run scoreboard players set @s ab.anim 0
+#  Pos: default
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=1}] as @s[scores={ab.anim=1}] as @s[scores={ab.use=..5}] run item replace entity @s[tag=!ab.0none0] container.1 with minecraft:carrot_on_a_stick{Tag:["game"],CustomModelData:4,display:{Name:'[{"translate":"ability.item","color":"#FFFFFF","bold":true,"italic":false}]'}}
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=1}] as @s[scores={ab.anim=2}] as @s[scores={ab.use=..5}] run item replace entity @s[tag=!ab.0none0] container.1 with minecraft:carrot_on_a_stick{Tag:["game"],CustomModelData:3,display:{Name:'[{"translate":"ability.item","color":"#FFCCAA","bold":true,"italic":false}]'}}
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=1}] as @s[scores={ab.anim=3}] as @s[scores={ab.use=..5}] run item replace entity @s[tag=!ab.0none0] container.1 with minecraft:carrot_on_a_stick{Tag:["game"],CustomModelData:1,display:{Name:'[{"translate":"ability.item","color":"#FFAA55","bold":true,"italic":false}]'}}
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=1}] as @s[scores={ab.anim=4..}] as @s[scores={ab.use=..5}] run item replace entity @s[tag=!ab.0none0] container.1 with minecraft:carrot_on_a_stick{Tag:["game"],CustomModelData:0,display:{Name:'[{"translate":"ability.item","color":"#FF7700","bold":true,"italic":false}]'}}
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=1}] as @s[scores={ab.anim=1..}] as @s[scores={ab.use=..5}] run item replace entity @s[tag=ab.0none0] container.1 with minecraft:red_dye{Tag:["game"],CustomModelData:1,display:{Name:'[{"translate":"ability.item.no_ability","color":"#FF0000","bold":true,"italic":false}]'}}
+execute as @a[scores={settings.setpos.active_ability=0..}] as @s[scores={ab.has=1}] as @s[scores={ab.anim=1..}] as @s[scores={ab.use=5..}] run item replace entity @s[tag=!ab.0none0] container.1 with minecraft:red_dye{Tag:["game"],CustomModelData:3,display:{Name:'[{"translate":"ability.item.wrong","color":"#CBCD55","bold":false,"italic":false}]'}}

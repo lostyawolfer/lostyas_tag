@@ -1,0 +1,226 @@
+[
+	"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n       ",
+	{
+		"text": "l",
+		"color":"#FF8800",
+		"bold": true
+	},
+	{
+		"text": "ostya's tag",
+		"bold": true
+	},
+	"\n ",
+	{
+		"translate":"menu.online",
+		"color":"dark_gray"
+	},
+	{
+		"selector":"@a"
+	},
+	"\n\n\n\n",
+	{
+		"text":"  ",
+		"color":"gold"
+	}, 
+	{
+		"translate": "menu.play",
+		"clickEvent": {
+			"action":"run_command",
+			"value":"/trigger menu set 0"
+		},
+		"hoverEvent": {
+			"action":"show_text",
+			"contents": [
+				{
+					"translate":"menu.play.hover"
+				}
+			]
+		}
+	},
+	"\n  ",
+	{
+		"translate": "menu.how_to_play",
+		"clickEvent": {
+			"action":"run_command",
+			"value":"/trigger menu set 2"
+		},
+		"hoverEvent": {
+			"action":"show_text",
+			"contents": {
+				"translate":"menu.how_to_play.hover"
+			}
+		}
+	},
+	"\n\n  ",
+	{
+		"translate": "menu.settings",
+		"clickEvent": {
+			"action":"run_command",
+			"value":"/trigger menu set 1"
+		},
+		"hoverEvent": {
+			"action":"show_text",
+			"contents": {
+				"translate":"menu.settings.hover"
+            }			
+		}
+    },
+	"\n\n",
+	{
+		"text":"⭐",
+		"color":"green",
+		"hoverEvent": {
+			"action": "show_text",
+			"contents": {
+				"translate":"menu.testing_only",
+				"color":"green"
+			}
+		}
+	},
+	{
+		"translate": "menu.testing.random_tagger",
+		"color":"white",
+		"clickEvent": {
+			"action":"run_command",
+			"value":"/tag @r[tag=!afk] add tag.recieve"
+		},
+		"hoverEvent": {
+			"action":"show_text",
+			"contents": {
+				"translate":"menu.testing.random_tagger.hover"
+			}
+		}
+	},
+	"\n",
+	{
+		"text":"⭐",
+		"color":"green",
+		"hoverEvent": {
+			"action": "show_text",
+			"contents": {
+				"translate":"menu.testing_only",
+				"color":"green"
+			}
+		}
+	},
+	{
+		"translate": "menu.testing.clear_taggers",
+		"color":"white",
+		"clickEvent": {
+			"action":"run_command",
+			"value":"/tag @a add tag.give_out"
+		},
+		"hoverEvent": {
+			"action":"show_text",
+			"contents": {
+				"translate":"menu.testing.clear_taggers.hover"
+			}
+		}
+	},
+	"\n",
+	{
+		"text":"⭐",
+		"color":"green",
+		"hoverEvent": {
+			"action": "show_text",
+			"contents": {
+				"translate":"menu.testing_only",
+				"color":"green"
+			}
+		}
+	},
+	{
+		"translate": "menu.testing.reset_points",
+		"color":"gray",
+		"clickEvent": {
+			"action":"run_command",
+			"value":"/scoreboard players set @a playtime 0"
+		},
+		"hoverEvent": {
+			"action":"show_text",
+			"contents": {
+				"translate":"menu.testing.reset_points.hover"
+			}
+		}
+	},
+	"\n",
+	{
+		"text":"⭐",
+		"color":"green",
+		"hoverEvent": {
+			"action": "show_text",
+			"contents": {
+				"translate":"menu.testing_only",
+				"color":"green"
+			}
+		}
+	},
+	{
+		"translate": "menu.testing.change_role.become_tagger",
+		"color":"gold",
+		"clickEvent": {
+			"action":"run_command",
+			"value":"/team join menu_tagger"
+		},
+		"hoverEvent": {
+			"action":"show_text",
+			"contents": {
+				"translate":"menu.testing.change_role.become_tagger.hover"
+			}
+		}
+	},
+	"\n",
+	{
+		"text":"⭐",
+		"color":"green",
+		"hoverEvent": {
+			"action": "show_text",
+			"contents": {
+				"translate":"menu.testing_only",
+				"color":"green"
+			}
+		}
+	},
+	{
+		"translate": "menu.testing.reload",
+		"color":"red",
+		"clickEvent": {
+			"action":"run_command",
+			"value":"/execute run reload"
+		},
+		"hoverEvent": {
+			"action":"show_text",
+			"contents": {
+				"translate":"menu.testing.reload.hover"
+			}
+		}
+	},
+	"\n\n  ",
+	{
+		"text": "разрабы",
+		"clickEvent": {
+			"action":"run_command",
+			"value":"/trigger menu set 3"
+		},
+		"hoverEvent": {
+			"action":"show_text",
+			"contents": {
+				"translate":"посмотри, кто делал игру"
+			}
+		}
+	},
+	"\n  ",
+	{
+		"text": "список изменений",
+		"clickEvent": {
+			"action":"run_command",
+			"value":"/trigger menu set 1"
+		},
+		"hoverEvent": {
+			"action":"show_text",
+			"contents": {
+				"translate":"что же поменялось? [пока не работает, иди плакай]"
+			}
+		}
+	}
+]
