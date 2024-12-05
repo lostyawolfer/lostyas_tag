@@ -6,12 +6,8 @@ pls contribute i write code like garbage
 
 
 ## build instructions
-NOT POSSIBLE YET
-
-TODO: make the !bindownload.py actually work
-
 after cloning the repo,
-1. launch !bindownload.py with python3
+1. launch bindownload.py with python3
 2. open cmd in the folder that you cloned the repo into
 3. `java -Xmx512M -Xms512M -jar server.jar nogui`
 4. open the newly created file "eula.txt" and accept minecraft's EULA
