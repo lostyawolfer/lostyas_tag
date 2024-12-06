@@ -12,7 +12,7 @@ pls contribute i write code like garbage
 after cloning the repo,
 1. launch bindownload.py with python3
 2. open cmd in the folder that you cloned the repo into
-3. `java -Xmx512M -Xms512M -jar server.jar nogui`
+3. `java -Xmx1G -Xms1G -jar server.jar nogui`
 4. open the newly created file "eula.txt" and accept minecraft's EULA
 
 now you're good to go. when you run the command from step 3 again, the server will fully launch, ready to be joined.
@@ -29,5 +29,5 @@ example script i use myself:
 @echo OFF
 title lostya's tag
 echo Starting...
-java -Xmx512M -Xms512M -jar server.jar nogui
+java -Xmx1G -Xms1G -jar server.jar nogui
 ```
