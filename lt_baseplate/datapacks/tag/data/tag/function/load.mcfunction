@@ -1,7 +1,12 @@
 # temporary variable; used to store if someone wants the "unplayable build" message removed
 scoreboard objectives add disable_message trigger
 
-# scoreboards
+
+# effect scoreboards
+scoreboard objectives add effect.glowing dummy
+
+
+# misc scoreboards
 scoreboard objectives add server dummy
 scoreboard players add buildnum server 1
 function tag:misc/update_player_list

@@ -17,8 +17,15 @@ bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"
 scoreboard players add @a player_list 0
 
 
+
+
+
 # other functions
 execute as @a at @s run function tag:tagging/decoration
+execute as @a[scores = {effect.glowing = 0..}] at @s run function tag:effects/glowing
+
+
+
 
 
 
