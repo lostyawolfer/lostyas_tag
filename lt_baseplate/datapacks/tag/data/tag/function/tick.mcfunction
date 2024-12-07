@@ -1,3 +1,4 @@
+# temporary unplayable build of the game thing
 execute as @a unless score @s disable_message matches 1.. run title @s actionbar "this is an unplayable build of the game. \"/trigger disable_message\" to disable this message"
 scoreboard players enable @a disable_message
 

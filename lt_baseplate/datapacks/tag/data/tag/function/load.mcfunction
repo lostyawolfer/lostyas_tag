@@ -1,3 +1,4 @@
+# temporary variable; used to store if someone wants the "unplayable build" message removed
 scoreboard objectives add disable_message trigger
 
 scoreboard objectives add server dummy
