@@ -22,6 +22,15 @@ scoreboard players add @a player_list 0
 
 # other functions
 execute as @a at @s run function tag:tagging/decoration
+
+execute as @a[tag=!safezone] at @s if block ~ ~ ~ cave_air run function tag:tagging/go_in_safezone
+execute as @a[tag=!safezone] at @s if block ~ ~1 ~ cave_air run function tag:tagging/go_in_safezone
+
+execute as @a[tag= safezone] at @s if block ~ ~ ~ cave_air run function tag:tagging/in_safezone
+execute as @a[tag= safezone] at @s if block ~ ~1 ~ cave_air run function tag:tagging/in_safezone
+
+execute as @a[tag= safezone] at @s unless block ~ ~ ~ cave_air unless block ~ ~1 ~ cave_air run function tag:tagging/out_of_safezone
+
 execute as @a[scores = {effect.glowing = 0..}] at @s run function tag:effects/glowing
 
 
