@@ -4,6 +4,9 @@ scoreboard objectives add disable_message trigger
 
 # effect scoreboards
 scoreboard objectives add effect.glowing dummy
+scoreboard objectives add effect.strong_levitation dummy
+scoreboard objectives add effect.freeze dummy
+scoreboard objectives add effect.invisibility dummy
 
 
 # misc scoreboards

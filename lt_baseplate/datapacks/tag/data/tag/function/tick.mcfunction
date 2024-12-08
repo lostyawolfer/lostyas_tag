@@ -32,7 +32,12 @@ execute as @a[tag= safezone] at @s if block ~ ~1 ~ cave_air run function tag:tag
 
 execute as @a[tag= safezone] at @s unless block ~ ~ ~ cave_air unless block ~ ~1 ~ cave_air run function tag:tagging/out_of_safezone
 
+execute as @a at @s unless score @s effect.strong_levitation matches 0.. if block ~ ~-1 ~ beacon run function tag:misc/beacons
+
 execute as @a[scores = {effect.glowing = 0..}] at @s run function tag:effects/glowing
+execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:effects/strong_levitation
+execute as @a[scores = {effect.freeze = 0..}] at @s run function tag:effects/freeze
+# TODO: make an invisiblity effect
 
 
 

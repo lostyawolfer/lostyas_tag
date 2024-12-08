@@ -16,3 +16,4 @@ scoreboard objectives modify player_list numberformat blank
 # TODO: when i will add points to the game,
 # make the numberformat show numbers in green
 # scoreboard objectives modify player_list numberformat {"color": "green"}
+scoreboard players add @a player_list 0
