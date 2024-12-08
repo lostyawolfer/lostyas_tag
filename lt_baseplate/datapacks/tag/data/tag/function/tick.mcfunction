@@ -1,3 +1,7 @@
+# make everyone in adventure
+gamemode adventure @a[gamemode = survival]
+
+
 # variables before functions
 execute store result score playercount_old server if entity @a
 execute store result score taggers_old server if entity @a[tag=tagger]
@@ -37,7 +41,7 @@ execute as @a at @s unless score @s effect.strong_levitation matches 0.. if bloc
 execute as @a[scores = {effect.glowing = 0..}] at @s run function tag:effects/glowing
 execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:effects/strong_levitation
 execute as @a[scores = {effect.freeze = 0..}] at @s run function tag:effects/freeze
-# TODO: make an invisiblity effect
+execute as @a[scores = {effect.invisibility = 0..}] at @s run function tag:effects/invisibility
 
 
 
