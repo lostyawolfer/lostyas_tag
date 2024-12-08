@@ -43,6 +43,8 @@ execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:
 execute as @a[scores = {effect.freeze = 0..}] at @s run function tag:effects/freeze
 execute as @a[scores = {effect.invisibility = 0..}] at @s run function tag:effects/invisibility
 
+function tag:map_specific/lt_playground
+
 
 
 
