@@ -2,7 +2,7 @@
 # ⚠️⚠️⚠️ THE GAME IS IN AN UNPLAYABLE STATE
 as of 6 dec 2024 i ONLY STARTED porting everything and THERE IS (almost) NO CODE AT ALL.
 if you download right now you will just have a WORLD TO BUILD IN.
-### minecraft: 1.21.3 // core: papermc 1.21.3 #80
+### minecraft: 1.21.3 // core: papermc 1.21.3 #80 // java 21
 a minigame about chasing people around. this is an early alpha, most of the stuff requires admin interaction to happen
 
 pls contribute i write code like garbage
@@ -12,7 +12,7 @@ pls contribute i write code like garbage
 after cloning the repo,
 1. launch bindownload.py with python3
 2. open cmd in the folder that you cloned the repo into
-3. `java -Xmx512M -Xms512M -jar server.jar nogui`
+3. `java -Xmx1G -Xms1G -jar server.jar nogui`
 4. open the newly created file "eula.txt" and accept minecraft's EULA
 
 now you're good to go. when you run the command from step 3 again, the server will fully launch, ready to be joined.
@@ -29,5 +29,5 @@ example script i use myself:
 @echo OFF
 title lostya's tag
 echo Starting...
-java -Xmx512M -Xms512M -jar server.jar nogui
+java -Xmx1G -Xms1G -jar server.jar nogui
 ```

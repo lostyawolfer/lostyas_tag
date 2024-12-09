@@ -7,6 +7,7 @@ hash = 'SHA256:ea8ac3f813abee88f3be3a7d3ae3d1b744542cbbd534bc427ed673f26a24e504'
 
 
 [doors_reloaded]
+subdir = 'plugins'
 version = '1.3.1'
 name_format = 'doorsreloaded-{version}.jar'
 url = 'https://mc-plugins.net/_cdn/plugins/bukkit-spigot/DoorsReloaded_1.3.1.jar'
@@ -20,42 +21,49 @@ hash = 'SHA256:be9f9a21a3f3911a101784b0599f9aebd2035062e0673c9ac8e959794c454c70'
 
 
 [gsit]
+subdir = 'plugins'
 version = '1.12.0'
 name_format = 'gsit-{version}.jar'
 url = 'https://github.com/gecolay/GSit/releases/download/1.12.0/GSit-1.12.0.jar'
 hash = 'SHA256:620979a464634557066a7087edcc0fd8d46beed0e8f8d161c6112f5ef295a342'
 
 [luckperms]
+subdir = 'plugins'
 version = '5.4.149'
 name_format = 'luckperms-{version}.jar'
 url = 'https://download.luckperms.net/1566/bukkit/loader/LuckPerms-Bukkit-5.4.149.jar'
 hash = 'SHA256:e327db3ee76fa118c99abb63522197c1322a584cf56f6d770f6df4f34f49d4ce'
 
 [multiversecore]
+subdir = 'plugins'
 version = '4.3.14'
 name_format = 'multiversecore-{version}.jar'
 url = 'https://cdn.modrinth.com/data/3wmN97b8/versions/jbQopAkk/multiverse-core-4.3.14.jar'
 hash = 'SHA256:27630e97c68612f2ccd1af729055528e22887923cce6f6cecc34e45583e5ae11'
 
 #[pistonmotd]
+# subdir = 'plugins'
 #version = ''
 #name_format = 'pistonmotd-{version}.jar'
 #url = ''
 #hash = 'SHA256:'
 
 [tablist]
+subdir = 'plugins'
 version = '5.7.7'
 name_format = 'tablist-{version}.jar'
 url = 'https://github.com/montlikadani/TabList/releases/download/v5.7.7/TabList-bukkit-v5.7.7.jar'
 hash = 'SHA256:86fd01aae58b2ebac7dee9c77078ea5dbb9742c425fe0afd6cdae6121f2a79f9'
 
 [viaversion]
+subdir = 'plugins'
 version = '5.1.1'
 name_format = 'viaversion-{version}.jar'
 url = 'https://cdn.modrinth.com/data/P1OZGk5p/versions/ffAFJrjN/ViaVersion-5.1.1.jar'
 hash = 'SHA256:4e42e83a391d545cf0add4d38e8517479215c7f3b763c68c75fdf80fdf3d2c59'
 
 [worldedit]
+subdir = 'plugins'
 version = '7.3.9'
 name_format = 'worldedit-{version}.jar'
 url = 'https://cdn.modrinth.com/data/1u6JkXh5/versions/Bu1zaaoc/worldedit-bukkit-7.3.9.jar'

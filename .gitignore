@@ -1,3 +1,6 @@
+# Ignore VSCode directory and all its contents
+/.vscode/
+
 *-backup
 wepif.yml
 
