@@ -1,0 +1,40 @@
+name: Release
+on: 
+  push:
+    tags:
+      - "v*"      # only pushes with tags containing 'v....' (versions)
+env:
+  PROJNAME: tag
+  OUTNAME: tag-${{ github.ref_name }}.zip
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        # This is the version of the action for setting up Python, not the Python version.
+        uses: actions/setup-python@v5
+        with:
+          # Semantic version range syntax or exact version of a Python version
+          python-version: '3.x'
+          # Optional - x64 or x86 architecture, defaults to x64
+          architecture: 'x64'
+      - name: Checkout    # get the files of our repo
+        uses: actions/checkout@v4
+      - name: bindownload
+        run: ./bindownload.py -vvvvv ALL
+      - name: Pack        # compress into release.zip in repo folder
+        # alternative is $${{ github.ref_name }}
+        run: zip -9 -x '.git/*' -x '.github/*' -r $OUTNAME .
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        # check for tag presence once again (prob. not needed)
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          name: ${{ env.PROJNAME }}-${{ github.ref_name }}
+          files: |
+            ${{ env.OUTNAME }}
+          body_path: RELEASE_NOTES.md
+          #draft: true    # mark as draft to make reviewable before made available
+          make_latest: true
