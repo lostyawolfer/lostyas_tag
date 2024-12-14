@@ -3,3 +3,4 @@ title @s title [{"translate": "safezone.leave.title", "color": "red"}]
 title @s subtitle [{"translate": "safezone.leave.subtitle", "color": "gold"}]
 
 tag @s remove safezone
+clear @s

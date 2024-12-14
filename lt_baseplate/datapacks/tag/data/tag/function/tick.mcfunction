@@ -5,12 +5,9 @@ gamemode adventure @a[gamemode = survival]
 # variables before functions
 execute store result score playercount_old server if entity @a
 execute store result score taggers_old server if entity @a[tag=tagger]
+scoreboard players add generic server 1
+execute if score generic server matches 20.. run scoreboard players set generic server 0
 
-
-
-# temporary unplayable build of the game thing
-execute as @a unless score @s disable_message matches 1.. run title @s actionbar "this is an unplayable build of the game. \"/trigger disable_message\" to disable this message"
-scoreboard players enable @a disable_message
 
 # effects that negate minecraft stuff
 effect give @a saturation 15 10 true
