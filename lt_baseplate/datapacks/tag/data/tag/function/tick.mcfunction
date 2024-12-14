@@ -40,6 +40,9 @@ execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:
 execute as @a[scores = {effect.freeze = 0..}] at @s run function tag:effects/freeze
 execute as @a[scores = {effect.invisibility = 0..}] at @s run function tag:effects/invisibility
 
+execute as @a[tag = dead] at @s run function tag:misc/death
+execute as @a[scores = {anim.death = ..-1}] at @s run function tag:misc/spawn
+
 function tag:map_specific/lt_playground
 
 
@@ -50,3 +53,13 @@ function tag:map_specific/lt_playground
 # variables after functions
 execute store result score playercount server if entity @a
 execute store result score taggers server if entity @a[tag=tagger]
+
+
+
+
+
+
+# temp
+# execute as @a[scores = {fall = 1..}] at @s run scoreboard players set @s anim.death -11
+# execute as @a[scores = {fall = 1..}] at @s run scoreboard players reset @s fall
+execute as @a at @s if block ~ ~-1 ~ sandstone run tag @s add dead

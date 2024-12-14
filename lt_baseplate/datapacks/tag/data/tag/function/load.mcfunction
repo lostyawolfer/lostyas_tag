@@ -13,6 +13,8 @@ scoreboard objectives add effect.invisibility dummy
 scoreboard objectives add server dummy
 scoreboard players add buildnum server 1
 function tag:misc/update_player_list
+scoreboard objectives add anim.death dummy
+scoreboard objectives add fall minecraft.custom:minecraft.fall_one_cm
 
 
 
