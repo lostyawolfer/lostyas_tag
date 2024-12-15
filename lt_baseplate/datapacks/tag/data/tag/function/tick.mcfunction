@@ -25,13 +25,15 @@ execute if score playercount_old server > playercount server run function tag:mi
 # other functions
 execute as @a at @s run function tag:tagging/decoration
 
-execute as @a[tag=!safezone] at @s if block ~ ~ ~ cave_air run function tag:tagging/go_in_safezone
-execute as @a[tag=!safezone] at @s if block ~ ~1 ~ cave_air run function tag:tagging/go_in_safezone
+execute as @a[tag =!safezone, gamemode =!spectator] at @s if block ~ ~ ~ cave_air run function tag:tagging/go_in_safezone
+execute as @a[tag =!safezone, gamemode =!spectator] at @s if block ~ ~1 ~ cave_air run function tag:tagging/go_in_safezone
 
-execute as @a[tag= safezone] at @s if block ~ ~ ~ cave_air run function tag:tagging/in_safezone
-execute as @a[tag= safezone] at @s if block ~ ~1 ~ cave_air run function tag:tagging/in_safezone
+execute as @a[tag = safezone] at @s if block ~ ~ ~ cave_air run function tag:tagging/in_safezone
+execute as @a[tag = safezone] at @s if block ~ ~1 ~ cave_air run function tag:tagging/in_safezone
 
-execute as @a[tag= safezone] at @s unless block ~ ~ ~ cave_air unless block ~ ~1 ~ cave_air run function tag:tagging/out_of_safezone
+execute as @a[tag = safezone] at @s unless block ~ ~ ~ cave_air unless block ~ ~1 ~ cave_air run function tag:tagging/out_of_safezone
+execute as @a[tag = safezone, gamemode = spectator] at @s run function tag:tagging/out_of_safezone
+
 
 execute as @a at @s unless score @s effect.strong_levitation matches 0.. if block ~ ~-1 ~ beacon run function tag:misc/beacons
 
@@ -40,7 +42,10 @@ execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:
 execute as @a[scores = {effect.freeze = 0..}] at @s run function tag:effects/freeze
 execute as @a[scores = {effect.invisibility = 0..}] at @s run function tag:effects/invisibility
 
-execute as @a[tag = dead] at @s run function tag:misc/death
+execute as @a[tag = dead, gamemode =!creative, tag =!safezone] at @s run function tag:misc/death
+execute as @a[tag = dead, tag = safezone] at @s run tag @s remove dead
+execute as @a[tag = dead, gamemode = creative] at @s run tag @s remove dead
+
 execute as @a[scores = {anim.death = ..-1}] at @s run function tag:misc/spawn
 
 function tag:map_specific/lt_playground
@@ -62,4 +67,4 @@ execute store result score taggers server if entity @a[tag=tagger]
 # temp
 # execute as @a[scores = {fall = 1..}] at @s run scoreboard players set @s anim.death -11
 # execute as @a[scores = {fall = 1..}] at @s run scoreboard players reset @s fall
-execute as @a at @s if block ~ ~-1 ~ sandstone run tag @s add dead
+execute as @a at @s if block ~ ~-1 ~ sandstone unless score @s anim.death matches -200.. run tag @s[gamemode=adventure] add dead
