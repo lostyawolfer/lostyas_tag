@@ -1,5 +1,5 @@
 # temporary variable; used to store if someone wants the "unplayable build" message removed
-scoreboard objectives add disable_message trigger
+# scoreboard objectives add disable_message trigger
 
 
 # effect scoreboards
@@ -15,6 +15,7 @@ scoreboard players add buildnum server 1
 function tag:misc/update_player_list
 scoreboard objectives add anim.death dummy
 scoreboard objectives add fall minecraft.custom:minecraft.fall_one_cm
+scoreboard objectives add screen_effect dummy
 
 
 

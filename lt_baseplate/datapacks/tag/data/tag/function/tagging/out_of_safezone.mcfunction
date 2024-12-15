@@ -4,5 +4,5 @@
 playsound tag:safezone_stop master @s
 stopsound @s master tag:safezone_start
 
+scoreboard players set @s screen_effect 0
 tag @s remove safezone
-clear @s heart_of_the_sea

@@ -4,19 +4,19 @@ execute if score @s anim.death matches 1 run damage @s .1
 execute if score @s anim.death matches 1 run playsound tag:death master @s ~ ~ ~ .75
 execute if score @s anim.death matches 1 run playsound tag:death_main master @s ~ ~ ~ 1
 gamemode spectator @s
-execute if score @s anim.death matches 1 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f0"}]
-execute if score @s anim.death matches 2 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f1"}]
-execute if score @s anim.death matches 3 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f2"}]
-execute if score @s anim.death matches 4 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f3"}]
-execute if score @s anim.death matches 5 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f4"}]
-execute if score @s anim.death matches 6 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f5"}]
-execute if score @s anim.death matches 7 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f6"}]
-execute if score @s anim.death matches 8 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f7"}]
-execute if score @s anim.death matches 9 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f8"}]
-execute if score @s anim.death matches 10 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f9"}]
-execute if score @s anim.death matches 11 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f10"}]
-execute if score @s anim.death matches 12 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f11"}]
-execute if score @s anim.death matches 13 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f12"}]
-execute if score @s anim.death matches 14 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f13"}]
-execute if score @s anim.death matches 15..16 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f14"}]
-execute if score @s anim.death matches 17 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/death_f15"}]
+execute if score @s anim.death matches 1 run scoreboard players set @s screen_effect 200
+execute if score @s anim.death matches 2 run scoreboard players set @s screen_effect 201
+execute if score @s anim.death matches 3 run scoreboard players set @s screen_effect 202
+execute if score @s anim.death matches 4 run scoreboard players set @s screen_effect 203
+execute if score @s anim.death matches 5 run scoreboard players set @s screen_effect 204
+execute if score @s anim.death matches 6 run scoreboard players set @s screen_effect 205
+execute if score @s anim.death matches 7 run scoreboard players set @s screen_effect 206
+execute if score @s anim.death matches 8 run scoreboard players set @s screen_effect 207
+execute if score @s anim.death matches 9 run scoreboard players set @s screen_effect 208
+execute if score @s anim.death matches 10 run scoreboard players set @s screen_effect 209
+execute if score @s anim.death matches 11 run scoreboard players set @s screen_effect 210
+execute if score @s anim.death matches 12 run scoreboard players set @s screen_effect 211
+execute if score @s anim.death matches 13 run scoreboard players set @s screen_effect 212
+execute if score @s anim.death matches 14 run scoreboard players set @s screen_effect 213
+execute if score @s anim.death matches 15..16 run scoreboard players set @s screen_effect 214
+execute if score @s anim.death matches 17 run scoreboard players set @s screen_effect 215

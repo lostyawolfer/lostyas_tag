@@ -1,5 +1,5 @@
-# make everyone in adventure
 gamemode adventure @a[gamemode = survival]
+recipe take @a *
 
 
 # variables before functions
@@ -49,6 +49,7 @@ execute as @a[tag = dead, gamemode = creative] at @s run tag @s remove dead
 execute as @a[scores = {anim.death = ..-1}] at @s run function tag:misc/spawn
 
 function tag:map_specific/lt_playground
+execute as @a run function tag:misc/screens
 
 
 
@@ -67,4 +68,4 @@ execute store result score taggers server if entity @a[tag=tagger]
 # temp
 # execute as @a[scores = {fall = 1..}] at @s run scoreboard players set @s anim.death -11
 # execute as @a[scores = {fall = 1..}] at @s run scoreboard players reset @s fall
-execute as @a at @s if block ~ ~-1 ~ sandstone unless score @s anim.death matches -200.. run tag @s[gamemode=adventure] add dead
+execute as @a at @s if block ~ ~-.1 ~ sandstone unless score @s anim.death matches -200.. run tag @s[gamemode=adventure] add dead

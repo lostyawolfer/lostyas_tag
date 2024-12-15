@@ -12,13 +12,22 @@
       "d.mario",
       "d.pacman",
       "d.gtaV",
-      "d.gmod",
       "d.cs2"
     ]
   },
   "death_main": {
     "sounds": [
       "death_main"
+    ]
+  },
+  "revive": {
+    "sounds": [
+      "revive"
+    ]
+  },
+  "downed_60s": {
+    "sounds": [
+      "downed_60s"
     ]
   },
   "jump": {
