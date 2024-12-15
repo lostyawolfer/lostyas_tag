@@ -9,6 +9,8 @@
 
 execute if entity @s[tag = tagger, tag = special] run tag @s remove special
 
+execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 300
+execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 0
 
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!001tagger] run team join 001tagger
 execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!002special] run team join 002special
