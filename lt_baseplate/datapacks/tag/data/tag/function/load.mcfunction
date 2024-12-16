@@ -58,7 +58,7 @@ team modify 003player seeFriendlyInvisibles true
 
 team add 101tagger_safezone
 team modify 101tagger_safezone color gray
-team modify 103player_safezone prefix {"text": "⭐", "color": "gold"}
+team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
 team modify 101tagger_safezone collisionRule never
 team modify 101tagger_safezone friendlyFire false
 team modify 101tagger_safezone nametagVisibility always

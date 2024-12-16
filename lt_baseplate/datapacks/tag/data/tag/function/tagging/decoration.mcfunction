@@ -9,8 +9,20 @@
 
 execute if entity @s[tag = tagger, tag = special] run tag @s remove special
 
-execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 300
+execute if score game server matches 1 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 300
+execute if score game server matches 2 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 301
+execute if score game server matches 3 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 302
+execute if score game server matches 4 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 303
+execute if score game server matches 5 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 304
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 0
+
+execute if score game server matches 1 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run team modify 001tagger color gold
+execute if score game server matches 2 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run team modify 001tagger color dark_green
+execute if score game server matches 3 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run team modify 001tagger color red
+execute if score game server matches 4 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run team modify 001tagger color yellow
+execute if score game server matches 5 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run team modify 001tagger color gold
+
+
 
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!001tagger] run team join 001tagger
 execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!002special] run team join 002special
