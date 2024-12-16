@@ -20,6 +20,8 @@ scoreboard objectives add screen_effect dummy
 scoreboard objectives add hit_detect.giver minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add hit_detect.taker minecraft.custom:minecraft.damage_taken
 
+scoreboard objectives add logging dummy
+
 
 
 # bossbars
@@ -34,14 +36,14 @@ bossbar set version value 0
 team add 001tagger
 team modify 001tagger color gold
 team modify 001tagger collisionRule never
-team modify 001tagger friendlyFire false
+team modify 001tagger friendlyFire true
 team modify 001tagger nametagVisibility always
 team modify 001tagger seeFriendlyInvisibles true
 
 team add 002special
 team modify 002special color blue
 team modify 002special collisionRule never
-team modify 002special friendlyFire false
+team modify 002special friendlyFire true
 team modify 002special nametagVisibility always
 team modify 002special seeFriendlyInvisibles false
 

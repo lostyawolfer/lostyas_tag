@@ -3,8 +3,8 @@ recipe take @a *
 
 
 # variables before functions
-execute store result score playercount_old server if entity @a
-execute store result score taggers_old server if entity @a[tag=tagger]
+execute store result score playercount server if entity @a
+execute store result score taggers server if entity @a[tag=tagger]
 scoreboard players add generic server 1
 execute if score generic server matches 20.. run scoreboard players set generic server 0
 
@@ -48,7 +48,7 @@ execute as @a[tag = dead, gamemode = creative] at @s run tag @s remove dead
 
 execute as @a[scores = {anim.death = ..-1}] at @s run function tag:misc/spawn
 
-
+execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run tellraw @a[scores = {logging = 1..2}] ["! warn: ", {"selector": "@s"}, " got hit by something unknown"]
 execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run scoreboard players set @s hit_detect.taker 0
 execute as @a[scores = {hit_detect.giver = 1..}] at @s run function tag:tagging/hit_detected
 
@@ -63,8 +63,8 @@ execute as @a run function tag:misc/screens
 
 
 # variables after functions
-execute store result score playercount server if entity @a
-execute store result score taggers server if entity @a[tag=tagger]
+execute store result score playercount_old server if entity @a
+execute store result score taggers_old server if entity @a[tag=tagger]
 
 
 
