@@ -48,6 +48,12 @@ execute as @a[tag = dead, gamemode = creative] at @s run tag @s remove dead
 
 execute as @a[scores = {anim.death = ..-1}] at @s run function tag:misc/spawn
 
+
+execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run scoreboard players set @s hit_detect.taker 0
+execute as @a[scores = {hit_detect.giver = 1..}] at @s run function tag:tagging/hit_detected
+
+
+
 function tag:map_specific/lt_playground
 execute as @a run function tag:misc/screens
 

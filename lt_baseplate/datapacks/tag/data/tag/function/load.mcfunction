@@ -17,6 +17,9 @@ scoreboard objectives add anim.death dummy
 scoreboard objectives add fall minecraft.custom:minecraft.fall_one_cm
 scoreboard objectives add screen_effect dummy
 
+scoreboard objectives add hit_detect.giver minecraft.custom:minecraft.damage_dealt
+scoreboard objectives add hit_detect.taker minecraft.custom:minecraft.damage_taken
+
 
 
 # bossbars
