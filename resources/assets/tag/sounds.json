@@ -26,9 +26,29 @@
       "revive"
     ]
   },
-  "downed_60s": {
+  "downed": {
     "sounds": [
-      "downed_60s"
+      "downed"
+    ]
+  },
+  "downed_even": {
+    "sounds": [
+      "downed_even"
+    ]
+  },
+  "downed_odd": {
+    "sounds": [
+      "downed_odd"
+    ]
+  },
+  "downed_intro": {
+    "sounds": [
+      "downed_intro"
+    ]
+  },
+  "downed_outro": {
+    "sounds": [
+      "downed_outro"
     ]
   },
   "jump": {
