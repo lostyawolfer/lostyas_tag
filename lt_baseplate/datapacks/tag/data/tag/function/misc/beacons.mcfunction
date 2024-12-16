@@ -1,3 +1,5 @@
+tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " used a beacon"]
+
 # tp @s ~ ~0.5 ~
 scoreboard players set @s effect.strong_levitation 1
 

@@ -1,7 +1,8 @@
 execute unless score @s anim.death matches 17.. unless score @s anim.death matches -1 run scoreboard players add @s anim.death 1
 title @s actionbar {"text": "you are a spectator", "color": "red"}
+execute if score @s anim.death matches 1 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " died"]
 execute if score @s anim.death matches 1 run damage @s .01
-execute if score @s anim.death matches 1 run playsound tag:death master @s ~ ~ ~ .75
+execute if score @s anim.death matches 1 run playsound tag:death master @s ~ ~ ~ 1
 execute if score @s anim.death matches 1 run playsound tag:death_main master @s ~ ~ ~ 1
 gamemode spectator @s
 execute if score @s anim.death matches 1 run scoreboard players set @s screen_effect 200
