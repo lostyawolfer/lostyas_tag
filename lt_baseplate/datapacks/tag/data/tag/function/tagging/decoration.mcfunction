@@ -2,12 +2,10 @@
 # a PLAYER is a normal player, nothing special.
 # a TAGGER is a tagged player, aka "IT".
 # a SPECIAL is anything else needed for modified game modes.
-# main use is to represent a frozen player during a game of freeze tag, but is also
+# main use for SPECIAL is to represent a frozen player during a game of freeze tag, but is also
 # planned to be used as a representation of a "0th patient" in a game of infection tag
 
 
-
-execute if entity @s[tag = tagger, tag = special] run tag @s remove special
 
 execute if score game server matches 1 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 300
 execute if score game server matches 2 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 301
@@ -16,12 +14,16 @@ execute if score game server matches 4 if entity @s[tag = tagger, tag =!safezone
 execute if score game server matches 5 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 304
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 0
 
-execute if score game server matches 1 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run team modify 001tagger color gold
-execute if score game server matches 2 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run team modify 001tagger color dark_green
-execute if score game server matches 3 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run team modify 001tagger color red
-execute if score game server matches 4 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run team modify 001tagger color yellow
-execute if score game server matches 5 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run team modify 001tagger color gold
+execute if score game server matches 1 run team modify 001tagger color gold
+execute if score game server matches 2 run team modify 001tagger color dark_green
+execute if score game server matches 3 run team modify 001tagger color red
+execute if score game server matches 4 run team modify 001tagger color yellow
+execute if score game server matches 5 run team modify 001tagger color gold
 
+
+
+
+execute if entity @s[tag = tagger, tag = special] run tag @s remove special
 
 
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!001tagger] run team join 001tagger
@@ -45,8 +47,15 @@ execute if entity @s[              tag = special, tag =!normal_player_decoration
 execute if entity @s[tag =!tagger, tag =!special, tag =!normal_player_decoration, gamemode = spectator, team =!303player_spectator] run team join 303player_spectator
 
 
+
+
+# gamemode specific decor
 execute if entity @s[tag = tagger] unless score @s effect.glowing matches 2.. run scoreboard players set @s effect.glowing 1
 
-# TODO: when adding new gamemodes except vanilla tag,
-#       make it use the "special" role differently by calling
-#       other functions depending on the game mode.
+execute if score game server matches 1 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run tag @s remove special
+execute if score game server matches 2 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run tag @s remove special
+execute if score game server matches 3 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run tag @s remove special
+execute if score game server matches 4 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run tag @s remove special
+
+execute if score game server matches 5 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run scoreboard players add @s effect.freeze 1
+execute if score game server matches 5 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run scoreboard players add @s effect.glowing 1
