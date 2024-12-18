@@ -7,6 +7,9 @@ scoreboard objectives add effect.glowing dummy
 scoreboard objectives add effect.strong_levitation dummy
 scoreboard objectives add effect.freeze dummy
 scoreboard objectives add effect.invisibility dummy
+scoreboard objectives add effect.downed dummy
+scoreboard objectives add effect.downed.seconds dummy
+scoreboard objectives add effect.downed.seconds_even dummy
 
 
 # misc scoreboards

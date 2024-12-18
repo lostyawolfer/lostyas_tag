@@ -38,10 +38,10 @@ execute as @a[tag = safezone, gamemode = spectator] at @s run function tag:taggi
 
 execute as @a at @s unless score @s effect.strong_levitation matches 0.. if block ~ ~-1 ~ beacon run function tag:misc/beacons
 
-execute as @a[scores = {effect.glowing = 0..}] at @s run function tag:effects/glowing
-execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:effects/strong_levitation
-execute as @a[scores = {effect.freeze = 0..}] at @s run function tag:effects/freeze
-execute as @a[scores = {effect.invisibility = 0..}] at @s run function tag:effects/invisibility
+execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
+execute as @a[scores = {effect.strong_levitation = 0..}, gamemode = adventure] at @s run function tag:effects/strong_levitation
+execute as @a[scores = {effect.freeze = 0..}, gamemode = adventure] at @s run function tag:effects/freeze
+execute as @a[scores = {effect.invisibility = 0..}, gamemode = adventure] at @s run function tag:effects/invisibility
 
 execute as @a[tag = dead, gamemode =!creative, tag =!safezone] at @s run function tag:misc/death
 execute as @a[tag = dead, tag = safezone] at @s run tag @s remove dead
