@@ -11,14 +11,14 @@ execute if score game server matches 1 if entity @s[tag = tagger, tag =!safezone
 execute if score game server matches 2 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 301
 execute if score game server matches 3 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 302
 execute if score game server matches 4 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 303
-execute if score game server matches 5 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 304
+execute if score game server matches 5..6 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 304
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 0
 
 execute if score game server matches 1 run team modify 001tagger color gold
 execute if score game server matches 2 run team modify 001tagger color dark_green
 execute if score game server matches 3 run team modify 001tagger color red
 execute if score game server matches 4 run team modify 001tagger color yellow
-execute if score game server matches 5 run team modify 001tagger color gold
+execute if score game server matches 5..6 run team modify 001tagger color gold
 
 
 
@@ -51,6 +51,8 @@ execute if entity @s[tag =!tagger, tag =!special, tag =!normal_player_decoration
 
 # gamemode specific decor
 execute if entity @s[tag = tagger] unless score @s effect.glowing matches 2.. run scoreboard players set @s effect.glowing 1
+execute if entity @s[tag = tagger] unless score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/play
+execute if entity @s[tag =!tagger] if score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/stop
 
 execute if score game server matches 1 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run tag @s remove special
 execute if score game server matches 2 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run tag @s remove special
