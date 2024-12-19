@@ -3,16 +3,16 @@ tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@a[tag = hit_detect
 tag @a[tag = hit_detect.taker] add special
 scoreboard players set @a[tag = hit_detect.taker] effect.downed 1199
 
-tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "gold"}, " ", {"translate": "chat.hit.freeze"}, " ", {"selector": "@a[tag = hit_detect.taker]", "color": "blue"}]
+tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "gold"}, {"translate": "chat.hit.freeze"}, {"selector": "@a[tag = hit_detect.taker]", "color": "blue"}]
 
 title @a[tag = hit_detect.giver] times 0 20 3
 title @a[tag = hit_detect.taker] times 0 60 200
 
-# title @a[tag = hit_detect.giver] title [{"selector": "@a[tag = hit_detect.taker]", "color": "#FFFF00", "bold": true}, " ", {"translate": "title.hit.freeze_other", "color":"gold"}]
-# title @a[tag = hit_detect.giver] subtitle [{"translate": "subtitle.hit.freeze_you_1", "color":"dark_green"}, " ", {"translate": "subtitle.hit.you", "color":"green", "bold": true}, " ", {"translate": "subtitle.hit.freeze_you_2", "color":"dark_green"}]
+# title @a[tag = hit_detect.giver] title [{"selector": "@a[tag = hit_detect.taker]", "color": "#FFFF00", "bold": true}, {"translate": "title.hit.freeze_other", "color":"gold"}]
+# title @a[tag = hit_detect.giver] subtitle [{"translate": "subtitle.hit.freeze_you_1", "color":"dark_green"}, {"translate": "subtitle.hit.you", "color":"green", "bold": true}, {"translate": "subtitle.hit.freeze_you_2", "color":"dark_green"}]
 
 title @a[tag = hit_detect.taker] title [{"translate": "title.hit.freeze_you", "color":"red", "bold": true}]
-title @a[tag = hit_detect.taker] subtitle [{"translate": "subtitle.hit.freeze_other_1", "color":"dark_aqua"}, " ", {"selector": "@a[tag = hit_detect.giver]", "color":"aqua", "bold": true}, " ", {"translate": "title.hit.freeze_other_2", "color":"dark_aqua"}]
+title @a[tag = hit_detect.taker] subtitle [{"translate": "subtitle.hit.freeze_other_1", "color":"dark_aqua"}, {"selector": "@a[tag = hit_detect.giver]", "color":"aqua", "bold": true}, {"translate": "title.hit.freeze_other_2", "color":"dark_aqua"}]
 
 execute as @a[tag = hit_detect.taker] at @s run playsound minecraft:entity.snow_golem.death master @s
 execute as @a[tag = hit_detect.taker] at @s run playsound minecraft:entity.player.hurt_freeze master @s

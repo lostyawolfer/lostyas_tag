@@ -1,0 +1,60 @@
+{  
+  "chat.hit.default": " передал ",
+  "subtitle.hit.default_you": "ты",
+  "subtitle.hit.default_you_1": "потому что ",
+  "subtitle.hit.default_other_1": "потому что ",
+  "subtitle.hit.default_you_2": " так сказал",
+  "subtitle.hit.default_other_2": " так сказал",
+  "title.hit.default_you": "Ты ВОДА!",  
+  "title.hit.default_other": " теперь вода!",  
+  
+  "chat.hit.infect": " заразил ",
+  "subtitle.hit.infect_you": "тебя",
+  "subtitle.hit.infect_you_1": "от ",
+  "subtitle.hit.infect_other_1": "от ",
+  "subtitle.hit.infect_you_2": "!",
+  "subtitle.hit.infect_other_2": "!",
+  "title.hit.infect_you": "Ты ЗАРАЖЁН!",  
+  "title.hit.infect_other": " был заражён",
+
+  "chat.hit.murder": " убил ",
+  "subtitle.hit.murder_you": "тебе",
+  "subtitle.hit.murder_you_1": "",
+  "subtitle.hit.murder_other_1": "спасибо, ",
+  "subtitle.hit.murder_you_2": " решил тебя убить без зазрений совести",
+  "subtitle.hit.murder_other_2": "",
+  "title.hit.murder_you": "Ты МЁРТВ!",  
+  "title.hit.murder_other": " был убит!",
+  
+  "chat.hit.crown": " забрал корону у ",
+  "subtitle.hit.crown_you": "ты",
+  "subtitle.hit.crown_you_1": " забрал её у ",
+  "subtitle.hit.crown_other_1": "иди поплачь",
+  "subtitle.hit.crown_you_2": "",
+  "subtitle.hit.crown_other_2": "",
+  "title.hit.crown_you": "Ты забрал КОРОНУ!",  
+  "title.hit.crown_other": " забрал твою КОРОНУ!",
+  
+  "chat.hit.freeze": " заморозил ",
+  "subtitle.hit.freeze_you": "тобой",
+  "subtitle.hit.freeze_you_1": "",
+  "subtitle.hit.freeze_other_1": "",
+  "subtitle.hit.freeze_you_2": "",
+  "subtitle.hit.freeze_other_2": " тебя заморозил",
+  "title.hit.freeze_you": "Ты ЗАМОРОЖЕН!",  
+  "title.hit.freeze_other": " заморожен!",
+
+  "chat.hit.unfreeze": " разморозил ",
+  "subtitle.hit.unfreeze_you": "тебе",
+  "subtitle.hit.unfreeze_you_1": "спасибо ",
+  "subtitle.hit.unfreeze_other_1": "спасибо, ",
+  "subtitle.hit.unfreeze_you_2": "!!",
+  "subtitle.hit.unfreeze_other_2": "",
+  "title.hit.unfreeze_you": "Ты РАЗМОРОЖЕН!",  
+  "title.hit.unfreeze_other": " был разморожен!",
+
+  
+  
+  "title.spectator": "ты зритель",
+  "safezone.notif": "⭐ ты в сейфзоне ⭐"
+}

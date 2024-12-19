@@ -1,0 +1,12 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "item/blaze_rod"
+	},
+	
+	"overrides": [
+		{"predicate": {"custom_model_data":1}, "model": "item/blaze_rod/1"},
+		{"predicate": {"custom_model_data":2}, "model": "item/blaze_rod/2"},
+		{"predicate": {"custom_model_data":3}, "model": "item/blaze_rod/3"}
+	]
+}

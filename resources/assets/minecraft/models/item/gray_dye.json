@@ -1,0 +1,13 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "item/gray_dye"
+	},
+	
+	"overrides": [
+		{"predicate": {"custom_model_data":-3}, "model": "item/gray_dye/-3"},
+		{"predicate": {"custom_model_data":-2}, "model": "item/gray_dye/-2"},
+		{"predicate": {"custom_model_data":-1}, "model": "item/gray_dye/-1"},
+		{"predicate": {"custom_model_data":0}, "model": "item/gray_dye"}
+	]
+}

@@ -1,0 +1,60 @@
+{  
+  "chat.hit.default": " tagged ",
+  "subtitle.hit.default_you": "you",
+  "subtitle.hit.default_you_1": "because ",
+  "subtitle.hit.default_other_1": "because ",
+  "subtitle.hit.default_you_2": " said so",
+  "subtitle.hit.default_other_2": " said so",
+  "title.hit.default_you": "You're IT!",  
+  "title.hit.default_other": " is IT!",  
+  
+  "chat.hit.infect": " infected ",
+  "subtitle.hit.infect_you": "you",
+  "subtitle.hit.infect_you_1": "by ",
+  "subtitle.hit.infect_other_1": "by ",
+  "subtitle.hit.infect_you_2": "!",
+  "subtitle.hit.infect_other_2": "!",
+  "title.hit.infect_you": "You're INFECTED!",  
+  "title.hit.infect_other": " was infected",
+
+  "chat.hit.murder": " killed ",
+  "subtitle.hit.murder_you": "your",
+  "subtitle.hit.murder_you_1": "",
+  "subtitle.hit.murder_other_1": "good job, this is ",
+  "subtitle.hit.murder_you_2": " decided to brutally murder you",
+  "subtitle.hit.murder_other_2": " fault",
+  "title.hit.murder_you": "You're DEAD!",  
+  "title.hit.murder_other": " was killed!",
+  
+  "chat.hit.crown": " took the crown of ",
+  "subtitle.hit.crown_you": "you",
+  "subtitle.hit.crown_you_1": " took it from ",
+  "subtitle.hit.crown_other_1": "cry about it",
+  "subtitle.hit.crown_you_2": "",
+  "subtitle.hit.crown_other_2": "",
+  "title.hit.crown_you": "You got the CROWN!",  
+  "title.hit.crown_other": " took your CROWN!",
+
+  "chat.hit.freeze": " froze ",
+  "subtitle.hit.freeze_you": "you",
+  "subtitle.hit.freeze_you_1": "by ",
+  "subtitle.hit.freeze_other_1": "by ",
+  "subtitle.hit.freeze_you_2": "",
+  "subtitle.hit.freeze_other_2": "",
+  "title.hit.freeze_you": "You're FROZEN!",  
+  "title.hit.freeze_other": " was frozen!",
+
+  "chat.hit.unfreeze": " unfroze ",
+  "subtitle.hit.unfreeze_you": "you",
+  "subtitle.hit.unfreeze_you_1": "thank ",
+  "subtitle.hit.unfreeze_other_1": "thank you, ",
+  "subtitle.hit.unfreeze_you_2": "!!",
+  "subtitle.hit.unfreeze_other_2": "",
+  "title.hit.unfreeze_you": "You're UNFROZEN!",  
+  "title.hit.unfreeze_other": " was unfrozen!",
+
+  
+  
+  "title.spectator": "you are a spectator",
+  "safezone.notif": "⭐ you're in a safezone ⭐"
+}

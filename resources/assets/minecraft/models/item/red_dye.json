@@ -1,0 +1,13 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "item/red_dye"
+	},
+	
+	"overrides": [
+		{"predicate": {"custom_model_data":0}, "model": "item/red_dye"},
+		{"predicate": {"custom_model_data":1}, "model": "item/red_dye/1"},
+		{"predicate": {"custom_model_data":2}, "model": "item/red_dye/2"},
+		{"predicate": {"custom_model_data":3}, "model": "item/red_dye/3"}
+	]
+}
