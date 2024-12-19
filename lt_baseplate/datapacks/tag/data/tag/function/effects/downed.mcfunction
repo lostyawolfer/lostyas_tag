@@ -33,6 +33,7 @@ execute if score @s effect.downed.count_up matches 17.. run scoreboard players s
 execute if score @s effect.downed matches 0 run tag @s add dead
 execute if score @s effect.downed matches 0 run stopsound @s * tag:downed
 execute if score @s effect.downed matches 0 run effect clear @s
+execute if score @s effect.downed matches 0 run tellraw @a [{"text":"☠ ", "color":"gold"}, {"selector":"@s", "color":"red"}, " died"]
 execute if score @s effect.downed matches 0 run scoreboard players set @s anim.death 100
 execute if score @s effect.downed matches 0 run scoreboard players reset @s effect.downed.count_up
 execute if score @s effect.downed matches 0 run scoreboard players reset @s effect.downed.seconds
