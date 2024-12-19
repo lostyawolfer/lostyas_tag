@@ -1,6 +1,17 @@
 # temporary variable; used to store if someone wants the "unplayable build" message removed
 # scoreboard objectives add disable_message trigger
 
+# constants
+scoreboard objectives add consts dummy
+scoreboard players set 0 consts 0
+scoreboard players set 1 consts 1
+scoreboard players set 2 consts 2
+scoreboard players set 5 consts 5
+scoreboard players set 10 consts 10
+scoreboard players set 20 consts 20
+scoreboard players set 60 consts 60
+scoreboard players set 100 consts 100
+
 
 # effect scoreboards
 scoreboard objectives add effect.glowing dummy
@@ -8,8 +19,9 @@ scoreboard objectives add effect.strong_levitation dummy
 scoreboard objectives add effect.freeze dummy
 scoreboard objectives add effect.invisibility dummy
 scoreboard objectives add effect.downed dummy
+scoreboard objectives add effect.downed.count_up dummy
 scoreboard objectives add effect.downed.seconds dummy
-scoreboard objectives add effect.downed.seconds_even dummy
+# scoreboard objectives add effect.downed.seconds_even dummy
 
 
 # misc scoreboards

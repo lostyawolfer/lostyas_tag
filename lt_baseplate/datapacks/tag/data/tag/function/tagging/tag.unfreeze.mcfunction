@@ -1,6 +1,7 @@
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@a[tag = hit_detect.giver]"}, " unfroze ", {"selector": "@a[tag = hit_detect.taker]"}]
 # tag @a[tag = hit_detect.giver] remove tagger
 tag @a[tag = hit_detect.taker] remove special
+scoreboard players set @a[tag = hit_detect.taker] effect.downed -1
 
 
 tellraw @a [{"text": "", "color": "aqua"}, {"text": "☀ ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "aqua"}, " ", {"translate": "chat.hit.unfreeze"}, " ", {"selector": "@a[tag = hit_detect.taker]", "color": "aqua"}]

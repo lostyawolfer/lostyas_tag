@@ -42,6 +42,7 @@ execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run f
 execute as @a[scores = {effect.strong_levitation = 0..}, gamemode = adventure] at @s run function tag:effects/strong_levitation
 execute as @a[scores = {effect.freeze = 0..}, gamemode = adventure] at @s run function tag:effects/freeze
 execute as @a[scores = {effect.invisibility = 0..}, gamemode = adventure] at @s run function tag:effects/invisibility
+execute as @a[scores = {effect.downed = -1..}, gamemode = adventure] at @s run function tag:effects/downed
 
 execute as @a[tag = dead, gamemode =!creative, tag =!safezone] at @s run function tag:misc/death
 execute as @a[tag = dead, tag = safezone] at @s run tag @s remove dead

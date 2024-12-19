@@ -25,8 +25,6 @@ execute if score game server matches 4 if entity @a[tag = hit_detect.giver, tag 
 execute if score game server matches 5 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!special, tag =!safezone] run function tag:tagging/tag.freeze
 execute if score game server matches 5 if entity @a[tag = hit_detect.giver, tag =!tagger, tag =!special, tag =!safezone] if entity @a[tag = hit_detect.taker, tag = special, tag =!safezone] run function tag:tagging/tag.unfreeze
 
-# TODO: decorate all of this stuff
-
 
 tag @a[tag = hit_detect.giver] remove hit_detect.giver
 tag @a[tag = hit_detect.taker] remove hit_detect.taker
