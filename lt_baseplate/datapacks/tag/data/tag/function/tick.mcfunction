@@ -36,7 +36,7 @@ execute as @a[tag = safezone] at @s unless block ~ ~ ~ cave_air unless block ~ ~
 execute as @a[tag = safezone, gamemode = spectator] at @s run function tag:tagging/out_of_safezone
 
 
-execute as @a at @s unless score @s effect.strong_levitation matches 0.. if block ~ ~-1 ~ beacon run function tag:misc/beacons
+execute as @a[gamemode = !spectator] at @s unless score @s effect.strong_levitation matches 0.. if block ~ ~-1 ~ beacon run function tag:misc/beacons
 
 execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
 execute as @a[scores = {effect.strong_levitation = 0..}, gamemode = adventure] at @s run function tag:effects/strong_levitation
