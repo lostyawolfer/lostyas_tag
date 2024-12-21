@@ -4,7 +4,7 @@
 
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " left the safezone"]
 
-playsound tag:safezone_stop master @s
+playsound tag:safezone_stop master @s ~ ~ ~ .25
 stopsound @s master tag:safezone_start
 
 scoreboard players set @s screen_effect 0

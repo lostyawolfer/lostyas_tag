@@ -1,1 +1,3 @@
-tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " called the spawntp function"]
+tellraw @a[scores = {logging = 0}] ["! debug: ", {"selector": "@s"}, " called the spawntp function"]
+
+spreadplayers -7 -65 2 10 under 48 false @s

@@ -4,5 +4,5 @@
 
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " entered a safezone"]
 
-playsound tag:safezone_start master @s
+playsound tag:safezone_start master @s ~ ~ ~ .25
 tag @s add safezone

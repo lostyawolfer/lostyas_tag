@@ -3,14 +3,17 @@
 
 # constants
 scoreboard objectives add consts dummy
+scoreboard players set -1 consts -1
 scoreboard players set 0 consts 0
 scoreboard players set 1 consts 1
 scoreboard players set 2 consts 2
 scoreboard players set 5 consts 5
+scoreboard players set 8 consts 8
 scoreboard players set 10 consts 10
 scoreboard players set 20 consts 20
 scoreboard players set 60 consts 60
 scoreboard players set 100 consts 100
+scoreboard players set 1000 consts 1000
 
 
 # effect scoreboards
@@ -34,6 +37,25 @@ scoreboard objectives add screen_effect dummy
 
 scoreboard objectives add hit_detect.giver minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add hit_detect.taker minecraft.custom:minecraft.damage_taken
+
+scoreboard objectives add stat.speed dummy
+scoreboard objectives add stat.speed.calculate_new_x dummy
+scoreboard objectives add stat.speed.calculate_new_y dummy
+scoreboard objectives add stat.speed.calculate_new_z dummy
+scoreboard objectives add stat.speed.calculate_old_x dummy
+scoreboard objectives add stat.speed.calculate_old_y dummy
+scoreboard objectives add stat.speed.calculate_old_z dummy
+scoreboard objectives add stat.speed.calculate_difference_x dummy
+scoreboard objectives add stat.speed.calculate_difference_y dummy
+scoreboard objectives add stat.speed.calculate_difference_z dummy
+
+scoreboard objectives add jump minecraft.custom:minecraft.jump
+scoreboard objectives add jump.bhop dummy
+scoreboard objectives add jump.bhop2 dummy
+scoreboard objectives add jump.timer dummy
+
+scoreboard objectives add is_sneaking minecraft.custom:minecraft.sneak_time
+
 
 scoreboard objectives add logging dummy
 

@@ -1,6 +1,7 @@
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@a[tag = hit_detect.giver]"}, " killed ", {"selector": "@a[tag = hit_detect.taker]"}]
 # tag @a[tag = hit_detect.giver] remove tagger
 tag @a[tag = hit_detect.taker] add dead
+tag @a[tag = hit_detect.taker] add special
 
 
 tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "gold"}, {"translate": "chat.hit.murder"}, {"selector": "@a[tag = hit_detect.taker]", "color": "dark_gray"}]

@@ -1,6 +1,8 @@
 gamemode adventure @a[gamemode = survival]
 recipe take @a *
 
+scoreboard players set @a is_sneaking 0
+
 
 # variables before functions
 execute store result score playercount server if entity @a
@@ -36,7 +38,8 @@ execute as @a[tag = safezone] at @s unless block ~ ~ ~ cave_air unless block ~ ~
 execute as @a[tag = safezone, gamemode = spectator] at @s run function tag:tagging/out_of_safezone
 
 
-execute as @a[gamemode = !spectator] at @s unless score @s effect.strong_levitation matches 0.. if block ~ ~-1 ~ beacon run function tag:misc/beacons
+execute as @a[gamemode = !spectator] at @s unless score @s effect.strong_levitation matches 10.. if block ~ ~-1 ~ beacon run function tag:misc/beacons
+
 
 execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
 execute as @a[scores = {effect.strong_levitation = 0..}, gamemode = adventure] at @s run function tag:effects/strong_levitation
@@ -48,11 +51,15 @@ execute as @a[tag = dead, gamemode =!creative, tag =!safezone] at @s run functio
 execute as @a[tag = dead, tag = safezone] at @s run tag @s remove dead
 execute as @a[tag = dead, gamemode = creative] at @s run tag @s remove dead
 
-execute as @a[scores = {anim.death = ..-1}] at @s run function tag:misc/spawn
+execute as @a[scores = {anim.death = ..-2}] at @s run function tag:misc/spawn
 
-execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run tellraw @a[scores = {logging = 1..2}] ["! warn: ", {"selector": "@s"}, " got hit by something unknown"]
+execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run tellraw @a[scores = {logging = 1..2}] ["! warn: ", {"selector": "@s"}, " got hit by environment or an unknown player"]
 execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run scoreboard players set @s hit_detect.taker 0
 execute as @a[scores = {hit_detect.giver = 1..}] at @s run function tag:tagging/hit_detected
+
+execute as @a at @s run function tag:misc/stats
+execute as @a at @s run function tag:misc/bhop
+execute as @a at @s run function tag:misc/stopmusic
 
 
 

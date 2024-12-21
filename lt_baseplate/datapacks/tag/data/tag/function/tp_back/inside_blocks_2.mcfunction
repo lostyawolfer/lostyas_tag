@@ -1,0 +1,1 @@
+damage @s 1 sweet_berry_bush by @s

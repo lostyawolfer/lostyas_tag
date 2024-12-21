@@ -1,3 +1,4 @@
+execute as @a[scores = {logging = 0}] run title @s actionbar ["! debug: ", {"selector": "@s"}, " has ", {"score": {"name": "@s", "objective": "screen_effect"}}, " screen effect"]
 execute if score @s screen_effect matches 0 run clear @s *[minecraft:custom_data={game:0}]
 
 # safezone

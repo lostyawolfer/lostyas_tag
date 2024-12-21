@@ -56,8 +56,8 @@ execute if entity @s[tag =!tagger] if score @s nbs_tagyoureit_t matches -1.. run
 
 execute if score game server matches 1 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run tag @s remove special
 execute if score game server matches 2 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run tag @s remove special
-execute if score game server matches 3 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run tag @s remove special
 execute if score game server matches 4 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run tag @s remove special
 
+execute if score game server matches 3 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run tag @s add dead
 execute if score game server matches 5 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run scoreboard players add @s effect.freeze 1
 execute if score game server matches 5..6 if entity @s[tag = special, tag =!safezone, gamemode = adventure] run scoreboard players set @s effect.glowing 1

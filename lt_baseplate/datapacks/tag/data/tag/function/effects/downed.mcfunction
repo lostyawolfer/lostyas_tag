@@ -1,3 +1,5 @@
+#tellraw @a[scores = {logging = 0}] ["! debug: ", {"selector": "@s"}, " called downed funciton"]
+
 scoreboard players operation @s effect.downed.seconds = @s effect.downed
 scoreboard players operation @s effect.downed.seconds /= 20 consts
 scoreboard players operation @s effect.downed.seconds += 1 consts

@@ -1,15 +1,18 @@
-execute if entity @a[tag = hit_detect.giver] run tellraw @a[scores = {logging = 1..2}] ["! warn: ", {"selector": "@s"}, " hit someone, but ", {"selector": "@a[tag = hit_detect.giver]"}, " was hitting someone else on the same tick, could not process hit"]
+execute if entity @a[tag = hit_detect.giver] run tellraw @a[scores = {logging = 1..4}] ["! critical: ", {"selector": "@s"}, " hit someone, but ", {"selector": "@a[tag = hit_detect.giver]"}, " was hitting someone else on the same tick, could not process hit"]
 execute if entity @a[tag = hit_detect.giver] run return 1
 tag @s add hit_detect.giver
 
-execute if entity @a[tag = hit_detect.taker] run tellraw @a[scores = {logging = 1..2}] ["! warn: ", {"selector": "@s"}, " hit someone, but ", {"selector": "@a[tag = hit_detect.giver]"}, " was hitting someone else on the same tick, could not process hit"]
+execute if entity @a[tag = hit_detect.taker] run tellraw @a[scores = {logging = 1..4}] ["! critical: ", {"selector": "@s"}, " hit someone, but ", {"selector": "@a[tag = hit_detect.giver]"}, " was hitting someone else on the same tick, could not process hit"]
 execute if entity @a[tag = hit_detect.taker] run return 2
 tag @a[scores = {hit_detect.taker=1..}] add hit_detect.taker
+
+execute as @a[tag = hit_detect.giver, tag = hit_detect.taker] run tellraw @a[scores = {logging = 1..3}] ["! error: ", {"selector": "@s"}, " hit someone, but both players are the same"]
+execute as @a[tag = hit_detect.giver, tag = hit_detect.taker] run tag @s remove hit_detect.taker
 
 scoreboard players set @a[tag = hit_detect.giver] hit_detect.giver 0
 scoreboard players set @a[tag = hit_detect.taker] hit_detect.taker 0
 
-execute unless entity @a[tag = hit_detect.taker] run tellraw @a[scores = {logging = 1..3}] ["! error: ", {"selector": "@a[tag = hit_detect.giver]"}, " hit someone, but no hit player found"]
+execute unless entity @a[tag = hit_detect.taker] run tellraw @a[scores = {logging = 1..4}] ["! critical: ", {"selector": "@a[tag = hit_detect.giver]"}, " hit someone, but no damage taker found"]
 execute unless entity @a[tag = hit_detect.taker] run tag @a remove hit_detect.giver
 execute unless entity @a[tag = hit_detect.taker] run tag @a remove hit_detect.taker
 execute unless entity @a[tag = hit_detect.taker] run return 404
