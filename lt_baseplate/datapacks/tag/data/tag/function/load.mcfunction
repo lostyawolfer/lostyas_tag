@@ -49,12 +49,16 @@ scoreboard objectives add stat.speed.calculate_difference_x dummy
 scoreboard objectives add stat.speed.calculate_difference_y dummy
 scoreboard objectives add stat.speed.calculate_difference_z dummy
 
+scoreboard objectives add stat.vertical_speed dummy
+
 scoreboard objectives add jump minecraft.custom:minecraft.jump
 scoreboard objectives add jump.bhop dummy
 scoreboard objectives add jump.bhop2 dummy
 scoreboard objectives add jump.timer dummy
 
 scoreboard objectives add is_sneaking minecraft.custom:minecraft.sneak_time
+
+scoreboard objectives add anticheat dummy
 
 
 scoreboard objectives add logging dummy

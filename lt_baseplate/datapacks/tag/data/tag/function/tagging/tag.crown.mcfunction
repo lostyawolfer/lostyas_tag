@@ -16,3 +16,8 @@ title @a[tag = hit_detect.taker] subtitle [{"translate": "subtitle.hit.crown_oth
 
 execute as @a[tag = hit_detect.taker] at @s run playsound minecraft:block.respawn_anchor.deplete master @s
 execute as @a[tag = hit_detect.giver] at @s run playsound minecraft:entity.player.levelup master @s
+
+
+
+
+
