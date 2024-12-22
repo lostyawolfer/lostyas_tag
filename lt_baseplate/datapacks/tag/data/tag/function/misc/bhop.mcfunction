@@ -19,21 +19,21 @@ execute if score @s is_sneaking matches 0 if score @s jump.bhop matches 14 run a
 execute if score @s is_sneaking matches 0 if score @s jump.bhop matches 15 run attribute @s movement_speed base set .5
 execute if score @s is_sneaking matches 0 if score @s jump.bhop matches 16.. run attribute @s movement_speed base set .525
 
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 2 run attribute @s movement_speed base set .7
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 3 run attribute @s movement_speed base set .8
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 4 run attribute @s movement_speed base set .9
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 5 run attribute @s movement_speed base set 1.0
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 6 run attribute @s movement_speed base set 1.1
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 7 run attribute @s movement_speed base set 1.2
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 8 run attribute @s movement_speed base set 1.3
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 9 run attribute @s movement_speed base set 1.4
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 10 run attribute @s movement_speed base set 1.5
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 11 run attribute @s movement_speed base set 1.6
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 12 run attribute @s movement_speed base set 1.7
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 13 run attribute @s movement_speed base set 1.8
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 14 run attribute @s movement_speed base set 1.9
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 15 run attribute @s movement_speed base set 2.0
-execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 16.. run attribute @s movement_speed base set 2.1
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 2 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .35
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 3 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .4
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 4 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .45
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 5 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .5
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 6 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .55
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 7 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .6
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 8 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .65
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 9 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .7
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 10 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .75
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 11 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .8
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 12 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .85
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 13 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .9
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 14 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set .95
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 15 run attribute @s[nbt = {OnGround: 1b}] movement_speed base set 1.0
+execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 16.. run attribute @s[nbt = {OnGround: 1b}] movement_speed base set 1.05
 
 
 

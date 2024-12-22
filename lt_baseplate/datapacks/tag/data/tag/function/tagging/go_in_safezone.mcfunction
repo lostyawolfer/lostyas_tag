@@ -4,5 +4,7 @@
 
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " entered a safezone"]
 
+
+effect give @s weakness infinite 255 true
 playsound tag:safezone_start master @s ~ ~ ~ .25
 tag @s add safezone

@@ -12,6 +12,7 @@ scoreboard players set @s effect.freeze -1
 
 execute if score @s anim.death matches ..-1 run scoreboard players remove @s anim.death 1
 
+execute if score @s anim.death matches -2 run stopsound @s
 execute if score @s anim.death matches -2 run playsound tag:revive master @s
 execute if score @s anim.death matches -2 run scoreboard players set @s screen_effect 250
 execute if score @s anim.death matches -3 run scoreboard players set @s screen_effect 251
