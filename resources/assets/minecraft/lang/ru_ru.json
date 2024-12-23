@@ -37,6 +37,20 @@
   "container.crafting": "",
   
   
+  "menu.game": "меню",
+  "menu.quit": "§4закрыть",
+  "menu.returnToMenu": "§4← выйти",
+  "menu.disconnect": "§4← выйти",
+  "menu.returnToGame": "§3продолжить →",
+  "menu.respawning": "возрождение",
+  "menu.sendFeedback": "отзыв о майне",
+  "menu.reportBugs": "нашёл баг?",
+  "gui.advancements": "ачивки",
+  "gui.stats": "статистика",
+  "menu.options": "настройки",
+  "menu.playerReporting": "жалобы",
+  "menu.paused": "пауза",
+  
   "gui.done": "§3ок",
   "gui.cancel": "§4отмена",
   "gui.back": "назад",

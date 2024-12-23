@@ -24,6 +24,12 @@ execute if score playercount_old server > playercount server run function tag:mi
 
 
 # other functions
+scoreboard players add glowing server 1
+execute if score glowing server matches 4.. run scoreboard players set glowing server 0
+
+execute if score glowing server matches 0..1 run team modify 013player_glow color aqua
+execute if score glowing server matches 2..3 run team modify 013player_glow color white
+
 execute as @a at @s run function tag:tagging/decoration
 
 execute as @a[tag =!safezone, gamemode =!spectator] at @s if block ~ ~ ~ cave_air run function tag:tagging/go_in_safezone
@@ -60,14 +66,15 @@ execute as @a at @s run function tag:misc/bhop
 execute as @a at @s run function tag:misc/stopmusic
 
 
-
 function tag:map_specific/lt_playground
 execute as @a run function tag:misc/screens
 execute as @a at @s run function tag:misc/anticheat
 
+item replace entity @a[gamemode = adventure] player.cursor with air
+execute as @a run attribute @s attack_speed base set 1000000
+effect give @a haste infinite 0 true
 
-
-
+scoreboard players set @a is_sneaking 0
 
 
 # variables after functions
@@ -82,8 +89,6 @@ execute store result score taggers_old server if entity @a[tag=tagger]
 # temp
 # execute as @a[scores = {fall = 1..}] at @s run scoreboard players set @s anim.death -11
 # execute as @a[scores = {fall = 1..}] at @s run scoreboard players reset @s fall
-execute as @a at @s if block ~ ~-.1 ~ sandstone unless score @s anim.death matches -200.. run tag @s[gamemode=adventure] add dead
+# execute as @a at @s if block ~ ~-.1 ~ sandstone unless score @s anim.death matches -200.. run tag @s[gamemode=adventure] add dead
 
-item replace entity @a[gamemode = adventure] container.2 with minecraft:ender_pearl[minecraft:use_cooldown={seconds:15, cooldown_group: "ender_pearl"}, minecraft:use_remainder={id: "ender_pearl", components: {use_cooldown: {seconds:15, cooldown_group: "ender_pearl"}}}]
-
-scoreboard players set @a is_sneaking 0
+# item replace entity @a[gamemode = adventure] container.2 with minecraft:ender_pearl[minecraft:use_cooldown={seconds:15, cooldown_group: "ender_pearl"}, minecraft:use_remainder={id: "heart_of_the_sea"}]

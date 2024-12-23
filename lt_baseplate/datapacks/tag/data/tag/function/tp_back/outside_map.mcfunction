@@ -18,5 +18,5 @@ execute as @s[scores={tp.id=14}] at @e[tag=tp, type=armor_stand, scores={tp.id=1
 execute as @s[scores={tp.id=15}] at @e[tag=tp, type=armor_stand, scores={tp.id=15}] run tp @s ~ ~-255 ~
 execute as @s[scores={tp.id=16}] at @e[tag=tp, type=armor_stand, scores={tp.id=16}] run tp @s ~ ~-255 ~
 
-particle block sandstone ~ ~.2 ~ .2 .2 .2 0 20 normal @s
-particle block sandstone ~ ~1 ~ .2 .4 .2 0 40 normal @a[distance=0.01..]
+particle block{block_state: "sandstone"} ~ ~.2 ~ .2 .2 .2 0 20 normal @s
+particle block{block_state: "sandstone"} ~ ~1 ~ .2 .4 .2 0 40 normal @a[distance=0.01..]

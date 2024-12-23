@@ -51,6 +51,15 @@ scoreboard objectives add stat.speed.calculate_difference_z dummy
 
 scoreboard objectives add stat.vertical_speed dummy
 
+scoreboard objectives add p.cd.s dummy
+scoreboard objectives add p.cd.ms dummy
+
+scoreboard objectives add ab.cd.s dummy
+scoreboard objectives add ab.cd.ms dummy
+scoreboard objectives add ab.use.s dummy
+scoreboard objectives add ab.use.ms dummy
+scoreboard objectives add ab.use.trigger minecraft.used:minecraft.carrot_on_a_stick
+
 scoreboard objectives add jump minecraft.custom:minecraft.jump
 scoreboard objectives add jump.bhop dummy
 scoreboard objectives add jump.bhop2 dummy
@@ -94,6 +103,14 @@ team modify 003player collisionRule never
 team modify 003player friendlyFire true
 team modify 003player nametagVisibility hideForOtherTeams
 team modify 003player seeFriendlyInvisibles true
+
+team add 013player_glow
+team modify 013player_glow color aqua
+team modify 013player_glow collisionRule never
+team modify 013player_glow friendlyFire true
+team modify 013player_glow nametagVisibility hideForOtherTeams
+team modify 013player_glow seeFriendlyInvisibles true
+
 
 
 
