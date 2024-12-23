@@ -17,19 +17,51 @@ execute if score game server matches 6 if entity @s[tag = tagger, tag =!safezone
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 0
 
 execute if score game server matches 1 run team modify 001tagger color gold
+execute if score game server matches 1 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 1 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 1 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
+
 execute if score game server matches 2 run team modify 001tagger color dark_green
+execute if score game server matches 2 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "dark_green"}
+execute if score game server matches 2 run team modify 201tagger_creative prefix {"text": "⭐", "color": "dark_green"}
+execute if score game server matches 2 run team modify 301tagger_spectator prefix {"text": "☆", "color": "dark_green"}
+
 execute if score game server matches 3 run team modify 001tagger color red
+execute if score game server matches 3 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "red"}
+execute if score game server matches 3 run team modify 201tagger_creative prefix {"text": "⭐", "color": "red"}
+execute if score game server matches 3 run team modify 301tagger_spectator prefix {"text": "☆", "color": "red"}
+
 execute if score game server matches 4 run team modify 001tagger color yellow
+execute if score game server matches 4 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "yellow"}
+execute if score game server matches 4 run team modify 201tagger_creative prefix {"text": "⭐", "color": "yellow"}
+execute if score game server matches 4 run team modify 301tagger_spectator prefix {"text": "☆", "color": "yellow"}
+
 execute if score game server matches 5 run team modify 001tagger color gold
+execute if score game server matches 5 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 5 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 5 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
+
 execute if score game server matches 6 run team modify 001tagger color gold
+execute if score game server matches 6 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 6 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 6 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
 
-execute if score game server matches 1 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=1, custom_data={game: 1}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}']
-execute if score game server matches 2 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=2, custom_data={game: 1}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}']
-execute if score game server matches 3 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=3, custom_data={game: 1}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}']
-execute if score game server matches 4 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=4, custom_data={game: 1}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}']
-execute if score game server matches 5 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=5, custom_data={game: 1}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}']
-execute if score game server matches 6 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=6, custom_data={game: 1}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}']
 
+
+
+
+
+
+execute unless score game server matches 4 if entity @s[tag = tagger, tag = safezone, gamemode = adventure] run item replace entity @s container.0 with stick[custom_data={game: 3}, custom_name='{"text": "Ты вода!", "color": "gray", "bold": true, "italic": false}']
+execute if score game server matches 1 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=1, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}', enchantments={levels:{knockback: 2}, show_in_tooltip: true}, enchantment_glint_override=false]
+execute if score game server matches 2 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=2, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}', enchantments={levels:{knockback: 2}, show_in_tooltip: true}, enchantment_glint_override=false]
+execute if score game server matches 3 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=3, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}', enchantments={levels:{knockback: 2}, show_in_tooltip: true}, enchantment_glint_override=false]
+execute if score game server matches 4 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=4, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FFFF00", "bold": true, "italic": false}']
+execute if score game server matches 5 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=5, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}', enchantments={levels:{knockback: 2}, show_in_tooltip: true}, enchantment_glint_override=false]
+execute if score game server matches 6 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=6, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}', enchantments={levels:{knockback: 2}, show_in_tooltip: true}, enchantment_glint_override=false]
+execute unless entity @s[tag = tagger] run clear @s *[custom_data={game: 2}]
+execute unless score game server matches 4 if entity @s[tag = tagger, tag = safezone] run clear @s *[custom_data={game: 2}]
+execute unless score game server matches 4 if entity @s[tag = tagger, tag =!safezone] run clear @s *[custom_data={game: 3}]
 
 
 execute if entity @s[tag = tagger, tag = special] run tag @s remove special
@@ -79,8 +111,11 @@ execute if score game server matches 5 if entity @s[tag = tagger] if score @s ef
 execute if score game server matches 6 if entity @s[tag = tagger] if score @s effect.invisibility matches 1.. unless score @s effect.glowing matches 1.. run scoreboard players set @s screen_effect 409
 
 
-execute if entity @s[tag = tagger] unless score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/play
+execute if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] unless score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/play
+execute if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run tag @s add nbs_tagyoureit
 execute if entity @s[tag =!tagger] if score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/stop
+execute if entity @s[gamemode =!adventure] if score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/stop
+execute if entity @s[tag = tagger, tag = safezone] run tag @s remove nbs_tagyoureit
 
 
 

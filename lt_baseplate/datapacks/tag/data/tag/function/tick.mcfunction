@@ -75,7 +75,7 @@ execute as @a run attribute @s attack_speed base set 1000000
 effect give @a haste infinite 0 true
 
 scoreboard players set @a is_sneaking 0
-
+execute as @a at @s if block ~ ~ ~ cauldron unless score @s effect.invisibility matches 1.. run scoreboard players set @s effect.invisibility 1
 
 # variables after functions
 execute store result score playercount_old server if entity @a
