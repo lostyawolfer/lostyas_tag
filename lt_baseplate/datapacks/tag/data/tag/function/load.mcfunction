@@ -51,14 +51,19 @@ scoreboard objectives add stat.speed.calculate_difference_z dummy
 
 scoreboard objectives add stat.vertical_speed dummy
 
+scoreboard objectives add stat.tagger_time dummy
+scoreboard objectives add stat.tagger_time.total dummy
+
 scoreboard objectives add p.cd.s dummy
-scoreboard objectives add p.cd.ms dummy
+scoreboard objectives add p.cd dummy
+scoreboard objectives add p.use.trigger minecraft.used:minecraft.ender_pearl
 
 scoreboard objectives add ab.cd.s dummy
-scoreboard objectives add ab.cd.ms dummy
+scoreboard objectives add ab.cd dummy
 scoreboard objectives add ab.use.s dummy
-scoreboard objectives add ab.use.ms dummy
+scoreboard objectives add ab.use dummy
 scoreboard objectives add ab.use.trigger minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add ab.current_ability dummy
 
 scoreboard objectives add jump minecraft.custom:minecraft.jump
 scoreboard objectives add jump.bhop dummy
@@ -89,6 +94,20 @@ team modify 001tagger collisionRule never
 team modify 001tagger friendlyFire true
 team modify 001tagger nametagVisibility always
 team modify 001tagger seeFriendlyInvisibles true
+
+team add 011tagger
+team modify 011tagger color yellow
+team modify 011tagger collisionRule never
+team modify 011tagger friendlyFire true
+team modify 011tagger nametagVisibility always
+team modify 011tagger seeFriendlyInvisibles true
+
+team add 021tagger
+team modify 021tagger color white
+team modify 021tagger collisionRule never
+team modify 021tagger friendlyFire true
+team modify 021tagger nametagVisibility always
+team modify 021tagger seeFriendlyInvisibles true
 
 team add 002special
 team modify 002special color blue

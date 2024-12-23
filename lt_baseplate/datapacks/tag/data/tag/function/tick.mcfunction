@@ -30,6 +30,49 @@ execute if score glowing server matches 4.. run scoreboard players set glowing s
 execute if score glowing server matches 0..1 run team modify 013player_glow color aqua
 execute if score glowing server matches 2..3 run team modify 013player_glow color white
 
+
+execute if score game server matches 1 run team modify 001tagger color gold
+execute if score game server matches 1 run team modify 011tagger color yellow
+execute if score game server matches 1 run team modify 021tagger color white
+execute if score game server matches 1 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 1 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 1 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
+
+execute if score game server matches 2 run team modify 001tagger color dark_green
+execute if score game server matches 2 run team modify 011tagger color green
+execute if score game server matches 2 run team modify 021tagger color white
+execute if score game server matches 2 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "dark_green"}
+execute if score game server matches 2 run team modify 201tagger_creative prefix {"text": "⭐", "color": "dark_green"}
+execute if score game server matches 2 run team modify 301tagger_spectator prefix {"text": "☆", "color": "dark_green"}
+
+execute if score game server matches 3 run team modify 001tagger color red
+execute if score game server matches 3 run team modify 011tagger color light_purple
+execute if score game server matches 3 run team modify 021tagger color white
+execute if score game server matches 3 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "red"}
+execute if score game server matches 3 run team modify 201tagger_creative prefix {"text": "⭐", "color": "red"}
+execute if score game server matches 3 run team modify 301tagger_spectator prefix {"text": "☆", "color": "red"}
+
+execute if score game server matches 4 run team modify 001tagger color yellow
+execute if score game server matches 4 run team modify 011tagger color yellow
+execute if score game server matches 4 run team modify 021tagger color white
+execute if score game server matches 4 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "yellow"}
+execute if score game server matches 4 run team modify 201tagger_creative prefix {"text": "⭐", "color": "yellow"}
+execute if score game server matches 4 run team modify 301tagger_spectator prefix {"text": "☆", "color": "yellow"}
+
+execute if score game server matches 5 run team modify 001tagger color gold
+execute if score game server matches 5 run team modify 011tagger color yellow
+execute if score game server matches 5 run team modify 021tagger color white
+execute if score game server matches 5 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 5 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 5 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
+
+execute if score game server matches 6 run team modify 001tagger color gold
+execute if score game server matches 5 run team modify 011tagger color yellow
+execute if score game server matches 5 run team modify 021tagger color white
+execute if score game server matches 6 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 6 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 6 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
+
 execute as @a at @s run function tag:tagging/decoration
 
 execute as @a[tag =!safezone, gamemode =!spectator] at @s if block ~ ~ ~ cave_air run function tag:tagging/go_in_safezone
@@ -77,10 +120,18 @@ effect give @a haste infinite 0 true
 scoreboard players set @a is_sneaking 0
 execute as @a at @s if block ~ ~ ~ cauldron unless score @s effect.invisibility matches 1.. run scoreboard players set @s effect.invisibility 1
 
+
+# items
+execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 1}]
+execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 2}]
+execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 3}]
+execute as @a[gamemode = adventure] at @s run function tag:items/ender_pearl
+execute as @a[gamemode = adventure] at @s run function tag:items/ability
+
+
 # variables after functions
 execute store result score playercount_old server if entity @a
 execute store result score taggers_old server if entity @a[tag=tagger]
-
 
 
 

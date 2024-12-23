@@ -6,7 +6,9 @@
 # planned to be used as a representation of a "0th patient" in a game of infection tag
 
 
-
+execute if entity @s[tag = tagger] run scoreboard players add @s stat.tagger_time 1
+execute if entity @s[tag =!tagger] run scoreboard players set @s stat.tagger_time 0
+execute if entity @s[tag = tagger] run scoreboard players add @s stat.tagger_time.total 1
 
 execute if score game server matches 1 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 300
 execute if score game server matches 2 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 301
@@ -15,40 +17,6 @@ execute if score game server matches 4 if entity @s[tag = tagger, tag =!safezone
 execute if score game server matches 5 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 304
 execute if score game server matches 6 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 304
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 0
-
-execute if score game server matches 1 run team modify 001tagger color gold
-execute if score game server matches 1 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
-execute if score game server matches 1 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
-execute if score game server matches 1 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
-
-execute if score game server matches 2 run team modify 001tagger color dark_green
-execute if score game server matches 2 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "dark_green"}
-execute if score game server matches 2 run team modify 201tagger_creative prefix {"text": "⭐", "color": "dark_green"}
-execute if score game server matches 2 run team modify 301tagger_spectator prefix {"text": "☆", "color": "dark_green"}
-
-execute if score game server matches 3 run team modify 001tagger color red
-execute if score game server matches 3 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "red"}
-execute if score game server matches 3 run team modify 201tagger_creative prefix {"text": "⭐", "color": "red"}
-execute if score game server matches 3 run team modify 301tagger_spectator prefix {"text": "☆", "color": "red"}
-
-execute if score game server matches 4 run team modify 001tagger color yellow
-execute if score game server matches 4 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "yellow"}
-execute if score game server matches 4 run team modify 201tagger_creative prefix {"text": "⭐", "color": "yellow"}
-execute if score game server matches 4 run team modify 301tagger_spectator prefix {"text": "☆", "color": "yellow"}
-
-execute if score game server matches 5 run team modify 001tagger color gold
-execute if score game server matches 5 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
-execute if score game server matches 5 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
-execute if score game server matches 5 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
-
-execute if score game server matches 6 run team modify 001tagger color gold
-execute if score game server matches 6 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
-execute if score game server matches 6 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
-execute if score game server matches 6 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
-
-
-
-
 
 
 
@@ -67,12 +35,16 @@ execute unless score game server matches 4 if entity @s[tag = tagger, tag =!safe
 execute if entity @s[tag = tagger, tag = special] run tag @s remove special
 
 
-execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!001tagger] run team join 001tagger
+execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!001tagger] if score @s stat.tagger_time matches 3.. run team join 001tagger
+execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!011tagger] if score @s stat.tagger_time matches 2 run team join 011tagger
+execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!021tagger] if score @s stat.tagger_time matches 1 run team join 021tagger
 execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!002special] run team join 002special
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team =!003player] unless score @s effect.glowing matches 1.. run team join 003player
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team =!013player_glow] if score @s effect.glowing matches 1.. run team join 013player_glow
 
-execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!001tagger] run team join 001tagger
+execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!001tagger] if score @s stat.tagger_time matches 3.. run team join 001tagger
+execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!011tagger] if score @s stat.tagger_time matches 2 run team join 011tagger
+execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!021tagger] if score @s stat.tagger_time matches 1 run team join 021tagger
 execute if entity @s[              tag = special, tag = normal_player_decoration, team =!002special] run team join 002special
 execute if entity @s[tag =!tagger, tag =!special, tag = normal_player_decoration, team =!003player] unless score @s effect.glowing matches 1.. run team join 003player
 execute if entity @s[tag =!tagger, tag =!special, tag = normal_player_decoration, team =!013player_glow] if score @s effect.glowing matches 1.. run team join 013player_glow
