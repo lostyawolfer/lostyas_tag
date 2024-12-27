@@ -30,6 +30,8 @@ execute if score @s anim.death matches -14 run title @s actionbar ""
 execute if score @s anim.death matches -14 run title @s title ""
 execute if score @s anim.death matches -14 run title @s subtitle ""
 execute if score @s anim.death matches -25..-15 run scoreboard players set @s screen_effect 263
+execute if score @s anim.death matches -25..-16 run tp @s @s
+execute if score @s anim.death matches -25..-16 run tp @s ~ ~ ~
 execute if score @s anim.death matches -15 run function tag:misc/spawntp
 execute if score @s anim.death matches -26 run effect give @s blindness 1 0 true
 execute if score @s anim.death matches -15 run gamemode spectator @s

@@ -6,10 +6,12 @@
 # planned to be used as a representation of a "0th patient" in a game of infection tag
 
 
-execute if entity @s[tag = tagger] run scoreboard players add @s stat.tagger_time 1
+execute if entity @s[tag = tagger, gamemode = adventure, tag =!safezone] if score game server matches 1.. run scoreboard players add @s stat.tagger_time 1
 execute if entity @s[tag =!tagger] run scoreboard players set @s stat.tagger_time 0
-execute if entity @s[tag = tagger] run scoreboard players add @s stat.tagger_time.total 1
+execute if entity @s[tag = tagger] unless score game server matches 1.. run scoreboard players set @s stat.tagger_time 3
+execute if entity @s[tag = tagger, gamemode = adventure, tag =!safezone] if score game server matches 1.. run scoreboard players add @s stat.tagger_time.total 1
 
+execute if score game server matches ..0 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 0
 execute if score game server matches 1 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 300
 execute if score game server matches 2 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 301
 execute if score game server matches 3 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 302
@@ -28,6 +30,8 @@ execute if score game server matches 4 if entity @s[tag = tagger, tag =!safezone
 execute if score game server matches 5 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=5, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}', enchantments={levels:{knockback: 2}, show_in_tooltip: true}, enchantment_glint_override=false]
 execute if score game server matches 6 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=6, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}', enchantments={levels:{knockback: 2}, show_in_tooltip: true}, enchantment_glint_override=false]
 execute unless entity @s[tag = tagger] run clear @s *[custom_data={game: 2}]
+execute unless score game server matches 1.. run clear @s *[custom_data={game: 2}]
+execute unless score game server matches 1.. run clear @s *[custom_data={game: 3}]
 execute unless score game server matches 4 if entity @s[tag = tagger, tag = safezone] run clear @s *[custom_data={game: 2}]
 execute unless score game server matches 4 if entity @s[tag = tagger, tag =!safezone] run clear @s *[custom_data={game: 3}]
 
@@ -67,12 +71,12 @@ execute if entity @s[              tag = special, tag =!normal_player_decoration
 execute if entity @s[tag =!tagger, tag =!special, tag =!normal_player_decoration, gamemode = spectator, team =!303player_spectator] run team join 303player_spectator
 
 
-# if the game type is crown (id 4), nothing special happens
+# if the game type is crown (id 4), no invisibility on crouch
 execute if score game server matches 4 if entity @s[tag = tagger] unless score @s effect.glowing matches 2.. run scoreboard players set @s effect.glowing 1
 
 # else, let the tagger sneak to become invisible
-execute unless score game server matches 4 if entity @s[tag = tagger] unless score @s effect.glowing matches 2.. if score @s is_sneaking matches 0 run scoreboard players set @s effect.glowing 1
-execute unless score game server matches 4 if entity @s[tag = tagger] unless score @s effect.invisibility matches 2.. if score @s is_sneaking matches 1 run scoreboard players set @s effect.invisibility 1
+execute if score game server matches 1.. unless score game server matches 4 if entity @s[tag = tagger] unless score @s effect.glowing matches 2.. if score @s is_sneaking matches 0 run scoreboard players set @s effect.glowing 1
+execute if score game server matches 1.. unless score game server matches 4 if entity @s[tag = tagger] unless score @s effect.invisibility matches 2.. if score @s is_sneaking matches 1 run scoreboard players set @s effect.invisibility 1
 
 # visual effect if the tagger is sneaking
 execute if score game server matches 1 if entity @s[tag = tagger] if score @s effect.invisibility matches 1.. unless score @s effect.glowing matches 1.. run scoreboard players set @s screen_effect 405
@@ -83,11 +87,13 @@ execute if score game server matches 5 if entity @s[tag = tagger] if score @s ef
 execute if score game server matches 6 if entity @s[tag = tagger] if score @s effect.invisibility matches 1.. unless score @s effect.glowing matches 1.. run scoreboard players set @s screen_effect 409
 
 
-execute if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] unless score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/play
-execute if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run tag @s add nbs_tagyoureit
-execute if entity @s[tag =!tagger] if score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/stop
-execute if entity @s[gamemode =!adventure] if score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/stop
-execute if entity @s[tag = tagger, tag = safezone] run tag @s remove nbs_tagyoureit
+execute if score game server matches 1.. if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] unless score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/play
+execute if score game server matches 1.. if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run tag @s add nbs_tagyoureit
+execute if score game server matches 1.. if entity @s[tag =!tagger] if score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/stop
+execute if score game server matches 1.. if entity @s[gamemode =!adventure] if score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/stop
+execute if score game server matches 1.. if entity @s[tag = tagger, tag = safezone] run tag @s remove nbs_tagyoureit
+
+execute unless score game server matches 1.. if score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/stop
 
 
 
