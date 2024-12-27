@@ -20,12 +20,12 @@ hash = 'SHA256:be9f9a21a3f3911a101784b0599f9aebd2035062e0673c9ac8e959794c454c70'
 # this plugin is not vital to the gameplay anyway 
 
 
-[gsit]
-subdir = 'plugins'
-version = '1.12.0'
-name_format = 'gsit-{version}.jar'
-url = 'https://github.com/gecolay/GSit/releases/download/1.12.0/GSit-1.12.0.jar'
-hash = 'SHA256:620979a464634557066a7087edcc0fd8d46beed0e8f8d161c6112f5ef295a342'
+#[gsit]
+#subdir = 'plugins'
+#version = '1.12.0'
+#name_format = 'gsit-{version}.jar'
+#url = 'https://github.com/gecolay/GSit/releases/download/1.12.0/GSit-1.12.0.jar'
+#hash = 'SHA256:620979a464634557066a7087edcc0fd8d46beed0e8f8d161c6112f5ef295a342'
 
 [luckperms]
 subdir = 'plugins'

@@ -6,15 +6,14 @@ wepif.yml
 
 */stats
 */advancements
-*/data/scoreboard.dat
 */playerdata
 
 *.thanos
 *session.lock
 *.jar
+*desktop.ini
 
 /eula.txt
-/desktop.ini
 /.console_history
 /banned-ips.json
 /banned-players.json
@@ -25,7 +24,6 @@ wepif.yml
 /whitelist.json
 /ops.json
 /help.yml
-/start.bat
 
 /versions
 /libraries
