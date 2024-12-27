@@ -52,5 +52,6 @@ execute if score @s anim.death matches 117 run scoreboard players set @s anim.de
 
 
 
-title @s actionbar {"text": "you are a spectator", "color": "red"}
+execute unless entity @a[distance=0, tag=!dead] run title @s actionbar {"text": "you are a spectator", "color": "red"}
+execute if entity @a[distance=0, tag=!dead] run title @s actionbar [{"text": "now spectating: ", "color": "red"}, {"selector": "@a[distance=0, tag=!dead]"}]
 gamemode spectator @s

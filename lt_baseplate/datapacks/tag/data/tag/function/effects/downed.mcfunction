@@ -2,8 +2,15 @@
 
 scoreboard players operation @s effect.downed.seconds = @s effect.downed
 scoreboard players operation @s effect.downed.seconds /= 20 consts
-scoreboard players operation @s effect.downed.seconds += 1 consts
-title @s actionbar [{"text":"☠ ", "color":"red"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}]
+#scoreboard players operation @s effect.downed.seconds += 1 consts
+
+scoreboard players operation @s effect.downed.ms = @s effect.downed
+scoreboard players operation @s effect.downed.ms %= 20 consts
+scoreboard players operation @s effect.downed.ms /= 2 consts
+
+
+execute if score @s effect.downed.seconds matches 10.. run title @s actionbar [{"text":"☠ ", "color":"red"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}]
+execute if score @s effect.downed.seconds matches ..9 run title @s actionbar [{"text":"☠ ", "color":"red"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}, ".", {"score":{"name":"@s","objective":"effect.downed.ms"}}]
 scoreboard players add @s effect.downed.count_up 1
 
 effect give @s slowness infinite 6 true
