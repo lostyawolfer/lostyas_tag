@@ -13,12 +13,12 @@ wepif.yml
 
 */stats
 */advancements
-*/data/scoreboard.dat
 */playerdata
 
 *.thanos
 *session.lock
 *.jar
+*desktop.ini
 
 /eula.txt
 /.console_history
@@ -31,7 +31,6 @@ wepif.yml
 /whitelist.json
 /ops.json
 /help.yml
-/start.bat
 
 /versions
 /libraries

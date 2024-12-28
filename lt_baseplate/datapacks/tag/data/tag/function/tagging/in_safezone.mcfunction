@@ -1,20 +1,20 @@
-execute if score generic server matches 0 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f0"}]
-execute if score generic server matches 1 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f1"}]
-execute if score generic server matches 2 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f2"}]
-execute if score generic server matches 3 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f3"}]
-execute if score generic server matches 4 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f4"}]
-execute if score generic server matches 5 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f5"}]
-execute if score generic server matches 6 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f6"}]
-execute if score generic server matches 7 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f7"}]
-execute if score generic server matches 8 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f8"}]
-execute if score generic server matches 9 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f9"}]
-execute if score generic server matches 10 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f9"}]
-execute if score generic server matches 11 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f8"}]
-execute if score generic server matches 12 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f7"}]
-execute if score generic server matches 13 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f6"}]
-execute if score generic server matches 14 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f5"}]
-execute if score generic server matches 15 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f4"}]
-execute if score generic server matches 16 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f3"}]
-execute if score generic server matches 17 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f2"}]
-execute if score generic server matches 18 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f1"}]
-execute if score generic server matches 19 run item replace entity @s armor.head with minecraft:heart_of_the_sea[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone_f0"}]
+execute if score generic server matches 0 run scoreboard players set @s screen_effect 100
+execute if score generic server matches 1 run scoreboard players set @s screen_effect 101
+execute if score generic server matches 2 run scoreboard players set @s screen_effect 102
+execute if score generic server matches 3 run scoreboard players set @s screen_effect 103
+execute if score generic server matches 4 run scoreboard players set @s screen_effect 104
+execute if score generic server matches 5 run scoreboard players set @s screen_effect 105
+execute if score generic server matches 6 run scoreboard players set @s screen_effect 106
+execute if score generic server matches 7 run scoreboard players set @s screen_effect 107
+execute if score generic server matches 8 run scoreboard players set @s screen_effect 108
+execute if score generic server matches 9 run scoreboard players set @s screen_effect 109
+execute if score generic server matches 10 run scoreboard players set @s screen_effect 110
+execute if score generic server matches 11 run scoreboard players set @s screen_effect 109
+execute if score generic server matches 12 run scoreboard players set @s screen_effect 108
+execute if score generic server matches 13 run scoreboard players set @s screen_effect 107
+execute if score generic server matches 14 run scoreboard players set @s screen_effect 106
+execute if score generic server matches 15 run scoreboard players set @s screen_effect 105
+execute if score generic server matches 16 run scoreboard players set @s screen_effect 104
+execute if score generic server matches 17 run scoreboard players set @s screen_effect 103
+execute if score generic server matches 18 run scoreboard players set @s screen_effect 102
+execute if score generic server matches 19 run scoreboard players set @s screen_effect 101

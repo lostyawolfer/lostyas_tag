@@ -1,5 +1,19 @@
 # temporary variable; used to store if someone wants the "unplayable build" message removed
-scoreboard objectives add disable_message trigger
+# scoreboard objectives add disable_message trigger
+
+# constants
+scoreboard objectives add consts dummy
+scoreboard players set -1 consts -1
+scoreboard players set 0 consts 0
+scoreboard players set 1 consts 1
+scoreboard players set 2 consts 2
+scoreboard players set 5 consts 5
+scoreboard players set 8 consts 8
+scoreboard players set 10 consts 10
+scoreboard players set 20 consts 20
+scoreboard players set 60 consts 60
+scoreboard players set 100 consts 100
+scoreboard players set 1000 consts 1000
 
 
 # effect scoreboards
@@ -7,6 +21,11 @@ scoreboard objectives add effect.glowing dummy
 scoreboard objectives add effect.strong_levitation dummy
 scoreboard objectives add effect.freeze dummy
 scoreboard objectives add effect.invisibility dummy
+scoreboard objectives add effect.downed dummy
+scoreboard objectives add effect.downed.count_up dummy
+scoreboard objectives add effect.downed.seconds dummy
+scoreboard objectives add effect.downed.ms dummy
+# scoreboard objectives add effect.downed.seconds_even dummy
 
 
 # misc scoreboards
@@ -15,6 +34,51 @@ scoreboard players add buildnum server 1
 function tag:misc/update_player_list
 scoreboard objectives add anim.death dummy
 scoreboard objectives add fall minecraft.custom:minecraft.fall_one_cm
+scoreboard objectives add screen_effect dummy
+
+scoreboard objectives add hit_detect.giver minecraft.custom:minecraft.damage_dealt
+scoreboard objectives add hit_detect.taker minecraft.custom:minecraft.damage_taken
+
+scoreboard objectives add stat.speed dummy
+scoreboard objectives add stat.speed.calculate_new_x dummy
+scoreboard objectives add stat.speed.calculate_new_y dummy
+scoreboard objectives add stat.speed.calculate_new_z dummy
+scoreboard objectives add stat.speed.calculate_old_x dummy
+scoreboard objectives add stat.speed.calculate_old_y dummy
+scoreboard objectives add stat.speed.calculate_old_z dummy
+scoreboard objectives add stat.speed.calculate_difference_x dummy
+scoreboard objectives add stat.speed.calculate_difference_y dummy
+scoreboard objectives add stat.speed.calculate_difference_z dummy
+
+scoreboard objectives add stat.vertical_speed dummy
+
+scoreboard objectives add stat.tagger_time dummy
+scoreboard objectives add stat.tagger_time.total dummy
+
+scoreboard objectives add p.cd.s dummy
+scoreboard objectives add p.cd dummy
+scoreboard objectives add p.use.trigger minecraft.used:minecraft.ender_pearl
+
+scoreboard objectives add ab.cd.s dummy
+scoreboard objectives add ab.cd dummy
+scoreboard objectives add ab.use.s dummy
+scoreboard objectives add ab.use dummy
+scoreboard objectives add ab.use.trigger minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add ab.current_ability dummy
+
+scoreboard objectives add jump minecraft.custom:minecraft.jump
+scoreboard objectives add jump.bhop dummy
+scoreboard objectives add jump.bhop2 dummy
+scoreboard objectives add jump.timer dummy
+
+scoreboard objectives add is_sneaking minecraft.custom:minecraft.sneak_time
+
+scoreboard objectives add anticheat dummy
+
+scoreboard objectives add joined minecraft.custom:minecraft.leave_game
+
+
+scoreboard objectives add logging dummy
 
 
 
@@ -30,14 +94,28 @@ bossbar set version value 0
 team add 001tagger
 team modify 001tagger color gold
 team modify 001tagger collisionRule never
-team modify 001tagger friendlyFire false
+team modify 001tagger friendlyFire true
 team modify 001tagger nametagVisibility always
 team modify 001tagger seeFriendlyInvisibles true
+
+team add 011tagger
+team modify 011tagger color yellow
+team modify 011tagger collisionRule never
+team modify 011tagger friendlyFire true
+team modify 011tagger nametagVisibility always
+team modify 011tagger seeFriendlyInvisibles true
+
+team add 021tagger
+team modify 021tagger color white
+team modify 021tagger collisionRule never
+team modify 021tagger friendlyFire true
+team modify 021tagger nametagVisibility always
+team modify 021tagger seeFriendlyInvisibles true
 
 team add 002special
 team modify 002special color blue
 team modify 002special collisionRule never
-team modify 002special friendlyFire false
+team modify 002special friendlyFire true
 team modify 002special nametagVisibility always
 team modify 002special seeFriendlyInvisibles false
 
@@ -48,11 +126,19 @@ team modify 003player friendlyFire true
 team modify 003player nametagVisibility hideForOtherTeams
 team modify 003player seeFriendlyInvisibles true
 
+team add 013player_glow
+team modify 013player_glow color aqua
+team modify 013player_glow collisionRule never
+team modify 013player_glow friendlyFire true
+team modify 013player_glow nametagVisibility hideForOtherTeams
+team modify 013player_glow seeFriendlyInvisibles true
+
+
 
 
 team add 101tagger_safezone
 team modify 101tagger_safezone color gray
-team modify 103player_safezone prefix {"text": "⭐", "color": "gold"}
+team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
 team modify 101tagger_safezone collisionRule never
 team modify 101tagger_safezone friendlyFire false
 team modify 101tagger_safezone nametagVisibility always

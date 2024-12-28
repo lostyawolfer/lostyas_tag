@@ -1,0 +1,13 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "item/carrot_on_a_stick"
+	},
+	
+	"overrides": [
+		{"predicate": {"custom_model_data":1}, "model": "item/carrot_on_a_stick/1"},
+		{"predicate": {"custom_model_data":2}, "model": "item/carrot_on_a_stick/2"},
+		{"predicate": {"custom_model_data":3}, "model": "item/carrot_on_a_stick/3"},
+		{"predicate": {"custom_model_data":4}, "model": "item/carrot_on_a_stick/4"}
+	]
+}

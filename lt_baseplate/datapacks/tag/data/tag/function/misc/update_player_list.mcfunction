@@ -17,3 +17,5 @@ scoreboard objectives modify player_list numberformat blank
 # make the numberformat show numbers in green
 # scoreboard objectives modify player_list numberformat {"color": "green"}
 scoreboard players add @a player_list 0
+
+tellraw @a[scores = {logging = 1}] ["! log: ", "updated player list sidebar"]

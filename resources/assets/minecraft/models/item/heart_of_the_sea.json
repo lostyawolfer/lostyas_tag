@@ -1,0 +1,15 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "item/heart_of_the_sea"
+	},
+	
+	"overrides": [
+		{"predicate": {"custom_model_data":-3}, "model": "item/heart_of_the_sea/-3"},
+		{"predicate": {"custom_model_data":-2}, "model": "item/heart_of_the_sea/-2"},
+		{"predicate": {"custom_model_data":-1}, "model": "item/heart_of_the_sea/-1"},
+		{"predicate": {"custom_model_data":0}, "model": "item/heart_of_the_sea"},
+		{"predicate": {"custom_model_data":1}, "model": "item/heart_of_the_sea/1"},
+		{"predicate": {"custom_model_data":999}, "model": "item/heart_of_the_sea/inf"}
+	]
+}
