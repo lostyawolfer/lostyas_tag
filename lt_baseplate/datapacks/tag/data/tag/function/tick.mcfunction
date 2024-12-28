@@ -12,6 +12,14 @@ execute store result score adventure-mode server if entity @a[gamemode = adventu
 scoreboard players add generic server 1
 execute if score generic server matches 20.. run scoreboard players set generic server 0
 
+
+# join and leave routine
+execute as @a unless score @s joined matches 0 at @s run function tag:misc/join_routine
+execute as @a unless score @s joined matches 0 at @s run scoreboard players set @s joined 0
+
+execute if score playercount_old server > playercount server run function tag:misc/update_player_list
+
+
 # restart the game if everyone was caught
 execute if score restart server matches 60.. run scoreboard players add restart server 1
 execute if score active-players server matches 2.. if score taggers server matches 1.. if score taggers server = active-players server run scoreboard players add restart server 1
@@ -46,12 +54,6 @@ execute if score game server matches 3 run bossbar set minecraft:version name [{
 execute if score game server matches 4 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"                ",{"text":"crown tag","color":"yellow","bold":false},{"text":"                ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 execute if score game server matches 5 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"               ",{"text":"freeze tag","color":"aqua","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 execute if score game server matches 6 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"            ",{"text":"killer freeze tag","color":"light_purple","bold":false},{"text":"            ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-
-
-
-scoreboard players add @a player_list 0
-
-execute if score playercount_old server > playercount server run function tag:misc/update_player_list
 
 
 
@@ -169,7 +171,7 @@ execute as @a at @s run function tag:misc/stopmusic
 
 function tag:map_specific/lt_playground
 execute as @a run function tag:misc/screens
-execute as @a at @s run function tag:misc/anticheat
+# execute as @a at @s run function tag:misc/anticheat
 
 item replace entity @a[gamemode = adventure] player.cursor with air
 execute as @a run attribute @s attack_speed base set 1000000
