@@ -1,4 +1,5 @@
 # ✨ TAG GUARD ✨
+# DISABLED
 
 #Blink
 execute if entity @s[gamemode = adventure, scores = {stat.vertical_speed=0}, nbt = {OnGround: 0b}] unless score @s effect.downed matches 1.. unless score @s effect.freeze matches 1.. run scoreboard players add @s anticheat 1

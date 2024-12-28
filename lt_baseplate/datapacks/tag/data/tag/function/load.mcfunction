@@ -75,6 +75,8 @@ scoreboard objectives add is_sneaking minecraft.custom:minecraft.sneak_time
 
 scoreboard objectives add anticheat dummy
 
+scoreboard objectives add joined minecraft.custom:minecraft.leave_game
+
 
 scoreboard objectives add logging dummy
 
