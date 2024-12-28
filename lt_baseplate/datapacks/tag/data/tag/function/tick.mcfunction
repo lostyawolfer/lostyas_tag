@@ -1,5 +1,6 @@
+# generic stuff
 gamemode adventure @a[gamemode = survival]
-recipe take @a *
+recipe give @a *
 
 
 # variables before functions
@@ -135,13 +136,19 @@ execute if score game server matches 6 run team modify 301tagger_spectator prefi
 
 execute as @a at @s run function tag:tagging/decoration
 
-execute as @a[tag =!safezone, gamemode =!spectator] at @s if block ~ ~ ~ cave_air run function tag:tagging/go_in_safezone
-execute as @a[tag =!safezone, gamemode =!spectator] at @s if block ~ ~1 ~ cave_air run function tag:tagging/go_in_safezone
+# safezone states
+# -1 = cannot enter     can exit
+#  0 = can enter        can exit
+#  1 = cannot exit      cannot exit
+execute as @a unless score @s safezone_state matches -1..1 run scoreboard players set @s safezone_state 0
+
+execute as @a[tag =!safezone, gamemode =!spectator] at @s if score @s safezone_state matches 0..1 if block ~ ~ ~ cave_air run function tag:tagging/go_in_safezone
+execute as @a[tag =!safezone, gamemode =!spectator] at @s if score @s safezone_state matches 0..1 if block ~ ~1 ~ cave_air run function tag:tagging/go_in_safezone
 
 execute as @a[tag = safezone] at @s if block ~ ~ ~ cave_air run function tag:tagging/in_safezone
 execute as @a[tag = safezone] at @s if block ~ ~1 ~ cave_air run function tag:tagging/in_safezone
 
-execute as @a[tag = safezone] at @s unless block ~ ~ ~ cave_air unless block ~ ~1 ~ cave_air run function tag:tagging/out_of_safezone
+execute as @a[tag = safezone] at @s if score @s safezone_state matches -1..0 unless block ~ ~ ~ cave_air unless block ~ ~1 ~ cave_air run function tag:tagging/out_of_safezone
 execute as @a[tag = safezone, gamemode = spectator] at @s run function tag:tagging/out_of_safezone
 
 
@@ -164,6 +171,7 @@ execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_
 execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run scoreboard players set @s hit_detect.taker 0
 execute as @a[scores = {hit_detect.giver = 1..}] at @s run function tag:tagging/hit_detected
 
+#execute as @a[tag = tagger] unless score @s stat.tagger_time matches 1.. run function tag:tagging/tag.generic
 execute as @a at @s run function tag:misc/stats
 execute as @a at @s run function tag:misc/bhop
 execute as @a at @s run function tag:misc/stopmusic

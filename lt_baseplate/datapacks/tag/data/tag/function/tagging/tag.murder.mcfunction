@@ -4,7 +4,7 @@ tag @a[tag = hit_detect.taker] add dead
 tag @a[tag = hit_detect.taker] add special
 
 
-tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "gold"}, {"translate": "chat.hit.murder"}, {"selector": "@a[tag = hit_detect.taker]", "color": "dark_gray"}]
+tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "red"}, {"translate": "chat.hit.murder"}, {"selector": "@a[tag = hit_detect.taker]", "color": "dark_gray"}]
 
 title @a[tag = hit_detect.giver] times 0 20 3
 title @a[tag = hit_detect.taker] times 0 40 100

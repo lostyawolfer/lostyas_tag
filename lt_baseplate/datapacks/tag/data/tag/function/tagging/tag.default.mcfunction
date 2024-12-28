@@ -1,6 +1,8 @@
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@a[tag = hit_detect.giver]"}, " tagged ", {"selector": "@a[tag = hit_detect.taker]"}]
 tag @a[tag = hit_detect.giver] remove tagger
+scoreboard players set @a[tag = hit_detect.giver] stat.tagger_time 0
 tag @a[tag = hit_detect.taker] add tagger
+scoreboard players set @a[tag = hit_detect.taker] stat.tagger_time 1
 
 
 tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "aqua"}, {"translate": "chat.hit.default"}, {"selector": "@a[tag = hit_detect.taker]", "color": "gold"}]

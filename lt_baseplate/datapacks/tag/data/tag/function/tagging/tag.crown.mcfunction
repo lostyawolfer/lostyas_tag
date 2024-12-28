@@ -1,9 +1,11 @@
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@a[tag = hit_detect.giver]"}, " took the crown of ", {"selector": "@a[tag = hit_detect.taker]"}]
 tag @a[tag = hit_detect.giver] add tagger
+scoreboard players set @a[tag = hit_detect.giver] stat.tagger_time 0
 tag @a[tag = hit_detect.taker] remove tagger
+scoreboard players set @a[tag = hit_detect.taker] stat.tagger_time 1
 
 
-tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "aqua"}, {"translate": "chat.hit.crown"}, {"selector": "@a[tag = hit_detect.taker]", "color": "gold"}]
+tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "yellow"}, {"translate": "chat.hit.crown"}, {"selector": "@a[tag = hit_detect.taker]", "color": "aqua"}]
 
 title @a[tag = hit_detect.giver] times 0 20 3
 title @a[tag = hit_detect.taker] times 0 20 3
