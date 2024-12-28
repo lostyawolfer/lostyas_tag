@@ -1,3 +1,4 @@
-### Tag Version 0.0.1-1alpha
+### Tag Version 0.1.1-alpha
 
-Basic project features with automatic build & release system
+- Respack automatic build and serving
+- Basic project features with automatic build & release system
