@@ -1,5 +1,12 @@
 # Ignore VSCode directory and all its contents
 /.vscode/
+# Windows-only files
+desktop.ini
+# Build directory
+/build/
+
+# server.properties since now it is a build artifact
+/server.properties
 
 *-backup
 wepif.yml

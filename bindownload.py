@@ -6,7 +6,6 @@ remote urls, as provided by the spec file.
 """
 
 import argparse
-from ast import Index
 import hashlib
 import logging
 import pathlib as pth
