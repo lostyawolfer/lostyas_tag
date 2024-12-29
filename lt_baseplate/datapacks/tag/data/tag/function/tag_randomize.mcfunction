@@ -39,10 +39,10 @@ execute if score tag.random_counter server matches 1..3 if score tag.random_coun
 execute if score tag.random_counter server matches 1..3 if score tag.random_counter.time server matches 15.. run scoreboard players set tag.random_counter.time server 0
 execute if score tag.random_counter server matches 1..3 if score tag.random_counter.time server matches 0 run scoreboard players remove tag.random_counter server 1
 
-execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a at @s run playsound ui.button.click master @s ~ ~ ~ .1 2
+execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a at @s run playsound ui.loom.take_result master @s ~ ~ ~ .1 1
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @r run tag @s add tagger
-execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @r run damage @s .1
-execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @r run title @a title [{"selector":"@s","color":"yellow"},{"text":" вода!"}]
+#execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a[tag = tagger] run damage @s .1
+#execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a[tag = tagger] run title @a title [{"selector":"@s","color":"yellow"},{"text":" вода!"}]
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run scoreboard players reset tag.random_counter server
 
 scoreboard players add tag.random_counter.time server 1

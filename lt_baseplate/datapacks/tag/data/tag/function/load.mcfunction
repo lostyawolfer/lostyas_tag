@@ -71,6 +71,10 @@ scoreboard objectives add jump.bhop dummy
 scoreboard objectives add jump.bhop2 dummy
 scoreboard objectives add jump.timer dummy
 
+scoreboard objectives add tp.id dummy
+
+scoreboard objectives add safezone_state dummy
+
 scoreboard objectives add is_sneaking minecraft.custom:minecraft.sneak_time
 
 scoreboard objectives add anticheat dummy

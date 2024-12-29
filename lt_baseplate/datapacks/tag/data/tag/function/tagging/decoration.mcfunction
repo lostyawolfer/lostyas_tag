@@ -5,12 +5,6 @@
 # main use for SPECIAL is to represent a frozen player during a game of freeze tag, but is also
 # planned to be used as a representation of a "0th patient" in a game of infection tag
 
-
-execute if entity @s[tag = tagger, gamemode = adventure, tag =!safezone] if score game server matches 1.. run scoreboard players add @s stat.tagger_time 1
-execute if entity @s[tag =!tagger] run scoreboard players set @s stat.tagger_time 0
-execute if entity @s[tag = tagger] unless score game server matches 1.. run scoreboard players set @s stat.tagger_time 3
-execute if entity @s[tag = tagger, gamemode = adventure, tag =!safezone] if score game server matches 1.. run scoreboard players add @s stat.tagger_time.total 1
-
 execute if score game server matches ..0 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 0
 execute if score game server matches 1 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 300
 execute if score game server matches 2 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 301
