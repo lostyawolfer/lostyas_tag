@@ -21,14 +21,16 @@ execute unless entity @a[tag = hit_detect.taker] run return 404
 
 
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@a[tag = hit_detect.giver]"}, " hit ", {"selector": "@a[tag = hit_detect.taker]"}]
-execute if score game server matches 0 if entity @a[tag = hit_detect.giver,               tag =!safezone] if entity @a[tag = hit_detect.taker,               tag =!safezone] run function tag:tagging/tag.default_start
-execute if score game server matches 1 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!safezone] run function tag:tagging/tag.default
-execute if score game server matches 2 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!safezone] run function tag:tagging/tag.infection
-execute if score game server matches 3 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!safezone] run function tag:tagging/tag.murder
-execute if score game server matches 4 if entity @a[tag = hit_detect.giver, tag =!tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag = tagger, tag =!safezone] run function tag:tagging/tag.crown
-execute if score game server matches 5 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!special, tag =!safezone] run function tag:tagging/tag.freeze
-execute if score game server matches 6 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!special, tag =!safezone] run function tag:tagging/tag.freeze_timed
-execute if score game server matches 5..6 if entity @a[tag = hit_detect.giver, tag =!tagger, tag =!special, tag =!safezone] if entity @a[tag = hit_detect.taker, tag = special, tag =!safezone] run function tag:tagging/tag.unfreeze
+execute if score game server matches 0 if entity @a[tag = hit_detect.giver,               tag =!safezone] if entity @a[tag = hit_detect.taker,               tag =!safezone] run function tag:tagging/tag_give/default_start
+execute if score game server matches 1 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!safezone] run function tag:tagging/tag_give/default
+execute if score game server matches 2 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!safezone] run function tag:tagging/tag_give/infection
+execute if score game server matches 3 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!safezone] run function tag:tagging/tag_give/murder
+execute if score game server matches 4 if entity @a[tag = hit_detect.giver, tag =!tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag = tagger, tag =!safezone] run function tag:tagging/tag_give/crown
+execute if score game server matches 5 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!special, tag =!safezone] run function tag:tagging/tag_give/freeze
+execute if score game server matches 6 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!special, tag =!safezone] run function tag:tagging/tag_give/freeze_timed
+execute if score game server matches 5..6 if entity @a[tag = hit_detect.giver, tag =!tagger, tag =!special, tag =!safezone] if entity @a[tag = hit_detect.taker, tag = special, tag =!safezone] run function tag:tagging/tag_give/unfreeze
+
+execute as @a[tag = tagger] unless score @s stat.tagger_time matches 0.. at @s run function tag:tagging/tag_give/generic
 
 
 tag @a[tag = hit_detect.giver] remove hit_detect.giver

@@ -1,6 +1,5 @@
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " got tagged by game or admin interaction"]
-scoreboard players add @s stat.tagger_time 0
-scoreboard players set @s[tag = safezone] stat.tagger_time 2
+scoreboard players set @s[tag = safezone] stat.tagger_time 0
 damage @s .1
 tag @s add tagger
 
