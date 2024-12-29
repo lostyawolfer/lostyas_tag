@@ -33,8 +33,16 @@ execute if score active-players server matches 2.. if score restart server match
 execute if score restart server matches 1 as @a run function tag_music:win/play
 execute if score restart server matches 1 run tellraw @a [{"text": "Everyone was caught! Restarting the game in ", "color": "gold"}, {"score": {"name": "restart.s_reversed", "objective": "server"}, "color": "gold"}, {"text": " seconds..."}]
 execute if score restart server matches 60 as @a run function tag:misc/spawn
-execute if score adventure-mode server matches 2.. if score restart server matches 140.. as @a run function tag:tag_randomize
-execute if score adventure-mode server matches 2.. if score restart server matches 140.. as @a run scoreboard players reset restart server
+execute if score adventure-mode server matches 2.. if score restart server matches 140 as @a run function tag:tag_randomize
+execute if score adventure-mode server matches 2.. if score restart server matches 60..340 run scoreboard players set @a safezone_state 1
+execute if score adventure-mode server matches 2.. if score restart server matches 340.. run scoreboard players set @a safezone_state -1
+execute if score adventure-mode server matches 2.. if score restart server matches 500.. as @a run scoreboard players set @a safezone_state 0
+execute if score adventure-mode server matches 2.. if score restart server matches 500.. as @a run scoreboard players reset restart server
+# execute if score game server matches -2..1 run scoreboard players set @a safezone_state 0
+# execute if score game server matches 2..3 run scoreboard players set @a safezone_state -1
+# execute if score game server matches 4 run scoreboard players set @a safezone_state 0
+# execute if score game server matches 5..6 run scoreboard players set @a safezone_state -1
+
 
 # effects that negate minecraft stuff
 effect give @a saturation 15 10 true
@@ -57,12 +65,6 @@ execute if score game server matches 3 run bossbar set minecraft:version name [{
 execute if score game server matches 4 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"                ",{"text":"crown tag","color":"yellow","bold":false},{"text":"                ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 execute if score game server matches 5 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"               ",{"text":"freeze tag","color":"aqua","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 execute if score game server matches 6 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"            ",{"text":"killer freeze tag","color":"light_purple","bold":false},{"text":"            ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-
-execute if score game server matches -2..1 run scoreboard players set @a safezone_state 0
-execute if score game server matches 2..3 run scoreboard players set @a safezone_state -1
-execute if score game server matches 4 run scoreboard players set @a safezone_state 0
-execute if score game server matches 5..6 run scoreboard players set @a safezone_state -1
-
 
 
 # other functions
@@ -143,6 +145,8 @@ execute if score game server matches 6 run team modify 301tagger_spectator prefi
 execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " got hit by environment or an unknown player"]
 execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run scoreboard players set @s hit_detect.taker 0
 execute as @a[scores = {hit_detect.giver = 1..}] at @s run function tag:tagging/hit_detected
+execute as @a[tag = tagger] unless score @s stat.tagger_time matches 0.. at @s run function tag:tagging/tag_give/generic
+
 
 execute as @a[tag = dead, gamemode =!creative, tag =!safezone] at @s run function tag:misc/death
 execute as @a[tag = dead, tag = safezone] at @s run tag @s remove dead
