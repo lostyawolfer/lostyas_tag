@@ -6,5 +6,6 @@ tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " entered a s
 
 
 effect give @s weakness infinite 255 true
+attribute @s knockback_resistance base set 10000
 playsound tag:safezone_start master @s ~ ~ ~ .25
 tag @s add safezone

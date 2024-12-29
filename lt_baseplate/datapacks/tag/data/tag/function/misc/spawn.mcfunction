@@ -36,6 +36,7 @@ execute if score @s anim.death matches -15 run function tag:misc/spawntp
 execute if score @s anim.death matches -36 run effect give @s blindness 1 0 true
 execute if score @s anim.death matches -15 run gamemode spectator @s
 execute if score @s anim.death matches -37 run gamemode adventure @s
+execute if score @s anim.death matches -37 run function tag:tagging/go_in_safezone
 
 
 

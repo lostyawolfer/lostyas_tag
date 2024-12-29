@@ -21,6 +21,7 @@ execute unless entity @a[tag = hit_detect.taker] run return 404
 
 
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@a[tag = hit_detect.giver]"}, " hit ", {"selector": "@a[tag = hit_detect.taker]"}]
+execute if score game server matches 0 if entity @a[tag = hit_detect.giver,               tag =!safezone] if entity @a[tag = hit_detect.taker,               tag =!safezone] run function tag:tagging/tag.default_start
 execute if score game server matches 1 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!safezone] run function tag:tagging/tag.default
 execute if score game server matches 2 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!safezone] run function tag:tagging/tag.infection
 execute if score game server matches 3 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!safezone] run function tag:tagging/tag.murder

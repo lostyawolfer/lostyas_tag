@@ -30,6 +30,7 @@ execute if score active-players server matches 2.. if score restart server match
 execute if score active-players server matches 2.. if score restart server matches 1.. run scoreboard players set restart.s_reversed server 3
 execute if score active-players server matches 2.. if score restart server matches 1.. run scoreboard players operation restart.s_reversed server -= restart.s server
 
+execute if score restart server matches 1 as @a run function tag_music:win/play
 execute if score restart server matches 1 run tellraw @a [{"text": "Everyone was caught! Restarting the game in ", "color": "gold"}, {"score": {"name": "restart.s_reversed", "objective": "server"}, "color": "gold"}, {"text": " seconds..."}]
 execute if score restart server matches 60 as @a run function tag:misc/spawn
 execute if score adventure-mode server matches 2.. if score restart server matches 140.. as @a run function tag:tag_randomize
@@ -42,7 +43,7 @@ effect give @a instant_health 15 10 true
 # ui stuff
 bossbar set minecraft:version players @a
 execute if score adventure-mode server matches 2.. if score taggers server matches 1.. unless score game server matches 0.. run scoreboard players operation game server = game_prev server
-execute if score adventure-mode server matches 2.. unless score taggers server matches 1.. unless score game server matches 0.. run scoreboard players set game server -1
+execute if score adventure-mode server matches 2.. unless score taggers server matches 1.. unless score game server matches 0.. run scoreboard players operation game server = game_prev server
 execute unless score adventure-mode server matches 2.. if score playercount server matches 1.. run scoreboard players set game server -2
 
 execute if score game server matches 1.. run scoreboard players operation game_prev server = game server
@@ -57,6 +58,10 @@ execute if score game server matches 4 run bossbar set minecraft:version name [{
 execute if score game server matches 5 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"               ",{"text":"freeze tag","color":"aqua","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 execute if score game server matches 6 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"            ",{"text":"killer freeze tag","color":"light_purple","bold":false},{"text":"            ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 
+execute if score game server matches -2..1 run scoreboard players set @a safezone_state 0
+execute if score game server matches 2..3 run scoreboard players set @a safezone_state -1
+execute if score game server matches 4 run scoreboard players set @a safezone_state 0
+execute if score game server matches 5..6 run scoreboard players set @a safezone_state -1
 
 
 
@@ -172,8 +177,8 @@ execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_
 execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run scoreboard players set @s hit_detect.taker 0
 execute as @a[scores = {hit_detect.giver = 1..}] at @s run function tag:tagging/hit_detected
 
-#execute as @a[tag = tagger] unless score @s stat.tagger_time matches 1.. run function tag:tagging/tag.generic
 execute as @a at @s run function tag:misc/stats
+execute as @a[tag = tagger] unless score @s stat.tagger_time matches 2.. at @s run function tag:tagging/tag.generic
 execute as @a at @s run function tag:misc/bhop
 execute as @a at @s run function tag:misc/stopmusic
 execute as @a at @s run function tag:tp_back/player_to_stand_check
