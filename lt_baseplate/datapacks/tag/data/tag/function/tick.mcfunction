@@ -41,14 +41,15 @@ effect give @a instant_health 15 10 true
 
 # ui stuff
 bossbar set minecraft:version players @a
-execute if score adventure-mode server matches 2.. if score taggers server matches 1.. unless score game server matches 0.. run scoreboard players set game server 0
+execute if score adventure-mode server matches 2.. if score taggers server matches 1.. unless score game server matches 0.. run scoreboard players operation game server = game_prev server
 execute if score adventure-mode server matches 2.. unless score taggers server matches 1.. unless score game server matches 0.. run scoreboard players set game server -1
 execute unless score adventure-mode server matches 2.. if score playercount server matches 1.. run scoreboard players set game server -2
 
+execute if score game server matches 1.. run scoreboard players operation game_prev server = game server
 
 execute if score game server matches -2 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"              ",{"text":"building mode","color":"gray","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 execute if score game server matches -1 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"              ",{"text":"social space","color":"gray","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 0 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"        ",{"text":"no gamemode selected","color":"gray","bold":false},{"text":"         ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches 0 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"     ",{"text":"punch to start classic tag","color":"gray","bold":false},{"text":"      ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 execute if score game server matches 1 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"               ",{"text":"classic tag","color":"#FFBB00","bold":false},{"text":"                ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 execute if score game server matches 2 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"              ",{"text":"infection tag","color":"dark_green","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 execute if score game server matches 3 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"               ",{"text":"murder tag","color":"red","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
@@ -139,7 +140,7 @@ execute as @a at @s run function tag:tagging/decoration
 # safezone states
 # -1 = cannot enter     can exit
 #  0 = can enter        can exit
-#  1 = cannot exit      cannot exit
+#  1 = can enter        cannot exit
 execute as @a unless score @s safezone_state matches -1..1 run scoreboard players set @s safezone_state 0
 
 execute as @a[tag =!safezone, gamemode =!spectator] at @s if score @s safezone_state matches 0..1 if block ~ ~ ~ cave_air run function tag:tagging/go_in_safezone
@@ -167,7 +168,7 @@ execute as @a[tag = dead, gamemode = creative] at @s run tag @s remove dead
 
 execute as @a[scores = {anim.death = ..-2}] at @s run function tag:misc/spawn
 
-execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run tellraw @a[scores = {logging = 1..2}] ["! warn: ", {"selector": "@s"}, " got hit by environment or an unknown player"]
+execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " got hit by environment or an unknown player"]
 execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run scoreboard players set @s hit_detect.taker 0
 execute as @a[scores = {hit_detect.giver = 1..}] at @s run function tag:tagging/hit_detected
 
@@ -175,7 +176,10 @@ execute as @a[scores = {hit_detect.giver = 1..}] at @s run function tag:tagging/
 execute as @a at @s run function tag:misc/stats
 execute as @a at @s run function tag:misc/bhop
 execute as @a at @s run function tag:misc/stopmusic
-
+execute as @a at @s run function tag:tp_back/player_to_stand_check
+execute as @a at @s run function tag:tp_back/stand_to_player_check
+function tag:misc/player_sidebar
+function tag:tp_back/create_stands
 
 function tag:map_specific/lt_playground
 execute as @a run function tag:misc/screens

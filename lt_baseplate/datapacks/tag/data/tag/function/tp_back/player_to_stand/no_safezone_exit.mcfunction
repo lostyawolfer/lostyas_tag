@@ -1,0 +1,20 @@
+#damage @s .1 sweet_berry_bush
+title @s actionbar {"text": "cannot exit safezone", "color": "green"}
+#particle sonic_boom ~ ~1 ~ .3 .5 .3 0 5 normal @a
+
+execute as @a[scores={tp.id=1}] at @e[type=armor_stand, tag=tp_back, tag=1] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=2}] at @e[type=armor_stand, tag=tp_back, tag=2] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=3}] at @e[type=armor_stand, tag=tp_back, tag=3] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=4}] at @e[type=armor_stand, tag=tp_back, tag=4] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=5}] at @e[type=armor_stand, tag=tp_back, tag=5] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=6}] at @e[type=armor_stand, tag=tp_back, tag=6] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=7}] at @e[type=armor_stand, tag=tp_back, tag=7] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=8}] at @e[type=armor_stand, tag=tp_back, tag=8] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=9}] at @e[type=armor_stand, tag=tp_back, tag=9] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=10}] at @e[type=armor_stand, tag=tp_back, tag=10] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=11}] at @e[type=armor_stand, tag=tp_back, tag=11] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=12}] at @e[type=armor_stand, tag=tp_back, tag=12] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=13}] at @e[type=armor_stand, tag=tp_back, tag=13] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=14}] at @e[type=armor_stand, tag=tp_back, tag=14] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=15}] at @e[type=armor_stand, tag=tp_back, tag=15] run tp ~ ~-255 ~
+execute as @a[scores={tp.id=16}] at @e[type=armor_stand, tag=tp_back, tag=16] run tp ~ ~-255 ~
