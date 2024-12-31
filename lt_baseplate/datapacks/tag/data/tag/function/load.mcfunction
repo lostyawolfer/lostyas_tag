@@ -1,6 +1,3 @@
-# temporary variable; used to store if someone wants the "unplayable build" message removed
-# scoreboard objectives add disable_message trigger
-
 # constants
 scoreboard objectives add consts dummy
 scoreboard players set -1 consts -1
@@ -30,7 +27,6 @@ scoreboard objectives add effect.downed.ms dummy
 
 # misc scoreboards
 scoreboard objectives add server dummy
-scoreboard players add buildnum server 1
 function tag:misc/update_player_list
 scoreboard objectives add anim.death dummy
 scoreboard objectives add fall minecraft.custom:minecraft.fall_one_cm
@@ -115,6 +111,30 @@ team modify 021tagger collisionRule never
 team modify 021tagger friendlyFire true
 team modify 021tagger nametagVisibility always
 team modify 021tagger seeFriendlyInvisibles true
+
+team add 001tagger_crouch
+team modify 001tagger_crouch color gold
+team modify 001tagger_crouch suffix {"text": "↓", "color": "yellow"}
+team modify 001tagger_crouch collisionRule never
+team modify 001tagger_crouch friendlyFire true
+team modify 001tagger_crouch nametagVisibility always
+team modify 001tagger_crouch seeFriendlyInvisibles true
+
+team add 011tagger_crouch
+team modify 011tagger_crouch color yellow
+team modify 011tagger_crouch suffix {"text": "↓", "color": "yellow"}
+team modify 011tagger_crouch collisionRule never
+team modify 011tagger_crouch friendlyFire true
+team modify 011tagger_crouch nametagVisibility always
+team modify 011tagger_crouch seeFriendlyInvisibles true
+
+team add 021tagger_crouch
+team modify 021tagger_crouch color white
+team modify 021tagger_crouch suffix {"text": "↓", "color": "yellow"}
+team modify 021tagger_crouch collisionRule never
+team modify 021tagger_crouch friendlyFire true
+team modify 021tagger_crouch nametagVisibility always
+team modify 021tagger_crouch seeFriendlyInvisibles true
 
 team add 002special
 team modify 002special color blue

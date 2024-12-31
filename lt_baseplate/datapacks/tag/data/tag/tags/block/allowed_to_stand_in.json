@@ -13,6 +13,8 @@
         "dandelion",
         "poppy",
         "allium",
+        "fern",
+        "large_fern",
 
         "#slabs",
         "#stairs",
@@ -29,8 +31,15 @@
         "#buttons",
         "#all_signs",
         "#banners",
+        "#flower_pots",
 
         "iron_bars",
+        "brewing_stand",
+        "enchanting_table",
+        "anvil",
+        "bell",
+        "stonecutter",
+        "daylight_detector",
 
         "player_head",
         "creeper_head",
@@ -55,6 +64,8 @@
         "campfire",
         "soul_campfire",
         "end_rod",
+        "glow_lichen",
+        "chain",
 
         "ladder",
         "scaffolding",

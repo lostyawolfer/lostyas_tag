@@ -18,6 +18,9 @@ execute as @a[tag =!getting_id] unless score @s tp.id matches 3 run scoreboard p
 execute as @a[tag =!getting_id] unless score @s tp.id matches 2 run scoreboard players set @a[tag = getting_id] tp.id 2
 execute as @a[tag =!getting_id] unless score @s tp.id matches 1 run scoreboard players set @a[tag = getting_id] tp.id 1
 
+execute unless entity @a[tag =!getting_id] run scoreboard players set @s tp.id 1
+
 tag @s remove getting_id
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " got a tp.id of ", {"score": {"name": "@s", "objective": "tp.id"}, "bold": true}]
-scoreboard players set @a[tag = getting_id] tp.id 0
+#scoreboard players set @a[tag = getting_id] tp.id 0
+return run scoreboard players get @s tp.id
