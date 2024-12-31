@@ -34,7 +34,7 @@ execute if score restart server matches 1 as @a run function tag_music:win/play
 execute if score restart server matches 1 run tellraw @a [{"text": "Everyone was caught! Restarting the game in ", "color": "gold"}, {"score": {"name": "restart.s_reversed", "objective": "server"}, "color": "gold"}, {"text": " seconds..."}]
 execute if score restart server matches 60 as @a run function tag:misc/spawn
 execute if score adventure-mode server matches 2.. if score restart server matches 140 as @a run function tag:tag_randomize
-execute if score adventure-mode server matches 2.. if score restart server matches 60..340 run scoreboard players set @a safezone_state 1
+execute if score adventure-mode server matches 2.. if score restart server matches 60..340 run scoreboard players set @a[tag=tagger] safezone_state 1
 execute if score adventure-mode server matches 2.. if score restart server matches 340.. run scoreboard players set @a safezone_state -1
 execute if score adventure-mode server matches 2.. if score restart server matches 500.. as @a run scoreboard players set @a safezone_state 0
 execute if score adventure-mode server matches 2.. if score restart server matches 500.. as @a run scoreboard players reset restart server
@@ -50,29 +50,39 @@ effect give @a instant_health 15 10 true
 
 # ui stuff
 bossbar set minecraft:version players @a
-execute if score adventure-mode server matches 2.. if score taggers server matches 1.. unless score game server matches 0.. run scoreboard players operation game server = game_prev server
-execute if score adventure-mode server matches 2.. unless score taggers server matches 1.. unless score game server matches 0.. run scoreboard players operation game server = game_prev server
-execute unless score adventure-mode server matches 2.. if score playercount server matches 1.. run scoreboard players set game server -2
+execute unless score force-game server matches 1 if score adventure-mode server matches 2.. if score taggers server matches 1.. unless score game server matches 0.. run scoreboard players operation game server = game_prev server
+execute unless score force-game server matches 1 if score adventure-mode server matches 2.. unless score taggers server matches 1.. unless score game server matches 0.. run scoreboard players operation game server = game_prev server
+execute unless score force-game server matches 1 unless score adventure-mode server matches 2.. if score playercount server matches 1.. run scoreboard players set game server -2
 
 execute if score game server matches 0.. run scoreboard players operation game_prev server = game server
 
-execute if score game server matches -2 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"              ",{"text":"building mode","color":"gray","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches -1 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"              ",{"text":"social space","color":"gray","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 0 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"     ",{"text":"punch to start classic tag","color":"gray","bold":false},{"text":"      ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 1 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"               ",{"text":"classic tag","color":"#FFBB00","bold":false},{"text":"                ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 2 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"              ",{"text":"infection tag","color":"dark_green","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 3 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"               ",{"text":"murder tag","color":"red","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 4 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"                ",{"text":"crown tag","color":"yellow","bold":false},{"text":"                ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 5 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"               ",{"text":"freeze tag","color":"aqua","bold":false},{"text":"               ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 6 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},"            ",{"text":"killer freeze tag","color":"light_purple","bold":false},{"text":"            ","color":"#999900","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches -2 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.building_mode","color":"gray","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches -1 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.social_space","color":"gray","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches 0 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.punch_to_start","color":"gray","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches 1 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.classic","color":"#FFBB00","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches 2 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.infection","color":"dark_green","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches 3 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.murder","color":"red","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches 4 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.crown","color":"yellow","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches 5 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.freeze","color":"aqua","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches 6 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.killer_freeze","color":"light_purple","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches 7 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.hot_potato","color":"red","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 
 
 # other functions
 scoreboard players add glowing server 1
 execute if score glowing server matches 4.. run scoreboard players set glowing server 0
-
 execute if score game server matches 1.. if score glowing server matches 0..1 run team modify 013player_glow color aqua
 execute if score game server matches 1.. if score glowing server matches 2..3 run team modify 013player_glow color white
+
+scoreboard players add crouching server 1
+execute if score crouching server matches 20.. run scoreboard players set crouching server 0
+execute if score game server matches 1.. if score crouching server matches 0..9 run team modify 001tagger_crouch suffix {"text": "↓", "color": "yellow"}
+execute if score game server matches 1.. if score crouching server matches 0..9 run team modify 011tagger_crouch suffix {"text": "↓", "color": "yellow"}
+execute if score game server matches 1.. if score crouching server matches 0..9 run team modify 021tagger_crouch suffix {"text": "↓", "color": "yellow"}
+execute if score game server matches 1.. if score crouching server matches 10..19 run team modify 001tagger_crouch suffix {"text": "↓", "color": "#999900"}
+execute if score game server matches 1.. if score crouching server matches 10..19 run team modify 011tagger_crouch suffix {"text": "↓", "color": "#999900"}
+execute if score game server matches 1.. if score crouching server matches 10..19 run team modify 021tagger_crouch suffix {"text": "↓", "color": "#999900"}
+
 
 execute if score game server matches 1.. run team modify 003player color aqua
 execute if score game server matches 1.. run team modify 103player_safezone prefix {"text": "⭐", "color": "aqua"}
@@ -81,7 +91,7 @@ execute if score game server matches 1.. run team modify 303player_spectator pre
 execute if score game server matches 1.. run team modify 002special color blue
 execute if score game server matches 1.. run team modify 102special_safezone prefix {"text": "⭐", "color": "blue"}
 execute if score game server matches 1.. run team modify 202special_creative prefix {"text": "⭐", "color": "blue"}
-execute if score game server matches 1.. run team modify 302special_spectator prefix {"text": "☆", "color": "blue"}
+execute if score game server matches 1.. run team modify 302special_spectator prefix {"text": "☠", "color": "blue"}
 
 
 execute unless score game server matches 1.. run team modify 013player_glow color gray
@@ -96,6 +106,12 @@ execute unless score game server matches 1.. run team modify 302special_spectato
 execute unless score game server matches 1.. run team modify 001tagger color gray
 execute unless score game server matches 1.. run team modify 011tagger color gray
 execute unless score game server matches 1.. run team modify 021tagger color gray
+execute unless score game server matches 1.. run team modify 001tagger_crouch color gray
+execute unless score game server matches 1.. run team modify 011tagger_crouch color gray
+execute unless score game server matches 1.. run team modify 021tagger_crouch suffix ""
+execute unless score game server matches 1.. run team modify 001tagger_crouch suffix ""
+execute unless score game server matches 1.. run team modify 011tagger_crouch suffix ""
+execute unless score game server matches 1.. run team modify 021tagger_crouch suffix ""
 execute unless score game server matches 1.. run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gray"}
 execute unless score game server matches 1.. run team modify 201tagger_creative prefix {"text": "⭐", "color": "gray"}
 execute unless score game server matches 1.. run team modify 301tagger_spectator prefix {"text": "☆", "color": "gray"}
@@ -103,6 +119,9 @@ execute unless score game server matches 1.. run team modify 301tagger_spectator
 execute if score game server matches 1 run team modify 001tagger color gold
 execute if score game server matches 1 run team modify 011tagger color yellow
 execute if score game server matches 1 run team modify 021tagger color white
+execute if score game server matches 1 run team modify 001tagger_crouch color gold
+execute if score game server matches 1 run team modify 011tagger_crouch color yellow
+execute if score game server matches 1 run team modify 021tagger_crouch color white
 execute if score game server matches 1 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
 execute if score game server matches 1 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
 execute if score game server matches 1 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
@@ -110,6 +129,9 @@ execute if score game server matches 1 run team modify 301tagger_spectator prefi
 execute if score game server matches 2 run team modify 001tagger color dark_green
 execute if score game server matches 2 run team modify 011tagger color green
 execute if score game server matches 2 run team modify 021tagger color white
+execute if score game server matches 2 run team modify 001tagger_crouch color dark_green
+execute if score game server matches 2 run team modify 011tagger_crouch color green
+execute if score game server matches 2 run team modify 021tagger_crouch color white
 execute if score game server matches 2 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "dark_green"}
 execute if score game server matches 2 run team modify 201tagger_creative prefix {"text": "⭐", "color": "dark_green"}
 execute if score game server matches 2 run team modify 301tagger_spectator prefix {"text": "☆", "color": "dark_green"}
@@ -117,6 +139,9 @@ execute if score game server matches 2 run team modify 301tagger_spectator prefi
 execute if score game server matches 3 run team modify 001tagger color red
 execute if score game server matches 3 run team modify 011tagger color light_purple
 execute if score game server matches 3 run team modify 021tagger color white
+execute if score game server matches 3 run team modify 001tagger_crouch color red
+execute if score game server matches 3 run team modify 011tagger_crouch color light_purple
+execute if score game server matches 3 run team modify 021tagger_crouch color white
 execute if score game server matches 3 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "red"}
 execute if score game server matches 3 run team modify 201tagger_creative prefix {"text": "⭐", "color": "red"}
 execute if score game server matches 3 run team modify 301tagger_spectator prefix {"text": "☆", "color": "red"}
@@ -124,6 +149,9 @@ execute if score game server matches 3 run team modify 301tagger_spectator prefi
 execute if score game server matches 4 run team modify 001tagger color yellow
 execute if score game server matches 4 run team modify 011tagger color yellow
 execute if score game server matches 4 run team modify 021tagger color white
+execute if score game server matches 4 run team modify 001tagger_crouch color yellow
+execute if score game server matches 4 run team modify 011tagger_crouch color yellow
+execute if score game server matches 4 run team modify 021tagger_crouch color white
 execute if score game server matches 4 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "yellow"}
 execute if score game server matches 4 run team modify 201tagger_creative prefix {"text": "⭐", "color": "yellow"}
 execute if score game server matches 4 run team modify 301tagger_spectator prefix {"text": "☆", "color": "yellow"}
@@ -131,6 +159,9 @@ execute if score game server matches 4 run team modify 301tagger_spectator prefi
 execute if score game server matches 5 run team modify 001tagger color gold
 execute if score game server matches 5 run team modify 011tagger color yellow
 execute if score game server matches 5 run team modify 021tagger color white
+execute if score game server matches 5 run team modify 001tagger_crouch color gold
+execute if score game server matches 5 run team modify 011tagger_crouch color yellow
+execute if score game server matches 5 run team modify 021tagger_crouch color white
 execute if score game server matches 5 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
 execute if score game server matches 5 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
 execute if score game server matches 5 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
@@ -138,6 +169,9 @@ execute if score game server matches 5 run team modify 301tagger_spectator prefi
 execute if score game server matches 6 run team modify 001tagger color gold
 execute if score game server matches 5 run team modify 011tagger color yellow
 execute if score game server matches 5 run team modify 021tagger color white
+execute if score game server matches 6 run team modify 001tagger_crouch color gold
+execute if score game server matches 5 run team modify 011tagger_crouch color yellow
+execute if score game server matches 5 run team modify 021tagger_crouch color white
 execute if score game server matches 6 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
 execute if score game server matches 6 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
 execute if score game server matches 6 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
@@ -155,7 +189,7 @@ execute as @a[tag = dead, gamemode = creative] at @s run tag @s remove dead
 execute as @a at @s run function tag:tagging/decoration
 
 execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
-execute as @a[scores = {effect.strong_levitation = 0..}, gamemode = adventure] at @s run function tag:effects/strong_levitation
+execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:effects/strong_levitation
 execute as @a[scores = {effect.freeze = 0..}, gamemode = adventure] at @s run function tag:effects/freeze
 execute as @a[scores = {effect.invisibility = 0..}, gamemode = adventure] at @s run function tag:effects/invisibility
 execute as @a[scores = {effect.downed = -1..}, gamemode = adventure] at @s run function tag:effects/downed
@@ -204,6 +238,28 @@ execute as @a at @s if block ~ ~ ~ cauldron unless score @s effect.invisibility 
 
 execute as @a unless score @s tp.id matches 1..16 run function tag:tp_back/get_id
 
+
+# events
+# glowing
+execute if score game server matches 1.. if score taggers server matches 1.. if score non-taggers server matches 1.. run scoreboard players remove e.glowing server 1
+execute unless score game server matches 1.. run scoreboard players set e.glowing server -2
+
+execute if score e.glowing server matches ..-4000 run scoreboard players set e.glowing server 99
+execute if score e.glowing server matches 0.. run title @a title ""
+execute if score e.glowing server matches 0.. run title @a times 0 5 3
+execute if score e.glowing server matches 0.. as @a unless score @s effect.glowing matches 2.. run scoreboard players set @s effect.glowing 2
+
+scoreboard players operation e.glowing_s server = e.glowing server
+scoreboard players operation e.glowing_s server /= 20 consts
+scoreboard players add e.glowing_s server 1
+
+execute if score e.glowing server matches 0.. run title @a subtitle [{"translate":"title.glowing", "color":"aqua"}, " ", {"score":{"name":"e.glowing_s", "objective":"server"}, "color":"#00FFFF", "bold": true}]
+execute if score e.glowing server matches -1 run title @a subtitle [{"translate":"title.glowing", "color":"dark_gray"}, " ", {"score":{"name":"e.glowing_s", "objective":"server"}, "color":"gray", "bold": true}]
+
+
+
+
+
 # items
 execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 1}]
 execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 2}]
@@ -215,8 +271,6 @@ execute as @a[gamemode = adventure] at @s run function tag:items/ability
 # variables after functions
 execute store result score playercount_old server if entity @a
 execute store result score taggers_old server if entity @a[tag=tagger]
-
-
 
 
 

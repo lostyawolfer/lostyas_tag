@@ -30,6 +30,7 @@ execute if score game server matches 5 if entity @a[tag = hit_detect.giver, tag 
 execute if score game server matches 6 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!special, tag =!safezone] run function tag:tagging/tag_give/freeze_timed
 execute if score game server matches 5..6 if entity @a[tag = hit_detect.giver, tag =!tagger, tag =!special, tag =!safezone] if entity @a[tag = hit_detect.taker, tag = special, tag =!safezone] run function tag:tagging/tag_give/unfreeze
 
+execute unless score e.glowing server matches 0.. run scoreboard players remove e.glowing server 2
 
 tag @a[tag = hit_detect.giver] remove hit_detect.giver
 tag @a[tag = hit_detect.taker] remove hit_detect.taker

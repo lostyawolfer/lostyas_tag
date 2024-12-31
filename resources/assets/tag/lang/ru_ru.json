@@ -19,10 +19,10 @@
 
   "chat.hit.murder": " убил ",
   "subtitle.hit.murder_you": "тебе",
-  "subtitle.hit.murder_you_1": "",
-  "subtitle.hit.murder_other_1": "спасибо, ",
-  "subtitle.hit.murder_you_2": " решил тебя убить без зазрений совести",
-  "subtitle.hit.murder_other_2": "",
+  "subtitle.hit.murder_you_1": "спасибо ",
+  "subtitle.hit.murder_other_1": "",
+  "subtitle.hit.murder_you_2": "",
+  "subtitle.hit.murder_other_2": " решил тебя убить без зазрений совести",
   "title.hit.murder_you": "Ты МЁРТВ!",  
   "title.hit.murder_other": " был убит!",
   
@@ -53,8 +53,41 @@
   "title.hit.unfreeze_you": "Ты РАЗМОРОЖЕН!",  
   "title.hit.unfreeze_other": " был разморожен!",
 
+  "chat.hit.generic": " стал водой по воле игры",
+  "subtitle.hit.generic_you": "игра",
+  "subtitle.hit.generic_you_1": "потому что ",
+  "subtitle.hit.generic_other_1": "потому что ",
+  "subtitle.hit.generic_you_2": " так сказала",
+  "subtitle.hit.generic_other_2": " так сказала",
+  "title.hit.generic_you": "Ты ВОДА!",  
+  "title.hit.generic_other": " вода!",
   
+  "subtitle.choosing_random": "кручу-верчу, петуха выбрать хочу",
+  "chat.choosing_random": "выбираю воду на рандом...",
   
+  "chat.dead": " умер",
+  "chat.dead.downed": " заморожен до смерти",
+  
+  "sidebar.now_online": "онлайн",
+  
+  "gamemode.building_mode": "             строительство              ",
+  "gamemode.social_space": "                social space                ",
+  "gamemode.punch_to_start": "           ударь чтобы начать           ",
+  "gamemode.classic": "        классические догонялки        ",
+  "gamemode.infection": "                    вирус                    ",
+  "gamemode.murder": "                   убийца                   ",
+  "gamemode.crown": "                   корона                   ",
+  "gamemode.freeze": "                 заморозка                 ",
+  "gamemode.killer_freeze": "            заморозка-убийца            ",
+  "gamemode.hot_potato": "            горячая картошка            ",
+
+  "title.tp.safezone_exit_error": "нельзя выйти из сейфзоны",
+  "title.tp.safezone_enter_error": "нельзя зайти в сейфзону",
+  "title.tp.outside_map": "ты оказался за картой",
+  "title.tp.inside_blocks": "ты был в блоках",
+
+  "title.glowing": "подсветка",
   "title.spectator": "ты зритель",
+  "title.now_spectating": "сейчас наблюдаю за ",
   "safezone.notif": "⭐ ты в сейфзоне ⭐"
 }
