@@ -27,8 +27,7 @@ execute if score game server matches 2 if entity @a[tag = hit_detect.giver, tag 
 execute if score game server matches 3 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!safezone] run function tag:tagging/tag_give/murder
 execute if score game server matches 4 if entity @a[tag = hit_detect.giver, tag =!tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag = tagger, tag =!safezone] run function tag:tagging/tag_give/crown
 execute if score game server matches 5 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!special, tag =!safezone] run function tag:tagging/tag_give/freeze
-execute if score game server matches 6 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag =!special, tag =!safezone] run function tag:tagging/tag_give/freeze_timed
-execute if score game server matches 5..6 if entity @a[tag = hit_detect.giver, tag =!tagger, tag =!special, tag =!safezone] if entity @a[tag = hit_detect.taker, tag = special, tag =!safezone] run function tag:tagging/tag_give/unfreeze
+execute if score game server matches 5 if entity @a[tag = hit_detect.giver, tag =!tagger, tag =!special, tag =!safezone] if entity @a[tag = hit_detect.taker, tag = special, tag =!safezone] run function tag:tagging/tag_give/unfreeze
 
 execute unless score e.glowing server matches 0.. run scoreboard players remove e.glowing server 2
 

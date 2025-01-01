@@ -16,6 +16,7 @@ scoreboard players add @s effect.downed.count_up 1
 effect give @s slowness infinite 6 true
 effect give @s slow_falling infinite 0 true
 particle electric_spark ~ ~1 ~ .2 .55 .2 0 2
+attribute @s gravity base set 0
 tp @s @s
 tp @s ~ ~ ~
 
@@ -42,6 +43,7 @@ execute if score @s effect.downed.count_up matches 17.. run scoreboard players s
 execute if score @s effect.downed matches 0 run tag @s add dead
 execute if score @s effect.downed matches 0 run stopsound @s * tag:downed
 execute if score @s effect.downed matches 0 run effect clear @s
+execute if score @s effect.downed matches 0 run attribute @s gravity base set .08
 execute if score @s effect.downed matches 0 run scoreboard players set @s anim.death 100
 execute if score @s effect.downed matches 0 run scoreboard players reset @s effect.downed.count_up
 execute if score @s effect.downed matches 0 run scoreboard players reset @s effect.downed.seconds
@@ -50,6 +52,7 @@ execute if score @s effect.downed matches 0 run scoreboard players reset @s effe
 execute if score @s effect.downed matches -1 run title @s actionbar ""
 execute if score @s effect.downed matches -1 run stopsound @s * tag:downed
 execute if score @s effect.downed matches -1 run effect clear @s
+execute if score @s effect.downed matches -1 run attribute @s gravity base set .08
 execute if score @s effect.downed matches -1 run scoreboard players reset @s effect.downed.count_up
 execute if score @s effect.downed matches -1 run scoreboard players reset @s effect.downed.seconds
 execute if score @s effect.downed matches -1 run scoreboard players reset @s effect.downed

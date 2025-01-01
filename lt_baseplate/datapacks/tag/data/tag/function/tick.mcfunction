@@ -50,8 +50,8 @@ effect give @a instant_health 15 10 true
 
 # ui stuff
 bossbar set minecraft:version players @a
-execute unless score force-game server matches 1 if score adventure-mode server matches 2.. if score taggers server matches 1.. unless score game server matches 0.. run scoreboard players operation game server = game_prev server
-execute unless score force-game server matches 1 if score adventure-mode server matches 2.. unless score taggers server matches 1.. unless score game server matches 0.. run scoreboard players operation game server = game_prev server
+execute unless score force-game server matches 1 if score adventure-mode server matches 2.. if score taggers server matches 1.. unless score game server matches -1.. run scoreboard players operation game server = game_prev server
+execute unless score force-game server matches 1 if score adventure-mode server matches 2.. unless score taggers server matches 1.. unless score game server matches -1.. run scoreboard players operation game server = game_prev server
 execute unless score force-game server matches 1 unless score adventure-mode server matches 2.. if score playercount server matches 1.. run scoreboard players set game server -2
 
 execute if score game server matches 0.. run scoreboard players operation game_prev server = game server
@@ -64,24 +64,27 @@ execute if score game server matches 2 run bossbar set minecraft:version name [{
 execute if score game server matches 3 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.murder","color":"red","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 execute if score game server matches 4 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.crown","color":"yellow","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 execute if score game server matches 5 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.freeze","color":"aqua","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 6 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.killer_freeze","color":"light_purple","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 7 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.hot_potato","color":"red","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
+execute if score game server matches 6 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.hot_potato","color":"red","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
 
 
 # other functions
-scoreboard players add glowing server 1
-execute if score glowing server matches 4.. run scoreboard players set glowing server 0
-execute if score game server matches 1.. if score glowing server matches 0..1 run team modify 013player_glow color aqua
-execute if score game server matches 1.. if score glowing server matches 2..3 run team modify 013player_glow color white
+scoreboard players add anim.fast server 1
+execute if score anim.fast server matches 4.. run scoreboard players set anim.fast server 0
+execute if score game server matches 1.. if score anim.fast server matches 0..1 run team modify 013player_glow color aqua
+execute if score game server matches 1.. if score anim.fast server matches 0..1 run team modify 022special_alert suffix {"text": "⚠", "color": "white"}
+execute if score game server matches 1.. if score anim.fast server matches 2..3 run team modify 013player_glow color white
+execute if score game server matches 1.. if score anim.fast server matches 2..3 run team modify 022special_alert suffix {"text": "⚠", "color": "red"}
 
-scoreboard players add crouching server 1
-execute if score crouching server matches 20.. run scoreboard players set crouching server 0
-execute if score game server matches 1.. if score crouching server matches 0..9 run team modify 001tagger_crouch suffix {"text": "↓", "color": "yellow"}
-execute if score game server matches 1.. if score crouching server matches 0..9 run team modify 011tagger_crouch suffix {"text": "↓", "color": "yellow"}
-execute if score game server matches 1.. if score crouching server matches 0..9 run team modify 021tagger_crouch suffix {"text": "↓", "color": "yellow"}
-execute if score game server matches 1.. if score crouching server matches 10..19 run team modify 001tagger_crouch suffix {"text": "↓", "color": "#999900"}
-execute if score game server matches 1.. if score crouching server matches 10..19 run team modify 011tagger_crouch suffix {"text": "↓", "color": "#999900"}
-execute if score game server matches 1.. if score crouching server matches 10..19 run team modify 021tagger_crouch suffix {"text": "↓", "color": "#999900"}
+scoreboard players add anim.slow server 1
+execute if score anim.slow server matches 20.. run scoreboard players set anim.slow server 0
+execute if score game server matches 1.. if score anim.slow server matches 0..9 run team modify 012special_alert suffix {"text": "⚠", "color": "white"}
+execute if score game server matches 1.. if score anim.slow server matches 0..9 run team modify 001tagger_crouch suffix {"text": "↓", "color": "yellow"}
+execute if score game server matches 1.. if score anim.slow server matches 0..9 run team modify 011tagger_crouch suffix {"text": "↓", "color": "yellow"}
+execute if score game server matches 1.. if score anim.slow server matches 0..9 run team modify 021tagger_crouch suffix {"text": "↓", "color": "yellow"}
+execute if score game server matches 1.. if score anim.slow server matches 10..19 run team modify 012special_alert suffix {"text": "⚠", "color": "red"}
+execute if score game server matches 1.. if score anim.slow server matches 10..19 run team modify 001tagger_crouch suffix {"text": "↓", "color": "#999900"}
+execute if score game server matches 1.. if score anim.slow server matches 10..19 run team modify 011tagger_crouch suffix {"text": "↓", "color": "#999900"}
+execute if score game server matches 1.. if score anim.slow server matches 10..19 run team modify 021tagger_crouch suffix {"text": "↓", "color": "#999900"}
 
 
 execute if score game server matches 1.. run team modify 003player color aqua
@@ -167,11 +170,11 @@ execute if score game server matches 5 run team modify 201tagger_creative prefix
 execute if score game server matches 5 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
 
 execute if score game server matches 6 run team modify 001tagger color gold
-execute if score game server matches 5 run team modify 011tagger color yellow
-execute if score game server matches 5 run team modify 021tagger color white
+execute if score game server matches 6 run team modify 011tagger color yellow
+execute if score game server matches 6 run team modify 021tagger color white
 execute if score game server matches 6 run team modify 001tagger_crouch color gold
-execute if score game server matches 5 run team modify 011tagger_crouch color yellow
-execute if score game server matches 5 run team modify 021tagger_crouch color white
+execute if score game server matches 6 run team modify 011tagger_crouch color yellow
+execute if score game server matches 6 run team modify 021tagger_crouch color white
 execute if score game server matches 6 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
 execute if score game server matches 6 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
 execute if score game server matches 6 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}

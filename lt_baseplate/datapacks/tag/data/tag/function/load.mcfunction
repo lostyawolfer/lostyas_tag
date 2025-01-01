@@ -143,6 +143,23 @@ team modify 002special friendlyFire true
 team modify 002special nametagVisibility always
 team modify 002special seeFriendlyInvisibles false
 
+team add 012special_alert
+team modify 012special_alert color blue
+team modify 012special_alert suffix {"text": "⚠", "color": "white"}
+team modify 012special_alert collisionRule never
+team modify 012special_alert friendlyFire true
+team modify 012special_alert nametagVisibility always
+team modify 012special_alert seeFriendlyInvisibles false
+
+team add 022special_alert
+team modify 022special_alert color blue
+team modify 022special_alert suffix {"text": "⚠", "color": "white"}
+team modify 022special_alert collisionRule never
+team modify 022special_alert friendlyFire true
+team modify 022special_alert nametagVisibility always
+team modify 022special_alert seeFriendlyInvisibles false
+
+
 team add 003player
 team modify 003player color aqua
 team modify 003player collisionRule never

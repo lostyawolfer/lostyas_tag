@@ -12,7 +12,7 @@ scoreboard objectives add player_list dummy
 scoreboard objectives setdisplay sidebar player_list
 scoreboard objectives setdisplay list player_list
 scoreboard objectives modify player_list displayname [{"translate": "sidebar.now_online", "color": "#c4ff20", "bold": true, "underlined": true}]
-scoreboard objectives modify player_list numberformat blank
+execute as @a unless score @s player_list matches 1.. run scoreboard objectives modify player_list numberformat blank
 scoreboard players add @a player_list 0
 
 tellraw @a[scores = {logging = 1}] ["! log: ", "updated player list sidebar"]
