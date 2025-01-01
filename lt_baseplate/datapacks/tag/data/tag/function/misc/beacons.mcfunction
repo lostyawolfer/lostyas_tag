@@ -7,7 +7,7 @@ execute unless score @s effect.invisibility matches 1.. unless score @s effect.s
 execute unless score @s effect.invisibility matches 1.. unless score @s effect.strong_levitation matches ..8 run particle flash ~ ~ ~ 0 0 0 0 1
 
 
-execute unless score e.glowing server matches 0.. run scoreboard players remove e.glowing server 5
+execute unless score e.glowing server matches 0.. run scoreboard players remove e.glowing server 20
 
 # tp @s ~ ~0.5 ~
-scoreboard players set @s effect.strong_levitation 9
+scoreboard players set @s effect.strong_levitation 1
