@@ -22,22 +22,27 @@ execute if score playercount_old server > playercount server run function tag:mi
 
 
 # restart the game if everyone was caught
-execute if score restart server matches 60.. run scoreboard players add restart server 1
+execute if score restart server matches 1.. run scoreboard players add restart server 1
 execute if score active-players server matches 2.. if score taggers server matches 1.. if score taggers server = active-players server run scoreboard players add restart server 1
 execute if score active-players server matches 2.. if score specials server matches 1.. if score specials server = non-taggers server run scoreboard players add restart server 1
 execute if score active-players server matches 2.. if score restart server matches 1.. run scoreboard players operation restart.s server = restart server
 execute if score active-players server matches 2.. if score restart server matches 1.. run scoreboard players operation restart.s server /= 20 consts
-execute if score active-players server matches 2.. if score restart server matches 1.. run scoreboard players set restart.s_reversed server 3
+execute if score active-players server matches 2.. if score restart server matches 1.. run scoreboard players set restart.s_reversed server 5
 execute if score active-players server matches 2.. if score restart server matches 1.. run scoreboard players operation restart.s_reversed server -= restart.s server
 
-execute if score restart server matches 1 as @a run function tag_music:win/play
-execute if score restart server matches 1 run tellraw @a [{"text": "Everyone was caught! Restarting the game in ", "color": "gold"}, {"score": {"name": "restart.s_reversed", "objective": "server"}, "color": "gold"}, {"text": " seconds..."}]
-execute if score restart server matches 60 as @a run function tag:misc/spawn
-execute if score adventure-mode server matches 2.. if score restart server matches 140 as @a run function tag:tag_randomize
-execute if score adventure-mode server matches 2.. if score restart server matches 60..340 run scoreboard players set @a[tag=tagger] safezone_state 1
-execute if score adventure-mode server matches 2.. if score restart server matches 340.. run scoreboard players set @a safezone_state -1
-execute if score adventure-mode server matches 2.. if score restart server matches 500.. as @a run scoreboard players set @a safezone_state 0
-execute if score adventure-mode server matches 2.. if score restart server matches 500.. as @a run scoreboard players reset restart server
+execute if score restart server matches 3 as @a run function tag_music:win/play
+execute if score restart server matches 1 as @a[scores = {effect.downed=1..}] run scoreboard players set @s effect.downed 0
+execute if score restart server matches 3 run title @a times 0 90 10
+execute if score restart server matches 1 run tag @a[tag=tagger] remove tagger
+execute if score restart server matches 3 run tellraw @a [{"text": "Game ended", "color": "yellow", "bold": true}]
+execute if score restart server matches 3 run title @a title [{"text": "Game over", "color": "red"}]
+execute if score restart server matches 3..99 run title @a subtitle [{"text": "Restarting in ", "color": "gold"}, {"score": {"name": "restart.s_reversed", "objective": "server"}}, "..."]
+execute if score restart server matches 100 as @a run function tag:misc/spawn
+execute if score adventure-mode server matches 2.. if score restart server matches 180 if score game server matches 1.. as @a run function tag:tag_randomize
+execute if score adventure-mode server matches 2.. if score restart server matches 100..380 run scoreboard players set @a[tag=tagger] safezone_state 1
+execute if score adventure-mode server matches 2.. if score restart server matches 380.. run scoreboard players set @a safezone_state -1
+execute if score adventure-mode server matches 2.. if score restart server matches 540.. as @a run scoreboard players set @a safezone_state 0
+execute if score adventure-mode server matches 2.. if score restart server matches 540.. as @a run scoreboard players reset restart server
 # execute if score game server matches -2..1 run scoreboard players set @a safezone_state 0
 # execute if score game server matches 2..3 run scoreboard players set @a safezone_state -1
 # execute if score game server matches 4 run scoreboard players set @a safezone_state 0

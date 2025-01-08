@@ -8,6 +8,8 @@ execute if score @s anim.death matches 1 run tellraw @a [{"text": "", "color": "
 execute if score @s anim.death matches 1 run damage @s .01
 execute if score @s anim.death matches 1 run playsound tag:death master @s ~ ~ ~ 1
 execute if score @s anim.death matches 1 run playsound tag:death_main master @s ~ ~ ~ 1
+execute if score @s anim.death matches 1 run particle block{block_state:{Name:redstone_block}} ~ ~1 ~ .3 .5 .3 0 40
+execute if score @s anim.death matches 1 run particle flame ~ ~1 ~ .3 .5 .3 .1 10
 
 execute if score @s anim.death matches 1 run scoreboard players set @s screen_effect 200
 execute if score @s anim.death matches 2 run scoreboard players set @s screen_effect 201
@@ -30,9 +32,14 @@ execute if score @s anim.death matches 17 run scoreboard players set @s screen_e
 
 execute if score @s anim.death matches 101 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " died by being downed"]
 execute if score @s anim.death matches 101 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead.downed"}]
-execute if score @s anim.death matches 101 run damage @s .01
+execute if score @s anim.death matches 101 run damage @s .01 freeze
+execute if score @s anim.death matches 101 run title @s times 0 40 100
+execute if score @s anim.death matches 101 run title @s title {"translate": "title.hit.murder_you", "color":"red", "bold": true}
 execute if score @s anim.death matches 101 run playsound tag:death master @s ~ ~ ~ 1
 execute if score @s anim.death matches 101 run playsound tag:death_main master @s ~ ~ ~ 1
+execute if score @s anim.death matches 101 run particle block{block_state:{Name:redstone_block}} ~ ~1 ~ .3 .5 .3 0 30
+execute if score @s anim.death matches 101 run particle block{block_state:{Name:packed_ice}} ~ ~1 ~ .3 .5 .3 0 10
+execute if score @s anim.death matches 101 run particle soul_fire_flame ~ ~1 ~ .3 .5 .3 .1 10
 
 execute if score @s anim.death matches 101 run scoreboard players set @s screen_effect 516
 execute if score @s anim.death matches 102 run scoreboard players set @s screen_effect 517

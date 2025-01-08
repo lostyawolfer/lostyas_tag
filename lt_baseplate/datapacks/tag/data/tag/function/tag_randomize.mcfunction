@@ -48,6 +48,7 @@ execute if score tag.random_counter server matches 0 if score tag.random_counter
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @r[tag=!prev_tagger] run tag @s add tagger
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run tag @a remove prev_tagger
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run tag @a[tag=tagger] add prev_tagger
+execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. at @a[tag=tagger] run summon lightning_bolt
 #execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a[tag = tagger] run damage @s .1
 #execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a[tag = tagger] run title @a title [{"selector":"@s","color":"yellow"},{"text":" вода!"}]
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run scoreboard players reset tag.random_counter server

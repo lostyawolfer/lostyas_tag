@@ -26,7 +26,6 @@ scoreboard objectives add effect.downed.ms dummy
 
 
 # misc scoreboards
-scoreboard objectives add server dummy
 function tag:misc/update_player_list
 scoreboard objectives add anim.death dummy
 scoreboard objectives add fall minecraft.custom:minecraft.fall_one_cm
@@ -68,6 +67,7 @@ scoreboard objectives add jump.bhop2 dummy
 scoreboard objectives add jump.timer dummy
 
 scoreboard objectives add tp.id dummy
+scoreboard objectives add tp.timer dummy
 
 scoreboard objectives add safezone_state dummy
 
