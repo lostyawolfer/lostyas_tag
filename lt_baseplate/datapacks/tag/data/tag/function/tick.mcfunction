@@ -2,7 +2,6 @@
 gamemode adventure @a[gamemode = survival]
 recipe give @a *
 
-
 # variables before functions
 execute store result score playercount server if entity @a
 execute store result score taggers server if entity @a[tag = tagger, gamemode = adventure, tag =!safezone]
@@ -38,7 +37,8 @@ execute if score restart server matches 3 run tellraw @a [{"text": "Game ended",
 execute if score restart server matches 3 run title @a title [{"text": "Game over", "color": "red"}]
 execute if score restart server matches 3..99 run title @a subtitle [{"text": "Restarting in ", "color": "gold"}, {"score": {"name": "restart.s_reversed", "objective": "server"}}, "..."]
 execute if score restart server matches 100 as @a run function tag:misc/spawn
-execute if score adventure-mode server matches 2.. if score restart server matches 180 if score game server matches 1.. as @a run function tag:tag_randomize
+execute if score restart server matches 110 run tellraw @a [{"text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew game", "color": "yellow", "bold": true}]
+execute if score adventure-mode server matches 2.. if score restart server matches 180 if score game server matches 1.. as @a run function tag:-/tag_randomize
 execute if score adventure-mode server matches 2.. if score restart server matches 100..380 run scoreboard players set @a[tag=tagger] safezone_state 1
 execute if score adventure-mode server matches 2.. if score restart server matches 380.. run scoreboard players set @a safezone_state -1
 execute if score adventure-mode server matches 2.. if score restart server matches 540.. as @a run scoreboard players set @a safezone_state 0
@@ -196,12 +196,6 @@ execute as @a[tag = dead, gamemode = creative] at @s run tag @s remove dead
 
 execute as @a at @s run function tag:tagging/decoration
 
-execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
-execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:effects/strong_levitation
-execute as @a[scores = {effect.freeze = 0..}, gamemode = adventure] at @s run function tag:effects/freeze
-execute as @a[scores = {effect.invisibility = 0..}, gamemode = adventure] at @s run function tag:effects/invisibility
-execute as @a[scores = {effect.downed = -1..}, gamemode = adventure] at @s run function tag:effects/downed
-
 
 # safezone states
 # -1 = cannot enter     can exit
@@ -266,6 +260,9 @@ execute if score e.glowing server matches -1 run title @a subtitle [{"translate"
 
 
 
+execute as @e[type = ender_pearl] run team join pearl @s
+execute as @e[type = ender_pearl] run data merge entity @s {Glowing: 1b}
+
 
 
 # items
@@ -274,6 +271,13 @@ execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 2}]
 execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 3}]
 execute as @a[gamemode = adventure] at @s run function tag:items/ender_pearl
 execute as @a[gamemode = adventure] at @s run function tag:items/ability
+
+
+execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
+execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:effects/strong_levitation
+execute as @a[scores = {effect.freeze = 0..}, gamemode = adventure] at @s run function tag:effects/freeze
+execute as @a[scores = {effect.invisibility = 0..}, gamemode = adventure] at @s run function tag:effects/invisibility
+execute as @a[scores = {effect.downed = -1..}, gamemode = adventure] at @s run function tag:effects/downed
 
 
 # variables after functions

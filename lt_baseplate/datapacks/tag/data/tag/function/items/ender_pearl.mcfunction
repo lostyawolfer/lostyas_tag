@@ -3,7 +3,9 @@ scoreboard players operation @s p.cd.s /= 20 consts
 scoreboard players add @s p.cd.s 1
 
 
+execute if score game server matches 1.. if score @s p.use.trigger matches 1.. if score game server matches 1.. run scoreboard players remove e.glowing server 120
 execute if score game server matches 1.. if score @s p.use.trigger matches 1.. run scoreboard players set @s p.cd 300
+execute if score game server matches 1.. if score @s p.use.trigger matches 1.. run scoreboard players set @s effect.glowing 10
 execute unless score game server matches 1.. if score @s p.use.trigger matches 1.. run scoreboard players set @s p.cd 10
 execute if score @s p.use.trigger matches 1.. run scoreboard players reset @s p.use.trigger
 

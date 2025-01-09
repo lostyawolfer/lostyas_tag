@@ -1,6 +1,7 @@
 execute unless score @s anim.death matches 17..99 unless score @s anim.death matches -1 run scoreboard players add @s anim.death 1
 
-
+execute if score @s anim.death matches 1 run team join 002special @s
+execute if score @s anim.death matches 1 run tag @s add special
 execute if score @s anim.death matches 1 run scoreboard players set @s ab.cd 0
 execute if score @s anim.death matches 1 run scoreboard players set @s p.cd 0
 execute if score @s anim.death matches 1 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " died"]
@@ -30,6 +31,10 @@ execute if score @s anim.death matches 17 run scoreboard players set @s screen_e
 
 
 
+execute if score @s anim.death matches 101 run team join 002special @s
+execute if score @s anim.death matches 101 run tag @s add special
+execute if score @s anim.death matches 101 run scoreboard players set @s ab.cd 0
+execute if score @s anim.death matches 101 run scoreboard players set @s p.cd 0
 execute if score @s anim.death matches 101 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " died by being downed"]
 execute if score @s anim.death matches 101 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead.downed"}]
 execute if score @s anim.death matches 101 run damage @s .01 freeze

@@ -50,6 +50,10 @@ scoreboard objectives add stat.vertical_speed dummy
 scoreboard objectives add stat.tagger_time dummy
 scoreboard objectives add stat.tagger_time.total dummy
 
+scoreboard objectives add stat.wasnt_selected_steak dummy
+
+scoreboard objectives add stat.current_hight dummy
+
 scoreboard objectives add p.cd.s dummy
 scoreboard objectives add p.cd dummy
 scoreboard objectives add p.use.trigger minecraft.used:minecraft.ender_pearl
@@ -91,6 +95,10 @@ bossbar set version value 0
 
 
 # teams
+team add pearl
+team modify pearl color dark_aqua
+team modify pearl collisionRule never
+
 team add 001tagger
 team modify 001tagger color gold
 team modify 001tagger collisionRule never

@@ -12,6 +12,9 @@ execute if score @s tp.timer matches 3.. run function tag:tp_back/player_to_stan
 execute if entity @s[gamemode = adventure] if block ~ ~ ~ #tag:forbidden_to_stand_on run function tag:tp_back/player_to_stand/outside_map
 execute if entity @s[gamemode = adventure] if block ~ ~-.1 ~ #tag:forbidden_to_stand_on run function tag:tp_back/player_to_stand/outside_map
 
+execute if entity @s[gamemode = adventure] if score @s stat.current_hight matches 125.. run function tag:tp_back/player_to_stand/outside_map
+execute if entity @s[gamemode = adventure] if score @s stat.current_hight matches ..-64 run function tag:tp_back/player_to_stand/outside_map
+
 execute if entity @s[gamemode = adventure, scores = {safezone_state =-1}, tag =!safezone] if block ~ ~ ~ cave_air run function tag:tp_back/player_to_stand/no_safezone
 execute if entity @s[gamemode = adventure, scores = {safezone_state =-1}, tag =!safezone] if block ~ ~1 ~ cave_air run function tag:tp_back/player_to_stand/no_safezone
 execute if entity @s[gamemode = adventure, scores = {safezone_state = 1}, tag = safezone] unless block ~ ~ ~ cave_air unless block ~ ~1 ~ cave_air run function tag:tp_back/player_to_stand/no_safezone_exit

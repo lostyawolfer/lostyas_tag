@@ -59,8 +59,8 @@ execute if entity @s[              tag = special, tag = normal_player_decoration
 execute if entity @s[tag =!tagger, tag =!special, tag = normal_player_decoration, team =!003player] unless score @s effect.glowing matches 1.. run team join 003player
 execute if entity @s[tag =!tagger, tag =!special, tag = normal_player_decoration, team =!013player_glow] if score @s effect.glowing matches 1.. run team join 013player_glow
 
-execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team = 013player_glow] unless score @s effect.downed matches 1.. unless score @s effect.freeze matches 1.. if score @s effect.glowing matches 1.. if score glowing server matches 0..1 run scoreboard players set @s screen_effect 402
-execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team = 013player_glow] unless score @s effect.downed matches 1.. unless score @s effect.freeze matches 1.. if score @s effect.glowing matches 1.. if score glowing server matches 2..3 run scoreboard players set @s screen_effect 403
+execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team = 013player_glow] unless score @s effect.downed matches 1.. unless score @s effect.freeze matches 1.. if score @s effect.glowing matches 1.. if score anim.fast server matches 0..1 run scoreboard players set @s screen_effect 402
+execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team = 013player_glow] unless score @s effect.downed matches 1.. unless score @s effect.freeze matches 1.. if score @s effect.glowing matches 1.. if score anim.fast server matches 2..3 run scoreboard players set @s screen_effect 403
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team =!013player_glow] unless score @s effect.downed matches 1.. unless score @s effect.freeze matches 1.. unless score @s effect.glowing matches 1.. if score @s effect.invisibility matches 1.. run scoreboard players set @s screen_effect 404
 
 
