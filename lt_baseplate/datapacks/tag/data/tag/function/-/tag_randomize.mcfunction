@@ -57,4 +57,4 @@ execute if score tag.random_counter server matches 0 if score tag.random_counter
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run scoreboard players reset tag.random_counter server
 
 scoreboard players add tag.random_counter.time server 1
-execute if score tag.random_counter server matches 0.. run schedule function tag:tag_randomize 1t
+execute if score tag.random_counter server matches 0.. run schedule function tag:-/tag_randomize 1t

@@ -18,3 +18,4 @@ title @a[tag = hit_detect.taker] subtitle [{"translate": "subtitle.hit.default_o
 
 execute as @a[tag = hit_detect.taker] at @s run playsound minecraft:entity.elder_guardian.curse master @s
 execute as @a[tag = hit_detect.giver] at @s run playsound minecraft:entity.player.levelup master @s
+execute as @a[tag = hit_detect.giver] at @s run scoreboard players set @s effect.glowing 20

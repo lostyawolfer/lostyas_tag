@@ -61,16 +61,8 @@ execute unless score force-game server matches 1 unless score adventure-mode ser
 
 execute if score game server matches 0.. run scoreboard players operation game_prev server = game server
 
-execute if score game server matches -2 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.building_mode","color":"gray","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches -1 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.social_space","color":"gray","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 0 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.punch_to_start","color":"gray","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 1 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.classic","color":"#FFBB00","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 2 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.infection","color":"dark_green","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 3 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.murder","color":"red","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 4 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.crown","color":"yellow","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 5 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.freeze","color":"aqua","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-execute if score game server matches 6 run bossbar set minecraft:version name [{"text":"lostya's tag","color":"#FF8800"},{"translate":"gamemode.hot_potato","color":"red","bold":false},{"text":"v. α ","color":"dark_gray","bold":false},{"score":{"name":"buildnum","objective":"server"},"color":"dark_gray","bold":true}]
-
+execute if score is-prod server matches 0 run function tag:misc/bossbar/dev
+execute if score is-prod server matches 1 run function tag:misc/bossbar/prod
 
 # other functions
 scoreboard players add anim.fast server 1
@@ -87,9 +79,9 @@ execute if score game server matches 1.. if score anim.slow server matches 0..9 
 execute if score game server matches 1.. if score anim.slow server matches 0..9 run team modify 011tagger_crouch suffix {"text": "↓", "color": "yellow"}
 execute if score game server matches 1.. if score anim.slow server matches 0..9 run team modify 021tagger_crouch suffix {"text": "↓", "color": "yellow"}
 execute if score game server matches 1.. if score anim.slow server matches 10..19 run team modify 012special_alert suffix {"text": "⚠", "color": "red"}
-execute if score game server matches 1.. if score anim.slow server matches 10..19 run team modify 001tagger_crouch suffix {"text": "↓", "color": "#999900"}
-execute if score game server matches 1.. if score anim.slow server matches 10..19 run team modify 011tagger_crouch suffix {"text": "↓", "color": "#999900"}
-execute if score game server matches 1.. if score anim.slow server matches 10..19 run team modify 021tagger_crouch suffix {"text": "↓", "color": "#999900"}
+execute if score game server matches 1.. if score anim.slow server matches 10..19 run team modify 001tagger_crouch suffix {"text": "↓", "color": "#BBBB00"}
+execute if score game server matches 1.. if score anim.slow server matches 10..19 run team modify 011tagger_crouch suffix {"text": "↓", "color": "#BBBB00"}
+execute if score game server matches 1.. if score anim.slow server matches 10..19 run team modify 021tagger_crouch suffix {"text": "↓", "color": "#BBBB00"}
 
 
 execute if score game server matches 1.. run team modify 003player color aqua
@@ -262,6 +254,7 @@ execute if score e.glowing server matches -1 run title @a subtitle [{"translate"
 
 execute as @e[type = ender_pearl] run team join pearl @s
 execute as @e[type = ender_pearl] run data merge entity @s {Glowing: 1b}
+execute as @e[type = ender_pearl] at @s run particle glow ~ ~.1 ~ .1 .1 .1 .01 5 force
 
 
 
