@@ -17,6 +17,7 @@ scoreboard players set 1000 consts 1000
 scoreboard objectives add effect.glowing dummy
 scoreboard objectives add effect.strong_levitation dummy
 scoreboard objectives add effect.freeze dummy
+scoreboard objectives add effect.speed dummy
 scoreboard objectives add effect.invisibility dummy
 scoreboard objectives add effect.downed dummy
 scoreboard objectives add effect.downed.count_up dummy
@@ -26,6 +27,8 @@ scoreboard objectives add effect.downed.ms dummy
 
 
 # misc scoreboards
+scoreboard objectives add server dummy
+
 function tag:misc/update_player_list
 scoreboard objectives add anim.death dummy
 scoreboard objectives add fall minecraft.custom:minecraft.fall_one_cm

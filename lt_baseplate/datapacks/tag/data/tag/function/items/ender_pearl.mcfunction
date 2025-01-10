@@ -1,4 +1,5 @@
 scoreboard players operation @s p.cd.s = @s p.cd
+scoreboard players remove @s p.cd.s 1
 scoreboard players operation @s p.cd.s /= 20 consts
 scoreboard players add @s p.cd.s 1
 
@@ -10,8 +11,8 @@ execute unless score game server matches 1.. if score @s p.use.trigger matches 1
 execute if score @s p.use.trigger matches 1.. run scoreboard players reset @s p.use.trigger
 
 
-execute if score game server matches 1.. unless score @s p.cd matches -4.. run item replace entity @s container.2 with ender_pearl[!use_cooldown, use_remainder={id: "heart_of_the_sea", count: 15}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
-execute unless score game server matches 1.. unless score @s p.cd matches -4.. run item replace entity @s container.2 with ender_pearl[!use_cooldown, use_remainder={id: "heart_of_the_sea", count: 1}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
+execute if score game server matches 1.. unless score @s p.cd matches -4.. run item replace entity @s container.2 with ender_pearl[!use_cooldown, use_remainder={id: "heart_of_the_sea", count: 15, components:{custom_model_data:1, custom_name:'{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "gray", "strikethrough": true}', custom_data:{game: 1}}}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
+execute unless score game server matches 1.. unless score @s p.cd matches -4.. run item replace entity @s container.2 with ender_pearl[!use_cooldown, use_remainder={id: "heart_of_the_sea", count: 1, components:{custom_model_data:1, custom_name:'{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "gray", "strikethrough": true}', custom_data:{game: 1}}}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
 
 execute if score @s p.cd matches 1.. run clear @s ender_pearl[custom_data={game: 1}]
 execute if score @s p.cd matches 1 run item replace entity @s container.2 with heart_of_the_sea[custom_model_data=-1, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}]
@@ -35,10 +36,10 @@ execute if score @s p.cd.s matches 15 run item replace entity @s container.2 wit
 
 
 execute if score @s p.cd matches 0 run playsound entity.ender_eye.death master @s ~ ~ ~ 1 1 1
-execute if score @s p.cd matches -1 run item replace entity @s container.2 with ender_pearl[custom_model_data=4, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
-execute if score @s p.cd matches -2 run item replace entity @s container.2 with ender_pearl[custom_model_data=3, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
-execute if score @s p.cd matches -3 run item replace entity @s container.2 with ender_pearl[custom_model_data=2, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
-execute if score @s p.cd matches -4 run item replace entity @s container.2 with ender_pearl[custom_model_data=1, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
+execute if score @s p.cd matches -1 run item replace entity @s container.2 with ender_pearl[custom_model_data=4, !use_cooldown, use_remainder={id: "heart_of_the_sea", components:{custom_model_data:1, custom_name:'{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "gray", "strikethrough": true}', custom_data:{game: 1}}}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
+execute if score @s p.cd matches -2 run item replace entity @s container.2 with ender_pearl[custom_model_data=3, !use_cooldown, use_remainder={id: "heart_of_the_sea", components:{custom_model_data:1, custom_name:'{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "gray", "strikethrough": true}', custom_data:{game: 1}}}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
+execute if score @s p.cd matches -3 run item replace entity @s container.2 with ender_pearl[custom_model_data=2, !use_cooldown, use_remainder={id: "heart_of_the_sea", components:{custom_model_data:1, custom_name:'{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "gray", "strikethrough": true}', custom_data:{game: 1}}}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
+execute if score @s p.cd matches -4 run item replace entity @s container.2 with ender_pearl[custom_model_data=1, !use_cooldown, use_remainder={id: "heart_of_the_sea", components:{custom_model_data:1, custom_name:'{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "gray", "strikethrough": true}', custom_data:{game: 1}}}, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "#339786", "bold": true}', custom_data={game: 1}]
 
 
 execute if entity @s[tag = safezone, scores = {p.cd = ..4}] run item replace entity @s container.2 with heart_of_the_sea[custom_model_data= 1, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}]

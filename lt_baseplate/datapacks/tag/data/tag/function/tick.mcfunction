@@ -8,7 +8,10 @@ execute store result score taggers server if entity @a[tag = tagger, gamemode = 
 execute store result score non-taggers server if entity @a[tag =!tagger, gamemode =!creative, tag =!safezone]
 execute store result score specials server if entity @a[tag = special, gamemode =!creative, tag =!safezone]
 execute store result score active-players server if entity @a[gamemode =!creative, tag =!safezone]
-execute store result score adventure-mode server if entity @a[gamemode = adventure]
+execute store result score adventure-mode-mode server if entity @a[gamemode = adventure, tag =!normal_player_decoration]
+execute store result score adventure-mode-decor server if entity @a[tag = normal_player_decoration]
+scoreboard players operation adventure-mode server = adventure-mode-mode server
+scoreboard players operation adventure-mode server += adventure-mode-decor server
 scoreboard players add generic server 1
 execute if score generic server matches 20.. run scoreboard players set generic server 0
 
@@ -18,6 +21,9 @@ execute as @a unless score @s joined matches 0 at @s run function tag:misc/join_
 execute as @a unless score @s joined matches 0 at @s run scoreboard players set @s joined 0
 
 execute if score playercount_old server > playercount server run function tag:misc/update_player_list
+
+
+execute as @a[scores={tp.id=0}] run function tag:tp_back/get_id
 
 
 # restart the game if everyone was caught
@@ -58,6 +64,7 @@ bossbar set minecraft:version players @a
 execute unless score force-game server matches 1 if score adventure-mode server matches 2.. if score taggers server matches 1.. unless score game server matches -1.. run scoreboard players operation game server = game_prev server
 execute unless score force-game server matches 1 if score adventure-mode server matches 2.. unless score taggers server matches 1.. unless score game server matches -1.. run scoreboard players operation game server = game_prev server
 execute unless score force-game server matches 1 unless score adventure-mode server matches 2.. if score playercount server matches 1.. run scoreboard players set game server -2
+execute unless score playercount server matches 1.. run scoreboard players set game_prev server 0
 
 execute if score game server matches 0.. run scoreboard players operation game_prev server = game server
 
@@ -263,12 +270,22 @@ execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 1}]
 execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 2}]
 execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 3}]
 execute as @a[gamemode = adventure] at @s run function tag:items/ender_pearl
+execute as @a[gamemode = adventure] at @s run function tag:items/effect
 execute as @a[gamemode = adventure] at @s run function tag:items/ability
+
+execute as @a[scores={ab.current_ability=1}] at @s run function tag:abilities/active/1
+execute as @a[scores={ab.current_ability=2}] at @s run function tag:abilities/active/2
+execute as @a[scores={ab.current_ability=3}] at @s run function tag:abilities/active/3
+execute as @a[scores={ab.current_ability=4}] at @s run function tag:abilities/active/4
+execute as @a[scores={ab.current_ability=5}] at @s run function tag:abilities/active/5
+execute as @a[scores={ab.current_ability=6}] at @s run function tag:abilities/active/6
+execute as @a[scores={ab.current_ability=7}] at @s run function tag:abilities/active/7
 
 
 execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
 execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:effects/strong_levitation
 execute as @a[scores = {effect.freeze = 0..}, gamemode = adventure] at @s run function tag:effects/freeze
+execute as @a[scores = {effect.speed = 0..}, gamemode = adventure] at @s run function tag:effects/speed
 execute as @a[scores = {effect.invisibility = 0..}, gamemode = adventure] at @s run function tag:effects/invisibility
 execute as @a[scores = {effect.downed = -1..}, gamemode = adventure] at @s run function tag:effects/downed
 
