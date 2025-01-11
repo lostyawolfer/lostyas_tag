@@ -1,4 +1,4 @@
-execute as @s[tag=!safezoned] unless score @s effect.glowing matches 1.. unless score @s effect.invisibility matches 1.. run item replace entity @s container.6 with minecraft:ink_sac[custom_data={game:1}, custom_model_data=1, custom_name='[{"translate":"item.effect.generic","color":"gray","italic":false}]']
+execute as @s[tag=!safezone] unless score @s effect.glowing matches 1.. unless score @s effect.invisibility matches 1.. run item replace entity @s container.6 with minecraft:ink_sac[custom_data={game:1}, custom_model_data=1, custom_name='[{"translate":"item.effect.generic","color":"gray","italic":false}]']
 
 # invisible
 execute as @s[tag=!safezone] unless score @s effect.glowing matches 1.. if score @s effect.invisibility matches 1.. unless entity @s[nbt={SelectedItem:{}}] run item replace entity @s container.6 with minecraft:ink_sac[custom_data={game:1}, custom_model_data=2, custom_name='[{"translate":"item.effect.invisible","color":"dark_gray","italic":false}]']

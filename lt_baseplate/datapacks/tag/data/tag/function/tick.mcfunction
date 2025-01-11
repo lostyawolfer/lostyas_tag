@@ -304,8 +304,9 @@ execute as @a[scores={ab.current_ability=6}] at @s run function tag:abilities/ac
 execute as @a[scores={ab.current_ability=7}] at @s run function tag:abilities/active/7
 
 execute as @a unless score @s menu matches 0.. run scoreboard players set @s menu 0
+execute as @a[tag =!safezone] if score @s menu matches 1.. run clear @s warped_fungus_on_a_stick
 execute as @a[tag =!safezone] if score @s menu matches 1.. run scoreboard players set @s menu 0
-execute as @a if score @s menu matches 0 run clear @s warped_fungus_on_a_stick[!custom_data={menu: 0}]
+#execute as @a if score @s menu matches 0 run clear @s warped_fungus_on_a_stick[!custom_data={menu: 1}]
 
 execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/ender_pearl
 execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/ability

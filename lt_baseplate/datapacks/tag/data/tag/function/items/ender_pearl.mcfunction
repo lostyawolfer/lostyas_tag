@@ -44,6 +44,7 @@ execute if score @s p.cd matches -4 run item replace entity @s container.2 with 
 
 execute if entity @s[tag = safezone, scores = {p.cd = ..4}] run item replace entity @s container.2 with heart_of_the_sea[custom_model_data= 1, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}]
 execute if entity @s[tag = safezone, scores = {p.cd = ..4}] run scoreboard players set @s p.cd 4
+execute if entity @s[scores = {p.cd = ..4}] if score @s effect.downed matches 1.. run scoreboard players set @s p.cd 5
 execute if score @s p.cd matches -4.. run scoreboard players remove @s[gamemode = adventure, tag =!safezone] p.cd 1
 # execute unless score game server matches 1.. if score @s p.cd matches 20.. run scoreboard players remove @s[gamemode = adventure, tag =!safezone] p.cd 19
 # execute unless score game server matches 1.. if score @s p.cd matches 7.. run scoreboard players remove @s[gamemode = adventure, tag =!safezone] p.cd 4
