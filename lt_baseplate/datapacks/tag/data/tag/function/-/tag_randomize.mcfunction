@@ -45,8 +45,9 @@ execute if score tag.random_counter server matches 1..3 if score tag.random_coun
 execute if score tag.random_counter server matches 1..3 if score tag.random_counter.time server matches 0 run scoreboard players remove tag.random_counter server 1
 
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a at @s run playsound ui.loom.take_result master @s ~ ~ ~ .1 1
-execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. unless entity @a[scores={stat.wasnt_selected_steak=4..}] as @r[tag=!prev_tagger] run tag @s add tagger
-execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. if entity @a[scores={stat.wasnt_selected_steak=4..}] as @r[tag=!prev_tagger, scores={stat.wasnt_selected_steak=4..}] run tag @s add tagger
+execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. unless entity @a[scores={stat.wasnt_selected_steak=3..}] as @r[tag=!prev_tagger] run tag @s add tagger
+execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. if entity @a[scores={stat.wasnt_selected_steak=3..}] unless entity @a[scores={stat.wasnt_selected_steak=7..}] as @r[tag=!prev_tagger, scores={stat.wasnt_selected_steak=3..}] run tag @s add tagger
+execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. if entity @a[scores={stat.wasnt_selected_steak=7..}] as @r[tag=!prev_tagger, scores={stat.wasnt_selected_steak=7..}] run tag @s add tagger
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run tag @a remove prev_tagger
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run tag @a[tag=tagger] add prev_tagger
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run scoreboard players reset @a[tag=tagger] stat.wasnt_selected_steak

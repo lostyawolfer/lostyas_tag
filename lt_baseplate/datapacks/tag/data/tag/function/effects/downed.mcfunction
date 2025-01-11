@@ -17,7 +17,7 @@ effect give @s slowness infinite 6 true
 effect give @s slow_falling infinite 0 true
 particle electric_spark ~ ~1 ~ .2 .55 .2 0 2
 attribute @s gravity base set 0
-tp @s @s
+#tp @s @s
 tp @s ~ ~ ~
 
 execute if score @s effect.downed.count_up matches 1 run tellraw @a[scores={logging=1}] ["! log: ", {"selector": "@s"}, " is downed"]
