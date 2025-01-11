@@ -1,4 +1,64 @@
 {  
+  "item.effect.generic": "Visibility: normal",
+  "item.effect.invisible": "Visibility: invisible",
+  "item.effect.invisible.item": "Visibility: invisible, but the item in your hand is visible",
+  "item.effect.glowing": "Visibility: glowing",
+  "item.effect.glowing_tagger": "Visibility: taggers are always glowing, but can sneak to be invisible",
+  "item.effect.glowing_invisible": "Visibility: glowing despite being invisible",
+
+  "item.tag.passive.none": "You don't have a passive ability!",
+  "item.tag.passive": "Passive ability",
+  "item.tag.menu": "Menu",
+  "item.minecraft.goat_horn.none": "You don't have a goat horn!",
+  
+  "menu.abilities.1": "From here to the stars",
+  "menu.abilities.1.desc": "Makes you fly up into the sky, as if you stepped on a beacon.",
+  
+  "menu.abilities.2": "Superspeed",
+  "menu.abilities.2.desc": "Glues you to the ground and lets you dash forward really fast.",
+  
+  "menu.abilities.3": "Holy mantle",
+  "menu.abilities.3.desc": "Makes you temporarily invincible to one singular hit of a tagger.",
+  
+  "menu.abilities.4": "Invisibility",
+  "menu.abilities.4.desc": "Makes you invisible, and makes you invulnerable to any glowing effects.",
+  
+  "menu.abilities.5": "Glowing",
+  "menu.abilities.5.desc": "Activates the glowing event, but you don't glow.",
+  
+  "menu.abilities.6": "2.6 cycle",
+  "menu.abilities.6.desc": "Makes your ender pearl regenerate extra fast.",
+
+  "menu.abilities.7": "Dark arts",
+  "menu.abilities.7.desc": "Lets you fly in spectator mode for a split second.",
+
+  "menu.abilities.cd": "Cooldown",
+  "menu.abilities.use": "Use time",
+  "menu.abilities.sec_one": "second",
+  "menu.abilities.sec_two": "seconds",
+  "menu.abilities.sec_many": "seconds",
+  "menu.abilities.ticks_one": "tick",
+  "menu.abilities.ticks_two": "ticks",
+  "menu.abilities.ticks_many": "ticks",
+
+
+  "menu.close": "Close menu",
+  "menu.back": "Back to main menu",
+  "menu.next": "Next page",
+  "menu.prev": "Previous page",
+  "menu.select": "Select",
+  "menu.buy": "Buy",
+  "menu.buy.price": "levels",
+  "menu.buy.insufficient_funds": "Insufficient funds!",
+  "menu.buy.insufficient_funds.desc": "Come back when you're a little, mmm, richer.",
+  "menu.abilities": "Active abilities",
+  "menu.passives": "Passive abilities",
+  "menu.goat_horns": "Goat horns",
+  
+  "chat.ability.select": "changed their ability to",
+  
+  
+  
   "chat.hit.default": " tagged ",
   "subtitle.hit.default_you": "you",
   "subtitle.hit.default_you_1": "because ",

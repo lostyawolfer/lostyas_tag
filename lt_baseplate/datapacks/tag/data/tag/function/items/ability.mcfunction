@@ -245,5 +245,6 @@ execute if entity @s[tag =!safezone, scores = {ab.cd = ..4}] if score @s effect.
 
 
 execute if score @s ab.use matches 0.. run scoreboard players remove @s[gamemode = adventure, tag =!safezone] ab.use 1
+execute if score @s ab.use matches 0.. run scoreboard players remove @s[gamemode =!adventure, tag =!safezone, tag = normal_player_decoration] ab.use 1
 execute if score @s ab.use matches 0.. run scoreboard players set @s[gamemode = adventure, tag = safezone] ab.use -1
 execute if score @s ab.cd matches -4.. unless score @s ab.use matches 1.. unless score @s effect.freeze matches 0.. unless score @s effect.downed matches 0.. run scoreboard players remove @s[gamemode = adventure, tag =!safezone] ab.cd 1

@@ -1,5 +1,5 @@
 execute as @a[scores = {logging = 0}] run title @s actionbar ["! debug: ", {"selector": "@s"}, " has ", {"score": {"name": "@s", "objective": "screen_effect"}}, " screen effect"]
-execute if score @s screen_effect matches 0 run clear @s *[minecraft:custom_data={game:0}]
+execute if score @s screen_effect matches 0 run item replace entity @s armor.head with paper[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/empty"}, minecraft:enchantments={levels:{binding_curse:1}, show_in_tooltip: false}, minecraft:enchantment_glint_override=false, minecraft:custom_data={game:0}, minecraft:custom_name='{"text":""}']
 
 # safezone
 execute if score @s screen_effect matches 100 run item replace entity @s armor.head with paper[minecraft:equippable={slot: "head", equip_sound: {sound_id: ""}, camera_overlay: "tag:vignettes/safezone/safezone_f0"}, minecraft:enchantments={levels:{binding_curse:1}, show_in_tooltip: false}, minecraft:enchantment_glint_override=false, minecraft:custom_data={game:0}, minecraft:custom_name='{"text":""}']

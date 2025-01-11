@@ -1,4 +1,63 @@
 {  
+  "item.effect.generic": "Видимость: обычная",
+  "item.effect.invisible": "Видимость: невидимый",
+  "item.effect.invisible.item": "Видимость: невидимый, но твой предмет в руке видно",
+  "item.effect.glowing": "Видимость: подсвечиваешься сквозь стены",
+  "item.effect.glowing_tagger": "Видимость: вода всегда подсвечивается, но может присесть, чтобы стать невидимым",
+  "item.effect.glowing_invisible": "Видимость: подсвечиваешься несмотря на невидимость",
+
+  "item.tag.passive.none": "У тебя нет пассивки!",
+  "item.tag.passive": "Пассивка",
+  "item.tag.menu": "Меню",
+  "item.minecraft.goat_horn.none": "У тебя нет козьего рога!",
+  
+  "menu.abilities.1": "Любитель ракет",
+  "menu.abilities.1.desc": "Подбрасывает тебя в воздух, будто ты наступил на маяк.",
+  
+  "menu.abilities.2": "Суперскорость",
+  "menu.abilities.2.desc": "Приклеивает тебя к земле и даёт быстро и далеко проскользить вперёд.",
+  
+  "menu.abilities.3": "Святая мантия",
+  "menu.abilities.3.desc": "Ты становишься временно неуязвимым на 1 удар воды.",
+  
+  "menu.abilities.4": "Невидимость",
+  "menu.abilities.4.desc": "Делает тебя невидимым, а так же даёт неуязвимость к любого рода подсветкам.",
+  
+  "menu.abilities.5": "Подсветка",
+  "menu.abilities.5.desc": "Активирует подсветку для всех, кроме пользователя.",
+  
+  "menu.abilities.6": "Цикл 2.6",
+  "menu.abilities.6.desc": "Твой эндер-жемчуг восстанавливается космически быстро в течение использования.",
+
+  "menu.abilities.7": "Тёмные исскувства",
+  "menu.abilities.7.desc": "Даёт тебе на долю секунды полетать в режиме наблюдения.",
+
+  "menu.abilities.cd": "Кулдаун",
+  "menu.abilities.use": "Время использования",
+  "menu.abilities.sec_one": "секунда",
+  "menu.abilities.sec_two": "секунды",
+  "menu.abilities.sec_many": "секунд",
+  "menu.abilities.ticks_one": "тик",
+  "menu.abilities.ticks_two": "тика",
+  "menu.abilities.ticks_many": "тиков",
+
+
+  "menu.close": "Закрыть меню",
+  "menu.back": "В главное меню",
+  "menu.next": "Следующая страница",
+  "menu.prev": "Предыдущая страница",
+  "menu.select": "Выбрать",
+  "menu.buy": "Купить",
+  "menu.buy.price": "уровней",
+  "menu.buy.insufficient_funds": "Недостаточно средств на счёте!",
+  "menu.buy.insufficient_funds.desc": "Вернись когда будешь, ммм... побогаче.",
+  "menu.abilities": "Активные способности",
+  "menu.passives": "Пассивные способности",
+  "menu.goat_horns": "Козьи рога",
+  
+  "chat.ability.select": "выбрал способность",
+
+
   "chat.hit.default": " передал ",
   "subtitle.hit.default_you": "ты",
   "subtitle.hit.default_you_1": "потому что ",

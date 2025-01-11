@@ -54,12 +54,18 @@ scoreboard objectives add stat.tagger_time dummy
 scoreboard objectives add stat.tagger_time.total dummy
 
 scoreboard objectives add stat.wasnt_selected_steak dummy
-
 scoreboard objectives add stat.current_hight dummy
+scoreboard objectives add stat.flew_in_ability minecraft.custom:minecraft.fly_one_cm
+scoreboard objectives add stat.xp dummy
 
 scoreboard objectives add p.cd.s dummy
 scoreboard objectives add p.cd dummy
 scoreboard objectives add p.use.trigger minecraft.used:minecraft.ender_pearl
+
+scoreboard objectives add gh.cd.s dummy
+scoreboard objectives add gh.cd dummy
+scoreboard objectives add gh.use.trigger minecraft.used:minecraft.goat_horn
+scoreboard objectives add gh.current_goat_horn dummy
 
 scoreboard objectives add ab.cd.s dummy
 scoreboard objectives add ab.cd dummy
@@ -67,6 +73,33 @@ scoreboard objectives add ab.use.s dummy
 scoreboard objectives add ab.use dummy
 scoreboard objectives add ab.use.trigger minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add ab.current_ability dummy
+
+scoreboard objectives add pa.active dummy
+scoreboard objectives add pa.current_passive dummy
+
+scoreboard objectives add menu dummy
+scoreboard objectives add menu.selecting dummy
+scoreboard objectives add menu.trigger minecraft.used:minecraft.warped_fungus_on_a_stick
+
+scoreboard objectives add ab.unlocked_1 dummy
+scoreboard objectives add ab.unlocked_2 dummy
+scoreboard objectives add ab.unlocked_3 dummy
+scoreboard objectives add ab.unlocked_4 dummy
+scoreboard objectives add ab.unlocked_5 dummy
+scoreboard objectives add ab.unlocked_6 dummy
+scoreboard objectives add ab.unlocked_7 dummy
+
+scoreboard objectives add gh.unlocked_1 dummy
+scoreboard objectives add gh.unlocked_2 dummy
+scoreboard objectives add gh.unlocked_3 dummy
+scoreboard objectives add gh.unlocked_4 dummy
+scoreboard objectives add gh.unlocked_5 dummy
+scoreboard objectives add gh.unlocked_6 dummy
+scoreboard objectives add gh.unlocked_7 dummy
+scoreboard objectives add gh.unlocked_8 dummy
+
+
+scoreboard objectives add xp.recieve dummy
 
 scoreboard objectives add jump minecraft.custom:minecraft.jump
 scoreboard objectives add jump.bhop dummy

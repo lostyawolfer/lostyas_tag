@@ -1,0 +1,14 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "item/brick"
+	},
+	
+	"overrides": [
+		{"predicate": {"custom_model_data":-3}, "model": "item/brick/-3"},
+		{"predicate": {"custom_model_data":-2}, "model": "item/brick/-2"},
+		{"predicate": {"custom_model_data":-1}, "model": "item/brick/-1"},
+		{"predicate": {"custom_model_data":0}, "model": "item/brick"},
+		{"predicate": {"custom_model_data":1}, "model": "item/brick/1"}
+	]
+}

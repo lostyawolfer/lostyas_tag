@@ -11,6 +11,9 @@ execute if score @s anim.death matches -11 run tag @s remove special
 execute if score @s anim.death matches -11 run tag @s add normal_player_decoration
 scoreboard players set @s[scores={effect.downed=1..}] effect.downed -1
 scoreboard players set @s effect.freeze -1
+scoreboard players set @s ab.cd 1
+scoreboard players set @s p.cd 1
+scoreboard players set @s gh.cd 1
 effect clear @s
 
 execute if score @s anim.death matches ..-1 run scoreboard players remove @s anim.death 1

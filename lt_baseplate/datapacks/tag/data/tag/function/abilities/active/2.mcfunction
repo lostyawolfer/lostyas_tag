@@ -16,8 +16,6 @@ execute as @s[scores={ab.use=1..}, nbt={OnGround:0b}] run scoreboard players add
 execute as @s[scores={ab.use=1..}] run particle dust{color:63487, scale:1} ~ ~1 ~ .3 .5 .3 0 20
 
 execute as @s[scores={ab.use=1..}] if score @s effect.strong_levitation matches 1.. run scoreboard players set @s ab.use 0
-execute as @s[scores={ab.use=1..}] if score @s effect.downed matches 1.. run scoreboard players set @s ab.use 0
-execute as @s[scores={ab.use=1..}] if score @s effect.freeze matches 1.. run scoreboard players set @s ab.use 0
 
 execute as @s[scores={ab.use=-1}] run attribute @s gravity base set 0.08
 execute as @s[scores={ab.use=-1}] run scoreboard players set @s ab.use -2

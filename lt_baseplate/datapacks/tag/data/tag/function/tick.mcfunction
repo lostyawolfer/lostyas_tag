@@ -242,9 +242,11 @@ execute as @a unless score @s tp.id matches 1..16 run function tag:tp_back/get_i
 
 # events
 # glowing
-execute if score game server matches 1.. if score taggers server matches 1.. if score non-taggers server matches 1.. run scoreboard players remove e.glowing server 1
+execute if score game server matches 1.. if score taggers server matches 1.. if score non-taggers server matches 1.. unless score e.glowing server matches 0.. run scoreboard players remove e.glowing server 1
+execute if score e.glowing server matches 0.. run scoreboard players remove e.glowing server 1
 execute unless score game server matches 1.. run scoreboard players set e.glowing server -2
 
+execute if score e.glowing server matches ..-4000 as @a at @s run playsound glowing master @s ~ ~ ~
 execute if score e.glowing server matches ..-4000 run scoreboard players set e.glowing server 99
 execute if score e.glowing server matches 0.. run title @a title ""
 execute if score e.glowing server matches 0.. run title @a times 0 5 3
@@ -259,8 +261,27 @@ execute if score e.glowing server matches -1 run title @a subtitle [{"translate"
 
 
 
+
+execute if score e.glowing_ability server matches -1.. run scoreboard players remove e.glowing_ability server 1
+
+execute if score e.glowing_ability server matches 0.. run scoreboard players set e.glowing server -2
+execute if score e.glowing_ability server matches 0.. run title @a title ""
+execute if score e.glowing_ability server matches 0.. run title @a times 0 5 3
+execute if score e.glowing_ability server matches 0.. as @a[tag=!ab.active.5] unless score @s effect.glowing matches 2.. run scoreboard players set @s effect.glowing 2
+
+scoreboard players operation e.glowing_ability_s server = e.glowing_ability server
+scoreboard players operation e.glowing_ability_s server /= 20 consts
+scoreboard players add e.glowing_ability_s server 1
+
+execute if score e.glowing_ability server matches 0.. run title @a subtitle [{"translate":"title.glowing", "color":"light_purple"}, " ", {"score":{"name":"e.glowing_ability_s", "objective":"server"}, "color":"#ff00ff", "bold": true}]
+execute if score e.glowing_ability server matches -1 run title @a subtitle [{"translate":"title.glowing", "color":"dark_gray"}, " ", {"score":{"name":"e.glowing_ability_s", "objective":"server"}, "color":"gray", "bold": true}]
+
+
+
+
+
 execute as @e[type = ender_pearl] run team join pearl @s
-execute as @e[type = ender_pearl] run data merge entity @s {Glowing: 1b}
+execute as @e[type = ender_pearl] run data merge entity @s {Glowing: 1b, Item: {components:{"custom_model_data":0}}}
 execute as @e[type = ender_pearl] at @s run particle glow ~ ~.1 ~ .1 .1 .1 .01 5 force
 
 
@@ -269,9 +290,10 @@ execute as @e[type = ender_pearl] at @s run particle glow ~ ~.1 ~ .1 .1 .1 .01 5
 execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 1}]
 execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 2}]
 execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 3}]
-execute as @a[gamemode = adventure] at @s run function tag:items/ender_pearl
-execute as @a[gamemode = adventure] at @s run function tag:items/effect
-execute as @a[gamemode = adventure] at @s run function tag:items/ability
+
+execute as @s[scores={ab.use=1..}] if score @s effect.downed matches 1.. run scoreboard players set @s ab.use -1
+execute as @s[scores={ab.use=1..}] if score @s effect.freeze matches 1.. run scoreboard players set @s ab.use -1
+execute as @s[scores={ab.use=1..}] if entity @s[tag = safezone] run scoreboard players set @s ab.use -1
 
 execute as @a[scores={ab.current_ability=1}] at @s run function tag:abilities/active/1
 execute as @a[scores={ab.current_ability=2}] at @s run function tag:abilities/active/2
@@ -280,6 +302,30 @@ execute as @a[scores={ab.current_ability=4}] at @s run function tag:abilities/ac
 execute as @a[scores={ab.current_ability=5}] at @s run function tag:abilities/active/5
 execute as @a[scores={ab.current_ability=6}] at @s run function tag:abilities/active/6
 execute as @a[scores={ab.current_ability=7}] at @s run function tag:abilities/active/7
+
+execute as @a unless score @s menu matches 0.. run scoreboard players set @s menu 0
+execute as @a[tag =!safezone] if score @s menu matches 1.. run scoreboard players set @s menu 0
+execute as @a if score @s menu matches 0 run clear @s warped_fungus_on_a_stick[!custom_data={menu: 0}]
+
+execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/ender_pearl
+execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/ability
+execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/goat_horn
+execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/passive
+execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/effect
+
+execute as @a[gamemode = adventure] at @s run function tag:items/menu/main
+
+
+execute as @a[gamemode = adventure] at @s run function tag:tagging/decoration_screens
+
+execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:items/ender_pearl
+execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:items/ability
+execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:items/effect
+execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:tagging/decoration_screens
+
+execute as @a[scores={xp.recieve=1..}] run function tag:misc/xp
+execute as @a[scores={xp.recieve=..-1}] run function tag:misc/xp
+
 
 
 execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
