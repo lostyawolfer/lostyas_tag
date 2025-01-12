@@ -13,4 +13,6 @@ title @s title [{"translate": "title.hit.infection_freeze_you", "color":"red", "
 title @s subtitle [{"translate": "subtitle.hit.infection_freeze_you_1", "color":"dark_aqua"}, {"translate": "subtitle.hit.infection_freeze_you", "color":"aqua", "bold": true}, {"translate": "subtitle.hit.infection_freeze_you_2", "color":"dark_aqua", "bold": false}]
 
 execute as @s at @s run playsound minecraft:entity.elder_guardian.curse master @s
+execute as @s at @s run playsound minecraft:entity.zombie.ambient master @s
+execute as @s at @s run playsound minecraft:entity.player.levelup master @s
 damage @s .1

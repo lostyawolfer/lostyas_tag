@@ -29,9 +29,9 @@ execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adv
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!001tagger_crouch] if score @s is_sneaking matches 1 if score @s stat.tagger_time matches 3.. run team join 001tagger_crouch
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!011tagger_crouch] if score @s is_sneaking matches 1 if score @s stat.tagger_time matches 2 run team join 011tagger_crouch
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!021tagger_crouch] if score @s is_sneaking matches 1 if score @s stat.tagger_time matches 1 run team join 021tagger_crouch
-execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!002special] unless score game server matches 5 run team join 002special
-execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!002special] if score game server matches 5 unless score @s effect.downed.seconds matches ..30 run team join 002special
-execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!012special_alert] if score game server matches 5..6 if score @s effect.downed.seconds matches 10..30 run team join 012special_alert
+execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!002special] unless score game server matches 5..6 run team join 002special
+execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!002special] if score game server matches 5..6 unless score @s effect.downed.seconds matches ..30 run team join 002special
+execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!012special_alert] if score game server matches 5..6 if score @s effect.downed.seconds matches 11..30 run team join 012special_alert
 execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!022special_alert] if score game server matches 5..6 if score @s effect.downed.seconds matches ..9 run team join 022special_alert
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team =!003player] unless score @s effect.glowing matches 1.. run team join 003player
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team =!013player_glow] if score @s effect.glowing matches 1.. run team join 013player_glow
@@ -42,10 +42,10 @@ execute if entity @s[tag = tagger,                tag = normal_player_decoration
 execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!001tagger_crouch] if score @s is_sneaking matches 1 if score @s stat.tagger_time matches 3.. run team join 001tagger_crouch
 execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!011tagger_crouch] if score @s is_sneaking matches 1 if score @s stat.tagger_time matches 2 run team join 011tagger_crouch
 execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!021tagger_crouch] if score @s is_sneaking matches 1 if score @s stat.tagger_time matches 1 run team join 021tagger_crouch
-execute if entity @s[              tag = special, tag = normal_player_decoration, team =!002special] unless score game server matches 5 run team join 002special
-execute if entity @s[              tag = special, tag = normal_player_decoration, team =!002special] if score game server matches 5 unless score @s effect.downed.seconds matches ..30 run team join 002special
-execute if entity @s[              tag = special, tag = normal_player_decoration, team =!012special_alert] if score game server matches 5 if score @s effect.downed.seconds matches 10..30 run team join 012special_alert
-execute if entity @s[              tag = special, tag = normal_player_decoration, team =!022special_alert] if score game server matches 5 if score @s effect.downed.seconds matches ..9 run team join 022special_alert
+execute if entity @s[              tag = special, tag = normal_player_decoration, team =!002special] unless score game server matches 5..6 run team join 002special
+execute if entity @s[              tag = special, tag = normal_player_decoration, team =!002special] if score game server matches 5..6 unless score @s effect.downed.seconds matches ..30 run team join 002special
+execute if entity @s[              tag = special, tag = normal_player_decoration, team =!012special_alert] if score game server matches 5..6 if score @s effect.downed.seconds matches 11..30 run team join 012special_alert
+execute if entity @s[              tag = special, tag = normal_player_decoration, team =!022special_alert] if score game server matches 5..6 if score @s effect.downed.seconds matches ..10 run team join 022special_alert
 execute if entity @s[tag =!tagger, tag =!special, tag = normal_player_decoration, team =!003player] unless score @s effect.glowing matches 1.. run team join 003player
 execute if entity @s[tag =!tagger, tag =!special, tag = normal_player_decoration, team =!013player_glow] if score @s effect.glowing matches 1.. run team join 013player_glow
 

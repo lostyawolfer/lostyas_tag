@@ -1,6 +1,6 @@
 # superspeed
 execute as @s[scores={ab.use.trigger=1..}] run scoreboard players set @s ab.cd 800
-execute as @s[scores={ab.use.trigger=1..}] run scoreboard players set @s ab.use 5
+execute as @s[scores={ab.use.trigger=1..}] run scoreboard players set @s ab.use 3
 execute as @s[scores={ab.use.trigger=1..}] run playsound minecraft:entity.warden.sonic_boom player @a ~ ~ ~ 2 1
 execute as @s[scores={ab.use.trigger=1..}] run stopsound @s player minecraft:entity.warden.sonic_boom
 execute as @s[scores={ab.use.trigger=1..}] run playsound minecraft:entity.warden.sonic_boom master @s ~ ~ ~ 10 1

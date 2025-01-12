@@ -43,11 +43,11 @@ execute if score restart server matches 3 run tellraw @a [{"text": "Game ended",
 execute if score restart server matches 3 run title @a title [{"text": "Game over", "color": "red"}]
 execute if score restart server matches 3..99 run title @a subtitle [{"text": "Restarting in ", "color": "gold"}, {"score": {"name": "restart.s_reversed", "objective": "server"}}, "..."]
 execute if score restart server matches 100 as @a run function tag:misc/spawn
+execute if score restart server matches 100 as @a run scoreboard players set @a safezone_state 0
 execute if score restart server matches 110 run tellraw @a [{"text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew game", "color": "yellow", "bold": true}]
 execute if score adventure-mode server matches 2.. if score restart server matches 180 if score game server matches 1.. as @a run function tag:-/tag_randomize
-execute if score adventure-mode server matches 2.. if score restart server matches 100..380 run scoreboard players set @a[tag=tagger] safezone_state 1
+#execute if score adventure-mode server matches 2.. if score restart server matches 100..380 run scoreboard players set @a[tag=tagger] safezone_state 1
 execute if score adventure-mode server matches 2.. if score restart server matches 380.. run scoreboard players set @a safezone_state -1
-execute if score adventure-mode server matches 2.. if score restart server matches 540.. as @a run scoreboard players set @a safezone_state 0
 execute if score adventure-mode server matches 2.. if score restart server matches 540.. as @a run scoreboard players reset restart server
 # execute if score game server matches -2..1 run scoreboard players set @a safezone_state 0
 # execute if score game server matches 2..3 run scoreboard players set @a safezone_state -1
@@ -207,30 +207,40 @@ execute as @a[tag = dead, gamemode = creative] at @s run tag @s remove dead
 execute as @a at @s run function tag:tagging/decoration
 
 
-execute unless score game server matches 7 run scoreboard players reset game_timer server
-execute if score game server matches 7 if score adventure-mode server matches ..1 run scoreboard players reset game_timer server
-execute if score game server matches 7 if score tag.random_counter server matches 1.. run scoreboard players reset game_timer server
-execute if score game server matches 7 if score adventure-mode server matches 1.. unless score game_timer server matches -2147483648..2147483647 unless score restart server matches -2147483648..2147483647 unless score restart server matches 1.. run scoreboard players set game_timer server -1
-execute if score game server matches 7 if score adventure-mode server matches 1.. if entity @a[tag=tagger] run scoreboard players remove game_timer server 1
-execute if score game server matches 7 if score adventure-mode server matches 1.. unless entity @a[tag=tagger] if score game_timer server matches ..-1 unless score restart server matches 1.. run scoreboard players remove game_timer server 1
+execute if score game server matches 7 unless score kill_timer server matches -2147483648..2147483647 if entity @a[tag=tagger, tag=!safezone] run scoreboard players set kill_timer server 1200
 
-scoreboard players operation game_timer.s server = game_timer server
-scoreboard players operation game_timer.s server /= 20 consts
-scoreboard players add game_timer.s server 1
+execute if score restart server matches 1.. run scoreboard players reset kill_timer
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players remove kill_timer server 1
 
-execute if score game server matches 7 if score adventure-mode server matches 1.. if score game_timer.s server matches 1.. run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"gold"}, {"score":{"name":"game_timer.s","objective":"server"}}]
-execute if score game server matches 7 if score adventure-mode server matches 1.. if score game_timer.s server matches 0 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"red"}, {"score":{"name":"game_timer.s","objective":"server"}}]
+execute if score kill_timer server matches 0 run playsound entity.generic.explode player @a ~ ~ ~ 1 .8 .5
+execute if score kill_timer server matches 0 run particle explosion_emitter ~ ~1 ~ 1 1 1 0 5
+execute if score kill_timer server matches 0 run particle lava ~ ~1 ~ .1 .4 .1 0 20
+execute if score kill_timer server matches 0 run tag @a[tag=tagger] add dead
+execute if score kill_timer server matches 0 run tag @a[tag=tagger] add special
+execute if score kill_timer server matches 0 run tag @a[tag=tagger] remove tagger
+execute if score game server matches 7 if score kill_timer server matches 0 unless score restart server matches 1.. unless score adventure-mode server matches 2.. run scoreboard players set restart server 1
 
-execute if score game server matches 7 if score game_timer server matches 0 as @a[tag=tagger] at @s run playsound entity.generic.explode player @a ~ ~ ~ 1 .8 .8
-execute if score game server matches 7 if score game_timer server matches 0 as @a[tag=tagger] at @s run particle explosion_emitter ~ ~ ~ .2 .2 .2 0 3
-execute if score game server matches 7 if score game_timer server matches 0 as @a[tag=tagger] at @s run function tag:-/kill
-execute if score game server matches 7 if score game_timer server matches 0 as @a[tag=tagger] at @s run tag @s remove tagger
-execute if score game server matches 7 if score game_timer server matches 0 as @a[tag=tagger] at @s run tag @s add special
-execute if score game server matches 7 if score game_timer server matches ..-150 if score adventure-mode server matches 2.. as @r[gamemode = adventure] unless entity @a[tag=tagger] at @s run function tag:tagging/tag_give/generic
-execute if score game server matches 7 if score game_timer server matches ..-150 if score adventure-mode server matches 2.. run scoreboard players set game_timer server 1200
+execute unless score game server matches 7 if score kill_timer server matches -30 run scoreboard players reset kill_timer
 
-execute if score game server matches 7 if score adventure-mode server matches ..1 unless score restart server matches 1.. run scoreboard players reset game_timer server
-execute if score game server matches 7 if score adventure-mode server matches ..1 unless score restart server matches 1.. run scoreboard players add restart server 1
+execute if score game server matches 7 if score kill_timer server matches ..-150 unless entity @a[tag=tagger] run tag @r[tag=!dead, gamemode=!creative] add tagger
+execute if score game server matches 7 if score kill_timer server matches ..-150 unless entity @a[tag=tagger] run scoreboard players reset @a[tag=tagger] stat.tagger_time
+execute if score game server matches 7 if score kill_timer server matches ..-150 unless entity @a[tag=tagger] if score adventure-mode server matches 2.. run scoreboard players set kill_timer server 1200
+
+execute unless score kill_timer server matches -2147483648..2147483647 run scoreboard players reset kill_timer.s
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.s server = kill_timer server
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.s server /= 20 consts
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.s server += 1 consts
+
+execute if score kill_timer.s server matches 61.. run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"green"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "white"}]
+execute if score kill_timer.s server matches 31..60 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"yellow"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "white"}]
+execute if score kill_timer.s server matches 11..30 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"gold"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "yellow"}]
+execute if score kill_timer.s server matches 6..10 if score anim.slow server matches 0..9 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+execute if score kill_timer.s server matches 6..10 if score anim.slow server matches 10..19 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+execute if score kill_timer.s server matches 1..5 if score anim.fast server matches 0..1 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+execute if score kill_timer.s server matches 1..5 if score anim.fast server matches 2..3 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+execute if score kill_timer.s server matches 0 run title @a[tag=!dead] actionbar [{"text":"💥 ", "color":"dark_red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "red"}]
+
+
 
 
 # safezone states
