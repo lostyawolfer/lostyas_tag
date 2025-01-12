@@ -52,10 +52,11 @@ execute if score tag.random_counter server matches 0 if score tag.random_counter
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run tag @a[tag=tagger] add prev_tagger
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run scoreboard players reset @a[tag=tagger] stat.wasnt_selected_steak
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run scoreboard players add @a[tag=!tagger] stat.wasnt_selected_steak 1
-execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. at @a[tag=tagger] run summon lightning_bolt
+#execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. at @a[tag=tagger] run summon lightning_bolt
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. if score game server matches 0 run scoreboard players set game server 1
 #execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a[tag = tagger] run damage @s .1
 #execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a[tag = tagger] run title @a title [{"selector":"@s","color":"yellow"},{"text":" вода!"}]
+execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. if score game server matches 7 run scoreboard players set game_timer server 1200
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run scoreboard players reset tag.random_counter server
 
 scoreboard players add tag.random_counter.time server 1

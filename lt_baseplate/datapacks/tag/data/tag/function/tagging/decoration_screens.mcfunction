@@ -11,7 +11,8 @@ execute if score game server matches 2 if entity @s[tag = tagger, tag =!safezone
 execute if score game server matches 3 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 302
 execute if score game server matches 4 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 303
 execute if score game server matches 5 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 304
-execute if score game server matches 6 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 304
+execute if score game server matches 6 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 305
+execute if score game server matches 7 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 306
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure] run scoreboard players set @s screen_effect 0
 
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team = 013player_glow] unless score @s effect.downed matches 1.. unless score @s effect.freeze matches 1.. if score @s effect.glowing matches 1.. if score anim.fast server matches 0..1 run scoreboard players set @s screen_effect 402
@@ -24,4 +25,5 @@ execute if score game server matches 2 if entity @s[tag = tagger] if score @s ef
 execute if score game server matches 3 if entity @s[tag = tagger] if score @s effect.invisibility matches 1.. unless score @s effect.glowing matches 1.. run scoreboard players set @s screen_effect 407
 execute if score game server matches 4 if entity @s[tag = tagger] if score @s effect.invisibility matches 1.. unless score @s effect.glowing matches 1.. run scoreboard players set @s screen_effect 408
 execute if score game server matches 5 if entity @s[tag = tagger] if score @s effect.invisibility matches 1.. unless score @s effect.glowing matches 1.. run scoreboard players set @s screen_effect 409
-execute if score game server matches 6 if entity @s[tag = tagger] if score @s effect.invisibility matches 1.. unless score @s effect.glowing matches 1.. run scoreboard players set @s screen_effect 409
+execute if score game server matches 6 if entity @s[tag = tagger] if score @s effect.invisibility matches 1.. unless score @s effect.glowing matches 1.. run scoreboard players set @s screen_effect 410
+execute if score game server matches 7 if entity @s[tag = tagger] if score @s effect.invisibility matches 1.. unless score @s effect.glowing matches 1.. run scoreboard players set @s screen_effect 411

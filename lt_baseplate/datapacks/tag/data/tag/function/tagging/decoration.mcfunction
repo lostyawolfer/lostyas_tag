@@ -12,6 +12,7 @@ execute if score game server matches 3 if entity @s[tag = tagger, tag =!safezone
 execute if score game server matches 4 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=4, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FFFF00", "bold": true, "italic": false}']
 execute if score game server matches 5 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=5, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}']
 execute if score game server matches 6 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=6, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}']
+execute if score game server matches 7 if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run item replace entity @s container.0 with blaze_rod[custom_model_data=7, custom_data={game: 2}, custom_name='{"text": "Ты вода!", "color": "#FF0000", "bold": true, "italic": false}']
 execute unless entity @s[tag = tagger] run clear @s *[custom_data={game: 2}]
 execute unless score game server matches 1.. run clear @s *[custom_data={game: 2}]
 execute unless score game server matches 1.. run clear @s *[custom_data={game: 3}]
@@ -30,8 +31,8 @@ execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adv
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!021tagger_crouch] if score @s is_sneaking matches 1 if score @s stat.tagger_time matches 1 run team join 021tagger_crouch
 execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!002special] unless score game server matches 5 run team join 002special
 execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!002special] if score game server matches 5 unless score @s effect.downed.seconds matches ..30 run team join 002special
-execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!012special_alert] if score game server matches 5 if score @s effect.downed.seconds matches 10..30 run team join 012special_alert
-execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!022special_alert] if score game server matches 5 if score @s effect.downed.seconds matches ..9 run team join 022special_alert
+execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!012special_alert] if score game server matches 5..6 if score @s effect.downed.seconds matches 10..30 run team join 012special_alert
+execute if entity @s[              tag = special, tag =!safezone, gamemode = adventure, team =!022special_alert] if score game server matches 5..6 if score @s effect.downed.seconds matches ..9 run team join 022special_alert
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team =!003player] unless score @s effect.glowing matches 1.. run team join 003player
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team =!013player_glow] if score @s effect.glowing matches 1.. run team join 013player_glow
 

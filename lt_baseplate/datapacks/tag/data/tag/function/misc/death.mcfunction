@@ -2,10 +2,12 @@ execute unless score @s anim.death matches 17..99 unless score @s anim.death mat
 
 execute if score @s anim.death matches 1 run team join 002special @s
 execute if score @s anim.death matches 1 run tag @s add special
-execute if score @s anim.death matches 1 run scoreboard players set @s ab.cd 0
-execute if score @s anim.death matches 1 run scoreboard players set @s p.cd 0
+execute if score @s anim.death matches 1 run tag @s remove tagger
+#execute if score @s anim.death matches 1 run scoreboard players set @s ab.cd 0
+#execute if score @s anim.death matches 1 run scoreboard players set @s p.cd 0
 execute if score @s anim.death matches 1 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " died"]
-execute if score @s anim.death matches 1 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead"}]
+execute if score @s anim.death matches 1 unless score game server matches 3 unless score game server matches 7 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead", "color": "aqua"}]
+execute if score @s anim.death matches 1 if score game server matches 7 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead.hot_potato", "color": "aqua"}]
 execute if score @s anim.death matches 1 run damage @s .01
 execute if score @s anim.death matches 1 run title @s times 0 40 100
 execute if score @s anim.death matches 1 run title @s title {"translate": "title.hit.murder_you", "color":"red", "bold": true}
@@ -35,8 +37,8 @@ execute if score @s anim.death matches 17 run scoreboard players set @s screen_e
 
 execute if score @s anim.death matches 101 run team join 002special @s
 execute if score @s anim.death matches 101 run tag @s add special
-execute if score @s anim.death matches 101 run scoreboard players set @s ab.cd 0
-execute if score @s anim.death matches 101 run scoreboard players set @s p.cd 0
+#execute if score @s anim.death matches 101 run scoreboard players set @s ab.cd 0
+#execute if score @s anim.death matches 101 run scoreboard players set @s p.cd 0
 execute if score @s anim.death matches 101 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " died by being downed"]
 execute if score @s anim.death matches 101 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead.downed"}]
 execute if score @s anim.death matches 101 run damage @s .01 freeze
@@ -68,7 +70,10 @@ execute if score @s anim.death matches 117 run scoreboard players set @s screen_
 execute if score @s anim.death matches 117 run scoreboard players set @s anim.death 17
 
 
-title @s actionbar {"translate": "title.spectator", "color": "red"}
+execute unless score game server matches 7 run title @s actionbar {"translate": "title.spectator", "color": "red"}
+execute if score game server matches 7 if score game_timer.s server matches 1.. run title @a actionbar [{"translate": "title.spectator", "color": "red"}, " | ", {"text":"💣 ", "color":"gold"}, {"score":{"name":"game_timer.s","objective":"server"}, "color": "gold"}]
+execute if score game server matches 7 if score game_timer.s server matches 0.. run title @a actionbar [{"translate": "title.spectator", "color": "red"}, " | ", {"text":"💣 ", "color":"red"}, {"score":{"name":"game_timer.s","objective":"server"}, "color": "red"}]
+execute if score game server matches 7 unless score game_timer.s server matches 0.. run title @a actionbar [{"translate": "title.spectator", "color": "red"}]
 #execute unless entity @a[distance=...2, tag=!dead] run title @s actionbar {"translate": "title.spectator", "color": "red"}
 #execute if entity @a[distance=...2, tag=!dead] run title @s actionbar [{"translate": "title.now_spectating", "color": "red"}, {"selector": "@a[distance=...2, tag=!dead]", "bold": true}]
 gamemode spectator @s

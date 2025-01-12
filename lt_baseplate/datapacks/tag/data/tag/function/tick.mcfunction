@@ -173,15 +173,26 @@ execute if score game server matches 5 run team modify 101tagger_safezone prefix
 execute if score game server matches 5 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
 execute if score game server matches 5 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
 
-execute if score game server matches 6 run team modify 001tagger color gold
-execute if score game server matches 6 run team modify 011tagger color yellow
+execute if score game server matches 6 run team modify 001tagger color dark_green
+execute if score game server matches 6 run team modify 011tagger color green
 execute if score game server matches 6 run team modify 021tagger color white
-execute if score game server matches 6 run team modify 001tagger_crouch color gold
-execute if score game server matches 6 run team modify 011tagger_crouch color yellow
+execute if score game server matches 6 run team modify 001tagger_crouch color dark_green
+execute if score game server matches 6 run team modify 011tagger_crouch color green
 execute if score game server matches 6 run team modify 021tagger_crouch color white
-execute if score game server matches 6 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
-execute if score game server matches 6 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
-execute if score game server matches 6 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
+execute if score game server matches 6 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "dark_green"}
+execute if score game server matches 6 run team modify 201tagger_creative prefix {"text": "⭐", "color": "dark_green"}
+execute if score game server matches 6 run team modify 301tagger_spectator prefix {"text": "☆", "color": "dark_green"}
+
+execute if score game server matches 7 run team modify 001tagger color gold
+execute if score game server matches 7 run team modify 011tagger color yellow
+execute if score game server matches 7 run team modify 021tagger color white
+execute if score game server matches 7 run team modify 001tagger_crouch color gold
+execute if score game server matches 7 run team modify 011tagger_crouch color yellow
+execute if score game server matches 7 run team modify 021tagger_crouch color white
+execute if score game server matches 7 run team modify 101tagger_safezone prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 7 run team modify 201tagger_creative prefix {"text": "⭐", "color": "gold"}
+execute if score game server matches 7 run team modify 301tagger_spectator prefix {"text": "☆", "color": "gold"}
+
 
 execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " got hit by environment or an unknown player"]
 execute as @a[scores = {hit_detect.taker = 1..}] unless entity @a[scores = {hit_detect.giver = 1..}] run scoreboard players set @s hit_detect.taker 0
@@ -194,6 +205,32 @@ execute as @a[tag = dead, tag = safezone] at @s run tag @s remove dead
 execute as @a[tag = dead, gamemode = creative] at @s run tag @s remove dead
 
 execute as @a at @s run function tag:tagging/decoration
+
+
+execute unless score game server matches 7 run scoreboard players reset game_timer server
+execute if score game server matches 7 if score adventure-mode server matches ..1 run scoreboard players reset game_timer server
+execute if score game server matches 7 if score tag.random_counter server matches 1.. run scoreboard players reset game_timer server
+execute if score game server matches 7 if score adventure-mode server matches 1.. unless score game_timer server matches -2147483648..2147483647 unless score restart server matches -2147483648..2147483647 unless score restart server matches 1.. run scoreboard players set game_timer server -1
+execute if score game server matches 7 if score adventure-mode server matches 1.. if entity @a[tag=tagger] run scoreboard players remove game_timer server 1
+execute if score game server matches 7 if score adventure-mode server matches 1.. unless entity @a[tag=tagger] if score game_timer server matches ..-1 unless score restart server matches 1.. run scoreboard players remove game_timer server 1
+
+scoreboard players operation game_timer.s server = game_timer server
+scoreboard players operation game_timer.s server /= 20 consts
+scoreboard players add game_timer.s server 1
+
+execute if score game server matches 7 if score adventure-mode server matches 1.. if score game_timer.s server matches 1.. run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"gold"}, {"score":{"name":"game_timer.s","objective":"server"}}]
+execute if score game server matches 7 if score adventure-mode server matches 1.. if score game_timer.s server matches 0 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"red"}, {"score":{"name":"game_timer.s","objective":"server"}}]
+
+execute if score game server matches 7 if score game_timer server matches 0 as @a[tag=tagger] at @s run playsound entity.generic.explode player @a ~ ~ ~ 1 .8 .8
+execute if score game server matches 7 if score game_timer server matches 0 as @a[tag=tagger] at @s run particle explosion_emitter ~ ~ ~ .2 .2 .2 0 3
+execute if score game server matches 7 if score game_timer server matches 0 as @a[tag=tagger] at @s run function tag:-/kill
+execute if score game server matches 7 if score game_timer server matches 0 as @a[tag=tagger] at @s run tag @s remove tagger
+execute if score game server matches 7 if score game_timer server matches 0 as @a[tag=tagger] at @s run tag @s add special
+execute if score game server matches 7 if score game_timer server matches ..-150 if score adventure-mode server matches 2.. as @r[gamemode = adventure] unless entity @a[tag=tagger] at @s run function tag:tagging/tag_give/generic
+execute if score game server matches 7 if score game_timer server matches ..-150 if score adventure-mode server matches 2.. run scoreboard players set game_timer server 1200
+
+execute if score game server matches 7 if score adventure-mode server matches ..1 unless score restart server matches 1.. run scoreboard players reset game_timer server
+execute if score game server matches 7 if score adventure-mode server matches ..1 unless score restart server matches 1.. run scoreboard players add restart server 1
 
 
 # safezone states
@@ -291,9 +328,12 @@ execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 1}]
 execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 2}]
 execute as @a[gamemode =!adventure] at @s run clear @s *[custom_data={game: 3}]
 
-execute as @s[scores={ab.use=1..}] if score @s effect.downed matches 1.. run scoreboard players set @s ab.use -1
-execute as @s[scores={ab.use=1..}] if score @s effect.freeze matches 1.. run scoreboard players set @s ab.use -1
-execute as @s[scores={ab.use=1..}] if entity @s[tag = safezone] run scoreboard players set @s ab.use -1
+execute as @a[scores={ab.use=1..}] if score @s effect.downed matches 1.. run scoreboard players set @s ab.use 0
+execute as @a[scores={ab.use=1..}] if score @s effect.freeze matches 1.. run scoreboard players set @s ab.use 0
+execute as @a[scores={ab.use=1..}] if entity @s[tag = safezone] run scoreboard players set @s ab.use 0
+execute as @a[scores={ab.use=1..}, tag=dead] run scoreboard players set @s ab.use 0
+#execute as @a[scores={ab.cd=1..}, tag=dead] run scoreboard players set @s ab.cd 0
+
 
 execute as @a[scores={ab.current_ability=1}] at @s run function tag:abilities/active/1
 execute as @a[scores={ab.current_ability=2}] at @s run function tag:abilities/active/2

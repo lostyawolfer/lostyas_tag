@@ -121,10 +121,30 @@
   "title.hit.generic_you": "Ты ВОДА!",  
   "title.hit.generic_other": " вода!",
   
-  "subtitle.choosing_random": "кручу-верчу, петуха выбрать хочу",
+  "chat.hit.infection_freeze": " заражён обморожением",
+  "subtitle.hit.infection_freeze_you": "заморозка",
+  "subtitle.hit.infection_freeze_you_1": "потому что ",
+  "subtitle.hit.infection_freeze_other_1": "потому что ",
+  "subtitle.hit.infection_freeze_you_2": " так сказала",
+  "subtitle.hit.infection_freeze_other_2": " так сказала",
+  "title.hit.infection_freeze_you": "Ты ЗАРАЖЁН!",  
+  "title.hit.infection_freeze_other": " был заражён!",
+
+  "chat.hit.hot_potato": " передал ",
+  "subtitle.hit.hot_potato_you": "ты",
+  "subtitle.hit.hot_potato_you_1": "потому что ",
+  "subtitle.hit.hot_potato_other_1": "потому что ",
+  "subtitle.hit.hot_potato_you_2": " так сказал",
+  "subtitle.hit.hot_potato_other_2": " так сказал",
+  "title.hit.hot_potato_you": "Ты ВОДА!",  
+  "title.hit.hot_potato_other": " вода!",
+
+  
+  "subtitle.choosing_random": "кручу-верчу, петуха выбрать хочу...",
   "chat.choosing_random": "выбираю воду на рандом...",
   
   "chat.dead": " умер",
+  "chat.dead.hot_potato": " взорвался",
   "chat.dead.downed": " заморожен до смерти",
   
   "sidebar.now_online": "онлайн",
@@ -142,7 +162,7 @@
   "gamemode.murder": "                   убийца                   ",
   "gamemode.crown": "                   корона                   ",
   "gamemode.freeze": "                 заморозка                 ",
-  "gamemode.killer_freeze": "            заморозка-убийца            ",
+  "gamemode.infection_freeze": "         заражающая заморозка         ",
   "gamemode.hot_potato": "            горячая картошка            ",
 
   "title.tp.safezone_exit_error": "нельзя выйти из сейфзоны",

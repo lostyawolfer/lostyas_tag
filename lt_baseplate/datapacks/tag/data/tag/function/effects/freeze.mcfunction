@@ -2,7 +2,7 @@ tellraw @a[scores = {logging = 0}] ["! debug: ", {"selector": "@s"}, " called fr
 
 effect give @s slowness infinite 6 true
 effect give @s slow_falling infinite 0 true
-particle electric_spark ~ ~1 ~ .2 .55 .2 0 2
+#particle electric_spark ~ ~1 ~ .2 .55 .2 0 2
 #tp @s @s
 tp @s ~ ~ ~
 # execute if score @s effect.freeze matches 1.. if score generic server matches 0 run scoreboard players set @s screen_effect 400

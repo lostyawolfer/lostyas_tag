@@ -122,10 +122,30 @@
   "title.hit.generic_you": "You're the TAGGER!",  
   "title.hit.generic_other": " is the tagger!",
   
+  "chat.hit.infection_freeze": " got infected by being frozen",
+  "subtitle.hit.infection_freeze_you": "the freezer",
+  "subtitle.hit.infection_freeze_you_1": "because ",
+  "subtitle.hit.infection_freeze_other_1": "because ",
+  "subtitle.hit.infection_freeze_you_2": " said so",
+  "subtitle.hit.infection_freeze_other_2": " said so",
+  "title.hit.infection_freeze_you": "You're INFECTED!",  
+  "title.hit.infection_freeze_other": " was infected!",
+
+  "chat.hit.hot_potato": " tagged ",
+  "subtitle.hit.hot_potato_you": "you",
+  "subtitle.hit.hot_potato_you_1": "because ",
+  "subtitle.hit.hot_potato_other_1": "because ",
+  "subtitle.hit.hot_potato_you_2": " said so",
+  "subtitle.hit.hot_potato_other_2": " said so",
+  "title.hit.hot_potato_you": "You got TAGGED!",  
+  "title.hit.hot_potato_other": " got tagged!",
+
+  
   "subtitle.choosing_random": "time to pray that you don't show up here",
   "chat.choosing_random": "choosing a random tagger...",
   
   "chat.dead": " died",
+  "chat.dead.hot_potato": " exploded",
   "chat.dead.downed": " was frozen to death",
   
   "sidebar.now_online": "now online",
@@ -142,8 +162,8 @@
   "gamemode.infection": "              infection tag              ",
   "gamemode.murder": "               murder tag               ",
   "gamemode.crown": "                crown tag                ",
-  "gamemode.building_mode": "               freeze tag               ",
-  "gamemode.freeze": "            killer freeze tag            ",
+  "gamemode.freeze": "              freeze tag               ",
+  "gamemode.infection_freeze": "        infection freeze tag        ",
   "gamemode.hot_potato": "               hot potato               ",
 
   "title.tp.safezone_exit_error": "cannot exit safezone",

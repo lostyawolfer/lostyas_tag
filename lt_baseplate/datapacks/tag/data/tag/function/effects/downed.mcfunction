@@ -19,7 +19,7 @@ scoreboard players set @s jump.bhop2 0
 scoreboard players set @s jump.timer 0
 scoreboard players set @s effect.invisibility 0
 scoreboard players set @s[scores={effect.strong_levitation=1..}] effect.strong_levitation 0
-particle electric_spark ~ ~1 ~ .2 .55 .2 0 2
+particle electric_spark ~ ~1 ~ .2 .55 .2 0 1
 attribute @s movement_speed base set 0
 attribute @s jump_strength base set 0
 attribute @s attack_damage base set 0
@@ -27,6 +27,8 @@ attribute @s knockback_resistance base set 120
 
 execute if score @s effect.downed.count_up matches 1 run tellraw @a[scores={logging=1}] ["! log: ", {"selector": "@s"}, " is downed"]
 execute if score @s effect.downed.count_up matches 1 run playsound tag:downed master @s ~ ~ ~ 1 1
+execute if score @s effect.downed.count_up matches 1 if score @s safezone_state matches -1 run tag @s add safezone_state_-1
+execute if score @s effect.downed.count_up matches 1.. run scoreboard players set @s safezone_state -1
 execute if score @s effect.downed.count_up matches 1 run scoreboard players set @s screen_effect 500
 execute if score @s effect.downed.count_up matches 2 run scoreboard players set @s screen_effect 501
 execute if score @s effect.downed.count_up matches 3 run scoreboard players set @s screen_effect 502
@@ -65,7 +67,11 @@ execute if score @s effect.downed.count_up matches 151..161 run attribute @s gra
 #tp @s[nbt={OnGround:1b}] @s
 
 
-execute if score @s effect.downed matches 0 run tag @s add dead
+execute if score @s effect.downed matches 0 unless score game server matches 6 run tag @s add dead
+execute if score @s effect.downed matches 0 if score game server matches 6 run tag @s add tagger
+execute if score @s effect.downed matches 0 if score game server matches 6 run function tag:tagging/tag_give/infection_freeze
+execute if score @s effect.downed matches 0 run scoreboard players set @s[tag=!safezone_state_-1] safezone_state 0
+execute if score @s effect.downed matches 0 run tag @s remove safezone_state_-1
 execute if score @s effect.downed matches 0 run stopsound @s * tag:downed
 execute if score @s effect.downed matches 0 run effect clear @s
 execute if score @s effect.downed matches 0 run attribute @s gravity base set .08
@@ -79,6 +85,8 @@ execute if score @s effect.downed matches 0 run scoreboard players reset @s effe
 execute if score @s effect.downed matches 0 run scoreboard players reset @s effect.downed
 
 execute if score @s effect.downed matches -1 run title @s actionbar ""
+execute if score @s effect.downed matches -1 run scoreboard players set @s[tag=!safezone_state_-1] safezone_state 0
+execute if score @s effect.downed matches -1 run tag @s remove safezone_state_-1
 execute if score @s effect.downed matches -1 run stopsound @s * tag:downed
 execute if score @s effect.downed matches -1 run effect clear @s
 execute if score @s effect.downed matches -1 run attribute @s gravity base set .08

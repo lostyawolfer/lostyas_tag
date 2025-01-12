@@ -15,4 +15,5 @@ title @a[distance = .1..] title [{"selector": "@s", "color": "#FFFF00", "bold": 
 title @a[distance = .1..] subtitle [{"translate": "subtitle.hit.generic_other_1", "color":"dark_purple"}, {"translate": "subtitle.hit.generic_you", "color":"light_purple", "bold": true}, {"translate": "subtitle.hit.generic_other_2", "color":"dark_purple", "bold": false}]
 
 execute as @s at @s run playsound minecraft:entity.elder_guardian.curse master @s
+summon lightning_bolt
 damage @s .1
