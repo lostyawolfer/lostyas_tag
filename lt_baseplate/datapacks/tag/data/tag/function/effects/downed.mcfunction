@@ -23,6 +23,7 @@ execute if score @s effect.downed.count_up matches 31 run title @s times 5 300 2
 execute if score @s effect.downed.count_up matches 31 run title @s title [{"translate": "помощь в пути...", "color":"#E1FCFF"}]
 # TEMPORARY!!!!!!!
 # PLEASE REPLACE THE TRANSLATION LINE WITH AN ACTUAL TRANSLATION LINE
+
 execute if score @s effect.downed.count_up matches 31..34 run title @s subtitle [{"text":"", "color":"red"}]
 
 
