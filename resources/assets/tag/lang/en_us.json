@@ -170,6 +170,7 @@
   "title.tp.safezone_enter_error": "cannot enter safezone",
   "title.tp.outside_map": "you were outside the map",
   "title.tp.inside_blocks": "you were in blocks",
+  "title.frozen": "hang in there...",
 
   "title.glowing": "glowing",
   "title.spectator": "you are a spectator",
