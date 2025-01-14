@@ -25,7 +25,7 @@ execute if score playercount_old server > playercount server run function tag:mi
 
 execute as @a[scores={tp.id=0}] run function tag:tp_back/get_id
 
-
+execute as @a at @s run function tag:misc/bhop
 
 execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
 execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:effects/strong_levitation
@@ -286,7 +286,6 @@ execute as @a[scores = {anim.death = ..-2}] at @s run function tag:misc/spawn
 
 
 execute as @a at @s run function tag:misc/stats
-execute as @a at @s run function tag:misc/bhop
 execute as @a at @s run function tag:misc/stopmusic
 execute as @a at @s run function tag:tp_back/player_to_stand_check
 execute as @a at @s run function tag:tp_back/stand_to_player_check

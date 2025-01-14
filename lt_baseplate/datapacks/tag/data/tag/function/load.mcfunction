@@ -22,6 +22,7 @@ scoreboard objectives add effect.invisibility dummy
 scoreboard objectives add effect.downed dummy
 scoreboard objectives add effect.downed.count_up dummy
 scoreboard objectives add effect.downed.seconds dummy
+scoreboard objectives add effect.downed.seconds.10 dummy
 scoreboard objectives add effect.downed.ms dummy
 # scoreboard objectives add effect.downed.seconds_even dummy
 

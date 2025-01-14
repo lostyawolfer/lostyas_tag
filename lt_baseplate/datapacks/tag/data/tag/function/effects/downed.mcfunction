@@ -8,10 +8,64 @@ scoreboard players operation @s effect.downed.ms = @s effect.downed
 scoreboard players operation @s effect.downed.ms %= 20 consts
 scoreboard players operation @s effect.downed.ms /= 2 consts
 
+scoreboard players operation @s effect.downed.seconds.10 = @s effect.downed.seconds
+scoreboard players operation @s effect.downed.seconds.10 %= 10 consts
 
-execute if score @s effect.downed.seconds matches 10.. run title @s actionbar [{"text":"☠ ", "color":"red"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}]
-execute if score @s effect.downed.seconds matches ..9 run title @s actionbar [{"text":"☠ ", "color":"red"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}, ".", {"score":{"name":"@s","objective":"effect.downed.ms"}}]
+
 scoreboard players add @s effect.downed.count_up 1
+
+
+
+execute if score @s effect.downed.count_up matches 1 run title @s times 0 25 5
+execute if score @s effect.downed.count_up matches 1 run title @s title [{"translate": "title.hit.freeze_you", "color":"red", "bold": true}]
+
+execute if score @s effect.downed.count_up matches 31 run title @s times 5 300 20
+execute if score @s effect.downed.count_up matches 31 run title @s title [{"translate": "помощь в пути...", "color":"#E1FCFF"}]
+# TEMPORARY!!!!!!!
+# PLEASE REPLACE THE TRANSLATION LINE WITH AN ACTUAL TRANSLATION LINE
+execute if score @s effect.downed.count_up matches 31..34 run title @s subtitle [{"text":"", "color":"red"}]
+
+
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 35 if score @s effect.downed.seconds matches 10.. run title @s subtitle [{"text":"☠", "color":"red"}]
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 35 if score @s effect.downed.seconds matches ..9 run title @s subtitle [{"text":"☠", "color":"red"}]
+
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 36 if score @s effect.downed.seconds matches 10.. run title @s subtitle [{"text":"☠ ", "color":"red"}]
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 36 if score @s effect.downed.seconds matches ..9 run title @s subtitle [{"text":"☠ ", "color":"red"}]
+
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 37 if score @s effect.downed.seconds matches 10.. run title @s subtitle [{"text":"☠ ", "color":"red"}, {"score":{"name":"@s","objective":"effect.downed.seconds.10"}}]
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 37 if score @s effect.downed.seconds matches ..9 run title @s subtitle [{"text":"☠ ", "color":"red"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}]
+
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 38 if score @s effect.downed.seconds matches 10.. run title @s subtitle [{"text":"☠ ", "color":"red"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}]
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 38 if score @s effect.downed.seconds matches ..9 run title @s subtitle [{"text":"☠ ", "color":"red"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}, "."]
+
+execute unless score game server matches 6 if score @s effect.downed matches 1.. if score @s effect.downed.count_up matches 39.. if score @s effect.downed.seconds matches 10.. run title @s subtitle [{"text":"☠ ", "color":"red"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}]
+execute unless score game server matches 6 if score @s effect.downed matches 1.. if score @s effect.downed.count_up matches 39.. if score @s effect.downed.seconds matches ..9 run title @s subtitle [{"text":"☠ ", "color":"red"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}, ".", {"score":{"name":"@s","objective":"effect.downed.ms"}}]
+
+
+
+execute if score game server matches 6 if score @s effect.downed.count_up matches 35 if score @s effect.downed.seconds matches 10.. run title @s subtitle [{"text":"🔥", "color":"dark_green"}]
+execute if score game server matches 6 if score @s effect.downed.count_up matches 35 if score @s effect.downed.seconds matches ..9 run title @s subtitle [{"text":"🔥", "color":"dark_green"}]
+
+execute if score game server matches 6 if score @s effect.downed.count_up matches 36 if score @s effect.downed.seconds matches 10.. run title @s subtitle [{"text":"🔥 ", "color":"dark_green"}]
+execute if score game server matches 6 if score @s effect.downed.count_up matches 36 if score @s effect.downed.seconds matches ..9 run title @s subtitle [{"text":"🔥 ", "color":"dark_green"}]
+
+execute if score game server matches 6 if score @s effect.downed.count_up matches 37 if score @s effect.downed.seconds matches 10.. run title @s subtitle [{"text":"🔥 ", "color":"dark_green"}, {"score":{"name":"@s","objective":"effect.downed.seconds.10"}}]
+execute if score game server matches 6 if score @s effect.downed.count_up matches 37 if score @s effect.downed.seconds matches ..9 run title @s subtitle [{"text":"🔥 ", "color":"dark_green"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}]
+
+execute if score game server matches 6 if score @s effect.downed.count_up matches 38 if score @s effect.downed.seconds matches 10.. run title @s subtitle [{"text":"🔥 ", "color":"dark_green"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}]
+execute if score game server matches 6 if score @s effect.downed.count_up matches 38 if score @s effect.downed.seconds matches ..9 run title @s subtitle [{"text":"🔥 ", "color":"dark_green"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}, "."]
+
+execute if score game server matches 6 if score @s effect.downed matches 1.. if score @s effect.downed.count_up matches 39.. if score @s effect.downed.seconds matches 10.. run title @s subtitle [{"text":"🔥 ", "color":"dark_green"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}]
+execute if score game server matches 6 if score @s effect.downed matches 1.. if score @s effect.downed.count_up matches 39.. if score @s effect.downed.seconds matches ..9 run title @s subtitle [{"text":"🔥 ", "color":"dark_green"}, {"score":{"name":"@s","objective":"effect.downed.seconds"}}, ".", {"score":{"name":"@s","objective":"effect.downed.ms"}}]
+
+
+
+
+execute if score @s effect.downed.count_up matches 40.. run title @s times 0 100 0
+execute if score @s effect.downed.count_up matches 40.. run title @s title [{"translate": "помощь в пути...", "color":"#E1FCFF"}]
+# TEMPORARY!!!!!!!
+# PLEASE REPLACE THE TRANSLATION LINE WITH AN ACTUAL TRANSLATION LINE
+
 
 scoreboard players set @s jump 0
 scoreboard players set @s jump.bhop 0
@@ -67,6 +121,7 @@ execute if score @s effect.downed.count_up matches 151..161 run attribute @s gra
 #tp @s[nbt={OnGround:1b}] @s
 
 
+execute if score @s effect.downed matches 0 run title @s times 0 20 3
 execute if score @s effect.downed matches 0 unless score game server matches 6 run tag @s add dead
 execute if score @s effect.downed matches 0 if score game server matches 6 run tag @s add tagger
 execute if score @s effect.downed matches 0 if score game server matches 6 run function tag:tagging/tag_give/infection_freeze
@@ -84,7 +139,8 @@ execute if score @s effect.downed matches 0 run scoreboard players reset @s effe
 execute if score @s effect.downed matches 0 run scoreboard players reset @s effect.downed.seconds
 execute if score @s effect.downed matches 0 run scoreboard players reset @s effect.downed
 
-execute if score @s effect.downed matches -1 run title @s actionbar ""
+execute if score @s effect.downed matches -1 run title @s times 0 20 3
+execute if score @s effect.downed matches -1 run title @s title [{"translate": "title.hit.unfreeze_you", "color":"green", "bold": true}]
 execute if score @s effect.downed matches -1 run scoreboard players set @s[tag=!safezone_state_-1] safezone_state 0
 execute if score @s effect.downed matches -1 run tag @s remove safezone_state_-1
 execute if score @s effect.downed matches -1 run stopsound @s * tag:downed
