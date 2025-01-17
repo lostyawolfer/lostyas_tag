@@ -32,9 +32,19 @@ execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:
 execute as @a[scores = {effect.freeze = 0..}, gamemode = adventure] at @s run function tag:effects/freeze
 execute as @a[scores = {effect.speed = 0..}, gamemode = adventure] at @s run function tag:effects/speed
 execute as @a[scores = {effect.invisibility = 0..}, gamemode = adventure] at @s run function tag:effects/invisibility
-execute as @a[scores = {effect.downed = -1..}, gamemode = adventure] at @s run function tag:effects/downed
+execute as @a[scores = {effect.downed = -30..}, gamemode = adventure] at @s run function tag:effects/downed
 
 
+
+scoreboard players add random server 1
+execute if score random server matches 10.. run scoreboard players remove random server 10
+execute if score random server matches 10.. run scoreboard players remove random server 10
+execute if score random server matches 10.. run scoreboard players remove random server 10
+execute if score random server matches 10.. run scoreboard players remove random server 10
+execute if score random server matches 10.. run scoreboard players remove random server 10
+execute if score random server matches 10.. run scoreboard players remove random server 10
+execute if score random server matches 10.. run scoreboard players remove random server 10
+execute if score random server matches ..-1 run scoreboard players set random server 0
 
 
 
@@ -149,10 +159,23 @@ execute if score game server matches 1.. run team modify 003player color aqua
 execute if score game server matches 1.. run team modify 103player_safezone prefix {"text": "⭐", "color": "aqua"}
 execute if score game server matches 1.. run team modify 203player_creative prefix {"text": "⭐", "color": "aqua"}
 execute if score game server matches 1.. run team modify 303player_spectator prefix {"text": "☆", "color": "aqua"}
-execute if score game server matches 1.. run team modify 002special color blue
-execute if score game server matches 1.. run team modify 102special_safezone prefix {"text": "⭐", "color": "blue"}
-execute if score game server matches 1.. run team modify 202special_creative prefix {"text": "⭐", "color": "blue"}
-execute if score game server matches 1.. run team modify 302special_spectator prefix {"text": "☠", "color": "blue"}
+
+execute if score game server matches 1.. run team modify 302special_spectator prefix {"text": "☠", "color": "red"}
+execute if score game server matches 1..5 run team modify 002special color blue
+execute if score game server matches 1..5 run team modify 012special_alert color blue
+execute if score game server matches 1..5 run team modify 022special_alert color blue
+execute if score game server matches 1..5 run team modify 102special_safezone prefix {"text": "⭐", "color": "blue"}
+execute if score game server matches 1..5 run team modify 202special_creative prefix {"text": "⭐", "color": "blue"}
+execute if score game server matches 6 run team modify 002special color dark_purple
+execute if score game server matches 6 run team modify 012special_alert color dark_purple
+execute if score game server matches 6 run team modify 022special_alert color dark_purple
+execute if score game server matches 6 run team modify 102special_safezone prefix {"text": "⭐", "color": "dark_purple"}
+execute if score game server matches 6 run team modify 202special_creative prefix {"text": "⭐", "color": "dark_purple"}
+execute if score game server matches 7.. run team modify 002special color blue
+execute if score game server matches 7.. run team modify 012special_alert color blue
+execute if score game server matches 7.. run team modify 022special_alert color blue
+execute if score game server matches 7.. run team modify 102special_safezone prefix {"text": "⭐", "color": "blue"}
+execute if score game server matches 7.. run team modify 202special_creative prefix {"text": "⭐", "color": "blue"}
 
 
 execute unless score game server matches 1.. run team modify 013player_glow color gray
@@ -314,16 +337,16 @@ execute unless score game server matches 1.. run scoreboard players set e.glowin
 
 execute if score e.glowing server matches ..-4000 as @a at @s run playsound glowing master @s ~ ~ ~
 execute if score e.glowing server matches ..-4000 run scoreboard players set e.glowing server 99
-execute if score e.glowing server matches 0.. run title @a title ""
-execute if score e.glowing server matches 0.. run title @a times 0 5 3
+execute if score e.glowing server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s title ""
+execute if score e.glowing server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s times 0 5 3
 execute if score e.glowing server matches 0.. as @a unless score @s effect.glowing matches 2.. run scoreboard players set @s effect.glowing 2
 
 scoreboard players operation e.glowing_s server = e.glowing server
 scoreboard players operation e.glowing_s server /= 20 consts
 scoreboard players add e.glowing_s server 1
 
-execute if score e.glowing server matches 0.. run title @a subtitle [{"translate":"title.glowing", "color":"aqua"}, " ", {"score":{"name":"e.glowing_s", "objective":"server"}, "color":"#00FFFF", "bold": true}]
-execute if score e.glowing server matches -1 run title @a subtitle [{"translate":"title.glowing", "color":"dark_gray"}, " ", {"score":{"name":"e.glowing_s", "objective":"server"}, "color":"gray", "bold": true}]
+execute if score e.glowing server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s subtitle [{"translate":"title.glowing", "color":"aqua"}, " ", {"score":{"name":"e.glowing_s", "objective":"server"}, "color":"#00FFFF", "bold": true}]
+execute if score e.glowing server matches -1 as @a unless score @s effect.downed matches 1.. run title @s subtitle [{"translate":"title.glowing", "color":"dark_gray"}, " ", {"score":{"name":"e.glowing_s", "objective":"server"}, "color":"gray", "bold": true}]
 
 
 
@@ -331,16 +354,16 @@ execute if score e.glowing server matches -1 run title @a subtitle [{"translate"
 execute if score e.glowing_ability server matches -1.. run scoreboard players remove e.glowing_ability server 1
 
 execute if score e.glowing_ability server matches 0.. run scoreboard players set e.glowing server -2
-execute if score e.glowing_ability server matches 0.. run title @a title ""
-execute if score e.glowing_ability server matches 0.. run title @a times 0 5 3
+execute if score e.glowing_ability server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s title ""
+execute if score e.glowing_ability server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s times 0 5 3
 execute if score e.glowing_ability server matches 0.. as @a[tag=!ab.active.5] unless score @s effect.glowing matches 2.. run scoreboard players set @s effect.glowing 2
 
 scoreboard players operation e.glowing_ability_s server = e.glowing_ability server
 scoreboard players operation e.glowing_ability_s server /= 20 consts
 scoreboard players add e.glowing_ability_s server 1
 
-execute if score e.glowing_ability server matches 0.. run title @a subtitle [{"translate":"title.glowing", "color":"light_purple"}, " ", {"score":{"name":"e.glowing_ability_s", "objective":"server"}, "color":"#ff00ff", "bold": true}]
-execute if score e.glowing_ability server matches -1 run title @a subtitle [{"translate":"title.glowing", "color":"dark_gray"}, " ", {"score":{"name":"e.glowing_ability_s", "objective":"server"}, "color":"gray", "bold": true}]
+execute if score e.glowing_ability server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s subtitle [{"translate":"title.glowing", "color":"light_purple"}, " ", {"score":{"name":"e.glowing_ability_s", "objective":"server"}, "color":"#ff00ff", "bold": true}]
+execute if score e.glowing_ability server matches -1 as @a unless score @s effect.downed matches 1.. run title @s subtitle [{"translate":"title.glowing", "color":"dark_gray"}, " ", {"score":{"name":"e.glowing_ability_s", "objective":"server"}, "color":"gray", "bold": true}]
 
 
 

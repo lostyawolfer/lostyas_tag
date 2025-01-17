@@ -2,10 +2,11 @@ tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " got tagged 
 scoreboard players set @s[tag = safezone] stat.tagger_time 0
 damage @s .1
 tag @s add tagger
+team join 001tagger @s
 scoreboard players set @s stat.tagger_time 0
 
 
-tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "red"}, {"selector": "@s", "color": "gold"}, {"translate": "chat.hit.infection_freeze"}]
+tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "red"}, {"selector": "@s", "color": "dark_green"}, {"translate": "chat.hit.infection_freeze"}]
 
 title @s times 0 20 3
 

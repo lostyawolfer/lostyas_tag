@@ -16,6 +16,13 @@ execute if score @s anim.death matches 1 run playsound tag:death_main master @s 
 execute if score @s anim.death matches 1 run particle block{block_state:{Name:redstone_block}} ~ ~1 ~ .3 .5 .3 0 40
 execute if score @s anim.death matches 1 run particle flame ~ ~1 ~ .3 .5 .3 .1 10
 
+execute if score @s anim.death matches 1 unless score game server matches 7 run summon skeleton ~ ~ ~ {Tags:[death], NoAI:1b}
+execute if score @s anim.death matches 1 unless score game server matches 7 run item replace entity @e[type=skeleton, tag=death] armor.head with paper
+execute if score @s anim.death matches 1 unless score game server matches 7 run kill @e[type=skeleton, tag=death]
+
+execute if score @s anim.death matches 1 if score game server matches 7 run summon creeper ~ ~ ~ {Tags:[death], NoAI:1b}
+execute if score @s anim.death matches 1 if score game server matches 7 run kill @e[type=creeper, tag=death]
+
 execute if score @s anim.death matches 1 run scoreboard players set @s screen_effect 200
 execute if score @s anim.death matches 2 run scoreboard players set @s screen_effect 201
 execute if score @s anim.death matches 3 run scoreboard players set @s screen_effect 202
@@ -50,6 +57,10 @@ execute if score @s anim.death matches 101 run playsound tag:death_main master @
 execute if score @s anim.death matches 101 run particle block{block_state:{Name:redstone_block}} ~ ~1 ~ .3 .5 .3 0 30
 execute if score @s anim.death matches 101 run particle block{block_state:{Name:packed_ice}} ~ ~1 ~ .3 .5 .3 0 10
 execute if score @s anim.death matches 101 run particle soul_fire_flame ~ ~1 ~ .3 .5 .3 .1 10
+
+execute if score @s anim.death matches 101 run summon stray ~ ~ ~ {Tags:[death], NoAI:1b}
+execute if score @s anim.death matches 101 run item replace entity @e[type=stray, tag=death] armor.head with paper
+execute if score @s anim.death matches 101 run kill @e[type=stray, tag=death]
 
 execute if score @s anim.death matches 101 run scoreboard players set @s screen_effect 516
 execute if score @s anim.death matches 102 run scoreboard players set @s screen_effect 517

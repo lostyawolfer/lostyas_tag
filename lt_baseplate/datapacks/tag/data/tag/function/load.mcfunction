@@ -24,6 +24,7 @@ scoreboard objectives add effect.downed.count_up dummy
 scoreboard objectives add effect.downed.seconds dummy
 scoreboard objectives add effect.downed.seconds.10 dummy
 scoreboard objectives add effect.downed.ms dummy
+scoreboard objectives add effect.downed.title_random dummy
 # scoreboard objectives add effect.downed.seconds_even dummy
 
 
@@ -58,6 +59,8 @@ scoreboard objectives add stat.wasnt_selected_steak dummy
 scoreboard objectives add stat.current_hight dummy
 scoreboard objectives add stat.flew_in_ability minecraft.custom:minecraft.fly_one_cm
 scoreboard objectives add stat.xp dummy
+
+scoreboard objectives add zombie-death-effect dummy
 
 scoreboard objectives add p.cd.s dummy
 scoreboard objectives add p.cd dummy

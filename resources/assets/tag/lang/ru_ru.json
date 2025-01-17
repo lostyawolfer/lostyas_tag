@@ -169,7 +169,17 @@
   "title.tp.safezone_enter_error": "нельзя зайти в сейфзону",
   "title.tp.outside_map": "ты оказался за картой",
   "title.tp.inside_blocks": "ты был в блоках",
-  "title.frozen": "помощь в пути...",
+
+  "title.frozen0": "аж уши заложило...",
+  "title.frozen1": "помощь в пути...",
+  "title.frozen2": "ещё не сдавайся...",
+  "title.frozen3": "тебя спасут...",
+  "title.frozen4": "кто-то поможет...",
+  "title.frozen5": "я замёрз...",
+  "title.frozen6": "помогите...",
+  "title.frozen7": "ещё есть надежда...",
+  "title.frozen8": "не всё потеряно...",
+  "title.frozen9": "не переживай...",
 
   "title.glowing": "подсветка",
   "title.spectator": "ты зритель",

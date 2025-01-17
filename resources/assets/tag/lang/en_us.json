@@ -170,7 +170,18 @@
   "title.tp.safezone_enter_error": "cannot enter safezone",
   "title.tp.outside_map": "you were outside the map",
   "title.tp.inside_blocks": "you were in blocks",
-  "title.frozen": "hang in there...",
+
+  "title.frozen1": "my ears ring...",
+  "title.frozen1": "help is coming...",
+  "title.frozen2": "don't give up...",
+  "title.frozen3": "you'll be saved...",
+  "title.frozen4": "someone must help...",
+  "title.frozen5": "it's cold...",
+  "title.frozen6": "help me...",
+  "title.frozen7": "there's still hope...",
+  "title.frozen8": "need a hand..?",
+  "title.frozen8": "it's gonna be ok...",
+
 
   "title.glowing": "glowing",
   "title.spectator": "you are a spectator",

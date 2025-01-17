@@ -39,6 +39,7 @@ execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 16.. run
 
 # add bhop & playtime
 execute if score @s jump matches 1.. run scoreboard players add @s jump.bhop 1
+execute if score @s jump matches 1.. run scoreboard players add random server 1
 #execute as @a[scores={jump=1..}] at @s if block ~ ~ ~ #stairs if score @s jump.bhop matches 8.. run scoreboard players add @s playtime 2
 #execute as @a[scores={jump=1..}] at @s if block ~ ~ ~ #stairs if score @s jump.bhop matches 8.. run scoreboard players set @s playtime.trimp.title_anim 20
 #execute as @a[scores={jump=1..}] at @s if block ~ ~ ~ #stairs if score @s jump.bhop matches 8.. run scoreboard players set @s effect.throw 2
