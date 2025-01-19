@@ -112,6 +112,13 @@ scoreboard objectives add gh.unlocked_7 dummy
 scoreboard objectives add gh.unlocked_8 dummy
 
 
+scoreboard objectives add points dummy
+scoreboard objectives add points.recieve dummy
+
+scoreboard objectives add points.reason.trigger dummy
+scoreboard objectives add points.reason.store dummy
+scoreboard objectives add points.reason.anim dummy
+
 scoreboard objectives add xp.recieve dummy
 
 scoreboard objectives add jump minecraft.custom:minecraft.jump

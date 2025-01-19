@@ -3,6 +3,10 @@ tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@a[tag = hit_detect
 tag @a[tag = hit_detect.taker] add special
 scoreboard players set @a[tag = hit_detect.taker] effect.downed 1199
 
+
+scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger 9
+
+
 tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "dark_green"}, {"translate": "chat.hit.freeze"}, {"selector": "@a[tag = hit_detect.taker]", "color": "dark_purple"}]
 
 title @a[tag = hit_detect.giver] times 0 20 3

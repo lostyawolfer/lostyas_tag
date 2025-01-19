@@ -1,3 +1,7 @@
+playsound block.note_block.hat master @s ~ ~ ~ .05 2
+
+
+
 execute as @a[scores={xp.recieve=1..}] at @s run execute if score @s xp.recieve matches 1 run xp add @s 1
 execute as @a[scores={xp.recieve=1..}] at @s run execute if score @s xp.recieve matches 1 run scoreboard players remove @s xp.recieve 1
 

@@ -15,6 +15,8 @@ scoreboard players operation adventure-mode server += adventure-mode-decor serve
 scoreboard players add generic server 1
 execute if score generic server matches 20.. run scoreboard players set generic server 0
 
+execute if entity @a[tag=tagger, tag=!safezone] if entity @a[tag=!tagger, tag=!safezone] if score game server matches 1.. if score generic server matches 0 run scoreboard players add @a[tag=!tagger] points.recieve 1
+
 
 # join and leave routine
 execute as @a unless score @s joined matches 0 at @s run function tag:misc/join_routine
@@ -106,7 +108,8 @@ execute if score restart server matches 3..99 run title @a subtitle [{"text": "R
 execute if score restart server matches 100 as @a run function tag:misc/spawn
 execute if score restart server matches 100 as @a run scoreboard players set @a safezone_state 0
 execute if score restart server matches 110 run tellraw @a [{"text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew game", "color": "yellow", "bold": true}]
-execute if score adventure-mode server matches 2.. if score restart server matches 180 if score game server matches 1.. as @a run function tag:-/tag_randomize
+execute if score adventure-mode server matches 2.. if score restart server matches 180 if score game server matches 1.. run function tag:-/tag_randomize
+execute if score restart server matches 200 if score game server matches 1.. as @a run function tag:points_xp/get_xp_from_points
 #execute if score adventure-mode server matches 2.. if score restart server matches 100..380 run scoreboard players set @a[tag=tagger] safezone_state 1
 execute if score game server matches 1 if score adventure-mode server matches 2.. if score restart server matches 480.. run scoreboard players set @a safezone_state 0
 execute if score game server matches 4 if score adventure-mode server matches 2.. if score restart server matches 480.. run scoreboard players set @a safezone_state 0
@@ -394,8 +397,14 @@ execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run fu
 execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:items/effect
 execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:tagging/decoration_screens
 
-execute as @a[scores={xp.recieve=1..}] run function tag:misc/xp
-execute as @a[scores={xp.recieve=..-1}] run function tag:misc/xp
+execute as @a[scores={xp.recieve=1..}] at @s run function tag:points_xp/animations/xp_recieve
+execute as @a[scores={xp.recieve=..-1}] at @s run function tag:points_xp/animations/xp_recieve
+
+execute as @a[scores={points.recieve=1..}] run function tag:points_xp/animations/points_recieve
+execute as @a[scores={points.recieve=..-1}] run function tag:points_xp/animations/points_recieve
+
+execute as @a[scores={points.reason.trigger=1..}] at @s run function tag:points_xp/gaining_reasons
+execute as @a[scores={points.reason.trigger=..-1}] at @s run function tag:points_xp/gaining_reasons
 
 
 # variables after functions

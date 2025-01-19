@@ -51,6 +51,9 @@ execute if score game server matches 7 if entity @a[tag = hit_detect.giver, tag 
 execute if score game server matches 7 if entity @a[tag = hit_detect.giver, tag = tagger, tag =!safezone] if entity @a[tag = hit_detect.taker, tag =!tagger, tag = invincible_one_time, tag =!safezone] run function tag:tagging/tag_give/absorbed
 
 
+execute if entity @a[tag = hit_detect.giver, tag =!safezone, tag =!tagger] if entity @a[tag = hit_detect.taker, tag =!safezone, tag = tagger] run scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger 6
+
+
 execute unless score e.glowing server matches 0.. run scoreboard players remove e.glowing server 2
 
 tag @a[tag = hit_detect.giver] remove hit_detect.giver

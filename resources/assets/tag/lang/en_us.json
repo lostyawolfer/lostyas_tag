@@ -223,6 +223,12 @@
   "chat.glowing.ability": "Glowing! Everyone is visible through walls!",
   "chat.glowing.ability": "Glowing! Everyone is visible through walls! (activated by an ability)",
 
+  "title.recieve_xp.1": "xp for",
+  "title.recieve_xp.2_one": "point",
+  "title.recieve_xp.2_two": "points",
+  "title.recieve_xp.2_many": "points",
+
+
   "title.spectator": "you are a spectator",
   "title.now_spectating": "now spectating ",
 

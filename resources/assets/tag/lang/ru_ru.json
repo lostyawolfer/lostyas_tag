@@ -223,6 +223,12 @@
   "chat.glowing": "Подсветка! Всех видно сквозь стены!",
   "chat.glowing.ability": "Подсветка! Всех видно сквозь стены! (вызвана способностью)",
 
+  "title.recieve_xp.1": "опыта за",
+  "title.recieve_xp.2_one": "очко",
+  "title.recieve_xp.2_two": "очка",
+  "title.recieve_xp.2_many": "очков",
+
+
   "title.spectator": "ты зритель",
   "title.now_spectating": "сейчас наблюдаю за ",
 
