@@ -151,23 +151,44 @@ execute if score @s effect.downed.count_up matches 1 run tellraw @a[scores={logg
 execute if score @s effect.downed.count_up matches 1 run playsound tag:downed master @s ~ ~ ~ 1 1
 execute if score @s effect.downed.count_up matches 1 if score @s safezone_state matches -1 run tag @s add safezone_state_-1
 execute if score @s effect.downed.count_up matches 1.. run scoreboard players set @s safezone_state -1
-execute if score @s effect.downed.count_up matches 1 run scoreboard players set @s screen_effect 500
-execute if score @s effect.downed.count_up matches 2 run scoreboard players set @s screen_effect 501
-execute if score @s effect.downed.count_up matches 3 run scoreboard players set @s screen_effect 502
-execute if score @s effect.downed.count_up matches 4 run scoreboard players set @s screen_effect 503
-execute if score @s effect.downed.count_up matches 5 run scoreboard players set @s screen_effect 504
-execute if score @s effect.downed.count_up matches 6 run scoreboard players set @s screen_effect 505
-execute if score @s effect.downed.count_up matches 7 run scoreboard players set @s screen_effect 506
-execute if score @s effect.downed.count_up matches 8 run scoreboard players set @s screen_effect 507
-execute if score @s effect.downed.count_up matches 9 run scoreboard players set @s screen_effect 508
-execute if score @s effect.downed.count_up matches 10 run scoreboard players set @s screen_effect 509
-execute if score @s effect.downed.count_up matches 11 run scoreboard players set @s screen_effect 510
-execute if score @s effect.downed.count_up matches 12 run scoreboard players set @s screen_effect 511
-execute if score @s effect.downed.count_up matches 13 run scoreboard players set @s screen_effect 512
-execute if score @s effect.downed.count_up matches 14 run scoreboard players set @s screen_effect 513
-execute if score @s effect.downed.count_up matches 15 run scoreboard players set @s screen_effect 514
-execute if score @s effect.downed.count_up matches 16 run scoreboard players set @s screen_effect 514
-execute if score @s effect.downed.count_up matches 17.. run scoreboard players set @s screen_effect 515
+
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 1 run scoreboard players set @s screen_effect 500
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 2 run scoreboard players set @s screen_effect 501
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 3 run scoreboard players set @s screen_effect 502
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 4 run scoreboard players set @s screen_effect 503
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 5 run scoreboard players set @s screen_effect 504
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 6 run scoreboard players set @s screen_effect 505
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 7 run scoreboard players set @s screen_effect 506
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 8 run scoreboard players set @s screen_effect 507
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 9 run scoreboard players set @s screen_effect 508
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 10 run scoreboard players set @s screen_effect 509
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 11 run scoreboard players set @s screen_effect 510
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 12 run scoreboard players set @s screen_effect 511
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 13 run scoreboard players set @s screen_effect 512
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 14 run scoreboard players set @s screen_effect 513
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 15 run scoreboard players set @s screen_effect 514
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 16 run scoreboard players set @s screen_effect 514
+execute unless score game server matches 6 if score @s effect.downed.count_up matches 17.. run scoreboard players set @s screen_effect 515
+
+execute if score game server matches 6 if score @s effect.downed.count_up matches 1 run scoreboard players set @s screen_effect 537
+execute if score game server matches 6 if score @s effect.downed.count_up matches 2 run scoreboard players set @s screen_effect 538
+execute if score game server matches 6 if score @s effect.downed.count_up matches 3 run scoreboard players set @s screen_effect 539
+execute if score game server matches 6 if score @s effect.downed.count_up matches 4 run scoreboard players set @s screen_effect 540
+execute if score game server matches 6 if score @s effect.downed.count_up matches 5 run scoreboard players set @s screen_effect 541
+execute if score game server matches 6 if score @s effect.downed.count_up matches 6 run scoreboard players set @s screen_effect 542
+execute if score game server matches 6 if score @s effect.downed.count_up matches 7 run scoreboard players set @s screen_effect 543
+execute if score game server matches 6 if score @s effect.downed.count_up matches 8 run scoreboard players set @s screen_effect 544
+execute if score game server matches 6 if score @s effect.downed.count_up matches 9 run scoreboard players set @s screen_effect 545
+execute if score game server matches 6 if score @s effect.downed.count_up matches 10 run scoreboard players set @s screen_effect 546
+execute if score game server matches 6 if score @s effect.downed.count_up matches 11 run scoreboard players set @s screen_effect 547
+execute if score game server matches 6 if score @s effect.downed.count_up matches 12 run scoreboard players set @s screen_effect 548
+execute if score game server matches 6 if score @s effect.downed.count_up matches 13 run scoreboard players set @s screen_effect 549
+execute if score game server matches 6 if score @s effect.downed.count_up matches 14 run scoreboard players set @s screen_effect 550
+execute if score game server matches 6 if score @s effect.downed.count_up matches 15 run scoreboard players set @s screen_effect 551
+execute if score game server matches 6 if score @s effect.downed.count_up matches 16 run scoreboard players set @s screen_effect 551
+execute if score game server matches 6 if score @s effect.downed.count_up matches 17.. run scoreboard players set @s screen_effect 552
+
+
 
 execute if score @s effect.downed.count_up matches 1..10 run attribute @s gravity base set .005
 execute if score @s effect.downed.count_up matches 11..20 run attribute @s gravity base set .01

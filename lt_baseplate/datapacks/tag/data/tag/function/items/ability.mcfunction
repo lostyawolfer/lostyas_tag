@@ -1,27 +1,45 @@
+# decrease cooldown
+execute if score @s ab.cd matches -4.. unless score @s ab.use matches 1.. unless score @s effect.freeze matches 0.. unless score @s effect.downed matches 0.. run scoreboard players remove @s[gamemode = adventure, tag =!safezone] ab.cd 1
+
+# ab.cd.s = ab.cd / 20
 scoreboard players operation @s ab.cd.s = @s ab.cd
 scoreboard players remove @s ab.cd.s 1
 scoreboard players operation @s ab.cd.s /= 20 consts
 scoreboard players add @s ab.cd.s 1
 
+# decrease usage
+execute if score @s ab.use matches 0.. run scoreboard players remove @s[gamemode = adventure, tag =!safezone] ab.use 1
+execute if score @s ab.use matches 0.. run scoreboard players remove @s[gamemode =!adventure, tag =!safezone, tag = normal_player_decoration] ab.use 1
+
+# ab.use.s = ab.use / 20
 scoreboard players operation @s ab.use.s = @s ab.use
 scoreboard players remove @s ab.use.s 1
 scoreboard players operation @s ab.use.s /= 20 consts
 scoreboard players add @s ab.use.s 1
 
+# cooldowns and use times on use are set by individual abilities
+# force cooldowns when in safezone or frozen
+execute if entity @s[tag = safezone, scores = {ab.cd = ..4}] run scoreboard players set @s ab.cd 4
+execute if entity @s[tag =!safezone, scores = {ab.cd = ..4}] if score @s effect.downed matches 0.. run scoreboard players set @s ab.cd 4
+execute if entity @s[tag =!safezone, scores = {ab.cd = ..4}] if score @s effect.freeze matches 0.. run scoreboard players set @s ab.cd 4
 
+# force finish using when in safezone or frozen
+execute if score @s ab.use matches 0.. run scoreboard players set @s[gamemode = adventure, tag = safezone] ab.use -1
 
-# TEMPORARY CODE
-# execute if score @s ab.use.trigger matches 1.. run scoreboard players set @s ab.cd 300
-# execute if score @s ab.use.trigger matches 1.. run scoreboard players set @s ab.use 300
-# execute if score @s ab.use.trigger matches 1.. run scoreboard players reset @s ab.use.trigger
-
+# show if there is no ability
 execute unless score @s ab.current_ability matches -999.. run scoreboard players set @s ab.current_ability 0
-
-execute unless score @s ab.current_ability matches 0 unless score @s ab.cd matches -4.. run item replace entity @s container.1 with carrot_on_a_stick[custom_name='{"translate": "item.tag.ability", "italic": false, "color": "#ffff00", "bold": true}', custom_data={game: 1}]
 execute if score @s ab.current_ability matches 0 run item replace entity @s container.1 with red_dye[custom_model_data=1, custom_name='{"translate": "item.tag.ability.none", "italic": false, "color": "red", "bold": true}', custom_data={game: 1}]
 
-execute if score @s ab.cd matches 1.. run clear @s carrot_on_a_stick[custom_data={game: 1}]
+# if no cooldown, give item
+execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 if score @s ab.cd matches 0 run playsound block.note_block.pling master @s ~ ~ ~ 1 1 1
+execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 if score @s ab.cd matches 0 run item replace entity @s container.1 with carrot_on_a_stick[custom_model_data=4, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.tag.ability", "italic": false, "color": "yellow", "bold": true}', custom_data={game: 1}]
+execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 if score @s ab.cd matches -1 run item replace entity @s container.1 with carrot_on_a_stick[custom_model_data=3, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.tag.ability", "italic": false, "color": "yellow", "bold": true}', custom_data={game: 1}]
+execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 if score @s ab.cd matches -2 run item replace entity @s container.1 with carrot_on_a_stick[custom_model_data=2, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.tag.ability", "italic": false, "color": "yellow", "bold": true}', custom_data={game: 1}]
+execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 if score @s ab.cd matches -3 run item replace entity @s container.1 with carrot_on_a_stick[custom_model_data=1, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.tag.ability", "italic": false, "color": "yellow", "bold": true}', custom_data={game: 1}]
+execute unless score @s ab.current_ability matches 0 unless score @s ab.cd matches -3.. run item replace entity @s container.1 with carrot_on_a_stick[custom_name='{"translate": "item.tag.ability", "italic": false, "color": "#ffff00", "bold": true}', custom_data={game: 1}]
 
+
+# if usage, show it
 execute unless score @s ab.current_ability matches 0 if score @s ab.use.s matches 1 run item replace entity @s container.1 with lime_dye[custom_name='{"translate": "item.tag.ability.use", "italic": false, "color": "#80ff00", "bold": true}', custom_data={game: 1}] 1
 execute unless score @s ab.current_ability matches 0 if score @s ab.use.s matches 2 run item replace entity @s container.1 with lime_dye[custom_name='{"translate": "item.tag.ability.use", "italic": false, "color": "#80ff00", "bold": true}', custom_data={game: 1}] 2
 execute unless score @s ab.current_ability matches 0 if score @s ab.use.s matches 3 run item replace entity @s container.1 with lime_dye[custom_name='{"translate": "item.tag.ability.use", "italic": false, "color": "#80ff00", "bold": true}', custom_data={game: 1}] 3
@@ -90,7 +108,7 @@ execute unless score @s ab.current_ability matches 0 if score @s ab.use.s matche
 execute unless score @s ab.current_ability matches 0 if score @s ab.use.s matches 60 run item replace entity @s container.1 with lime_dye[custom_name='{"translate": "item.tag.ability.use", "italic": false, "color": "#80ff00", "bold": true}', custom_data={game: 1}] 60
 
 
-
+# if cooldown, show it
 execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 unless score @s ab.use matches 1.. if score @s ab.cd matches 1 run item replace entity @s container.1 with gray_dye[custom_model_data=-1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}]
 execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 unless score @s ab.use matches 1.. if score @s ab.cd matches 2 run item replace entity @s container.1 with gray_dye[custom_model_data=-2, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}]
 execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 unless score @s ab.use matches 1.. if score @s ab.cd matches 3 run item replace entity @s container.1 with gray_dye[custom_model_data=-3, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}]
@@ -160,7 +178,8 @@ execute unless score @s effect.downed matches 1.. unless score @s ab.current_abi
 execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 59 run item replace entity @s container.1 with gray_dye[custom_model_data= 0, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 59
 
 
-
+# if cooldown and frozen, use frozen sprites
+execute if score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 0 if score @s ab.cd matches 1.. run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 1
 execute if score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 1 run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 1
 execute if score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 2 run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 2
 execute if score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 3 run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 3
@@ -227,24 +246,6 @@ execute if score @s effect.downed matches 1.. unless score @s ab.current_ability
 execute if score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 59 run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 59
 
 
-
-
-
-
-execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 if score @s ab.cd matches 0 run playsound block.note_block.pling master @s ~ ~ ~ 1 1 1
-execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 if score @s ab.cd matches -1 run item replace entity @s container.1 with carrot_on_a_stick[custom_model_data=4, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.tag.ability", "italic": false, "color": "yellow", "bold": true}', custom_data={game: 1}]
-execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 if score @s ab.cd matches -2 run item replace entity @s container.1 with carrot_on_a_stick[custom_model_data=3, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.tag.ability", "italic": false, "color": "yellow", "bold": true}', custom_data={game: 1}]
-execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 if score @s ab.cd matches -3 run item replace entity @s container.1 with carrot_on_a_stick[custom_model_data=2, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.tag.ability", "italic": false, "color": "yellow", "bold": true}', custom_data={game: 1}]
-execute unless score @s effect.downed matches 1.. unless score @s ab.current_ability matches 0 if score @s ab.cd matches -4 run item replace entity @s container.1 with carrot_on_a_stick[custom_model_data=1, !use_cooldown, use_remainder={id: "heart_of_the_sea"}, custom_name='{"translate": "item.tag.ability", "italic": false, "color": "yellow", "bold": true}', custom_data={game: 1}]
-
-
-#execute if entity @s[tag = safezone, scores = {ab.cd = ..4}] run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.minecraft.ender_pearl", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}]
-execute if entity @s[tag = safezone, scores = {ab.cd = ..4}] run scoreboard players set @s ab.cd 4
-execute if entity @s[tag =!safezone, scores = {ab.cd = ..4}] if score @s effect.downed matches 0.. run scoreboard players set @s ab.cd 4
-execute if entity @s[tag =!safezone, scores = {ab.cd = ..4}] if score @s effect.freeze matches 0.. run scoreboard players set @s ab.cd 4
-
-
-execute if score @s ab.use matches 0.. run scoreboard players remove @s[gamemode = adventure, tag =!safezone] ab.use 1
-execute if score @s ab.use matches 0.. run scoreboard players remove @s[gamemode =!adventure, tag =!safezone, tag = normal_player_decoration] ab.use 1
-execute if score @s ab.use matches 0.. run scoreboard players set @s[gamemode = adventure, tag = safezone] ab.use -1
-execute if score @s ab.cd matches -4.. unless score @s ab.use matches 1.. unless score @s effect.freeze matches 0.. unless score @s effect.downed matches 0.. run scoreboard players remove @s[gamemode = adventure, tag =!safezone] ab.cd 1
+# if there is cooldown or a use time, clear ability item
+execute if score @s ab.cd matches 1.. run clear @s carrot_on_a_stick[custom_data={game: 1}]
+execute if score @s ab.use matches 1.. run clear @s carrot_on_a_stick[custom_data={game: 1}]
