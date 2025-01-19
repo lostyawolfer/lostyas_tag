@@ -60,8 +60,6 @@ scoreboard objectives add stat.current_hight dummy
 scoreboard objectives add stat.flew_in_ability minecraft.custom:minecraft.fly_one_cm
 scoreboard objectives add stat.xp dummy
 
-scoreboard objectives add zombie-death-effect dummy
-
 scoreboard objectives add p.cd.s dummy
 scoreboard objectives add p.cd dummy
 scoreboard objectives add p.use.trigger minecraft.used:minecraft.ender_pearl
@@ -80,6 +78,8 @@ scoreboard objectives add ab.current_ability dummy
 
 scoreboard objectives add pa.active dummy
 scoreboard objectives add pa.current_passive dummy
+scoreboard objectives add pa.ability_specific.jump minecraft.custom:minecraft.jump
+scoreboard objectives add pa.ability_specific.counter minecraft.custom:minecraft.jump
 
 scoreboard objectives add menu dummy
 scoreboard objectives add menu.selecting dummy
@@ -92,6 +92,15 @@ scoreboard objectives add ab.unlocked_4 dummy
 scoreboard objectives add ab.unlocked_5 dummy
 scoreboard objectives add ab.unlocked_6 dummy
 scoreboard objectives add ab.unlocked_7 dummy
+
+scoreboard objectives add pa.unlocked_1 dummy
+scoreboard objectives add pa.unlocked_2 dummy
+scoreboard objectives add pa.unlocked_3 dummy
+scoreboard objectives add pa.unlocked_4 dummy
+scoreboard objectives add pa.unlocked_5 dummy
+scoreboard objectives add pa.unlocked_6 dummy
+scoreboard objectives add pa.unlocked_7 dummy
+scoreboard objectives add pa.unlocked_8 dummy
 
 scoreboard objectives add gh.unlocked_1 dummy
 scoreboard objectives add gh.unlocked_2 dummy
@@ -127,10 +136,16 @@ scoreboard objectives add logging dummy
 
 
 # bossbars
-bossbar add version ""
-bossbar set version visible true
-bossbar set version max 1
-bossbar set version value 0
+bossbar add tag:top ""
+bossbar set tag:top visible true
+bossbar set tag:top max 1
+bossbar set tag:top value 0
+
+bossbar add tag:notif.safezone {"translate": "notif.safezone", "color": "green"}
+bossbar set tag:notif.safezone name {"translate": "notif.safezone", "color": "green"}
+bossbar set tag:notif.safezone visible true
+bossbar set tag:notif.safezone max 1
+bossbar set tag:notif.safezone value 0
 
 
 

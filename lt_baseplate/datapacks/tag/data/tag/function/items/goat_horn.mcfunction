@@ -11,9 +11,8 @@ execute if score @s gh.current_goat_horn matches 0 run item replace entity @s co
 execute if score @s gh.current_goat_horn matches 0 run return 0
 
 
-execute if score game server matches 1.. if score @s gh.use.trigger matches 1.. if score game server matches 1.. if score e.glowing server matches ..-1 run scoreboard players remove e.glowing server 36
-execute if score game server matches 1.. if score @s gh.use.trigger matches 1.. run scoreboard players set @s gh.cd 140
-execute unless score game server matches 1.. if score @s gh.use.trigger matches 1.. run scoreboard players set @s gh.cd 10
+execute if score @s gh.use.trigger matches 1.. if score game server matches 1.. if score e.glowing server matches ..-1 run scoreboard players remove e.glowing server 36
+execute if score @s gh.use.trigger matches 1.. run scoreboard players set @s gh.cd 140
 execute if score @s gh.use.trigger matches 1.. run scoreboard players reset @s gh.use.trigger
 
 

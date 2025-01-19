@@ -6,8 +6,6 @@
   "item.effect.glowing_tagger": "Visibility: taggers are always glowing, but can sneak to be invisible",
   "item.effect.glowing_invisible": "Visibility: glowing despite being invisible",
 
-  "item.tag.passive.none": "You don't have a passive ability!",
-  "item.tag.passive": "Passive ability",
   "item.tag.menu": "Menu",
   "item.minecraft.goat_horn.none": "You don't have a goat horn!",
   
@@ -42,11 +40,42 @@
   "menu.abilities.ticks_many": "ticks",
 
 
+  "menu.passives.synergies": "SYNERGIES:",
+
+  "menu.passives.1": "Tagging accelerator",
+  "menu.passives.1.desc": "Gives you a significant speed boost when you are IT.",
+
+  "menu.passives.2": "Radar",
+  "menu.passives.2.desc": "When you're IT, doubles the amount of glowings.",
+
+  "menu.passives.3": "Pearl accelerator",
+  "menu.passives.3.desc": "Speed up your ender pearl cooldown 1.5x.",
+
+  "menu.passives.4": "Ability accelerator",
+  "menu.passives.4.desc": "Speed up your ability cooldown 1.5x.",
+
+  "menu.passives.5": "Ability extender",
+  "menu.passives.5.desc": "Extend the active ability's usage time. If not applicable, will make your ability stronger in some other way.",
+
+  "menu.passives.6": "Spirit slap",
+  "menu.passives.6.desc": "When your ability is charged and you are not a tagger, gives you a stick with knockback II.",
+
+  "menu.passives.7": "Spring",
+  "menu.passives.7.desc": "When you're near any construction of height up to 2.5 blocks above your feet, gives you jump boost that will be just enough to jump on it.",
+
+  "menu.passives.8": "Airmaster",
+  "menu.passives.8.desc": "Makes beacons' levitation effect stronger.",
+
+  "menu.passives.9": "Concussion",
+  "menu.passives.9.desc": "// currently unused, the concept for its info is in russian lang file",
+
+
   "menu.close": "Close menu",
   "menu.back": "Back to main menu",
   "menu.next": "Next page",
   "menu.prev": "Previous page",
   "menu.select": "Select",
+  "menu.deselect": "Deselect the ability?",
   "menu.buy": "Buy",
   "menu.buy.price": "levels",
   "menu.buy.insufficient_funds": "Insufficient funds!",
@@ -56,6 +85,7 @@
   "menu.goat_horns": "Goat horns",
   
   "chat.ability.select": "changed their ability to",
+  "chat.passive.select": "changed their passive ability to",
   
   
   
@@ -154,6 +184,10 @@
   "item.tag.ability.use": "Ability",
   "item.tag.ability.cd": "Ability",
   "item.tag.ability.none": "You don't have an ability!",
+
+  "item.tag.passive_active": "Passive ability",
+  "item.tag.passive_not_active": "Passive ability",
+  "item.tag.passive.none": "You don't have a passive ability!",
   
   "gamemode.building_mode": "              building mode               ",
   "gamemode.social_space": "              social space              ",
@@ -171,7 +205,7 @@
   "title.tp.outside_map": "you were outside the map",
   "title.tp.inside_blocks": "you were in blocks",
 
-  "title.frozen1": "my ears ring...",
+  "title.frozen0": "my ears ring...",
   "title.frozen1": "help is coming...",
   "title.frozen2": "don't give up...",
   "title.frozen3": "you'll be saved...",
@@ -180,11 +214,17 @@
   "title.frozen6": "help me...",
   "title.frozen7": "there's still hope...",
   "title.frozen8": "need a hand..?",
-  "title.frozen8": "it's gonna be ok...",
+  "title.frozen9": "it's gonna be ok...",
 
+  "title.glowing": "Glowing",
+  "subtitle.glowing": "You are visible for 5 seconds",
+  "subtitle.glowing.tagger": "You see everyone for 5 seconds",
+  "subtitle.glowing.dead": "Everyone is visible 5 сек.",
+  "chat.glowing.ability": "Glowing! Everyone is visible through walls!",
+  "chat.glowing.ability": "Glowing! Everyone is visible through walls! (activated by an ability)",
 
-  "title.glowing": "glowing",
   "title.spectator": "you are a spectator",
   "title.now_spectating": "now spectating ",
-  "safezone.notif": "⭐ you're in a safezone ⭐"
+
+  "notif.safezone": "⭐ you're in a safezone ⭐"
 }

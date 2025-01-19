@@ -124,11 +124,13 @@ effect give @a saturation 15 10 true
 effect give @a instant_health 15 10 true
 
 # ui stuff
-bossbar set minecraft:version players @a
+bossbar set tag:top players @a
 execute unless score force-game server matches 1 if score adventure-mode server matches 2.. if score taggers server matches 1.. unless score game server matches -1.. run scoreboard players operation game server = game_prev server
 execute unless score force-game server matches 1 if score adventure-mode server matches 2.. unless score taggers server matches 1.. unless score game server matches -1.. run scoreboard players operation game server = game_prev server
 execute unless score force-game server matches 1 unless score adventure-mode server matches 2.. if score playercount server matches 1.. run scoreboard players set game server -2
 execute unless score playercount server matches 1.. run scoreboard players set game_prev server 0
+
+bossbar set tag:notif.safezone players @a[tag = safezone]
 
 execute if score game server matches 0.. run scoreboard players operation game_prev server = game server
 
@@ -330,41 +332,7 @@ execute as @a unless score @s tp.id matches 1..16 run function tag:tp_back/get_i
 
 
 # events
-# glowing
-execute if score game server matches 1.. if score taggers server matches 1.. if score non-taggers server matches 1.. unless score e.glowing server matches 0.. run scoreboard players remove e.glowing server 1
-execute if score e.glowing server matches 0.. run scoreboard players remove e.glowing server 1
-execute unless score game server matches 1.. run scoreboard players set e.glowing server -2
-
-execute if score e.glowing server matches ..-4000 as @a at @s run playsound glowing master @s ~ ~ ~
-execute if score e.glowing server matches ..-4000 run scoreboard players set e.glowing server 99
-execute if score e.glowing server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s title ""
-execute if score e.glowing server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s times 0 5 3
-execute if score e.glowing server matches 0.. as @a unless score @s effect.glowing matches 2.. run scoreboard players set @s effect.glowing 2
-
-scoreboard players operation e.glowing_s server = e.glowing server
-scoreboard players operation e.glowing_s server /= 20 consts
-scoreboard players add e.glowing_s server 1
-
-execute if score e.glowing server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s subtitle [{"translate":"title.glowing", "color":"aqua"}, " ", {"score":{"name":"e.glowing_s", "objective":"server"}, "color":"#00FFFF", "bold": true}]
-execute if score e.glowing server matches -1 as @a unless score @s effect.downed matches 1.. run title @s subtitle [{"translate":"title.glowing", "color":"dark_gray"}, " ", {"score":{"name":"e.glowing_s", "objective":"server"}, "color":"gray", "bold": true}]
-
-
-
-
-execute if score e.glowing_ability server matches -1.. run scoreboard players remove e.glowing_ability server 1
-
-execute if score e.glowing_ability server matches 0.. run scoreboard players set e.glowing server -2
-execute if score e.glowing_ability server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s title ""
-execute if score e.glowing_ability server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s times 0 5 3
-execute if score e.glowing_ability server matches 0.. as @a[tag=!ab.active.5] unless score @s effect.glowing matches 2.. run scoreboard players set @s effect.glowing 2
-
-scoreboard players operation e.glowing_ability_s server = e.glowing_ability server
-scoreboard players operation e.glowing_ability_s server /= 20 consts
-scoreboard players add e.glowing_ability_s server 1
-
-execute if score e.glowing_ability server matches 0.. as @a unless score @s effect.downed matches 1.. run title @s subtitle [{"translate":"title.glowing", "color":"light_purple"}, " ", {"score":{"name":"e.glowing_ability_s", "objective":"server"}, "color":"#ff00ff", "bold": true}]
-execute if score e.glowing_ability server matches -1 as @a unless score @s effect.downed matches 1.. run title @s subtitle [{"translate":"title.glowing", "color":"dark_gray"}, " ", {"score":{"name":"e.glowing_ability_s", "objective":"server"}, "color":"gray", "bold": true}]
-
+function tag:events/glowing
 
 
 
@@ -394,6 +362,16 @@ execute as @a[scores={ab.current_ability=4}] at @s run function tag:abilities/ac
 execute as @a[scores={ab.current_ability=5}] at @s run function tag:abilities/active/5
 execute as @a[scores={ab.current_ability=6}] at @s run function tag:abilities/active/6
 execute as @a[scores={ab.current_ability=7}] at @s run function tag:abilities/active/7
+
+execute as @a[scores={pa.current_passive=1}] at @s run function tag:abilities/passive/1
+execute as @a[scores={pa.current_passive=2}] at @s run function tag:abilities/passive/2
+execute as @a[scores={pa.current_passive=3}] at @s run function tag:abilities/passive/3
+execute as @a[scores={pa.current_passive=4}] at @s run function tag:abilities/passive/4
+execute as @a[scores={pa.current_passive=5}] at @s run function tag:abilities/passive/5
+execute as @a[scores={pa.current_passive=6}] at @s run function tag:abilities/passive/6
+execute as @a[scores={pa.current_passive=7}] at @s run function tag:abilities/passive/7
+execute as @a[scores={pa.current_passive=8}] at @s run function tag:abilities/passive/8
+
 
 execute as @a unless score @s menu matches 0.. run scoreboard players set @s menu 0
 execute as @a[tag =!safezone] if score @s menu matches 1.. run clear @s warped_fungus_on_a_stick
