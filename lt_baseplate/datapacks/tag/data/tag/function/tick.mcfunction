@@ -400,11 +400,12 @@ execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run fu
 execute as @a[scores={xp.recieve=1..}] at @s run function tag:points_xp/animations/xp_recieve
 execute as @a[scores={xp.recieve=..-1}] at @s run function tag:points_xp/animations/xp_recieve
 
+execute as @a[scores={points.reason.trigger=1..}] at @s run function tag:points_xp/gaining_reasons
+execute as @a[scores={points.reason.trigger=..-1}] at @s run function tag:points_xp/gaining_reasons
+
 execute as @a[scores={points.recieve=1..}] run function tag:points_xp/animations/points_recieve
 execute as @a[scores={points.recieve=..-1}] run function tag:points_xp/animations/points_recieve
 
-execute as @a[scores={points.reason.trigger=1..}] at @s run function tag:points_xp/gaining_reasons
-execute as @a[scores={points.reason.trigger=..-1}] at @s run function tag:points_xp/gaining_reasons
 
 
 # variables after functions
