@@ -1,5 +1,5 @@
-execute if score @s effect.downed matches 1.. run return 0
-execute if score @s effect.freeze matches 1.. run return 0
+# execute if score @s effect.downed matches 1.. run return 0
+# execute if score @s effect.freeze matches 1.. run return 0
 
 execute unless score @s effect.strong_levitation matches ..8 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " used a beacon"]
 # execute if score @s effect.strong_levitation matches ..8 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " had an error using a beacon, applying effect again"]
