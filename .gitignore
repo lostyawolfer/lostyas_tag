@@ -1,24 +1,24 @@
-lt_playground/
-lt_playground_winter/
-lt_baseplate_nether/
-lt_baseplate_the_end/
-plugins/
-config/
+/lt_playground/
+/lt_playground_winter/
+*_nether/
+*_the_end/
+/plugins/
+/config
 
-lt_baseplate/advancements/
-lt_baseplate/data/
-lt_baseplate/entities/
-lt_baseplate/region/
-lt_baseplate/playerdata/
-lt_baseplate/poi/
-lt_basetplate/region/
-lt_baseplate/stats/
-lt_basteplate/icon.png
-lt_baseplate/level.dat
-lt_baseplate/level.dat_old
-lt_baseplate/paper-world.yml
-lt_baseplate/session.lock
-lt_baseplate/uid.dat
+*/advancements/
+*/data/
+*/entities/
+*/region/
+*/playerdata/
+*/poi/
+*/region/
+*/stats/
+*/icon.png
+*/level.dat
+*/level.dat_old
+*/paper-world.yml
+*/session.lock
+*/uid.dat
 
 
 # Ignore VSCode directory and all its contents
