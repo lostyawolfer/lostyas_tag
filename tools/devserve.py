@@ -6,17 +6,16 @@ import logging
 import pathlib as pth
 import shlex
 import shutil
+from .common import log, BuildError
 import subprocess as sp
-
-logging.basicConfig()
-log = logging.getLogger(__name__ if __name__ != '__main__' else 'MAIN')
 
 def scp_copy(src, dst, *,
         ssh_user, ssh_host, ssh_port=22,
         force_win_dst=False):
     """Wraps SCP as Python function"""
 
-    assert float(ssh_port).is_integer()
+    if not float(ssh_port).is_integer():
+        raise BuildError(f'Wrong ssh port "{ssh_port}", non-integer')
     ssh_port = int(ssh_port)
 
     dst_cls = pth.Path if not force_win_dst else pth.PureWindowsPath
@@ -31,8 +30,11 @@ def scp_copy(src, dst, *,
         cmd_str = shlex.join(cmd)
         log.debug(f'Built command {cmd_str}')
 
-    res = sp.run(cmd, capture_output=True, text=True, check=True)
-    return res
+    try:
+        res = sp.run(cmd, capture_output=True, text=True, check=True)
+        return res
+    except Exception as exc:
+        raise BuildError('SCP copy failed') from exc
 
 
 if __name__ == '__main__':

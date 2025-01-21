@@ -12,9 +12,9 @@ import io
 import logging
 import pathlib as pth
 import sys
+from tools.common import zip_folder
 import types
 import uuid
-import zipfile
 
 log = logging.getLogger(__name__)
 # TODO: Set custom logging format for INFO level
@@ -24,65 +24,6 @@ DEFAULTS = types.SimpleNamespace(
     serverprops='server.properties.in',
     respack_dir='resources',
 )
-
-
-class BuildError(Exception):
-    pass
-
-
-def zip_folder(indir, outfile, *, compression_ratio=9):
-    """Archives `indir` into `outdir`/`filename` ZIP.
-    Uses provided `compression_ratio`
-    """
-    assert 0 <= compression_ratio <= 9, 'Compression ratio out of bounds'
-
-    indir, outfile = map(pth.Path, [indir, outfile])
-    assert indir.is_dir(), 'Input directory does not exist'
-    outdir = outfile.parent
-    outdir.mkdir(exist_ok=True)  # ensure output directory exists
-
-    # check that outfile is not placed under indir
-    # Catch ValueError (meaning our ZIP is not to be placed in subpath of indir)
-    # When no ValueError is raised, it means we have a recursion -> mark FAILURE
-    try:
-        outfile.relative_to(indir)
-    except ValueError:
-        pass  # ignore raised exception
-    else:  # there was no exception
-        msg = f'Cannot put "{outfile}" into directory "{indir}"'
-        msg += ' being archived'
-        raise BuildError(msg)
-
-    log.debug(f'Constructed output path: "{outfile}"')
-
-    # Windows natively supports only DEFLATE. Also use STORED for uncompressed ZIPs
-    algo = zipfile.ZIP_STORED if not compression_ratio else zipfile.ZIP_DEFLATED
-
-    with zipfile.ZipFile(outfile, mode='w',
-                         compression=algo,
-                         compresslevel=compression_ratio) as zip:
-        # Walk input directory, putting files in archive
-        for dirpath, dirnames, filenames in indir.walk():
-            basepth = pth.Path(dirpath).relative_to(indir)
-            log.debug(f'Inside dir {basepth}')
-
-            subdirs = [basepth.joinpath(i) for i in dirnames]
-            # log.debug(f'Subdirs: {subdirs}')
-
-            # create directories in ZIP archive
-            for subdir in subdirs:
-                zip.mkdir(str(subdir))
-
-            # put files into archive
-            for fname in filenames:
-                infile = pth.Path(dirpath).joinpath(fname)
-                arcname = infile.relative_to(indir)
-                log.debug(f'\t\tFile "{arcname}"')
-                zip.write(infile, str(arcname))
-
-        assert zip.testzip() is None, 'ZIP integrity failure'
-
-        return zip.infolist()
 
 
 def file_hash(file, *, algo='sha1'):
