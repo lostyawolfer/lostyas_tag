@@ -109,7 +109,7 @@ execute if score restart server matches 100 as @a run function tag:misc/spawn
 execute if score restart server matches 100 as @a run scoreboard players set @a safezone_state 0
 execute if score restart server matches 110 run tellraw @a [{"text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew game", "color": "yellow", "bold": true}]
 execute if score adventure-mode server matches 2.. if score restart server matches 180 if score game server matches 1.. run function tag:-/tag_randomize
-execute if score restart server matches 200 if score game server matches 1.. as @a run function tag:points_xp/get_xp_from_points
+execute if score restart server matches 120 if score game server matches 1.. as @a run function tag:points_xp/get_xp_from_points
 #execute if score adventure-mode server matches 2.. if score restart server matches 100..380 run scoreboard players set @a[tag=tagger] safezone_state 1
 execute if score game server matches 1 if score adventure-mode server matches 2.. if score restart server matches 480.. run scoreboard players set @a safezone_state 0
 execute if score game server matches 4 if score adventure-mode server matches 2.. if score restart server matches 480.. run scoreboard players set @a safezone_state 0

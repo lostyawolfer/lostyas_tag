@@ -18,6 +18,7 @@ scoreboard players reset @s[scores={effect.downed=..0}] effect.downed.count_up
 
 execute if score @s effect.downed.count_up matches 1 run scoreboard players operation @s effect.downed.title_random = random server
 
+execute if score @s effect.downed.count_up matches 1 run damage @s .01 freeze
 
 execute if score @s effect.downed.count_up matches 1 run title @s times 0 30 10
 execute if score @s effect.downed.count_up matches 1 run title @s title [{"translate": "title.hit.freeze_you", "color":"red", "bold": true}]
