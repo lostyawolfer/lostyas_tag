@@ -358,22 +358,22 @@ execute as @a[scores={ab.use=1..}, tag=dead] run scoreboard players set @s ab.us
 #execute as @a[scores={ab.cd=1..}, tag=dead] run scoreboard players set @s ab.cd 0
 
 
-execute as @a[scores={ab.current_ability=1}] at @s run function tag:abilities/active/1
-execute as @a[scores={ab.current_ability=2}] at @s run function tag:abilities/active/2
-execute as @a[scores={ab.current_ability=3}] at @s run function tag:abilities/active/3
-execute as @a[scores={ab.current_ability=4}] at @s run function tag:abilities/active/4
-execute as @a[scores={ab.current_ability=5}] at @s run function tag:abilities/active/5
-execute as @a[scores={ab.current_ability=6}] at @s run function tag:abilities/active/6
-execute as @a[scores={ab.current_ability=7}] at @s run function tag:abilities/active/7
+execute as @a[scores={ab.current=1}] at @s run function tag:abilities/active/1
+execute as @a[scores={ab.current=2}] at @s run function tag:abilities/active/2
+execute as @a[scores={ab.current=3}] at @s run function tag:abilities/active/3
+execute as @a[scores={ab.current=4}] at @s run function tag:abilities/active/4
+execute as @a[scores={ab.current=5}] at @s run function tag:abilities/active/5
+execute as @a[scores={ab.current=6}] at @s run function tag:abilities/active/6
+execute as @a[scores={ab.current=7}] at @s run function tag:abilities/active/7
 
-execute as @a[scores={pa.current_passive=1}] at @s run function tag:abilities/passive/1
-execute as @a[scores={pa.current_passive=2}] at @s run function tag:abilities/passive/2
-execute as @a[scores={pa.current_passive=3}] at @s run function tag:abilities/passive/3
-execute as @a[scores={pa.current_passive=4}] at @s run function tag:abilities/passive/4
-execute as @a[scores={pa.current_passive=5}] at @s run function tag:abilities/passive/5
-execute as @a[scores={pa.current_passive=6}] at @s run function tag:abilities/passive/6
-execute as @a[scores={pa.current_passive=7}] at @s run function tag:abilities/passive/7
-execute as @a[scores={pa.current_passive=8}] at @s run function tag:abilities/passive/8
+execute as @a[scores={pa.current=1}] at @s run function tag:abilities/passive/1
+execute as @a[scores={pa.current=2}] at @s run function tag:abilities/passive/2
+execute as @a[scores={pa.current=3}] at @s run function tag:abilities/passive/3
+execute as @a[scores={pa.current=4}] at @s run function tag:abilities/passive/4
+execute as @a[scores={pa.current=5}] at @s run function tag:abilities/passive/5
+execute as @a[scores={pa.current=6}] at @s run function tag:abilities/passive/6
+execute as @a[scores={pa.current=7}] at @s run function tag:abilities/passive/7
+execute as @a[scores={pa.current=8}] at @s run function tag:abilities/passive/8
 
 
 execute as @a unless score @s menu matches 0.. run scoreboard players set @s menu 0

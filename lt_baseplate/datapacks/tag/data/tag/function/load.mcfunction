@@ -67,17 +67,17 @@ scoreboard objectives add p.use.trigger minecraft.used:minecraft.ender_pearl
 scoreboard objectives add gh.cd.s dummy
 scoreboard objectives add gh.cd dummy
 scoreboard objectives add gh.use.trigger minecraft.used:minecraft.goat_horn
-scoreboard objectives add gh.current_goat_horn dummy
+scoreboard objectives add gh.current dummy
 
 scoreboard objectives add ab.cd.s dummy
 scoreboard objectives add ab.cd dummy
 scoreboard objectives add ab.use.s dummy
 scoreboard objectives add ab.use dummy
 scoreboard objectives add ab.use.trigger minecraft.used:minecraft.carrot_on_a_stick
-scoreboard objectives add ab.current_ability dummy
+scoreboard objectives add ab.current dummy
 
 scoreboard objectives add pa.active dummy
-scoreboard objectives add pa.current_passive dummy
+scoreboard objectives add pa.current dummy
 scoreboard objectives add pa.ability_specific.jump minecraft.custom:minecraft.jump
 scoreboard objectives add pa.ability_specific.counter minecraft.custom:minecraft.jump
 

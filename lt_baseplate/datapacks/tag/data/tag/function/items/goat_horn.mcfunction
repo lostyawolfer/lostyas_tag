@@ -5,10 +5,10 @@ scoreboard players remove @s gh.cd.s 1
 scoreboard players operation @s gh.cd.s /= 20 consts
 scoreboard players add @s gh.cd.s 1
 
-execute unless score @s gh.current_goat_horn matches -999.. run scoreboard players set @s gh.current_goat_horn 0
+execute unless score @s gh.current matches -999.. run scoreboard players set @s gh.current 0
 
-execute if score @s gh.current_goat_horn matches 0 run item replace entity @s container.7 with red_dye[custom_model_data=2, custom_name='{"translate": "item.minecraft.goat_horn.none", "italic": false, "color": "red", "bold": true}', custom_data={game: 1}]
-execute if score @s gh.current_goat_horn matches 0 run return 0
+execute if score @s gh.current matches 0 run item replace entity @s container.7 with red_dye[custom_model_data=2, custom_name='{"translate": "item.minecraft.goat_horn.none", "italic": false, "color": "red", "bold": true}', custom_data={game: 1}]
+execute if score @s gh.current matches 0 run return 0
 
 
 execute if score @s gh.use.trigger matches 1.. if score game server matches 1.. if score e.glowing server matches ..-1 run scoreboard players remove e.glowing server 36
@@ -16,14 +16,14 @@ execute if score @s gh.use.trigger matches 1.. run scoreboard players set @s gh.
 execute if score @s gh.use.trigger matches 1.. run scoreboard players reset @s gh.use.trigger
 
 
-execute if score @s gh.current_goat_horn matches 1 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "ponder_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
-execute if score @s gh.current_goat_horn matches 2 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "sing_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
-execute if score @s gh.current_goat_horn matches 3 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "seek_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
-execute if score @s gh.current_goat_horn matches 4 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "feel_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
-execute if score @s gh.current_goat_horn matches 5 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "admire_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
-execute if score @s gh.current_goat_horn matches 6 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "call_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
-execute if score @s gh.current_goat_horn matches 7 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "yearn_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
-execute if score @s gh.current_goat_horn matches 8 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "dream_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
+execute if score @s gh.current matches 1 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "ponder_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
+execute if score @s gh.current matches 2 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "sing_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
+execute if score @s gh.current matches 3 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "seek_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
+execute if score @s gh.current matches 4 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "feel_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
+execute if score @s gh.current matches 5 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "admire_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
+execute if score @s gh.current matches 6 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "call_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
+execute if score @s gh.current matches 7 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "yearn_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
+execute if score @s gh.current matches 8 unless score @s gh.cd matches -3.. run item replace entity @s container.7 with goat_horn[instrument = "dream_goat_horn", custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "#B7B77F", "bold": true}', custom_data={game: 1}]
 
 execute if score @s gh.cd matches 1 run item replace entity @s container.7 with brick[custom_model_data=-1, custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}]
 execute if score @s gh.cd matches 2 run item replace entity @s container.7 with brick[custom_model_data=-2, custom_name='{"translate": "item.minecraft.goat_horn", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}]

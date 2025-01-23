@@ -1,0 +1,1 @@
+$item replace entity @s container.0 with minecraft:warped_fungus_on_a_stick[custom_data={game:4, menu:$(points_to)}, custom_model_data=26, custom_name='[{"translate":"menu.prev","color":"white","italic":false}]']

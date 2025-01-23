@@ -220,7 +220,7 @@
   "subtitle.glowing": "You are visible for 5 seconds",
   "subtitle.glowing.tagger": "You see everyone for 5 seconds",
   "subtitle.glowing.dead": "Everyone is visible 5 сек.",
-  "chat.glowing.ability": "Glowing! Everyone is visible through walls!",
+  "chat.glowing": "Glowing! Everyone is visible through walls!",
   "chat.glowing.ability": "Glowing! Everyone is visible through walls! (activated by an ability)",
 
   "title.recieve_xp.1": "xp for",
