@@ -13,12 +13,13 @@ execute if score @s menu matches 310 run function tag:items/menu/items/product {
 execute if score @s menu matches 310 run function tag:items/menu/items/product {product: gh, slot: 2, id: 3, price: 5, price_count: many, page: 310, command: 300}
 execute if score @s menu matches 310 run function tag:items/menu/items/product {product: gh, slot: 3, id: 4, price: 2, price_count: two, page: 310, command: 300}
 execute if score @s menu matches 310 run function tag:items/menu/items/product {product: gh, slot: 4, id: 5, price: 2, price_count: two, page: 310, command: 300}
+execute if score @s menu matches 310 run function tag:items/menu/items/product {product: gh, slot: 5, id: 6, price: 7, price_count: many, page: 310, command: 300}
 execute if score @s menu matches 310 run function tag:items/menu/items/next_page {points_to: 320}
 
 execute if score @s menu matches 320 run function tag:items/menu/items/prev_page {points_to: 310}
-execute if score @s menu matches 320 run function tag:items/menu/items/product {product: gh, slot: 1, id: 6, price: 7, price_count: many, page: 320, command: 300}
-execute if score @s menu matches 320 run function tag:items/menu/items/product {product: gh, slot: 2, id: 7, price: 3, price_count: two, page: 320, command: 300}
-execute if score @s menu matches 320 run function tag:items/menu/items/product {product: gh, slot: 3, id: 8, price: 2, price_count: two, page: 320, command: 300}
+execute if score @s menu matches 320 run function tag:items/menu/items/product {product: gh, slot: 1, id: 7, price: 3, price_count: two, page: 320, command: 300}
+execute if score @s menu matches 320 run function tag:items/menu/items/product {product: gh, slot: 2, id: 8, price: 2, price_count: two, page: 320, command: 300}
+execute if score @s menu matches 320 run item replace entity @s container.3 with air
 execute if score @s menu matches 320 run item replace entity @s container.4 with air
 execute if score @s menu matches 320 run item replace entity @s container.5 with air
 execute if score @s menu matches 320 run item replace entity @s container.6 with air

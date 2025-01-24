@@ -101,6 +101,8 @@ scoreboard objectives add pa.unlocked_5 dummy
 scoreboard objectives add pa.unlocked_6 dummy
 scoreboard objectives add pa.unlocked_7 dummy
 scoreboard objectives add pa.unlocked_8 dummy
+scoreboard objectives add pa.unlocked_9 dummy
+scoreboard objectives add pa.unlocked_10 dummy
 
 scoreboard objectives add gh.unlocked_1 dummy
 scoreboard objectives add gh.unlocked_2 dummy

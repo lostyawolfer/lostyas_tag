@@ -29,14 +29,6 @@ execute as @a[scores={tp.id=0}] run function tag:tp_back/get_id
 
 execute as @a at @s run function tag:misc/bhop
 
-execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
-execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:effects/strong_levitation
-execute as @a[scores = {effect.freeze = 0..}, gamemode = adventure] at @s run function tag:effects/freeze
-execute as @a[scores = {effect.speed = 0..}, gamemode = adventure] at @s run function tag:effects/speed
-execute as @a[scores = {effect.invisibility = 0..}, gamemode = adventure] at @s run function tag:effects/invisibility
-execute as @a[scores = {effect.downed = -30..}, gamemode = adventure] at @s run function tag:effects/downed
-
-
 
 scoreboard players add random server 1
 execute if score random server matches 10.. run scoreboard players remove random server 10
@@ -374,6 +366,7 @@ execute as @a[scores={pa.current=5}] at @s run function tag:abilities/passive/5
 execute as @a[scores={pa.current=6}] at @s run function tag:abilities/passive/6
 execute as @a[scores={pa.current=7}] at @s run function tag:abilities/passive/7
 execute as @a[scores={pa.current=8}] at @s run function tag:abilities/passive/8
+execute as @a[scores={pa.current=9}] at @s run function tag:abilities/passive/9
 
 
 execute as @a unless score @s menu matches 0.. run scoreboard players set @s menu 0
@@ -405,6 +398,15 @@ execute as @a[scores={points.reason.trigger=..-1}] at @s run function tag:points
 
 execute as @a[scores={points.recieve=1..}] run function tag:points_xp/animations/points_recieve
 execute as @a[scores={points.recieve=..-1}] run function tag:points_xp/animations/points_recieve
+
+
+
+execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
+execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:effects/strong_levitation
+execute as @a[scores = {effect.freeze = 0..}, gamemode = adventure] at @s run function tag:effects/freeze
+execute as @a[scores = {effect.speed = 0..}, gamemode = adventure] at @s run function tag:effects/speed
+execute as @a[scores = {effect.invisibility = 0..}, gamemode = adventure] at @s run function tag:effects/invisibility
+execute as @a[scores = {effect.downed = -30..}, gamemode = adventure] at @s run function tag:effects/downed
 
 
 
