@@ -42,51 +42,62 @@
 
   "menu.passives.synergies": "SYNERGIES:",
 
-  "menu.passives.1": "Tagging accelerator",
-  "menu.passives.1.desc": "Gives you a significant speed boost when you are IT.",
+  "menu.pa.1": "Tagging Accelerator",
+  "menu.pa.1.desc": "WHEN NOT A TAGGER: higher base speed when there's a tagger in 20-block radius.\nWHEN A TAGGER: higher base speed.",
 
-  "menu.passives.2": "Radar",
-  "menu.passives.2.desc": "When you're IT, doubles the amount of glowings.",
+  "menu.pa.2": "Radar",
+  "menu.pa.2.desc": "WHEN NOT A TAGGER: every 3 seconds shows all invisible taggers via particles. Only you can see the particles.\nWHEN A TAGGER: every 10 seconds the nearest player gets glowing for half a second.",
 
-  "menu.passives.3": "Pearl accelerator",
-  "menu.passives.3.desc": "Speed up your ender pearl cooldown 1.5x.",
+  "menu.pa.3": "Pearl Accelerator",
+  "menu.pa.3.desc": "The cooldown of your ender pearl goes down faster by 1.5x.",
 
-  "menu.passives.4": "Ability accelerator",
-  "menu.passives.4.desc": "Speed up your ability cooldown 1.5x.",
+  "menu.pa.4": "Ability Accelerator",
+  "menu.pa.4.desc": "The cooldown of your ability goes down faster by 1.5x.",
 
-  "menu.passives.5": "Ability extender",
-  "menu.passives.5.desc": "Extend the active ability's usage time. If not applicable, will make your ability stronger in some other way.",
+  "menu.pa.5": "Ability Extender",
+  "menu.pa.5.desc": "Makes your ability usage last longer. If not applicable to your ability, will make it stronger in some other way.",
 
-  "menu.passives.6": "Spirit slap",
-  "menu.passives.6.desc": "When your ability is charged and you are not a tagger, gives you a stick with knockback II.",
+  "menu.pa.6": "Knock Em Out",
+  "menu.pa.6.desc": "WHEN NOT A TAGGER: when your ability is charged, you get a knockback 2 stick.\nWHEN A TAGGER: useless.",
 
-  "menu.passives.7": "Spring",
-  "menu.passives.7.desc": "When you're near any construction of height up to 2.5 blocks above your feet, gives you jump boost that will be just enough to jump on it.",
+  "menu.pa.7": "Bouncy Ball",
+  "menu.pa.7.desc": "Lets you jump up to 2.5 blocks high when needed (when you are near a 1.5, 2 or 2.5 block high construction).",
 
-  "menu.passives.8": "Airmaster",
-  "menu.passives.8.desc": "Makes beacons' levitation effect stronger.",
+  "menu.pa.8": "Aircraft",
+  "menu.pa.8.desc": "Makes beacons' levitation effect stronger.",
 
-  "menu.passives.9": "Concussion",
-  "menu.passives.9.desc": "// currently unused, the concept for its info is in russian lang file",
+  "menu.pa.9": "Spy",
+  "menu.pa.9.desc": "WHEN NOT A TAGGER: when you stand without any movement for 5 seconds straight, gives you invisibility. It goes away if you move. When active, you sometimes emit half-transparent blue particles.\nWHEN A TAGGER: every 3 seconds spawns particles around invisible players. Only you can see the particles.",
+  
+  "menu.pa.10": "Backpack",
+  "menu.pa.10.desc": "unused",
+
+  "menu.pa.11": "Concussion",
+  "menu.pa.11.desc": "unused",
 
 
   "menu.close": "Close menu",
-  "menu.back": "Back to main menu",
+  "menu.back": "Main menu",
   "menu.next": "Next page",
   "menu.prev": "Previous page",
   "menu.select": "Select",
-  "menu.deselect": "Deselect the ability?",
+  "menu.ab.deselect": "Deselect the ability?",
+  "menu.pa.deselect": "Deselect the passive ability?",
   "menu.buy": "Buy",
-  "menu.buy.price": "levels",
+  "menu.buy.price_one": "level",
+  "menu.buy.price_two": "levels",
+  "menu.buy.price_many": "levels",
   "menu.buy.insufficient_funds": "Insufficient funds!",
-  "menu.buy.insufficient_funds.desc": "Come back when you're a little, mmm, richer.",
-  "menu.abilities": "Active abilities",
-  "menu.passives": "Passive abilities",
-  "menu.goat_horns": "Goat horns",
+  "menu.buy.insufficient_funds.desc": "Come back when you're a little... mmm... richer.",
+  "menu.ab": "Active abilities",
+  "menu.pa": "Passive abilities",
+  "menu.gh": "Goat horns",
   
-  "chat.ability.select": "changed their ability to",
-  "chat.passive.select": "changed their passive ability to",
-  
+  "chat.ab.select": "selected the ability",
+  "chat.ab.deselect": "removed their ability",
+
+  "chat.pa.select": "selected the passive ability",
+  "chat.pa.deselect": "removed their passive ability",
   
   
   "chat.hit.default": " tagged ",
