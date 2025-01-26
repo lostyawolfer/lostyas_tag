@@ -1,0 +1,2 @@
+execute if entity @s[gamemode=adventure, tag=!safezone] if score @s effect.strong_levitation matches 1.. run scoreboard players set @s pa.active 1
+execute unless score @s effect.strong_levitation matches 1.. run scoreboard players set @s pa.active 0

@@ -1,0 +1,2 @@
+execute as @s[scores={nbs_tagyoureit=43200..43520}] run function tag_music:tag_youre_it/tree/540_541
+execute as @s[scores={nbs_tagyoureit=43360..43760}] run function tag_music:tag_youre_it/tree/542_543

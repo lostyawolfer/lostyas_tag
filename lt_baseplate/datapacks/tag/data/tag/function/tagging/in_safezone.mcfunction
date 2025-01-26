@@ -1,3 +1,6 @@
+execute if entity @s[nbt={Dimension:"minecraft:lt_lobby"}] run scoreboard players set @s screen_effect 0
+execute if entity @s[nbt={Dimension:"minecraft:lt_lobby"}] run return 1
+
 execute if score generic server matches 0 run scoreboard players set @s screen_effect 100
 execute if score generic server matches 1 run scoreboard players set @s screen_effect 101
 execute if score generic server matches 2 run scoreboard players set @s screen_effect 102

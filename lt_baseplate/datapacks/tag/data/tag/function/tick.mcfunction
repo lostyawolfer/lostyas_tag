@@ -125,7 +125,7 @@ execute unless score force-game server matches 1 if score adventure-mode server 
 execute unless score force-game server matches 1 unless score adventure-mode server matches 2.. if score playercount server matches 1.. run scoreboard players set game server -2
 execute unless score playercount server matches 1.. run scoreboard players set game_prev server 0
 
-bossbar set tag:notif.safezone players @a[tag = safezone]
+bossbar set tag:notif.safezone players @a[tag = safezone, scores={anim.death=-13..}, nbt=!{Dimension:"minecraft:lt_lobby"}]
 
 execute if score game server matches 0.. run scoreboard players operation game_prev server = game server
 
@@ -289,14 +289,16 @@ execute as @a at @s run function tag:tagging/decoration
 #  1 = can enter        cannot exit
 execute as @a unless score @s safezone_state matches -1..1 run scoreboard players set @s safezone_state 0
 
-execute as @a[tag =!safezone, gamemode =!spectator] at @s if score @s safezone_state matches 0..1 if block ~ ~ ~ cave_air run function tag:tagging/go_in_safezone
-execute as @a[tag =!safezone, gamemode =!spectator] at @s if score @s safezone_state matches 0..1 if block ~ ~1 ~ cave_air run function tag:tagging/go_in_safezone
+execute as @a[tag =!safezone, gamemode =!spectator, nbt=!{Dimension:"minecraft:lt_lobby"}] at @s if score @s safezone_state matches 0..1 if block ~ ~ ~ cave_air run function tag:tagging/go_in_safezone
+execute as @a[tag =!safezone, gamemode =!spectator, nbt=!{Dimension:"minecraft:lt_lobby"}] at @s if score @s safezone_state matches 0..1 if block ~ ~1 ~ cave_air run function tag:tagging/go_in_safezone
 
-execute as @a[tag = safezone] at @s if block ~ ~ ~ cave_air run function tag:tagging/in_safezone
-execute as @a[tag = safezone] at @s if block ~ ~1 ~ cave_air run function tag:tagging/in_safezone
+execute as @a[tag =!safezone, gamemode =!spectator, nbt={Dimension:"minecraft:lt_lobby"}] at @s run function tag:tagging/go_in_safezone
+
+execute as @a[tag = safezone] run function tag:tagging/in_safezone
+execute as @a[tag = safezone] run function tag:tagging/in_safezone
 
 execute as @a[tag = safezone] at @s if score @s safezone_state matches -1..0 unless block ~ ~ ~ cave_air unless block ~ ~1 ~ cave_air run function tag:tagging/out_of_safezone
-execute as @a[tag = safezone, gamemode = spectator] at @s run function tag:tagging/out_of_safezone
+execute as @a[tag = safezone, gamemode = spectator, nbt=!{Dimension:"minecraft:lt_lobby"}] at @s run function tag:tagging/out_of_safezone
 
 
 execute as @a[gamemode = !spectator] at @s unless score @s effect.strong_levitation matches 10.. if block ~ ~-1 ~ beacon run function tag:misc/beacons

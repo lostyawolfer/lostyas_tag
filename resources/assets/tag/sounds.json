@@ -23,6 +23,11 @@
             "tag:death_main"
         ]
     },
+    "lobby": {
+        "sounds": [
+            "tag:lobby.temp"
+        ]
+    },
     "revive": {
         "sounds": [
             "tag:revive"

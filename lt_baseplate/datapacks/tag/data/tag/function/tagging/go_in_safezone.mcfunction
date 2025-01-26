@@ -7,5 +7,5 @@ tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " entered a s
 
 effect give @s weakness infinite 255 true
 attribute @s knockback_resistance base set 10000
-playsound tag:safezone_start master @s ~ ~ ~ .25
+execute unless data entity @s {Dimension:"minecraft:lt_lobby"} unless score @s anim.death matches ..-1 run playsound tag:safezone_start master @s ~ ~ ~ .25
 tag @s add safezone
