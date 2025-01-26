@@ -44,6 +44,7 @@ execute if score @s anim.death matches 17 run scoreboard players set @s screen_e
 
 execute if score @s anim.death matches 101 run team join 002special @s
 execute if score @s anim.death matches 101 run tag @s add special
+execute if score @s anim.death matches 101 run scoreboard players set @a[tag = tagger] points.reason.trigger 10
 #execute if score @s anim.death matches 101 run scoreboard players set @s ab.cd 0
 #execute if score @s anim.death matches 101 run scoreboard players set @s p.cd 0
 execute if score @s anim.death matches 101 run stopsound @s * tag:downed

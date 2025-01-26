@@ -13,8 +13,6 @@ scoreboard players set @s[scores={effect.downed=1..}] effect.downed -1
 scoreboard players set @s effect.freeze -1
 effect clear @s
 
-execute if score @s anim.death matches ..-1 run scoreboard players remove @s anim.death 1
-
 execute if score @s anim.death matches -2 run stopsound @s
 execute if score @s anim.death matches -2 run playsound tag:revive master @s
 execute if score @s anim.death matches -2 run scoreboard players set @s screen_effect 250
@@ -61,3 +59,5 @@ execute if score @s anim.death matches -38 run scoreboard players set @s screen_
 execute if score @s anim.death matches -4 run scoreboard players set @s anim.death -14
 execute if score @s anim.death matches ..-38 run scoreboard players set @s screen_effect 0
 execute if score @s anim.death matches ..-38 run scoreboard players reset @s anim.death
+
+execute if score @s anim.death matches ..-1 run scoreboard players remove @s anim.death 1

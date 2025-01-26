@@ -15,7 +15,7 @@ scoreboard players operation adventure-mode server += adventure-mode-decor serve
 scoreboard players add generic server 1
 execute if score generic server matches 20.. run scoreboard players set generic server 0
 
-execute if entity @a[tag=tagger, tag=!safezone] if entity @a[tag=!tagger, tag=!safezone] if score game server matches 1.. if score generic server matches 0 run scoreboard players add @a[tag=!tagger] points.recieve 1
+execute if entity @a[tag=tagger, tag=!safezone] if entity @a[tag=!tagger, tag=!safezone] if score game server matches 1.. if score generic server matches 0 as @a[tag=!tagger, tag=!dead] unless score @s effect.downed matches 1.. run scoreboard players add @s points.recieve 1
 
 
 # join and leave routine
@@ -25,7 +25,7 @@ execute as @a unless score @s joined matches 0 at @s run scoreboard players set 
 execute if score playercount_old server > playercount server run function tag:misc/update_player_list
 
 
-execute as @a[scores={tp.id=0}] run function tag:tp_back/get_id
+execute as @a[scores={tp.id=0}] store result score @s tp.id run function tag:tp_back/get_id {scoreboard: tp.id}
 
 execute as @a at @s run function tag:misc/bhop
 
@@ -307,8 +307,8 @@ execute as @a[scores = {anim.death = ..-2}] at @s run function tag:misc/spawn
 
 execute as @a at @s run function tag:misc/stats
 execute as @a at @s run function tag:misc/stopmusic
-execute as @a at @s run function tag:tp_back/player_to_stand_check
 execute as @a at @s run function tag:tp_back/stand_to_player_check
+execute as @a at @s run function tag:tp_back/player_to_stand_check
 function tag:misc/player_sidebar
 function tag:tp_back/create_stands
 
@@ -379,6 +379,7 @@ execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:
 execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/goat_horn
 execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/passive
 execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/effect
+execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/tagger_stick
 
 execute as @a[gamemode = adventure] at @s run function tag:items/menu/main
 

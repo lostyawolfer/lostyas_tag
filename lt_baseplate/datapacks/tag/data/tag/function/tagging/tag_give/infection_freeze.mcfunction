@@ -1,6 +1,7 @@
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " got tagged by game via being frozen"]
 scoreboard players set @s[tag = safezone] stat.tagger_time 0
 damage @s .1
+tag @s remove special
 tag @s add tagger
 team join 001tagger @s
 scoreboard players set @s stat.tagger_time 0
