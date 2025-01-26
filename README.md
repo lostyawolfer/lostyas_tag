@@ -1,9 +1,8 @@
-![logo alpha](logo_alpha.png)
-# ⚠️⚠️⚠️ THE GAME IS IN AN UNPLAYABLE STATE
-as of 6 dec 2024 i ONLY STARTED porting everything and THERE IS (almost) NO CODE AT ALL.
-if you download right now you will just have a WORLD TO BUILD IN.
+![logo beta](logo_beta.png)
+# beta development branch!
 ### minecraft: 1.21.3 // core: papermc 1.21.3 #80 // java 21
-a minigame about chasing people around. this is an early alpha, most of the stuff requires admin interaction to happen
+a minigame about chasing people around.
+beta is gonna be released soon! you know what that means? STUFF'S GONNA BE AUTOMATIC NOW. no more admin interaction and no need to give anyone operator perms! still just for my friends tho.
 
 pls contribute i write code like garbage
 
