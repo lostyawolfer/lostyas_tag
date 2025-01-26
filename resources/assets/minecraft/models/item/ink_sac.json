@@ -1,0 +1,39 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "item/ink_sac"
+	},
+	
+	"overrides": [
+		{"predicate": {"custom_model_data":0}, "model": "item/ink_sac"},
+		{"predicate": {"custom_model_data":1}, "model": "item/ink_sac/1"},
+		{"predicate": {"custom_model_data":2}, "model": "item/ink_sac/2"},
+		{"predicate": {"custom_model_data":3}, "model": "item/ink_sac/3"},
+		{"predicate": {"custom_model_data":4}, "model": "item/ink_sac/4"},
+		{"predicate": {"custom_model_data":5}, "model": "item/ink_sac/5"},
+		{"predicate": {"custom_model_data":6}, "model": "item/ink_sac/6"},
+		{"predicate": {"custom_model_data":7}, "model": "item/ink_sac/7"},
+		{"predicate": {"custom_model_data":8}, "model": "item/ink_sac/8"},
+		{"predicate": {"custom_model_data":9}, "model": "item/ink_sac/9"},
+		{"predicate": {"custom_model_data":10}, "model": "item/ink_sac/10"},
+		{"predicate": {"custom_model_data":11}, "model": "item/ink_sac/11"},
+		{"predicate": {"custom_model_data":12}, "model": "item/ink_sac/12"},
+		{"predicate": {"custom_model_data":13}, "model": "item/ink_sac/13"},
+		{"predicate": {"custom_model_data":14}, "model": "item/ink_sac/14"},
+		{"predicate": {"custom_model_data":15}, "model": "item/ink_sac/15"},
+		{"predicate": {"custom_model_data":16}, "model": "item/ink_sac/16"},
+		{"predicate": {"custom_model_data":17}, "model": "item/ink_sac/17"},
+		{"predicate": {"custom_model_data":18}, "model": "item/ink_sac/18"},
+		{"predicate": {"custom_model_data":19}, "model": "item/ink_sac/19"},
+		{"predicate": {"custom_model_data":20}, "model": "item/ink_sac/20"},
+		{"predicate": {"custom_model_data":21}, "model": "item/ink_sac/21"},
+		{"predicate": {"custom_model_data":22}, "model": "item/ink_sac/22"},
+		{"predicate": {"custom_model_data":23}, "model": "item/ink_sac/23"},
+		{"predicate": {"custom_model_data":24}, "model": "item/ink_sac/24"},
+		{"predicate": {"custom_model_data":25}, "model": "item/ink_sac/25"},
+		{"predicate": {"custom_model_data":26}, "model": "item/ink_sac/26"},
+		{"predicate": {"custom_model_data":27}, "model": "item/ink_sac/27"},
+		{"predicate": {"custom_model_data":28}, "model": "item/ink_sac/28"},
+		{"predicate": {"custom_model_data":29}, "model": "item/ink_sac/29"}
+	]
+}

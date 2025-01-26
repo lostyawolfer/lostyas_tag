@@ -1,0 +1,4 @@
+$scoreboard players set @s menu $(page)
+$execute if score @s menu.selecting matches $(id) if score @s $(product).current matches $(id) run return run function tag:items/menu/deselect {product: $(product)}
+$execute if score @s menu.selecting matches $(id) unless score @s $(product).current matches $(id) unless score @s $(product).unlocked_$(id) matches 1 run return run function tag:items/menu/buy {id: $(id), product: $(product), price: $(price)}
+$execute if score @s menu.selecting matches $(id) unless score @s $(product).current matches $(id) if score @s $(product).unlocked_$(id) matches 1 run return run function tag:items/menu/select {id: $(id), product: $(product)}

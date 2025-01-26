@@ -1,0 +1,1 @@
+$function tag:items/menu/items/product_$(product) {price: $(price), price_count: $(price_count), id: $(id), product: $(product), slot: $(slot), page: $(page), command: $(command)}

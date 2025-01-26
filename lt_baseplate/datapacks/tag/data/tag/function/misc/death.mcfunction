@@ -1,13 +1,27 @@
 execute unless score @s anim.death matches 17..99 unless score @s anim.death matches -1 run scoreboard players add @s anim.death 1
 
-
-execute if score @s anim.death matches 1 run scoreboard players set @s ab.cd 0
-execute if score @s anim.death matches 1 run scoreboard players set @s p.cd 0
+execute if score @s anim.death matches 1 run team join 002special @s
+execute if score @s anim.death matches 1 run tag @s add special
+execute if score @s anim.death matches 1 run tag @s remove tagger
+#execute if score @s anim.death matches 1 run scoreboard players set @s ab.cd 0
+#execute if score @s anim.death matches 1 run scoreboard players set @s p.cd 0
 execute if score @s anim.death matches 1 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " died"]
-execute if score @s anim.death matches 1 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead"}]
+execute if score @s anim.death matches 1 unless score game server matches 3 unless score game server matches 7 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead", "color": "aqua"}]
+execute if score @s anim.death matches 1 if score game server matches 7 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead.hot_potato", "color": "aqua"}]
 execute if score @s anim.death matches 1 run damage @s .01
+execute if score @s anim.death matches 1 run title @s times 0 40 100
+execute if score @s anim.death matches 1 run title @s title {"translate": "title.hit.murder_you", "color":"red", "bold": true}
 execute if score @s anim.death matches 1 run playsound tag:death master @s ~ ~ ~ 1
 execute if score @s anim.death matches 1 run playsound tag:death_main master @s ~ ~ ~ 1
+execute if score @s anim.death matches 1 run particle block{block_state:{Name:redstone_block}} ~ ~1 ~ .3 .5 .3 0 40
+execute if score @s anim.death matches 1 run particle flame ~ ~1 ~ .3 .5 .3 .1 10
+
+execute if score @s anim.death matches 1 unless score game server matches 7 run summon skeleton ~ ~ ~ {Tags:[death], NoAI:1b}
+execute if score @s anim.death matches 1 unless score game server matches 7 run item replace entity @e[type=skeleton, tag=death] armor.head with paper
+execute if score @s anim.death matches 1 unless score game server matches 7 run kill @e[type=skeleton, tag=death]
+
+execute if score @s anim.death matches 1 if score game server matches 7 run summon creeper ~ ~ ~ {Tags:[death], NoAI:1b}
+execute if score @s anim.death matches 1 if score game server matches 7 run kill @e[type=creeper, tag=death]
 
 execute if score @s anim.death matches 1 run scoreboard players set @s screen_effect 200
 execute if score @s anim.death matches 2 run scoreboard players set @s screen_effect 201
@@ -28,11 +42,27 @@ execute if score @s anim.death matches 17 run scoreboard players set @s screen_e
 
 
 
+execute if score @s anim.death matches 101 run team join 002special @s
+execute if score @s anim.death matches 101 run tag @s add special
+execute if score @s anim.death matches 101 run scoreboard players set @a[tag = tagger] points.reason.trigger 10
+#execute if score @s anim.death matches 101 run scoreboard players set @s ab.cd 0
+#execute if score @s anim.death matches 101 run scoreboard players set @s p.cd 0
+execute if score @s anim.death matches 101 run stopsound @s * tag:downed
 execute if score @s anim.death matches 101 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " died by being downed"]
 execute if score @s anim.death matches 101 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead.downed"}]
-execute if score @s anim.death matches 101 run damage @s .01
+execute if score @s anim.death matches 101 run damage @s .01 freeze
+execute if score @s anim.death matches 101 run title @s times 0 40 100
+execute if score @s anim.death matches 101 run title @s title {"translate": "title.hit.murder_you", "color":"red", "bold": true}
+execute if score @s anim.death matches 101 run title @s subtitle [{"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead.downed"}]
 execute if score @s anim.death matches 101 run playsound tag:death master @s ~ ~ ~ 1
 execute if score @s anim.death matches 101 run playsound tag:death_main master @s ~ ~ ~ 1
+execute if score @s anim.death matches 101 run particle block{block_state:{Name:redstone_block}} ~ ~1 ~ .3 .5 .3 0 30
+execute if score @s anim.death matches 101 run particle block{block_state:{Name:packed_ice}} ~ ~1 ~ .3 .5 .3 0 10
+execute if score @s anim.death matches 101 run particle soul_fire_flame ~ ~1 ~ .3 .5 .3 .1 10
+
+execute if score @s anim.death matches 101 run summon stray ~ ~ ~ {Tags:[death], NoAI:1b}
+execute if score @s anim.death matches 101 run item replace entity @e[type=stray, tag=death] armor.head with paper
+execute if score @s anim.death matches 101 run kill @e[type=stray, tag=death]
 
 execute if score @s anim.death matches 101 run scoreboard players set @s screen_effect 516
 execute if score @s anim.death matches 102 run scoreboard players set @s screen_effect 517
@@ -53,7 +83,15 @@ execute if score @s anim.death matches 117 run scoreboard players set @s screen_
 execute if score @s anim.death matches 117 run scoreboard players set @s anim.death 17
 
 
-
-execute unless entity @a[distance=0, tag=!dead] run title @s actionbar {"translate": "title.spectator", "color": "red"}
-execute if entity @a[distance=0, tag=!dead] run title @s actionbar [{"translate": "title.now_spectating", "color": "red"}, {"selector": "@a[distance=0, tag=!dead]", "bold": true}]
+execute unless score kill_timer.s server matches 0.. run title @s actionbar {"translate": "title.spectator", "color": "red"}
+execute if score kill_timer.s server matches 61.. run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ", {"text":"💣 ", "color":"green"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "white"}]
+execute if score kill_timer.s server matches 31..60 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"yellow"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "white"}]
+execute if score kill_timer.s server matches 11..30 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"gold"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "yellow"}]
+execute if score kill_timer.s server matches 6..10 if score anim.slow server matches 0..9 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+execute if score kill_timer.s server matches 6..10 if score anim.slow server matches 10..19 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+execute if score kill_timer.s server matches 1..5 if score anim.fast server matches 0..1 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+execute if score kill_timer.s server matches 1..5 if score anim.fast server matches 2..3 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+execute if score kill_timer.s server matches 0 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💥 ", "color":"dark_red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "red"}]
+#execute unless entity @a[distance=...2, tag=!dead] run title @s actionbar {"translate": "title.spectator", "color": "red"}
+#execute if entity @a[distance=...2, tag=!dead] run title @s actionbar [{"translate": "title.now_spectating", "color": "red"}, {"selector": "@a[distance=...2, tag=!dead]", "bold": true}]
 gamemode spectator @s

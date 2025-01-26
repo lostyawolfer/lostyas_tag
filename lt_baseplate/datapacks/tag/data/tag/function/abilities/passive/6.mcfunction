@@ -1,0 +1,5 @@
+execute as @s[tag=!safezone, gamemode=adventure, tag=!tagger] unless score @s ab.cd matches 1.. run item replace entity @s container.0 with stick[custom_model_data=0, custom_data={game: 1}, custom_name='{"text": "Волшебный пендель", "color": "#9d5100", "bold": false, "italic": false}', enchantments={levels:{knockback: 2}, show_in_tooltip: true}, enchantment_glint_override=true]
+execute as @s[tag=!safezone, gamemode=adventure, tag=!tagger] unless score @s ab.cd matches 1.. run scoreboard players set @s pa.active 1
+
+execute unless entity @s[tag=!safezone, gamemode=adventure, tag=!tagger] if score @s ab.cd matches 1.. run clear @s stick[custom_data={game: 1}]
+execute unless entity @s[tag=!safezone, gamemode=adventure, tag=!tagger] if score @s ab.cd matches 1.. run scoreboard players set @s pa.active 0

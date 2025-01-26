@@ -4,6 +4,9 @@ tag @a[tag = hit_detect.taker] add dead
 tag @a[tag = hit_detect.taker] add special
 
 
+scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger 7
+
+
 tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "red"}, {"translate": "chat.hit.murder"}, {"selector": "@a[tag = hit_detect.taker]", "color": "dark_gray"}]
 
 title @a[tag = hit_detect.giver] times 0 20 3

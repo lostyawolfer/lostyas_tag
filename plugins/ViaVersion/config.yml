@@ -156,7 +156,7 @@ fix-1_21-placement-rotation: false
 # Do you want us to prevent collision?
 prevent-collision: true
 # If the above is true, should we automatically team players until you do?
-auto-team: true
+auto-team: false
 # When enabled if certain entity data can't be read, we won't tell you about it
 suppress-metadata-errors: false
 # When enabled, 1.9+ will be able to block by using shields

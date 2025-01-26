@@ -39,6 +39,7 @@ execute if score @s is_sneaking matches 1 if score @s jump.bhop matches 16.. run
 
 # add bhop & playtime
 execute if score @s jump matches 1.. run scoreboard players add @s jump.bhop 1
+execute if score @s jump matches 1.. run scoreboard players add random server 1
 #execute as @a[scores={jump=1..}] at @s if block ~ ~ ~ #stairs if score @s jump.bhop matches 8.. run scoreboard players add @s playtime 2
 #execute as @a[scores={jump=1..}] at @s if block ~ ~ ~ #stairs if score @s jump.bhop matches 8.. run scoreboard players set @s playtime.trimp.title_anim 20
 #execute as @a[scores={jump=1..}] at @s if block ~ ~ ~ #stairs if score @s jump.bhop matches 8.. run scoreboard players set @s effect.throw 2
@@ -59,16 +60,9 @@ execute if score @s jump matches 1.. unless block ~ ~2 ~ air unless block ~ ~2 ~
 
 #execute as @a[tag = tagger] at @s if block ~ ~2 ~ air run scoreboard players set @s jump.bhop2 0
 
-#execute as @a[scores={jump.bhop=5..}] at @s run effect give @s jump_boost 1 254 true
-#execute as @a[scores={jump=1..}] at @s run title @s[scores={jump.bhop=5..19}] actionbar [{"score":{"name":"@s","objective":"jump.bhop"},"color":"dark_purple"},{"text":" bhop"}]
-#execute if score @s jump matches 1.. if score @s jump.bhop2 matches 10..24 if entity @s[tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if entity @a[tag=tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players set @s playtime.title.trigger 2
-#execute if score @s jump matches 1.. if score @s jump.bhop2 matches 10.. if entity @s[tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if entity @a[tag=tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players add @s playtime 1
-#execute if score @s jump matches 1.. if score @s jump.bhop2 matches 25..49 if entity @s[tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if entity @a[tag=tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players set @s playtime.title.trigger 3
-#execute if score @s jump matches 1.. if score @s jump.bhop2 matches 25.. if entity @s[tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if entity @a[tag=tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players add @s playtime 1
-#execute if score @s jump matches 1.. if score @s jump.bhop2 matches 49.. if entity @s[tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if entity @a[tag=tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players set @s playtime.title.trigger 4
-#execute if score @s jump matches 1.. if score @s jump.bhop2 matches 49.. if entity @s[tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if entity @a[tag=tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players add @s playtime 1
-#execute as @a[scores={jump=1..}] as @s[scores={jump.bhop2=20..}] at @s run playsound minecraft:entity.player.attack.crit player @s ~ ~ ~ .5 1.5
-#execute if score @s jump matches 1.. if score @s jump.bhop2 matches 10.. if entity @s[tag=!tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if entity @a[tag=tagger, tag=!afk, tag=!safezoned, gamemode=adventure] if block ~ ~2 ~ air if score @s stat.speed matches 20.. run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ .25 2
+execute if score @s jump matches 1.. if score @s jump.bhop2 matches 10..24 if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players set @s points.reason.trigger 1
+execute if score @s jump matches 1.. if score @s jump.bhop2 matches 25..49 if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players set @s points.reason.trigger 2
+execute if score @s jump matches 1.. if score @s jump.bhop2 matches 49.. if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players set @s points.reason.trigger 3
 
 #execute if score @s jump matches 1.. run playsound jump player @a ~ ~ ~ .5
 execute if score @s jump matches 1.. run scoreboard players remove @s jump 1

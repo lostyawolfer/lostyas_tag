@@ -1,0 +1,2 @@
+tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@a[tag = hit_detect.giver]"}, " tried to hit ", {"selector": "@a[tag = hit_detect.taker]"}, " but he absorbed the damage"]
+tag @a[tag = hit_detect.taker] remove invincible_one_time

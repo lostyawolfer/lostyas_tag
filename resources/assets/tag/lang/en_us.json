@@ -1,4 +1,94 @@
 {  
+  "item.effect.generic": "Visibility: normal",
+  "item.effect.invisible": "Visibility: invisible",
+  "item.effect.invisible.item": "Visibility: invisible, but the item in your hand is visible",
+  "item.effect.glowing": "Visibility: glowing",
+  "item.effect.glowing_tagger": "Visibility: taggers are always glowing, but can sneak to be invisible",
+  "item.effect.glowing_invisible": "Visibility: glowing despite being invisible",
+
+  "item.tag.menu": "Menu",
+  "item.minecraft.goat_horn.none": "You don't have a goat horn!",
+  
+  "menu.abilities.1": "From here to the stars",
+  "menu.abilities.1.desc": "Makes you fly up into the sky, as if you stepped on a beacon.",
+  
+  "menu.abilities.2": "Superspeed",
+  "menu.abilities.2.desc": "Glues you to the ground and lets you dash forward really fast.",
+  
+  "menu.abilities.3": "Holy mantle",
+  "menu.abilities.3.desc": "Makes you temporarily invincible to one singular hit of a tagger.",
+  
+  "menu.abilities.4": "Invisibility",
+  "menu.abilities.4.desc": "Makes you invisible, and makes you invulnerable to any glowing effects.",
+  
+  "menu.abilities.5": "Glowing",
+  "menu.abilities.5.desc": "Activates the glowing event, but you don't glow.",
+  
+  "menu.abilities.6": "2.6 cycle",
+  "menu.abilities.6.desc": "Makes your ender pearl regenerate extra fast.",
+
+  "menu.abilities.7": "Dark arts",
+  "menu.abilities.7.desc": "Lets you fly in spectator mode for a split second.",
+
+  "menu.abilities.cd": "Cooldown",
+  "menu.abilities.use": "Use time",
+  "menu.abilities.sec_one": "second",
+  "menu.abilities.sec_two": "seconds",
+  "menu.abilities.sec_many": "seconds",
+  "menu.abilities.ticks_one": "tick",
+  "menu.abilities.ticks_two": "ticks",
+  "menu.abilities.ticks_many": "ticks",
+
+
+  "menu.passives.synergies": "SYNERGIES:",
+
+  "menu.passives.1": "Tagging accelerator",
+  "menu.passives.1.desc": "Gives you a significant speed boost when you are IT.",
+
+  "menu.passives.2": "Radar",
+  "menu.passives.2.desc": "When you're IT, doubles the amount of glowings.",
+
+  "menu.passives.3": "Pearl accelerator",
+  "menu.passives.3.desc": "Speed up your ender pearl cooldown 1.5x.",
+
+  "menu.passives.4": "Ability accelerator",
+  "menu.passives.4.desc": "Speed up your ability cooldown 1.5x.",
+
+  "menu.passives.5": "Ability extender",
+  "menu.passives.5.desc": "Extend the active ability's usage time. If not applicable, will make your ability stronger in some other way.",
+
+  "menu.passives.6": "Spirit slap",
+  "menu.passives.6.desc": "When your ability is charged and you are not a tagger, gives you a stick with knockback II.",
+
+  "menu.passives.7": "Spring",
+  "menu.passives.7.desc": "When you're near any construction of height up to 2.5 blocks above your feet, gives you jump boost that will be just enough to jump on it.",
+
+  "menu.passives.8": "Airmaster",
+  "menu.passives.8.desc": "Makes beacons' levitation effect stronger.",
+
+  "menu.passives.9": "Concussion",
+  "menu.passives.9.desc": "// currently unused, the concept for its info is in russian lang file",
+
+
+  "menu.close": "Close menu",
+  "menu.back": "Back to main menu",
+  "menu.next": "Next page",
+  "menu.prev": "Previous page",
+  "menu.select": "Select",
+  "menu.deselect": "Deselect the ability?",
+  "menu.buy": "Buy",
+  "menu.buy.price": "levels",
+  "menu.buy.insufficient_funds": "Insufficient funds!",
+  "menu.buy.insufficient_funds.desc": "Come back when you're a little, mmm, richer.",
+  "menu.abilities": "Active abilities",
+  "menu.passives": "Passive abilities",
+  "menu.goat_horns": "Goat horns",
+  
+  "chat.ability.select": "changed their ability to",
+  "chat.passive.select": "changed their passive ability to",
+  
+  
+  
   "chat.hit.default": " tagged ",
   "subtitle.hit.default_you": "you",
   "subtitle.hit.default_you_1": "because ",
@@ -22,18 +112,18 @@
   "subtitle.hit.murder_you_1": "thanks to ",
   "subtitle.hit.murder_other_1": "",
   "subtitle.hit.murder_you_2": " he's now a ghost",
-  "subtitle.hit.murder_other_2": " killed you without a second thought",
+  "subtitle.hit.murder_other_2": " brutally murdered you",
   "title.hit.murder_you": "You're DEAD!",  
   "title.hit.murder_other": " was killed!",
   
   "chat.hit.crown": " got the crown from ",
   "subtitle.hit.crown_you": "you",
   "subtitle.hit.crown_you_1": " got it from ",
-  "subtitle.hit.crown_other_1": "cry about it",
+  "subtitle.hit.crown_other_1": "he stole it from you, cry about it",
   "subtitle.hit.crown_you_2": "",
   "subtitle.hit.crown_other_2": "",
   "title.hit.crown_you": "You got the CROWN!",  
-  "title.hit.crown_other": " got your CROWN!",
+  "title.hit.crown_other": " got the CROWN!",
   
   "chat.hit.freeze": " froze ",
   "subtitle.hit.freeze_you": "you",
@@ -62,13 +152,42 @@
   "title.hit.generic_you": "You're the TAGGER!",  
   "title.hit.generic_other": " is the tagger!",
   
+  "chat.hit.infection_freeze": " got infected by being frozen",
+  "subtitle.hit.infection_freeze_you": "the freezer",
+  "subtitle.hit.infection_freeze_you_1": "because ",
+  "subtitle.hit.infection_freeze_other_1": "because ",
+  "subtitle.hit.infection_freeze_you_2": " said so",
+  "subtitle.hit.infection_freeze_other_2": " said so",
+  "title.hit.infection_freeze_you": "You're INFECTED!",  
+  "title.hit.infection_freeze_other": " was infected!",
+
+  "chat.hit.hot_potato": " tagged ",
+  "subtitle.hit.hot_potato_you": "you",
+  "subtitle.hit.hot_potato_you_1": "because ",
+  "subtitle.hit.hot_potato_other_1": "because ",
+  "subtitle.hit.hot_potato_you_2": " said so",
+  "subtitle.hit.hot_potato_other_2": " said so",
+  "title.hit.hot_potato_you": "You got TAGGED!",  
+  "title.hit.hot_potato_other": " got tagged!",
+
+  
   "subtitle.choosing_random": "time to pray that you don't show up here",
   "chat.choosing_random": "choosing a random tagger...",
   
   "chat.dead": " died",
+  "chat.dead.hot_potato": " exploded",
   "chat.dead.downed": " was frozen to death",
   
   "sidebar.now_online": "now online",
+  
+  "item.tag.ability": "Ability",
+  "item.tag.ability.use": "Ability",
+  "item.tag.ability.cd": "Ability",
+  "item.tag.ability.none": "You don't have an ability!",
+
+  "item.tag.passive_active": "Passive ability",
+  "item.tag.passive_not_active": "Passive ability",
+  "item.tag.passive.none": "You don't have a passive ability!",
   
   "gamemode.building_mode": "              building mode               ",
   "gamemode.social_space": "              social space              ",
@@ -77,8 +196,8 @@
   "gamemode.infection": "              infection tag              ",
   "gamemode.murder": "               murder tag               ",
   "gamemode.crown": "                crown tag                ",
-  "gamemode.building_mode": "               freeze tag               ",
-  "gamemode.freeze": "            killer freeze tag            ",
+  "gamemode.freeze": "              freeze tag               ",
+  "gamemode.infection_freeze": "        infection freeze tag        ",
   "gamemode.hot_potato": "               hot potato               ",
 
   "title.tp.safezone_exit_error": "cannot exit safezone",
@@ -86,8 +205,32 @@
   "title.tp.outside_map": "you were outside the map",
   "title.tp.inside_blocks": "you were in blocks",
 
-  "title.glowing": "glowing",
+  "title.frozen0": "my ears ring...",
+  "title.frozen1": "help is coming...",
+  "title.frozen2": "don't give up...",
+  "title.frozen3": "you'll be saved...",
+  "title.frozen4": "someone must help...",
+  "title.frozen5": "it's cold...",
+  "title.frozen6": "help me...",
+  "title.frozen7": "there's still hope...",
+  "title.frozen8": "need a hand..?",
+  "title.frozen9": "it's gonna be ok...",
+
+  "title.glowing": "Glowing",
+  "subtitle.glowing": "You are visible for 5 seconds",
+  "subtitle.glowing.tagger": "You see everyone for 5 seconds",
+  "subtitle.glowing.dead": "Everyone is visible 5 сек.",
+  "chat.glowing": "Glowing! Everyone is visible through walls!",
+  "chat.glowing.ability": "Glowing! Everyone is visible through walls! (activated by an ability)",
+
+  "title.recieve_xp.1": "xp for",
+  "title.recieve_xp.2_one": "point",
+  "title.recieve_xp.2_two": "points",
+  "title.recieve_xp.2_many": "points",
+
+
   "title.spectator": "you are a spectator",
   "title.now_spectating": "now spectating ",
-  "safezone.notif": "⭐ you're in a safezone ⭐"
+
+  "notif.safezone": "⭐ you're in a safezone ⭐"
 }

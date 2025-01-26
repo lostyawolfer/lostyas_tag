@@ -17,16 +17,20 @@ scoreboard players set 1000 consts 1000
 scoreboard objectives add effect.glowing dummy
 scoreboard objectives add effect.strong_levitation dummy
 scoreboard objectives add effect.freeze dummy
+scoreboard objectives add effect.speed dummy
 scoreboard objectives add effect.invisibility dummy
 scoreboard objectives add effect.downed dummy
 scoreboard objectives add effect.downed.count_up dummy
 scoreboard objectives add effect.downed.seconds dummy
+scoreboard objectives add effect.downed.seconds.10 dummy
 scoreboard objectives add effect.downed.ms dummy
+scoreboard objectives add effect.downed.title_random dummy
 # scoreboard objectives add effect.downed.seconds_even dummy
 
 
 # misc scoreboards
 scoreboard objectives add server dummy
+
 function tag:misc/update_player_list
 scoreboard objectives add anim.death dummy
 scoreboard objectives add fall minecraft.custom:minecraft.fall_one_cm
@@ -51,16 +55,73 @@ scoreboard objectives add stat.vertical_speed dummy
 scoreboard objectives add stat.tagger_time dummy
 scoreboard objectives add stat.tagger_time.total dummy
 
+scoreboard objectives add stat.wasnt_selected_steak dummy
+scoreboard objectives add stat.current_hight dummy
+scoreboard objectives add stat.flew_in_ability minecraft.custom:minecraft.fly_one_cm
+scoreboard objectives add stat.xp dummy
+
 scoreboard objectives add p.cd.s dummy
 scoreboard objectives add p.cd dummy
 scoreboard objectives add p.use.trigger minecraft.used:minecraft.ender_pearl
+
+scoreboard objectives add gh.cd.s dummy
+scoreboard objectives add gh.cd dummy
+scoreboard objectives add gh.use.trigger minecraft.used:minecraft.goat_horn
+scoreboard objectives add gh.current dummy
 
 scoreboard objectives add ab.cd.s dummy
 scoreboard objectives add ab.cd dummy
 scoreboard objectives add ab.use.s dummy
 scoreboard objectives add ab.use dummy
 scoreboard objectives add ab.use.trigger minecraft.used:minecraft.carrot_on_a_stick
-scoreboard objectives add ab.current_ability dummy
+scoreboard objectives add ab.current dummy
+
+scoreboard objectives add pa.active dummy
+scoreboard objectives add pa.current dummy
+scoreboard objectives add pa.ability_specific.jump minecraft.custom:minecraft.jump
+scoreboard objectives add pa.ability_specific.counter minecraft.custom:minecraft.jump
+
+scoreboard objectives add menu dummy
+scoreboard objectives add menu.selecting dummy
+scoreboard objectives add menu.trigger minecraft.used:minecraft.warped_fungus_on_a_stick
+
+scoreboard objectives add ab.unlocked_1 dummy
+scoreboard objectives add ab.unlocked_2 dummy
+scoreboard objectives add ab.unlocked_3 dummy
+scoreboard objectives add ab.unlocked_4 dummy
+scoreboard objectives add ab.unlocked_5 dummy
+scoreboard objectives add ab.unlocked_6 dummy
+scoreboard objectives add ab.unlocked_7 dummy
+
+scoreboard objectives add pa.unlocked_1 dummy
+scoreboard objectives add pa.unlocked_2 dummy
+scoreboard objectives add pa.unlocked_3 dummy
+scoreboard objectives add pa.unlocked_4 dummy
+scoreboard objectives add pa.unlocked_5 dummy
+scoreboard objectives add pa.unlocked_6 dummy
+scoreboard objectives add pa.unlocked_7 dummy
+scoreboard objectives add pa.unlocked_8 dummy
+scoreboard objectives add pa.unlocked_9 dummy
+scoreboard objectives add pa.unlocked_10 dummy
+
+scoreboard objectives add gh.unlocked_1 dummy
+scoreboard objectives add gh.unlocked_2 dummy
+scoreboard objectives add gh.unlocked_3 dummy
+scoreboard objectives add gh.unlocked_4 dummy
+scoreboard objectives add gh.unlocked_5 dummy
+scoreboard objectives add gh.unlocked_6 dummy
+scoreboard objectives add gh.unlocked_7 dummy
+scoreboard objectives add gh.unlocked_8 dummy
+
+
+scoreboard objectives add points dummy
+scoreboard objectives add points.recieve dummy
+
+scoreboard objectives add points.reason.trigger dummy
+scoreboard objectives add points.reason.store dummy
+scoreboard objectives add points.reason.anim dummy
+
+scoreboard objectives add xp.recieve dummy
 
 scoreboard objectives add jump minecraft.custom:minecraft.jump
 scoreboard objectives add jump.bhop dummy
@@ -68,6 +129,7 @@ scoreboard objectives add jump.bhop2 dummy
 scoreboard objectives add jump.timer dummy
 
 scoreboard objectives add tp.id dummy
+scoreboard objectives add tp.timer dummy
 
 scoreboard objectives add safezone_state dummy
 
@@ -83,14 +145,24 @@ scoreboard objectives add logging dummy
 
 
 # bossbars
-bossbar add version ""
-bossbar set version visible true
-bossbar set version max 1
-bossbar set version value 0
+bossbar add tag:top ""
+bossbar set tag:top visible true
+bossbar set tag:top max 1
+bossbar set tag:top value 0
+
+bossbar add tag:notif.safezone {"translate": "notif.safezone", "color": "green"}
+bossbar set tag:notif.safezone name {"translate": "notif.safezone", "color": "green"}
+bossbar set tag:notif.safezone visible true
+bossbar set tag:notif.safezone max 1
+bossbar set tag:notif.safezone value 0
 
 
 
 # teams
+team add pearl
+team modify pearl color dark_aqua
+team modify pearl collisionRule never
+
 team add 001tagger
 team modify 001tagger color gold
 team modify 001tagger collisionRule never
@@ -142,6 +214,23 @@ team modify 002special collisionRule never
 team modify 002special friendlyFire true
 team modify 002special nametagVisibility always
 team modify 002special seeFriendlyInvisibles false
+
+team add 012special_alert
+team modify 012special_alert color blue
+team modify 012special_alert suffix {"text": "⚠", "color": "white"}
+team modify 012special_alert collisionRule never
+team modify 012special_alert friendlyFire true
+team modify 012special_alert nametagVisibility always
+team modify 012special_alert seeFriendlyInvisibles false
+
+team add 022special_alert
+team modify 022special_alert color blue
+team modify 022special_alert suffix {"text": "⚠", "color": "white"}
+team modify 022special_alert collisionRule never
+team modify 022special_alert friendlyFire true
+team modify 022special_alert nametagVisibility always
+team modify 022special_alert seeFriendlyInvisibles false
+
 
 team add 003player
 team modify 003player color aqua

@@ -4,6 +4,9 @@ tag @a[tag = hit_detect.taker] remove special
 scoreboard players set @a[tag = hit_detect.taker] effect.downed -1
 
 
+scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger 11
+
+
 tellraw @a [{"text": "", "color": "aqua"}, {"text": "☀ ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "aqua"}, {"translate": "chat.hit.unfreeze"}, {"selector": "@a[tag = hit_detect.taker]", "color": "aqua"}]
 
 # title @a[tag = hit_detect.giver] times 0 20 3

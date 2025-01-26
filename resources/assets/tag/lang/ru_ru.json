@@ -1,4 +1,105 @@
 {  
+  "item.effect.generic": "Видимость: обычная",
+  "item.effect.invisible": "Видимость: невидимый",
+  "item.effect.invisible.item": "Видимость: невидимый, но твой предмет в руке видно",
+  "item.effect.glowing": "Видимость: подсвечиваешься сквозь стены",
+  "item.effect.glowing_tagger": "Видимость: вода всегда подсвечивается, но может присесть, чтобы стать невидимым",
+  "item.effect.glowing_invisible": "Видимость: подсвечиваешься несмотря на невидимость",
+
+  "item.tag.menu": "Меню",
+  "item.minecraft.goat_horn.none": "У тебя нет козьего рога!",
+  
+  "menu.ab.1": "Любитель ракет",
+  "menu.ab.1.desc": "Подбрасывает тебя в воздух, будто ты наступил на маяк.",
+  
+  "menu.ab.2": "Суперскорость",
+  "menu.ab.2.desc": "Приклеивает тебя к земле и даёт быстро и далеко проскользить вперёд.",
+  
+  "menu.ab.3": "Святая мантия",
+  "menu.ab.3.desc": "Ты становишься временно неуязвимым на 1 удар воды.",
+  
+  "menu.ab.4": "Невидимость",
+  "menu.ab.4.desc": "Делает тебя невидимым, а так же даёт неуязвимость к любого рода подсветкам. Не забудь убрать предмет из руки!",
+  
+  "menu.ab.5": "Подсветка",
+  "menu.ab.5.desc": "Активирует подсветку для всех, кроме пользователя.",
+  
+  "menu.ab.6": "Цикл 2.6",
+  "menu.ab.6.desc": "Твой эндер-жемчуг восстанавливается космически быстро в течение использования. За 10 секунд успеешь кинуть 4!",
+
+  "menu.ab.7": "Тёмные исскувства",
+  "menu.ab.7.desc": "Даёт тебе на долю секунды полетать в режиме наблюдения.",
+
+  "menu.ab.cd": "Кулдаун",
+  "menu.ab.use": "Время использования",
+  "menu.ab.sec_one": "секунда",
+  "menu.ab.sec_two": "секунды",
+  "menu.ab.sec_many": "секунд",
+  "menu.ab.ticks_one": "тик",
+  "menu.ab.ticks_two": "тика",
+  "menu.ab.ticks_many": "тиков",
+
+
+  "menu.pa.synergies": "СИНЕРГИИ:",
+
+  "menu.pa.1": "Водный ускоритель",
+  "menu.pa.1.desc": "КОГДА НЕ ВОДА: увеличенная базовая скорость, в случае если в радиусе 20 блоков от тебя есть вода.\nКОГДА ВОДА: увеличенная базовая скорость.",
+
+  "menu.pa.2": "Радар",
+  "menu.pa.2.desc": "КОГДА НЕ ВОДА: каждые 3 секунды создаёт вокруг воды несколько частиц, видимых только тебе. Полезно, когда вода постоянно сидит на шифте.\nКОГДА ВОДА: каждые 10 секунд подсвечивает на полсекунды ближайшего игрока.",
+
+  "menu.pa.3": "Разгон жемчуга",
+  "menu.pa.3.desc": "Ускорение кулдауна эндер-жемчуга в 1,5 раза.",
+
+  "menu.pa.4": "Разгон способности",
+  "menu.pa.4.desc": "Ускорение кулдауна способности в 1,5 раза.",
+
+  "menu.pa.5": "Удлиннитель способности",
+  "menu.pa.5.desc": "Удлинняет время использования твоей способности. Если это к ней не применимо - усиливает её каким-нибудь другим способом.",
+
+  "menu.pa.6": "Волшебный пендель",
+  "menu.pa.6.desc": "КОГДА НЕ ВОДА: когда заряжена способность, тебе выдаётся палка на отдачу 2.\nКОГДА ВОДА: бесполезна.",
+
+  "menu.pa.7": "Попрыгунчик",
+  "menu.pa.7.desc": "Когда ты находишься рядом с любой конструкцией высотой 2,5 блока или ниже, тебе выдаётся эффект прыгучести, которого хватит ровно на то чтобы на неё запрыгнуть.",
+
+  "menu.pa.8": "Лётчик",
+  "menu.pa.8.desc": "Усиливает эффект подкидывания маяка.",
+
+  "menu.pa.9": "Шпион",
+  "menu.pa.9.desc": "КОГДА НЕ ВОДА: если стоишь неподвижно в течение 5 секунд, получаешь эффект невидимости, который спадает при малейшем движении. Пока невидимый, каждые 10 секунд появляется несколько тёмных частиц.\nКОГДА ВОДА: каждые 3 секунды создаёт несколько частиц вокруг невидимых игроков. Частицы видно только тебе.",
+  
+  "menu.pa.10": "Портфель",
+  "menu.pa.10.desc": "Позволяет накапливать до двух эндер-жемчугов, которые можно использовать подряд.",
+
+  "menu.pa.11": "Контузия",
+  "menu.pa.11.desc": "СТАНДАРТНЫЙ РЕЖИМ: когда ты передаёшь воду кому-либо, на 1 секунду даёт ему сильный эффект замедления, а так же закрывает его способность и жемчуг на 3 секунды. Добавление кулдауна не стакается (если у него и так способность и/или жемчуг имеют кулдаун выше чем 3, ничего не произойдёт).\nВИРУС: восстанавливает тебе пёрл и способность на 1 секунду.\nУБИЙЦА: тоже, что и вирус.\nКОРОНА: тоже, что и стандартный, только применяется когда ты забираешь корону.\nЗАМОРОЗКА: блокирует способность и жемчуг на 3 секунды после разморозки; снимает 5 секунд со счётчика жизни жертвы.\nЗАРАЖАЮЩАЯ ЗАМОРОЗКА: тоже, что и заморозка.\nГОРЯЧАЯ КАРТОШКА: тоже, что и стандартный.",
+
+
+  "menu.close": "Закрыть меню",
+  "menu.back": "В главное меню",
+  "menu.next": "Следующая страница",
+  "menu.prev": "Предыдущая страница",
+  "menu.select": "Выбрать",
+  "menu.ab.deselect": "Убрать способность?",
+  "menu.pa.deselect": "Убрать пассивку?",
+  "menu.buy": "Купить",
+  "menu.buy.price_one": "уровень",
+  "menu.buy.price_two": "уровня",
+  "menu.buy.price_many": "уровней",
+  "menu.buy.insufficient_funds": "Недостаточно средств на счёте!",
+  "menu.buy.insufficient_funds.desc": "Вернись когда будешь, ммм... побогаче.",
+  "menu.ab": "Активные способности",
+  "menu.pa": "Пассивные способности",
+  "menu.gh": "Козьи рога",
+  
+  "chat.ab.select": "выбрал способность",
+  "chat.ab.deselect": "убрал способность",
+
+  "chat.pa.select": "выбрал пассивку",
+  "chat.pa.deselect": "убрал пассивку",
+
+
   "chat.hit.default": " передал ",
   "subtitle.hit.default_you": "ты",
   "subtitle.hit.default_you_1": "потому что ",
@@ -18,22 +119,22 @@
   "title.hit.infect_other": " был заражён",
 
   "chat.hit.murder": " убил ",
-  "subtitle.hit.murder_you": "тебе",
-  "subtitle.hit.murder_you_1": "спасибо ",
+  "subtitle.hit.murder_you": "ты",
+  "subtitle.hit.murder_you_1": "убийца ",
   "subtitle.hit.murder_other_1": "",
   "subtitle.hit.murder_you_2": "",
-  "subtitle.hit.murder_other_2": " решил тебя убить без зазрений совести",
+  "subtitle.hit.murder_other_2": " безжалостно тебя убил",
   "title.hit.murder_you": "Ты МЁРТВ!",  
   "title.hit.murder_other": " был убит!",
   
   "chat.hit.crown": " забрал корону у ",
   "subtitle.hit.crown_you": "ты",
   "subtitle.hit.crown_you_1": " забрал её у ",
-  "subtitle.hit.crown_other_1": "иди поплачь",
+  "subtitle.hit.crown_other_1": "у тебя её украли, плачем всем селом",
   "subtitle.hit.crown_you_2": "",
   "subtitle.hit.crown_other_2": "",
   "title.hit.crown_you": "Ты забрал КОРОНУ!",  
-  "title.hit.crown_other": " забрал КОРОНУ!",
+  "title.hit.crown_other": " с КОРОНОЙ!",
   
   "chat.hit.freeze": " заморозил ",
   "subtitle.hit.freeze_you": "тобой",
@@ -62,13 +163,42 @@
   "title.hit.generic_you": "Ты ВОДА!",  
   "title.hit.generic_other": " вода!",
   
-  "subtitle.choosing_random": "кручу-верчу, петуха выбрать хочу",
+  "chat.hit.infection_freeze": " заражён обморожением",
+  "subtitle.hit.infection_freeze_you": "заморозка",
+  "subtitle.hit.infection_freeze_you_1": "потому что ",
+  "subtitle.hit.infection_freeze_other_1": "потому что ",
+  "subtitle.hit.infection_freeze_you_2": " так сказала",
+  "subtitle.hit.infection_freeze_other_2": " так сказала",
+  "title.hit.infection_freeze_you": "Ты ЗАРАЖЁН!",  
+  "title.hit.infection_freeze_other": " был заражён!",
+
+  "chat.hit.hot_potato": " передал ",
+  "subtitle.hit.hot_potato_you": "ты",
+  "subtitle.hit.hot_potato_you_1": "потому что ",
+  "subtitle.hit.hot_potato_other_1": "потому что ",
+  "subtitle.hit.hot_potato_you_2": " так сказал",
+  "subtitle.hit.hot_potato_other_2": " так сказал",
+  "title.hit.hot_potato_you": "Ты ВОДА!",
+  "title.hit.hot_potato_other": " вода!",
+
+  
+  "subtitle.choosing_random": "кручу-верчу, петуха выбрать хочу...",
   "chat.choosing_random": "выбираю воду на рандом...",
   
   "chat.dead": " умер",
+  "chat.dead.hot_potato": " взорвался",
   "chat.dead.downed": " заморожен до смерти",
   
   "sidebar.now_online": "онлайн",
+  
+  "item.tag.ability": "Способность",
+  "item.tag.ability.use": "Способность",
+  "item.tag.ability.cd": "Способность",
+  "item.tag.ability.none": "У тебя нет способности!",
+
+  "item.tag.passive_active": "Пассивка",
+  "item.tag.passive_not_active": "Пассивка",
+  "item.tag.passive.none": "У тебя нет пассивки!",
   
   "gamemode.building_mode": "             строительство              ",
   "gamemode.social_space": "                social space                ",
@@ -78,7 +208,7 @@
   "gamemode.murder": "                   убийца                   ",
   "gamemode.crown": "                   корона                   ",
   "gamemode.freeze": "                 заморозка                 ",
-  "gamemode.killer_freeze": "            заморозка-убийца            ",
+  "gamemode.infection_freeze": "         заражающая заморозка         ",
   "gamemode.hot_potato": "            горячая картошка            ",
 
   "title.tp.safezone_exit_error": "нельзя выйти из сейфзоны",
@@ -86,8 +216,32 @@
   "title.tp.outside_map": "ты оказался за картой",
   "title.tp.inside_blocks": "ты был в блоках",
 
-  "title.glowing": "подсветка",
+  "title.frozen0": "аж уши заложило...",
+  "title.frozen1": "помощь в пути...",
+  "title.frozen2": "ещё не сдавайся...",
+  "title.frozen3": "тебя спасут...",
+  "title.frozen4": "кто-то поможет...",
+  "title.frozen5": "я замёрз...",
+  "title.frozen6": "помогите...",
+  "title.frozen7": "ещё есть надежда...",
+  "title.frozen8": "не всё потеряно...",
+  "title.frozen9": "не переживай...",
+
+  "title.glowing": "Подсветка",
+  "subtitle.glowing": "Тебя видно следующие 5 сек.",
+  "subtitle.glowing.tagger": "Ты видишь всех следующие 5 сек.",
+  "subtitle.glowing.dead": "Всех видно следующие 5 сек.",
+  "chat.glowing": "Подсветка! Всех видно сквозь стены!",
+  "chat.glowing.ability": "Подсветка! Всех видно сквозь стены! (вызвана способностью)",
+
+  "title.recieve_xp.1": "опыта за",
+  "title.recieve_xp.2_one": "очко",
+  "title.recieve_xp.2_two": "очка",
+  "title.recieve_xp.2_many": "очков",
+
+
   "title.spectator": "ты зритель",
   "title.now_spectating": "сейчас наблюдаю за ",
-  "safezone.notif": "⭐ ты в сейфзоне ⭐"
+
+  "notif.safezone": "⭐ ты в сейфзоне ⭐"
 }
