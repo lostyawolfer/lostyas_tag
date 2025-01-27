@@ -1,4 +1,4 @@
-execute unless score @s anim.death matches -200..-1 run scoreboard players set @s anim.death -11
+execute if score @s anim.death matches 0 run scoreboard players set @s anim.death -11
 execute if score @s anim.death matches 1.. run scoreboard players set @s anim.death -1
 
 execute if score @s anim.death matches -1 run tag @s remove dead

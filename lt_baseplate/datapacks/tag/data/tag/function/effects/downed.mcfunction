@@ -230,6 +230,7 @@ execute if score @s effect.downed matches 0 if score game server matches 6 run s
 
 execute if score @s effect.downed matches -1 run title @s times 0 20 3
 execute if score @s effect.downed matches -1 run title @s title [{"translate": "title.hit.unfreeze_you", "color":"green", "bold": true}]
+execute if score @s effect.downed matches -1 run damage @s .01 minecraft:on_fire
 execute if score @s effect.downed matches -1 run scoreboard players set @s[tag=!safezone_state_-1] safezone_state 0
 execute if score @s effect.downed matches -1 run tag @s remove safezone_state_-1
 execute if score @s effect.downed matches -1 run stopsound @s * tag:downed
