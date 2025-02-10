@@ -1,0 +1,2 @@
+execute as @a[tag=nbs_proceedtot] run scoreboard players operation @s nbs_proceedtot += speed nbs_proceedtot
+execute as @a[tag=nbs_proceedtot] at @s run function tag_music:proceed_to_the_nearest_shelter/tree/0_2047

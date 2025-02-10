@@ -9,6 +9,7 @@ execute if score @s anim.death matches -11 run tag @s remove tagger
 execute if score @s anim.death matches -11 run tag @s remove special
 scoreboard players set @s[scores={effect.downed=1..}] effect.downed -1
 scoreboard players set @s effect.freeze -1
+effect clear @s
 
 execute if score @s anim.death matches ..-1 run scoreboard players remove @s anim.death 1
 
