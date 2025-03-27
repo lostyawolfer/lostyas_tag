@@ -1,12 +1,12 @@
-playsound minecraft:block.note_block.harp music @s ^0 ^ ^ 1 1.334840 1
-playsound minecraft:block.note_block.flute music @s ^0 ^ ^ 0.60 1.334840 1
-playsound minecraft:block.note_block.didgeridoo music @s ^0 ^ ^ 0.50 1.122462 1
-playsound minecraft:block.note_block.flute music @s ^0 ^ ^ 0.80 1.122462 1
-playsound minecraft:block.note_block.snare music @s ^0 ^ ^ 0.30 0.629961 1
-playsound minecraft:block.note_block.snare music @s ^0 ^ ^ 0.30 0.793701 1
-playsound minecraft:block.note_block.iron_xylophone music @s ^0 ^ ^ 0.80 1.334840 1
-playsound minecraft:block.note_block.iron_xylophone music @s ^0 ^ ^ 0.45 1.334840 1
-playsound minecraft:block.note_block.guitar music @s ^0 ^ ^ 1 0.667420 1
-playsound minecraft:block.note_block.guitar music @s ^0 ^ ^ 1 1.334840 1
-playsound minecraft:block.note_block.bass music @s ^0 ^ ^ 1 0.667420 1
+playsound minecraft:block.note_block.harp music @s ^0 ^ ^ 0.61 1.334840 1
+playsound minecraft:block.note_block.flute music @s ^0 ^ ^ 0.37 1.334840 1
+playsound minecraft:block.note_block.didgeridoo music @s ^0 ^ ^ 0.31 1.122462 1
+playsound minecraft:block.note_block.flute music @s ^0 ^ ^ 0.49 1.122462 1
+playsound minecraft:block.note_block.snare music @s ^0 ^ ^ 0.19 0.629961 1
+playsound minecraft:block.note_block.snare music @s ^0 ^ ^ 0.19 0.793701 1
+playsound minecraft:block.note_block.iron_xylophone music @s ^0 ^ ^ 0.49 1.334840 1
+playsound minecraft:block.note_block.iron_xylophone music @s ^0 ^ ^ 0.28 1.334840 1
+playsound minecraft:block.note_block.guitar music @s ^0 ^ ^ 0.61 0.667420 1
+playsound minecraft:block.note_block.guitar music @s ^0 ^ ^ 0.61 1.334840 1
+playsound minecraft:block.note_block.bass music @s ^0 ^ ^ 0.61 0.667420 1
 scoreboard players set @s nbs_tagyoureit_t 250

@@ -17,6 +17,7 @@ execute as @s[tag=ab.active.7] if entity @a[distance=..0.01, gamemode=!spectator
 execute as @s[tag=ab.active.7] if entity @a[distance=..0.01, gamemode=!spectator] run function tag:tp_back/player_to_stand/raw
 
 execute as @s[scores={ab.use=1..}] run particle dust_color_transition{from_color:8847522, to_color:0, scale:1} ~ ~1 ~ .3 .5 .3 .1 30
+execute as @s[scores={ab.use=1..}] run scoreboard players set @s screen_effect 600
 
 execute as @s[scores={ab.use=-3..-2}] run attribute @s gravity base set .08
 execute as @s[scores={ab.use=-3..-2}] run scoreboard players remove @s ab.use 1
