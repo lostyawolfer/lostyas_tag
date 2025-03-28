@@ -57,7 +57,7 @@ execute if score tag.random_counter server matches 0 if score tag.random_counter
 #execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a[tag = tagger] run damage @s .1
 #execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a[tag = tagger] run title @a title [{"selector":"@s","color":"yellow"},{"text":" вода!"}]
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. if score game server matches 7 run scoreboard players set kill_timer server 1200
-execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. if score game server matches 1..6 run scoreboard players set kill_timer server 18000
+execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. if score game server matches 1..6 run scoreboard players set kill_timer server 6000
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run scoreboard players set tag.random_counter server -1
 
 execute if score tag.random_counter server matches 0.. run scoreboard players add tag.random_counter.time server 1
