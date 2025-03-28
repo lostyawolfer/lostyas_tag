@@ -1,7 +1,7 @@
-playsound minecraft:block.note_block.bass music @s ^0 ^ ^ 0.43 0.943874 1
-playsound minecraft:block.note_block.bass music @s ^0 ^ ^ 0.43 0.943874 1
-playsound minecraft:block.note_block.flute music @s ^0 ^ ^ 0.13 0.943874 1
-playsound minecraft:block.note_block.hat music @s ^0 ^ ^ 0.35 1.000000 1
-playsound minecraft:block.note_block.bell music @s ^0 ^ ^ 0.39 0.943874 1
-playsound minecraft:block.note_block.chime music @s ^0 ^ ^ 0.39 0.943874 1
+playsound minecraft:block.note_block.bass music @s ^0 ^ ^ 0.86 0.943874 1
+playsound minecraft:block.note_block.bass music @s ^0 ^ ^ 0.86 0.943874 1
+playsound minecraft:block.note_block.flute music @s ^0 ^ ^ 0.26 0.943874 1
+playsound minecraft:block.note_block.hat music @s ^0 ^ ^ 0.69 1.000000 1
+playsound minecraft:block.note_block.bell music @s ^0 ^ ^ 0.78 0.943874 1
+playsound minecraft:block.note_block.chime music @s ^0 ^ ^ 0.78 0.943874 1
 scoreboard players set @s nbs_tagyoureit_t 480

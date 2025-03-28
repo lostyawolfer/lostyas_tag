@@ -1,7 +1,7 @@
 tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@a[tag = hit_detect.giver]"}, " froze ", {"selector": "@a[tag = hit_detect.taker]"}]
 # tag @a[tag = hit_detect.giver] remove tagger
 tag @a[tag = hit_detect.taker] add special
-scoreboard players set @a[tag = hit_detect.taker] effect.downed 1199
+scoreboard players set @a[tag = hit_detect.taker] effect.downed 900
 
 
 scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger 9

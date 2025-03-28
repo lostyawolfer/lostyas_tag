@@ -4,6 +4,7 @@ recipe give @a *
 
 # variables before functions
 execute store result score playercount server if entity @a
+execute store result score all-taggers server if entity @a[tag = tagger]
 execute store result score taggers server if entity @a[tag = tagger, gamemode = adventure, tag =!safezone]
 execute store result score non-taggers server if entity @a[tag =!tagger, gamemode =!creative, tag =!safezone]
 execute store result score specials server if entity @a[tag = special, gamemode =!creative, tag =!safezone]
@@ -14,6 +15,12 @@ scoreboard players operation adventure-mode server = adventure-mode-mode server
 scoreboard players operation adventure-mode server += adventure-mode-decor server
 scoreboard players add generic server 1
 execute if score generic server matches 20.. run scoreboard players set generic server 0
+
+scoreboard players operation taggers-percent server = all-taggers server
+scoreboard players operation taggers-percent server *= 100 consts
+scoreboard players operation taggers-percent server /= playercount server
+
+execute if score taggers-percent server matches ..15 if score game server matches 1..6 unless score tag.random_counter server matches -30.. unless score restart server matches 0..400 unless score kill_timer server matches -1..0 if entity @a[tag=!tagger, gamemode=adventure] run function tag:-/tag_randomize_add
 
 execute if entity @a[tag=tagger, tag=!safezone] if entity @a[tag=!tagger, tag=!safezone] if score game server matches 1.. if score generic server matches 0 as @a[tag=!tagger, tag=!dead] unless score @s effect.downed matches 1.. run scoreboard players add @s points.recieve 1
 
@@ -44,11 +51,13 @@ execute if score random server matches ..-1 run scoreboard players set random se
 
 execute if score game server matches 7 unless score kill_timer server matches -2147483648..2147483647 if entity @a[tag=tagger, tag=!safezone] run scoreboard players set kill_timer server 1200
 
-execute if score restart server matches 1..367 run scoreboard players reset kill_timer
+execute if score restart server matches 1..347 run scoreboard players reset kill_timer
 execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players remove kill_timer server 1
 
 
 execute if score kill_timer server matches -1 if score game_prev server matches 7 unless score adventure-mode server matches 2.. run scoreboard players set restart server 1
+execute if score kill_timer server matches -1 unless score game_prev server matches 7 run scoreboard players add @a[tag=!tagger, tag=!safezone, tag=!special, tag=!dead, gamemode=adventure] points.recieve 240
+execute if score kill_timer server matches -1 unless score game_prev server matches 7 run scoreboard players set restart server 1
 execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run playsound entity.generic.explode player @a ~ ~ ~ 1 .8 .5
 execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run particle explosion_emitter ~ ~1 ~ 0 0 0 0 2
 execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run particle lava ~ ~1 ~ .3 .5 .3 0 50
@@ -67,21 +76,61 @@ execute unless score kill_timer server matches -2147483648..2147483647 run score
 execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.s server = kill_timer server
 execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.s server /= 20 consts
 execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.s server += 1 consts
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.s server %= 60 consts
 
-execute if score kill_timer.s server matches 61.. run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"green"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "white"}]
-execute if score kill_timer.s server matches 31..60 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"yellow"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "white"}]
-execute if score kill_timer.s server matches 11..30 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"gold"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "yellow"}]
-execute if score kill_timer.s server matches 6..10 if score anim.slow server matches 0..9 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
-execute if score kill_timer.s server matches 6..10 if score anim.slow server matches 10..19 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
-execute if score kill_timer.s server matches 1..5 if score anim.fast server matches 0..1 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
-execute if score kill_timer.s server matches 1..5 if score anim.fast server matches 2..3 run title @a[tag=!dead] actionbar [{"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
-execute if score kill_timer.s server matches 0 run title @a[tag=!dead] actionbar [{"text":"💥 ", "color":"dark_red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "red"}]
+
+
+
+execute unless score kill_timer server matches -2147483648..2147483647 run scoreboard players reset kill_timer.s1
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.s1 server = kill_timer.s server
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.s1 server /= 10 consts
+
+execute unless score kill_timer server matches -2147483648..2147483647 run scoreboard players reset kill_timer.s2
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.s2 server = kill_timer.s server
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.s2 server %= 10 consts
+
+
+
+
+execute unless score kill_timer server matches -2147483648..2147483647 run scoreboard players reset kill_timer.m
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.m server = kill_timer server
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.m server /= 20 consts
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.m server += 1 consts
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.m server /= 60 consts
+
+
+execute unless score kill_timer server matches -2147483648..2147483647 run scoreboard players reset kill_timer.m1
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.m1 server = kill_timer.m server
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.m1 server /= 10 consts
+
+execute unless score kill_timer server matches -2147483648..2147483647 run scoreboard players reset kill_timer.m2
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.m2 server = kill_timer.m server
+execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players operation kill_timer.m2 server %= 10 consts
+
+
+
+
+# execute if score kill_timer.m server matches 1.. run title @a[tag=!dead] actionbar [{"text": "", "color": "white"}, {"text":"💣 ", "color":"green"}, {"score":{"name":"kill_timer.m","objective":"server"}}, ":", {"score":{"name":"kill_timer.s1","objective":"server"}}, {"score":{"name":"kill_timer.s2","objective":"server"}}]
+# execute unless score kill_timer.m server matches 1.. if score kill_timer.s server matches 31..60 run title @a[tag=!dead] actionbar [{"text": "", "color": "white"}, {"text":"💣 ", "color":"yellow"}, {"score":{"name":"kill_timer.s","objective":"server"}}]
+# execute unless score kill_timer.m server matches 1.. if score kill_timer.s server matches 11..30 run title @a[tag=!dead] actionbar [{"text": "", "color": "white"}, {"text":"💣 ", "color":"gold"}, {"score":{"name":"kill_timer.s","objective":"server"}}]
+# execute unless score kill_timer.m server matches 1.. if score kill_timer.s server matches 6..10 if score anim.slow server matches 0..9 run title @a[tag=!dead] actionbar [{"text": "", "color": "white"}, {"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}}]
+# execute unless score kill_timer.m server matches 1.. if score kill_timer.s server matches 6..10 if score anim.slow server matches 10..19 run title @a[tag=!dead] actionbar [{"text": "", "color": "yellow"}, {"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}}]
+# execute unless score kill_timer.m server matches 1.. if score kill_timer.s server matches 1..5 if score anim.fast server matches 0..1 run title @a[tag=!dead] actionbar [{"text": "", "color": "white"}, {"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}}]
+# execute unless score kill_timer.m server matches 1.. if score kill_timer.s server matches 1..5 if score anim.fast server matches 2..3 run title @a[tag=!dead] actionbar [{"text": "", "color": "yellow"}, {"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}}]
+# execute unless score kill_timer.m server matches 1.. if score kill_timer.s server matches 0 run title @a[tag=!dead] actionbar [{"text": "", "color": "red"}, {"text":"💥 ", "color":"dark_red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "red"}]
+
+
+
+
+
 
 
 
 # restart the game if everyone was caught
 execute if score restart server matches 1.. run scoreboard players add restart server 1
+execute if score active-players server matches 2.. if score taggers server matches 1.. if score taggers server = active-players server run scoreboard players add @a[tag=tagger] points.recieve 240
 execute if score active-players server matches 2.. if score taggers server matches 1.. if score taggers server = active-players server run scoreboard players add restart server 1
+execute if score active-players server matches 2.. if score specials server matches 1.. if score specials server = non-taggers server run scoreboard players add @a[tag=tagger] points.recieve 240
 execute if score active-players server matches 2.. if score specials server matches 1.. if score specials server = non-taggers server run scoreboard players add restart server 1
 execute if score restart server matches 1.. run scoreboard players operation restart.s server = restart server
 execute if score restart server matches 1.. run scoreboard players operation restart.s server /= 20 consts

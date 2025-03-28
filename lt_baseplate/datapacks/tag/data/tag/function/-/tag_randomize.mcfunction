@@ -1,10 +1,10 @@
-execute unless score tag.random_counter server matches 0.. run tellraw @a [{"text":"🔥 ","color":"light_purple"},{"translate":"chat.choosing_random","color":"dark_aqua"}]
-execute unless score tag.random_counter server matches 0.. run tag @a remove tagger
-execute unless score tag.random_counter server matches 0.. run scoreboard players set tag.random_counter server 80
-execute unless score tag.random_counter server matches 0.. run scoreboard players set tag.random_counter.time server 0
+execute unless score tag.random_counter server matches -30.. run tellraw @a [{"text":"🔥 ","color":"light_purple"},{"translate":"chat.choosing_random","color":"dark_aqua"}]
+execute unless score tag.random_counter server matches -30.. run tag @a remove tagger
+execute unless score tag.random_counter server matches -30.. run scoreboard players set tag.random_counter server 80
+execute unless score tag.random_counter server matches -30.. run scoreboard players set tag.random_counter.time server 0
 
-title @a subtitle {"translate":"subtitle.choosing_random","color":"dark_purple"}
-title @a times 0 30 3
+execute if score tag.random_counter server matches 0.. run title @a subtitle {"translate":"subtitle.choosing_random","color":"dark_purple"}
+execute if score tag.random_counter server matches 0.. run title @a times 0 30 3
 execute if score tag.random_counter server matches 30.. run title @a title [{"text":"> ","bold": true, "color": "yellow"},{"selector":"@r[tag=!prev_tagger]","color":"blue"},{"text":" <"}]
 execute if score tag.random_counter server matches 30.. as @a at @s run playsound ui.button.click master @s ~ ~ ~ .1 2
 execute if score tag.random_counter server matches 30.. as @a at @s run scoreboard players remove tag.random_counter server 1
@@ -57,7 +57,10 @@ execute if score tag.random_counter server matches 0 if score tag.random_counter
 #execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a[tag = tagger] run damage @s .1
 #execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. as @a[tag = tagger] run title @a title [{"selector":"@s","color":"yellow"},{"text":" вода!"}]
 execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. if score game server matches 7 run scoreboard players set kill_timer server 1200
-execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run scoreboard players reset tag.random_counter server
+execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. if score game server matches 1..6 run scoreboard players set kill_timer server 18000
+execute if score tag.random_counter server matches 0 if score tag.random_counter.time server matches 20.. run scoreboard players set tag.random_counter server -1
 
-scoreboard players add tag.random_counter.time server 1
-execute if score tag.random_counter server matches 0.. run schedule function tag:-/tag_randomize 1t
+execute if score tag.random_counter server matches 0.. run scoreboard players add tag.random_counter.time server 1
+execute if score tag.random_counter server matches ..-1 run scoreboard players remove tag.random_counter server 1
+execute if score tag.random_counter server matches ..-30 run scoreboard players reset tag.random_counter server
+execute if score tag.random_counter server matches -30.. run schedule function tag:-/tag_randomize 1t

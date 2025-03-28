@@ -177,6 +177,9 @@ execute unless score @s effect.downed matches 1.. unless score @s ab.current mat
 execute unless score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 58 run item replace entity @s container.1 with gray_dye[custom_model_data= 0, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 58
 execute unless score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 59 run item replace entity @s container.1 with gray_dye[custom_model_data= 0, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 59
 
+execute unless score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 60 run item replace entity @s container.1 with gray_dye[custom_model_data= 0, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 60
+
+
 
 # if cooldown and frozen, use frozen sprites
 execute if score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 0 if score @s ab.cd matches 1.. run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 1
@@ -244,6 +247,8 @@ execute if score @s effect.downed matches 1.. unless score @s ab.current matches
 execute if score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 57 run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 57
 execute if score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 58 run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 58
 execute if score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 59 run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 59
+
+execute if score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.cd.s matches 60 run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 60
 
 
 # if there is cooldown or a use time, clear ability item

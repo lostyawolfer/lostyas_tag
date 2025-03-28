@@ -1,4 +1,5 @@
-playsound minecraft:block.note_block.harp music @s ^0 ^ ^ 0.01 0.943874 1
-playsound minecraft:block.note_block.bell music @s ^0 ^ ^ 0.01 0.943874 1
-playsound minecraft:block.note_block.chime music @s ^0 ^ ^ 0.01 0.943874 1
+playsound minecraft:block.note_block.harp music @s ^0 ^ ^ 0.65 0.943874 1
+playsound minecraft:block.note_block.flute music @s ^0 ^ ^ 0.20 0.943874 1
+playsound minecraft:block.note_block.bell music @s ^0 ^ ^ 0.58 0.943874 1
+playsound minecraft:block.note_block.chime music @s ^0 ^ ^ 0.58 0.943874 1
 scoreboard players set @s nbs_tagyoureit_t 1070
