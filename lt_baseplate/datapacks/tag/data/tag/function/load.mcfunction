@@ -146,6 +146,8 @@ scoreboard objectives add joined minecraft.custom:minecraft.leave_game
 scoreboard objectives add logging dummy
 
 
+scoreboard objectives add game_count dummy
+
 
 # bossbars
 bossbar add tag:top ""

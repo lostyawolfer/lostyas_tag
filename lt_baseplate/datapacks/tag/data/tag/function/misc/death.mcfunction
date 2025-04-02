@@ -5,6 +5,7 @@ execute if score @s anim.death matches 1 run tag @s add special
 execute if score @s anim.death matches 1 run tag @s remove tagger
 #execute if score @s anim.death matches 1 run scoreboard players set @s ab.cd 0
 #execute if score @s anim.death matches 1 run scoreboard players set @s p.cd 0
+execute if score @s anim.death matches 1 run scoreboard players set @s effect.glowing 0
 execute if score @s anim.death matches 1 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " died"]
 execute if score @s anim.death matches 1 unless score game server matches 3 unless score game server matches 7 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead", "color": "aqua"}]
 execute if score @s anim.death matches 1 if score game server matches 7 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead.hot_potato", "color": "aqua"}]
@@ -47,6 +48,7 @@ execute if score @s anim.death matches 101 run tag @s add special
 execute if score @s anim.death matches 101 run scoreboard players set @a[tag = tagger] points.reason.trigger 10
 #execute if score @s anim.death matches 101 run scoreboard players set @s ab.cd 0
 #execute if score @s anim.death matches 101 run scoreboard players set @s p.cd 0
+execute if score @s anim.death matches 101 run scoreboard players set @s effect.glowing 0
 execute if score @s anim.death matches 101 run stopsound @s * tag:downed
 execute if score @s anim.death matches 101 run tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@s"}, " died by being downed"]
 execute if score @s anim.death matches 101 run tellraw @a [{"text": "", "color": "aqua"}, {"text": "☠ ", "color": "red"}, {"selector": "@s", "color": "dark_gray"}, {"translate": "chat.dead.downed"}]

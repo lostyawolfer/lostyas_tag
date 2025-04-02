@@ -18,9 +18,9 @@ execute if score @s points.reason.trigger matches 6 run scoreboard players add @
 execute if score @s points.reason.trigger matches 7 run scoreboard players add @s points.recieve 40
 execute if score @s points.reason.trigger matches 8 run scoreboard players remove @s points.recieve 40
 # freeze
-execute if score @s points.reason.trigger matches 9 run scoreboard players add @s points.recieve 20
-execute if score @s points.reason.trigger matches 10 run scoreboard players add @s points.recieve 40
-execute if score @s points.reason.trigger matches 11 run scoreboard players add @s points.recieve 20
+execute if score @s points.reason.trigger matches 9 run scoreboard players add @s points.recieve 40
+execute if score @s points.reason.trigger matches 10 run scoreboard players add @s points.recieve 200
+execute if score @s points.reason.trigger matches 11 run scoreboard players add @s points.recieve 40
 # escape
 execute if score @s points.reason.trigger matches -1 run scoreboard players add @s points.recieve 10
 
