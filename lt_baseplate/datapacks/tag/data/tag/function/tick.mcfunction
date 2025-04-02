@@ -20,7 +20,7 @@ scoreboard players operation taggers-percent server = all-taggers server
 scoreboard players operation taggers-percent server *= 100 consts
 scoreboard players operation taggers-percent server /= playercount server
 
-execute if score taggers-percent server matches ..15 if score game server matches 1..6 unless score tag.random_counter server matches -30.. unless score restart server matches 0..400 unless score kill_timer server matches -1..0 if entity @a[tag=!tagger, gamemode=adventure] run function tag:-/tag_randomize_add
+execute if score taggers-percent server matches ..15 if score game server matches 1..6 unless score tag.random_counter server matches -30.. unless score restart server matches 0..400 unless score kill_timer server matches -1..0 if entity @a[tag=!tagger, gamemode=adventure] if score playercount server matches 2.. run function tag:-/tag_randomize_add
 
 execute if entity @a[tag=tagger, tag=!safezone] if entity @a[tag=!tagger, tag=!safezone] if score game server matches 1.. if score generic server matches 0 as @a[tag=!tagger, tag=!dead] unless score @s effect.downed matches 1.. run scoreboard players add @s points.recieve 1
 
@@ -55,14 +55,171 @@ execute if score restart server matches 1..347 run scoreboard players reset kill
 execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players remove kill_timer server 1
 
 
+
+execute unless score game server matches 7 if score kill_timer server matches 1600 run scoreboard players set e.glowing server -3200
+execute unless score game server matches 7 if score kill_timer server matches 1400 run playsound tag:round.intro master @a ~ ~ ~ .5 1 .5
+
+execute unless score game server matches 7 if score kill_timer server matches 1200 run playsound tag:round.warn master @a ~ ~ ~ 1 1 1
+execute unless score game server matches 7 if score kill_timer server matches 1200 run playsound tag:round.60s master @a ~ ~ ~ .5 1 .5
+execute unless score game server matches 7 if score kill_timer server matches ..1200 run scoreboard players remove @a[scores={ab.cd=2..}] ab.cd 1
+execute unless score game server matches 7 if score kill_timer server matches ..1200 run scoreboard players remove @a[scores={effect.downed=1..}] effect.downed 1
+execute unless score game server matches 7 if score kill_timer server matches 1200 run title @a times 0 20 10
+execute unless score game server matches 7 if score kill_timer server matches 1200 run title @a subtitle {"translate": "title.round.60s.sub", "color": "gray"}
+execute unless score game server matches 7 if score kill_timer server matches 1200 run title @a title {"translate": "title.round.60s", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 1199 run title @a title {"translate": "title.round.60s", "color": "#FFDDFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 1198 run title @a title {"translate": "title.round.60s", "color": "#FFBBFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 1197 run title @a title {"translate": "title.round.60s", "color": "#FF99FF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 1196 run title @a title {"translate": "title.round.60s", "color": "#FF77FF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 1195 run title @a title {"translate": "title.round.60s", "color": "#FF55FF", "bold": false}
+
+execute unless score game server matches 7 if score kill_timer server matches 1165 run title @a times 10 30 20
+execute unless score game server matches 7 unless score game server matches 5..6 if score kill_timer server matches 1165 run title @a subtitle {"translate": "title.round.60s.effect_sub", "color": "gold"}
+execute unless score game server matches 7 if score game server matches 5..6 if score kill_timer server matches 1165 run title @a subtitle {"translate": "title.round.60s.effect_sub.freeze", "color": "gold"}
+execute unless score game server matches 7 if score kill_timer server matches 1165 run title @a title {"translate": "title.round.60s.effect", "color": "yellow"}
+
+
+
+execute unless score game server matches 7 if score kill_timer server matches 600 run stopsound @a * tag:round.60s
+execute unless score game server matches 7 if score kill_timer server matches 600 run playsound tag:round.warn master @a ~ ~ ~ 1 1.2 1
+execute unless score game server matches 7 if score kill_timer server matches 600 run playsound tag:round.30s master @a ~ ~ ~ .5 1 .5
+
+execute unless score game server matches 7 if score kill_timer server matches ..600 run scoreboard players set e.glowing server -3500
+
+execute unless score game server matches 7 if score kill_timer server matches 600 run title @a times 0 20 10
+execute unless score game server matches 7 if score kill_timer server matches 600 run title @a subtitle {"translate": "title.round.30s.sub", "color": "gray"}
+execute unless score game server matches 7 if score kill_timer server matches 600 run title @a title {"translate": "title.round.30s", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches ..600 run scoreboard players set @a effect.glowing 1
+execute unless score game server matches 7 if score kill_timer server matches 599 run title @a title {"translate": "title.round.30s", "color": "#FFDDDD", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 598 run title @a title {"translate": "title.round.30s", "color": "#FFBBBB", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 597 run title @a title {"translate": "title.round.30s", "color": "#FF9999", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 596 run title @a title {"translate": "title.round.30s", "color": "#FF7777", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 595 run title @a title {"translate": "title.round.30s", "color": "#FF5555", "bold": false}
+
+execute unless score game server matches 7 if score kill_timer server matches 565 run title @a times 10 30 20
+execute unless score game server matches 7 if score kill_timer server matches 565 run title @a subtitle {"translate": "title.round.30s.effect_sub", "color": "dark_aqua"}
+execute unless score game server matches 7 if score kill_timer server matches 565 run title @a title {"translate": "title.round.30s.effect", "color": "aqua"}
+
+
+
+
+
+execute unless score game server matches 7 if score kill_timer server matches 280 run stopsound @a * tag:round.30s
+execute unless score game server matches 7 if score kill_timer server matches 281 run playsound tag:round.20s master @a ~ ~ ~ .5 1 .5
+
+
+
+execute unless score game server matches 7 if score kill_timer server matches 240 run title @a times 30 10 0
+execute unless score game server matches 7 if score kill_timer server matches 240 run title @a title ""
+execute unless score game server matches 7 if score kill_timer server matches 240 run title @a subtitle {"translate": "title.round.ends_in", "color": "gray"}
+
+
+execute unless score game server matches 7 if score kill_timer server matches 200 run title @a times 0 10 5
+
+execute unless score game server matches 7 if score kill_timer server matches 200 run playsound tag:round.countdown_10 master @a ~ ~ ~ 1 1 1
+execute unless score game server matches 7 if score kill_timer server matches 200 run title @a title {"text": "10", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 199 run title @a title {"text": "10", "color": "#FFFFDD", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 198 run title @a title {"text": "10", "color": "#FFFFBB", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 197 run title @a title {"text": "10", "color": "#FFFF99", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 196 run title @a title {"text": "10", "color": "#FFFF77", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 195 run title @a title {"text": "10", "color": "#FFFF55", "bold": false}
+
+execute unless score game server matches 7 if score kill_timer server matches 180 run playsound tag:round.countdown_9 master @a ~ ~ ~ 1 1 1
+execute unless score game server matches 7 if score kill_timer server matches 180 run title @a title {"text": "9", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 179 run title @a title {"text": "9", "color": "#FFF7DD", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 178 run title @a title {"text": "9", "color": "#FFF0BB", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 177 run title @a title {"text": "9", "color": "#FFE799", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 176 run title @a title {"text": "9", "color": "#FFE077", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 175 run title @a title {"text": "9", "color": "#FFD755", "bold": false}
+
+execute unless score game server matches 7 if score kill_timer server matches 160 run playsound tag:round.countdown_8 master @a ~ ~ ~ 1 1 1
+execute unless score game server matches 7 if score kill_timer server matches 160 run title @a title {"text": "8", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 159 run title @a title {"text": "8", "color": "#FFF0DD", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 158 run title @a title {"text": "8", "color": "#FFE0BB", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 157 run title @a title {"text": "8", "color": "#FFD099", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 156 run title @a title {"text": "8", "color": "#FFC077", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 155 run title @a title {"text": "8", "color": "#FFB055", "bold": false}
+
+execute unless score game server matches 7 if score kill_timer server matches 140 run playsound tag:round.countdown_7 master @a ~ ~ ~ 1 1 1
+execute unless score game server matches 7 if score kill_timer server matches 140 run title @a title {"text": "7", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 139 run title @a title {"text": "7", "color": "#FFE7DD", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 138 run title @a title {"text": "7", "color": "#FFDDBB", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 137 run title @a title {"text": "7", "color": "#FFC799", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 136 run title @a title {"text": "7", "color": "#FFBB77", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 135 run title @a title {"text": "7", "color": "#FFA755", "bold": false}
+
+execute unless score game server matches 7 if score kill_timer server matches 120 run playsound tag:round.countdown_6 master @a ~ ~ ~ 1 1 1
+execute unless score game server matches 7 if score kill_timer server matches 120 run title @a title {"text": "6", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 119 run title @a title {"text": "6", "color": "#FFEEDD", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 118 run title @a title {"text": "6", "color": "#FFDDBB", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 117 run title @a title {"text": "6", "color": "#FFCC99", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 116 run title @a title {"text": "6", "color": "#FFBB77", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 115 run title @a title {"text": "6", "color": "#FFAA55", "bold": false}
+
+execute unless score game server matches 7 if score kill_timer server matches 100 run playsound tag:round.countdown_5 master @a ~ ~ ~ 1 1 1
+execute unless score game server matches 7 if score kill_timer server matches 100 run title @a title {"text": "5", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 99 run title @a title {"text": "5", "color": "#FFE0DD", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 98 run title @a title {"text": "5", "color": "#FFD0BB", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 97 run title @a title {"text": "5", "color": "#FFC099", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 96 run title @a title {"text": "5", "color": "#FFB077", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 95 run title @a title {"text": "5", "color": "#FFA055", "bold": false}
+
+execute unless score game server matches 7 if score kill_timer server matches 80 run playsound tag:round.countdown_4 master @a ~ ~ ~ 1 1 1
+execute unless score game server matches 7 if score kill_timer server matches 80 run title @a title {"text": "4", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 79 run title @a title {"text": "4", "color": "#FFDFDD", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 78 run title @a title {"text": "4", "color": "#FFDFBB", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 77 run title @a title {"text": "4", "color": "#FFCF99", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 76 run title @a title {"text": "4", "color": "#FF9F77", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 75 run title @a title {"text": "4", "color": "#FF7F55", "bold": false}
+
+execute unless score game server matches 7 if score kill_timer server matches 60 run playsound tag:round.countdown_3 master @a ~ ~ ~ 1 1 1
+execute unless score game server matches 7 if score kill_timer server matches 60 run title @a title {"text": "3", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 59 run title @a title {"text": "3", "color": "#FFDDDD", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 58 run title @a title {"text": "3", "color": "#FFBBBB", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 57 run title @a title {"text": "3", "color": "#FF9999", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 56 run title @a title {"text": "3", "color": "#FF7777", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 55 run title @a title {"text": "3", "color": "#FF5555", "bold": false}
+
+execute unless score game server matches 7 if score kill_timer server matches 40 run playsound tag:round.countdown_2 master @a ~ ~ ~ 1 1 1
+execute unless score game server matches 7 if score kill_timer server matches 40 run title @a title {"text": "2", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 39 run title @a title {"text": "2", "color": "#FFDDDD", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 38 run title @a title {"text": "2", "color": "#FFBBBB", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 37 run title @a title {"text": "2", "color": "#FF9999", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 36 run title @a title {"text": "2", "color": "#FF7777", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 35 run title @a title {"text": "2", "color": "#FF5555", "bold": false}
+
+execute unless score game server matches 7 if score kill_timer server matches 20 run playsound tag:round.countdown_1 master @a ~ ~ ~ 1 1 1
+execute unless score game server matches 7 if score kill_timer server matches 20 run title @a title {"text": "1", "color": "#FFFFFF", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 19 run title @a title {"text": "1", "color": "#FFDDDD", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 18 run title @a title {"text": "1", "color": "#FFBBBB", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 17 run title @a title {"text": "1", "color": "#FF9999", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 16 run title @a title {"text": "1", "color": "#FF7777", "bold": false}
+execute unless score game server matches 7 if score kill_timer server matches 15 run title @a title {"text": "1", "color": "#FF5555", "bold": false}
+
+
+
+execute unless score game server matches 7 if score kill_timer server matches 60 run stopsound @a * tag:round.20s
+execute unless score game server matches 7 if score kill_timer server matches 60 run playsound tag:round.finale master @a ~ ~ ~ .5 1 .5
+
+execute unless score game server matches 7 if score kill_timer server matches 0 run stopsound @a * tag:round.finale
+execute unless score game server matches 7 if score kill_timer server matches 0 run playsound tag:round.outro master @a ~ ~ ~ .5 1 .5
+
+
 execute if score kill_timer server matches -1 if score game_prev server matches 7 unless score adventure-mode server matches 2.. run scoreboard players set restart server 1
-execute if score kill_timer server matches -1 unless score game_prev server matches 7 run scoreboard players add @a[tag=!tagger, tag=!safezone, tag=!special, tag=!dead, gamemode=adventure] points.recieve 240
+execute if score kill_timer server matches -1 unless score game_prev server matches 7 run scoreboard players add @a[tag=!tagger, tag=!safezone, tag=!special, tag=!dead, gamemode=adventure] points.recieve 1000
+execute if score kill_timer server matches -1 unless score game_prev server matches 7 run playsound ui.toast.challenge_complete master @a[tag=!tagger, tag=!safezone, tag=!special, tag=!dead, gamemode=adventure] 0 0 0 1 1 1
+execute if score kill_timer server matches -1 unless score game_prev server matches 7 run title @a[tag=!tagger, tag=!safezone, tag=!special, tag=!dead, gamemode=adventure] times 0 60 40
+execute if score kill_timer server matches -1 unless score game_prev server matches 7 run title @a[tag=!tagger, tag=!safezone, tag=!special, tag=!dead, gamemode=adventure] title {"translate": "title.round.win", "color": "green", "bold": true}
+execute if score kill_timer server matches -1 unless score game_prev server matches 7 run title @a[tag=!tagger, tag=!safezone, tag=!special, tag=!dead, gamemode=adventure] subtitle {"translate": "title.round.win.sub_player", "color": "gray"}
 execute if score kill_timer server matches -1 unless score game_prev server matches 7 run scoreboard players set restart server 1
 execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run playsound entity.generic.explode player @a ~ ~ ~ 1 .8 .5
-execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run particle explosion_emitter ~ ~1 ~ 0 0 0 0 2
+execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run particle explosion_emitter ~ ~1 ~ 0 0 0 0 1
 execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run particle lava ~ ~1 ~ .3 .5 .3 0 50
 execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run function tag:-/kill
 execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run tag @s remove tagger
+
+
+
+
 
 
 execute unless score game server matches 7 if score kill_timer server matches -30 run scoreboard players reset kill_timer
@@ -128,29 +285,44 @@ execute if score kill_timer server matches -2147483648..2147483647 run scoreboar
 
 # restart the game if everyone was caught
 execute if score restart server matches 1.. run scoreboard players add restart server 1
-execute if score active-players server matches 2.. if score taggers server matches 1.. if score taggers server = active-players server run scoreboard players add @a[tag=tagger] points.recieve 240
+execute if score active-players server matches 2.. if score taggers server matches 1.. if score taggers server = active-players server run scoreboard players add @a[tag=tagger] points.recieve 1000
+execute if score active-players server matches 2.. if score taggers server matches 1.. if score taggers server = active-players server run playsound ui.toast.challenge_complete master @a[tag=tagger] 0 0 0 1 1 1
+execute if score active-players server matches 2.. if score taggers server matches 1.. if score taggers server = active-players server run title @a[tag=tagger] times 0 60 40
+execute if score active-players server matches 2.. if score taggers server matches 1.. if score taggers server = active-players server run title @a[tag=tagger] title {"translate": "title.round.win", "color": "green", "bold": true}
+execute if score active-players server matches 2.. if score taggers server matches 1.. if score taggers server = active-players server run title @a[tag=tagger] subtitle {"translate": "title.round.win.sub_tagger", "color": "gray"}
 execute if score active-players server matches 2.. if score taggers server matches 1.. if score taggers server = active-players server run scoreboard players add restart server 1
-execute if score active-players server matches 2.. if score specials server matches 1.. if score specials server = non-taggers server run scoreboard players add @a[tag=tagger] points.recieve 240
+execute if score active-players server matches 2.. if score specials server matches 1.. if score specials server = non-taggers server run scoreboard players add @a[tag=tagger] points.recieve 1000
+execute if score active-players server matches 2.. if score specials server matches 1.. if score specials server = non-taggers server run playsound ui.toast.challenge_complete master @a[tag=tagger] 0 0 0 1 1 1
+execute if score active-players server matches 2.. if score specials server matches 1.. if score specials server = non-taggers server run title @a[tag=tagger] times 0 60 40
+execute if score active-players server matches 2.. if score specials server matches 1.. if score specials server = non-taggers server run title @a[tag=tagger] title {"translate": "title.round.win", "color": "green", "bold": true}
+execute if score active-players server matches 2.. if score specials server matches 1.. if score specials server = non-taggers server run title @a[tag=tagger] subtitle {"translate": "title.round.win.sub_tagger", "color": "gray"}
 execute if score active-players server matches 2.. if score specials server matches 1.. if score specials server = non-taggers server run scoreboard players add restart server 1
 execute if score restart server matches 1.. run scoreboard players operation restart.s server = restart server
 execute if score restart server matches 1.. run scoreboard players operation restart.s server /= 20 consts
 execute if score restart server matches 1.. run scoreboard players set restart.s_reversed server 5
 execute if score restart server matches 1.. run scoreboard players operation restart.s_reversed server -= restart.s server
 
-execute if score restart server matches 3 as @a run function tag_music:win/play
-execute if score restart server matches 3 run title @a times 0 90 10
+#execute if score restart server matches 3 as @a run function tag_music:win/play
+#execute if score restart server matches 3 run title @a times 0 90 10
 execute if score restart server matches 1..3 run tag @a[tag=tagger] remove tagger
 execute if score restart server matches 1..3 run tag @a[tag=!dead, tag=special] remove special
 execute if score restart server matches 1..3 unless score game server matches 6 as @a[scores = {effect.downed=1..}] run scoreboard players set @s effect.downed 0
 execute if score restart server matches 1..3 if score game server matches 6 as @a[scores = {effect.downed=1..}] run scoreboard players set @s effect.downed -1
+execute if score restart server matches 3 run stopsound @a * tag:round.intro
+execute if score restart server matches 3 run stopsound @a * tag:round.60s
+execute if score restart server matches 3 run stopsound @a * tag:round.30s
+execute if score restart server matches 3 run stopsound @a * tag:round.20s
+execute if score restart server matches 3 run stopsound @a * tag:round.finale
 execute if score restart server matches 3 run tellraw @a [{"text": "Game ended", "color": "yellow", "bold": true}]
-execute if score restart server matches 3 run title @a title [{"text": "Game over", "color": "red"}]
-execute if score restart server matches 3..99 run title @a subtitle [{"text": "Restarting in ", "color": "gold"}, {"score": {"name": "restart.s_reversed", "objective": "server"}}, "..."]
-execute if score restart server matches 100 as @a run function tag:misc/spawn
-execute if score restart server matches 100 as @a run scoreboard players set @a safezone_state 0
-execute if score restart server matches 110 run tellraw @a [{"text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew game", "color": "yellow", "bold": true}]
-execute if score adventure-mode server matches 2.. if score restart server matches 180 if score game server matches 1.. run function tag:-/tag_randomize
-execute if score restart server matches 120 if score game server matches 1.. as @a run function tag:points_xp/get_xp_from_points
+execute if score restart server matches 3 run playsound entity.wither.death master @a[tag=dead] 0 0 0 1 1 1
+execute if score restart server matches 1..5 run title @a[tag=dead] times 0 60 40
+execute if score restart server matches 3..5 run title @a[tag=dead] title [{"translate": "title.round.loss", "color": "red", "bold": true}]
+execute if score restart server matches 3..5 run title @a[tag=dead] subtitle [{"translate": "title.round.loss.sub", "color": "gray"}]
+execute if score restart server matches 110 as @a run function tag:misc/spawn
+execute if score restart server matches 110 as @a run scoreboard players set @a safezone_state 0
+execute if score restart server matches 120 run tellraw @a [{"text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew game", "color": "yellow", "bold": true}]
+execute if score adventure-mode server matches 2.. if score restart server matches 200 if score game server matches 1.. run function tag:-/tag_randomize
+execute if score restart server matches 170 if score game server matches 1.. as @a run function tag:points_xp/get_xp_from_points
 #execute if score adventure-mode server matches 2.. if score restart server matches 100..380 run scoreboard players set @a[tag=tagger] safezone_state 1
 execute if score game server matches 1 if score adventure-mode server matches 2.. if score restart server matches 480.. run scoreboard players set @a safezone_state 0
 execute if score game server matches 4 if score adventure-mode server matches 2.. if score restart server matches 480.. run scoreboard players set @a safezone_state 0

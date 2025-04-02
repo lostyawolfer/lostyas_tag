@@ -5,7 +5,7 @@ execute unless score tag.random_counter server matches -30.. run scoreboard play
 
 execute if score tag.random_counter server matches 0.. run title @a subtitle {"translate":"subtitle.choosing_random","color":"dark_purple"}
 execute if score tag.random_counter server matches 0.. run title @a times 0 30 3
-execute if score tag.random_counter server matches 30.. run title @a title [{"text":"> ","bold": true, "color": "yellow"},{"selector":"@r[tag=!prev_tagger]","color":"blue"},{"text":" <"}]
+execute if score tag.random_counter server matches 30.. run title @a title [{"text":"> ","bold": true, "color": "yellow"},{"selector":"@r","color":"blue"},{"text":" <"}]
 execute if score tag.random_counter server matches 30.. as @a at @s run playsound ui.button.click master @s ~ ~ ~ .1 2
 execute if score tag.random_counter server matches 30.. as @a at @s run scoreboard players remove tag.random_counter server 1
 

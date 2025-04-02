@@ -12,7 +12,8 @@ execute if score game server matches 7 run bossbar set tag:top name [ {"text":"l
 
 execute unless score kill_timer server matches 1.. run bossbar set tag:top color white
 
-execute if score kill_timer server matches 1.. unless score game server matches 7 run bossbar set tag:top color yellow
+execute if score kill_timer server matches 1201.. unless score game server matches 7 run bossbar set tag:top color yellow
+execute if score kill_timer server matches ..1200 unless score game server matches 7 run bossbar set tag:top color red
 execute if score kill_timer server matches 1.. if score game server matches 7 run bossbar set tag:top color red
 
 

@@ -83,15 +83,17 @@ execute if score @s anim.death matches 117 run scoreboard players set @s screen_
 execute if score @s anim.death matches 117 run scoreboard players set @s anim.death 17
 
 
-execute unless score kill_timer.s server matches 0.. run title @s actionbar {"translate": "title.spectator", "color": "red"}
-execute if score kill_timer.s server matches 61.. run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ", {"text":"💣 ", "color":"green"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "white"}]
-execute if score kill_timer.s server matches 31..60 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"yellow"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "white"}]
-execute if score kill_timer.s server matches 11..30 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"gold"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "yellow"}]
-execute if score kill_timer.s server matches 6..10 if score anim.slow server matches 0..9 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
-execute if score kill_timer.s server matches 6..10 if score anim.slow server matches 10..19 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
-execute if score kill_timer.s server matches 1..5 if score anim.fast server matches 0..1 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
-execute if score kill_timer.s server matches 1..5 if score anim.fast server matches 2..3 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
-execute if score kill_timer.s server matches 0 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💥 ", "color":"dark_red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "red"}]
+title @s actionbar {"translate": "title.spectator", "color": "red"}
+
+# execute unless score kill_timer.s server matches 0.. run title @s actionbar {"translate": "title.spectator", "color": "red"}
+# execute if score kill_timer.s server matches 61.. run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ", {"text":"💣 ", "color":"green"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "white"}]
+# execute if score kill_timer.s server matches 31..60 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"yellow"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "white"}]
+# execute if score kill_timer.s server matches 11..30 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"gold"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "yellow"}]
+# execute if score kill_timer.s server matches 6..10 if score anim.slow server matches 0..9 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+# execute if score kill_timer.s server matches 6..10 if score anim.slow server matches 10..19 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+# execute if score kill_timer.s server matches 1..5 if score anim.fast server matches 0..1 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+# execute if score kill_timer.s server matches 1..5 if score anim.fast server matches 2..3 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💣 ", "color":"white"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "gold"}]
+# execute if score kill_timer.s server matches 0 run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ",{"text":"💥 ", "color":"dark_red"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "red"}]
 #execute unless entity @a[distance=...2, tag=!dead] run title @s actionbar {"translate": "title.spectator", "color": "red"}
 #execute if entity @a[distance=...2, tag=!dead] run title @s actionbar [{"translate": "title.now_spectating", "color": "red"}, {"selector": "@a[distance=...2, tag=!dead]", "bold": true}]
 gamemode spectator @s
