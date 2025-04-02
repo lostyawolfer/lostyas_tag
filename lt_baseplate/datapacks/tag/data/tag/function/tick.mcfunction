@@ -113,6 +113,7 @@ execute unless score game server matches 7 if score kill_timer server matches 24
 execute unless score game server matches 7 if score kill_timer server matches 240 run title @a subtitle {"translate": "title.round.ends_in", "color": "gray"}
 
 
+execute unless score game server matches 7 if score kill_timer server matches 200 run title @a clear
 execute unless score game server matches 7 if score kill_timer server matches 200 run title @a times 0 10 5
 
 execute unless score game server matches 7 if score kill_timer server matches 200 run playsound tag:round.countdown_10 master @a ~ ~ ~ 1 1 1
