@@ -4,6 +4,7 @@ scoreboard players set -1 consts -1
 scoreboard players set 0 consts 0
 scoreboard players set 1 consts 1
 scoreboard players set 2 consts 2
+scoreboard players set 3 consts 3
 scoreboard players set 5 consts 5
 scoreboard players set 8 consts 8
 scoreboard players set 10 consts 10
