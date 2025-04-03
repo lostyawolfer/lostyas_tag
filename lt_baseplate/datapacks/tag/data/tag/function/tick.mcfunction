@@ -20,7 +20,8 @@ scoreboard players operation taggers-percent server = all-taggers server
 scoreboard players operation taggers-percent server *= 100 consts
 scoreboard players operation taggers-percent server /= playercount server
 
-execute if score taggers-percent server matches ..22 if score game server matches 1..6 unless score tag.random_counter server matches -30.. unless score restart server matches 0..400 unless score kill_timer server matches -1..0 if entity @a[tag=!tagger, gamemode=adventure] if score playercount server matches 2.. run function tag:-/tag_randomize_add
+execute if score taggers-percent server matches ..22 if score game server matches 1..6 unless score game server matches 4 unless score tag.random_counter server matches -30.. unless score restart server matches 0..400 unless score kill_timer server matches -1..0 if entity @a[tag=!tagger, gamemode=adventure] if score playercount server matches 2.. run function tag:-/tag_randomize_add
+execute if score taggers-percent server matches ..33 if score game server matches 1..6 if score game server matches 4 unless score tag.random_counter server matches -30.. unless score restart server matches 0..400 unless score kill_timer server matches -1..0 if entity @a[tag=!tagger, gamemode=adventure] if score playercount server matches 2.. run function tag:-/tag_randomize_add
 
 execute unless score game server matches 4 if entity @a[tag=tagger, tag=!safezone] if entity @a[tag=!tagger, tag=!safezone] if score game server matches 1.. if score generic server matches 0 as @a[tag=!tagger, tag=!dead, tag=!safezone] unless score @s effect.downed matches 1.. run scoreboard players add @s points.recieve 1
 execute if score game server matches 4 if entity @a[tag=tagger, tag=!safezone] if entity @a[tag=!tagger, tag=!safezone] if score game server matches 1.. if score generic server matches 0 as @a[tag= tagger, tag=!dead, tag=!safezone] unless score @s effect.downed matches 1.. run scoreboard players add @s points.recieve 1
@@ -220,16 +221,20 @@ execute if score kill_timer server matches -1 unless score game_prev server matc
 execute if score kill_timer server matches -1 unless score game_prev server matches 7 run title @a[tag=!tagger, tag=!safezone, tag=!special, tag=!dead, gamemode=adventure] title {"translate": "title.round.win", "color": "green", "bold": true}
 execute if score kill_timer server matches -1 unless score game_prev server matches 7 run title @a[tag=!tagger, tag=!safezone, tag=!special, tag=!dead, gamemode=adventure] subtitle {"translate": "title.round.win.sub_player", "color": "gray"}
 execute if score kill_timer server matches -1 unless score game_prev server matches 7 run scoreboard players set restart server 1
-execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run playsound entity.generic.explode player @a ~ ~ ~ 1 .8 .5
-execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run particle explosion_emitter ~ ~1 ~ 0 0 0 0 1
-execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run particle lava ~ ~1 ~ .3 .5 .3 0 50
-execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run function tag:-/kill
+execute if score kill_timer server matches 0 unless score game server matches 4 as @a[tag=tagger] at @s run playsound entity.generic.explode player @a ~ ~ ~ 1 .8 .5
+execute if score kill_timer server matches 0 unless score game server matches 4 as @a[tag=tagger] at @s run particle explosion_emitter ~ ~1 ~ 0 0 0 0 1
+execute if score kill_timer server matches 0 unless score game server matches 4 as @a[tag=tagger] at @s run particle lava ~ ~1 ~ .3 .5 .3 0 50
+execute if score kill_timer server matches 0 unless score game server matches 4 as @a[tag=tagger] at @s run function tag:-/kill
+execute if score kill_timer server matches 0 if score game server matches 4 as @a[tag=!tagger] at @s run playsound entity.generic.explode player @a ~ ~ ~ 1 .8 .5
+execute if score kill_timer server matches 0 if score game server matches 4 as @a[tag=!tagger] at @s run particle explosion_emitter ~ ~1 ~ 0 0 0 0 1
+execute if score kill_timer server matches 0 if score game server matches 4 as @a[tag=!tagger] at @s run particle lava ~ ~1 ~ .3 .5 .3 0 50
+execute if score kill_timer server matches 0 if score game server matches 4 as @a[tag=!tagger] at @s run function tag:-/kill
 execute if score kill_timer server matches 0 as @a[tag=tagger] at @s run tag @s remove tagger
 
 
 
 
-execute if score game server matches 4 if entity @a[scores={points=1000..}] as @a run function tag:points_xp/get_xp_from_points
+execute if score game server matches 4 if entity @a[scores={points=1000..}] unless score restart server matches 1.. unless score kill_timer server matches 0.. as @a run function tag:points_xp/get_xp_from_points
 
 
 
