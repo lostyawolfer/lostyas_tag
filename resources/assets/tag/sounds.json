@@ -1,28 +1,93 @@
 {
     "death": {
         "sounds": [
-            "tag:d.metal_pipe",
-            "tag:d.jeb_no",
-            "tag:d.oof",
-            "tag:d.fortnite",
-            "tag:d.anime_ahh",
-            "tag:d.vine_boom",
-            "tag:d.reverb_fart",
-            "tag:d.fart",
-            "tag:d.mario",
-            "tag:d.pacman",
-            "tag:d.gtav",
-            "tag:d.cs2",
-            "tag:d.afton",
-            "tag:d.astronomia",
-            "tag:d.lego"
+            "tag:death/d.metal_pipe",
+            "tag:death/d.jeb_no",
+            "tag:death/d.oof",
+            "tag:death/d.fortnite",
+            "tag:death/d.anime_ahh",
+            "tag:death/d.vine_boom",
+            "tag:death/d.reverb_fart",
+            "tag:death/d.fart",
+            "tag:death/d.mario",
+            "tag:death/d.pacman",
+            "tag:death/d.gtav",
+            "tag:death/d.cs2",
+            "tag:death/d.afton",
+            "tag:death/d.astronomia",
+            "tag:death/d.lego",
+            "tag:death/d.ah_hah",
+            "tag:death/d.ahh",
+            "tag:death/d.among_us",
+            "tag:death/d.bad_to_the_bone",
+            "tag:death/d.brain_fart",
+            "tag:death/d.heeheeheeha",
+            "tag:death/d.john_cena",
+            "tag:death/d.majora_mask_bell",
+            "tag:death/d.nerd_horn",
+            "tag:death/d.pain",
+            "tag:death/d.piano_riff",
+            "tag:death/d.raahh",
+            "tag:death/d.sad_sponge_bob",
+            "tag:death/d.sad_sponge_bob_2"
         ]
     },
     "death_main": {
         "sounds": [
-            "tag:death_main"
+            "tag:death/aaa.death_main"
         ]
     },
+
+    "round.intro": {
+        "sounds": [
+            {
+                "name": "tag:round_finish/intro",
+                "stream": true
+            }
+        ]
+    },
+    "round.60s": {
+        "sounds": [
+            {
+                "name": "tag:round_finish/60s",
+                "stream": true
+            }
+        ]
+    },
+    "round.30s": {
+        "sounds": [
+            {
+                "name": "tag:round_finish/30s",
+                "stream": true
+            }
+        ]
+    },
+    "round.20s": {
+        "sounds": [
+            {
+                "name": "tag:round_finish/20s",
+                "stream": true
+            }
+        ]
+    },
+    "round.finale": {
+        "sounds": [
+            {
+                "name": "tag:round_finish/finale",
+                "stream": true
+            }
+        ]
+    },
+    "round.outro": {
+        "sounds": [
+            {
+                "name": "tag:round_finish/outro",
+                "stream": true
+            }
+        ]
+    },
+
+
     "revive": {
         "sounds": [
             "tag:revive"
@@ -30,7 +95,10 @@
     },
     "downed": {
         "sounds": [
-            "tag:downed"
+            {
+                "name": "tag:downed",
+                "stream": true
+            }
         ]
     },
     "downed_even": {
@@ -106,92 +174,92 @@
     },
     "round.warn": {
         "sounds": [
-            "tag:round.warn"
+            "tag:round_finish/round.warn"
         ]
     },
     "round.60_sec": {
         "sounds": [
-            "tag:round.60_sec"
+            "tag:round_finish/round.60_sec"
         ]
     },
     "round.30_sec": {
         "sounds": [
-            "tag:round.30_sec"
+            "tag:round_finish/round.30_sec"
         ]
     },
     "round.countdown_10": {
         "sounds": [
-            "tag:round.countdown_10"
+            "tag:round_finish/round.countdown_10"
         ]
     },
     "round.countdown_9": {
         "sounds": [
-            "tag:round.countdown_9"
+            "tag:round_finish/round.countdown_9"
         ]
     },
     "round.countdown_8": {
         "sounds": [
-            "tag:round.countdown_8"
+            "tag:round_finish/round.countdown_8"
         ]
     },
     "round.countdown_7": {
         "sounds": [
-            "tag:round.countdown_7"
+            "tag:round_finish/round.countdown_7"
         ]
     },
     "round.countdown_6": {
         "sounds": [
-            "tag:round.countdown_6"
+            "tag:round_finish/round.countdown_6"
         ]
     },
     "round.countdown_5": {
         "sounds": [
-            "tag:round.countdown_5"
+            "tag:round_finish/round.countdown_5"
         ]
     },
     "round.countdown_4": {
         "sounds": [
-            "tag:round.countdown_4"
+            "tag:round_finish/round.countdown_4"
         ]
     },
     "round.countdown_3": {
         "sounds": [
-            "tag:round.countdown_3"
+            "tag:round_finish/round.countdown_3"
         ]
     },
     "round.countdown_2": {
         "sounds": [
-            "tag:round.countdown_2"
+            "tag:round_finish/round.countdown_2"
         ]
     },
     "round.countdown_1": {
         "sounds": [
-            "tag:round.countdown_1"
+            "tag:round_finish/round.countdown_1"
         ]
     },
     "round.overtime": {
         "sounds": [
-            "tag:round.overtime"
+            "tag:round_finish/round.overtime"
         ]
     },
     "round.overtime_start": {
         "sounds": [
-            "tag:round.overtime_start"
+            "tag:round_finish/round.overtime_start"
         ]
     },
     "round.starting_clock_note": {
         "sounds": [
-            "tag:round.starting_clock_note"
+            "tag:round_finish/round.starting_clock_note"
         ]
     },
     "round.starting_clock_counter": {
         "sounds": [
-            "tag:round.starting_clock_counter"
+            "tag:round_finish/round.starting_clock_counter"
         ]
     },
     "round.starting_clock_start": {
         "sounds": [
-            "tag:round.starting_clock_start"
+            "tag:round_finish/round.starting_clock_start"
         ]
     }
 }

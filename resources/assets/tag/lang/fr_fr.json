@@ -1,0 +1,276 @@
+{
+  "item.effect.generic": "visibilité: Visible",
+  "item.effect.invisible": "visibilité: invisible",
+  "item.effect.invisible.item": "visibilité: invisible, mais les items dans ta main sont visibles",
+  "item.effect.glowing": "visibilité: brillant",
+  "item.effect.glowing_tagger": "visibilité: Le Chat est toujours brillant sauf quand il s'accroupit",
+  "item.effect.glowing_invisible": "Visibility: glowing despite being invisible",
+
+  "item.tag.menu": "Menu",
+  "item.minecraft.goat_horn.none": "Tu n'as pas de corne de brumes",
+
+  "menu.ab.1": "De la terre au ciel",
+  "menu.ab.1.desc": "Te fait t'envoller dans les airs, comme si tu étais sur un beacon",
+
+  "menu.ab.2": "Super Vitesse",
+  "menu.ab.2.desc": "Te colle au sol et te fait parcourir une grande distance super vite",
+
+  "menu.ab.3": "Manteau Divin",
+  "menu.ab.3.desc": "Te rends temporairement invinsible à 1 coup du chat",
+
+  "menu.ab.4": "Invisibilité",
+  "menu.ab.4.desc": "Te rends invisible pendant un certain temps et l'effet de brillance ne s'applique pas à tu pendant qu'il est actif",
+
+  "menu.ab.5": "Brillance",
+  "menu.ab.5.desc": "Actives l'effet de brillance pour tout le monde sauf pour tu",
+
+  "menu.ab.6": "Cycle 2.6",
+  "menu.ab.6.desc": "Ton Ender Pearl se régénère super vite",
+
+  "menu.ab.7": "Arts Mystiques",
+  "menu.ab.7.desc": "Te laisse voler en spectateur pour une petite seconde",
+
+  "menu.ab.cd": "recharge",
+  "menu.ab.use": "Utilise temps",
+  "menu.ab.sec_one": "seconde",
+  "menu.ab.sec_two": "secondes",
+  "menu.ab.sec_many": "secondes",
+  "menu.ab.ticks_one": "tick",
+  "menu.ab.ticks_two": "ticks",
+  "menu.ab.ticks_many": "ticks",
+
+
+  "menu.passives.synergies": "SYNERGIES:",
+
+  "menu.pa.1": "Tagging Accelerator",
+  "menu.pa.1.desc": "WHEN NOT A TAGGER: higher base speed when there's a tagger in 20-block radius.\nWHEN A TAGGER: higher base speed.",
+
+  "menu.pa.2": "Radar",
+  "menu.pa.2.desc": "WHEN NOT A TAGGER: every 5 seconds shows all invisible taggers via particles. Only you can see the particles. Useful when the tagger is sneaking all the time.\nWHEN A TAGGER: every 15 seconds the nearest player to you gets glowing for half a second; if they are invisible, every 15 seconds shows them with particles only you can see.",
+
+  "menu.pa.3": "Pearl Accelerator",
+  "menu.pa.3.desc": "The cooldown of your ender pearl goes down faster by 1.5x.",
+
+  "menu.pa.4": "Ability Accelerator",
+  "menu.pa.4.desc": "The cooldown of your ability goes down faster by 1.5x.",
+
+  "menu.pa.5": "Ability Extender",
+  "menu.pa.5.desc": "Makes your ability usage last longer. If not applicable to your ability, will make it stronger in some other way.",
+
+  "menu.pa.6": "Knock Em Out",
+  "menu.pa.6.desc": "WHEN NOT A TAGGER: when your ability is charged, you get a knockback 2 stick.\nWHEN A TAGGER: useless.",
+
+  "menu.pa.7": "Bouncy Ball",
+  "menu.pa.7.desc": "Lets you jump up to 2.5 blocks high when needed (when you are near a 1.5, 2 or 2.5 block high construction).",
+
+  "menu.pa.8": "Aircraft",
+  "menu.pa.8.desc": "Makes beacons' levitation effect stronger.",
+
+  "menu.pa.9": "Spy",
+  "menu.pa.9.desc": "WHEN NOT A TAGGER: when you stand without any movement for 5 seconds straight, gives you invisibility. It goes away if you move. When active, you sometimes emit half-transparent blue particles.\nWHEN A TAGGER: glowing event is slightly more common.",
+
+  "menu.pa.10": "Backpack",
+  "menu.pa.10.desc": "unused",
+
+  "menu.pa.11": "Concussion",
+  "menu.pa.11.desc": "unused",
+
+
+  "menu.close": "Fermer Menu",
+  "menu.back": "Menu Principale",
+  "menu.next": "Page Suivante",
+  "menu.prev": "Page Précédente",
+  "menu.select": "Selectionner",
+  "menu.ab.deselect": "Deselectionner l'abilité?",
+  "menu.pa.deselect": "Deselectionner l'abilité passive?",
+  "menu.buy": "Buy",
+  "menu.buy.price_one": "niveau",
+  "menu.buy.price_two": "niveaux",
+  "menu.buy.price_many": "niveaux",
+  "menu.buy.insufficient_funds": "Fonds inssufisants",
+  "menu.buy.insufficient_funds.desc": "reviens quand tu est........assez riche",
+  "menu.ab": "Abilité Active",
+  "menu.pa": "Abilité Passive",
+  "menu.gh": "Corne de Brume",
+
+  "chat.ab.select": "selectionné l'abilité active",
+  "chat.ab.deselect": "retiré l'abilités active",
+
+  "chat.pa.select": "selectionné l'abilité passive",
+  "chat.pa.deselect": "retiré l'abilité passive",
+
+
+  "chat.hit.default": " Touché ",
+  "subtitle.hit.default_you": "tu",
+  "subtitle.hit.default_you_1": "parce que ",
+  "subtitle.hit.default_other_1": "parce que ",
+  "subtitle.hit.default_you_2": " j'ai dit que c'étais comme ça ",
+  "subtitle.hit.default_other_2": " j'ai dit que c'étais comme ça ",
+  "title.hit.default_you": "TU AS ÉTÉ TOUCHÉ ",
+  "title.hit.default_other": " est maintenant un chat ",
+
+  "chat.hit.infect": " infecté ",
+  "subtitle.hit.infect_you": "tu",
+  "subtitle.hit.infect_you_1": "by ",
+  "subtitle.hit.infect_other_1": "by ",
+  "subtitle.hit.infect_you_2": "!",
+  "subtitle.hit.infect_other_2": "!",
+  "title.hit.infect_you": "tu est INFECTÉ",
+  "title.hit.infect_other": " étais INFECTÉ",
+
+  "chat.hit.murder": " t'a tué ",
+  "subtitle.hit.murder_you": "tu",
+  "subtitle.hit.murder_you_1": "grace à ",
+  "subtitle.hit.murder_other_1": "",
+  "subtitle.hit.murder_you_2": " il est maintenant un phantôme",
+  "subtitle.hit.murder_other_2": " t'a brutallement tué ",
+  "title.hit.murder_you": "tu est MORT!",
+  "title.hit.murder_other": " a été tué!",
+
+  "chat.hit.crown": " à pris la couronne à ",
+  "subtitle.hit.crown_you": "tu",
+  "subtitle.hit.crown_you_1": " l'a eu de ",
+  "subtitle.hit.crown_other_1": "il te l'a volé, tu peut en pleurer",
+  "subtitle.hit.crown_you_2": "",
+  "subtitle.hit.crown_other_2": "",
+  "title.hit.crown_you": "Tu as la COURONNE!",
+  "title.hit.crown_other": " a récupéré la COURONNE!",
+
+  "chat.hit.freeze": " gelé ",
+  "subtitle.hit.freeze_you": "tu",
+  "subtitle.hit.freeze_you_1": "par ",
+  "subtitle.hit.freeze_other_1": "",
+  "subtitle.hit.freeze_you_2": "",
+  "subtitle.hit.freeze_other_2": " t'a gelé",
+  "title.hit.freeze_you": "Tu est GELER!",
+  "title.hit.freeze_other": " est maintenant GELER!",
+
+  "chat.hit.unfreeze": " dégeler ",
+  "subtitle.hit.unfreeze_you": "tu",
+  "subtitle.hit.unfreeze_you_1": "grace ",
+  "subtitle.hit.unfreeze_other_1": "grace à, ",
+  "subtitle.hit.unfreeze_you_2": "!!",
+  "subtitle.hit.unfreeze_other_2": "",
+  "title.hit.unfreeze_you": "Tu est DÉGELÉ!",
+  "title.hit.unfreeze_other": " a été DÉGELÉ!",
+
+  "chat.hit.generic": " est maintenant un chat car Dieu l'a voulu",
+  "subtitle.hit.generic_you": "le jeu",
+  "subtitle.hit.generic_you_1": "parce que",
+  "subtitle.hit.generic_other_1": "parce que ",
+  "subtitle.hit.generic_you_2": " j'ai dit que ça allait être comme ça",
+  "subtitle.hit.generic_other_2": " c'est moi qui décides",
+  "title.hit.generic_you": "Tu est le CHAT!",
+  "title.hit.generic_other": " Est le CHAT!",
+
+
+
+
+
+
+
+
+
+  "chat.hit.infection_freeze": " a été infecté à force d'avoir gelé'",
+  "subtitle.hit.infection_freeze_you": "le congeleur",
+  "subtitle.hit.infection_freeze_you_1": "parceque ",
+  "subtitle.hit.infection_freeze_other_1": "car ",
+  "subtitle.hit.infection_freeze_you_2": " j'ai dit que ça allait être comme ça'",
+  "subtitle.hit.infection_freeze_other_2": " en a décidé ainsi",
+  "title.hit.infection_freeze_you": "Tu est INFECTÉ!",
+  "title.hit.infection_freeze_other": " a été infecté!",
+
+  "chat.hit.hot_potato": " touché ",
+  "subtitle.hit.hot_potato_you": "t'a'",
+  "subtitle.hit.hot_potato_you_1": "parceque ",
+  "subtitle.hit.hot_potato_other_1": "car ",
+  "subtitle.hit.hot_potato_you_2": " j'ai dit que c'étais comme ça",
+  "subtitle.hit.hot_potato_other_2": " en a décidé ainsi",
+  "title.hit.hot_potato_you": "tu as été touché!",
+  "title.hit.hot_potato_other": " a été touché!",
+
+
+  "subtitle.choosing_random": "c'est l'heure de prier que ton nom n'apparaisses pas ici'",
+  "chat.choosing_random": "en train de séléctionner le chat...",
+
+  "chat.dead": " est mort",
+  "chat.dead.hot_potato": " a explosé",
+  "chat.dead.downed": " a fini par congeller",
+
+  "sidebar.now_online": "est maintenant en ligne",
+
+  "item.tag.ability": "Abilité",
+  "item.tag.ability.use": "Abilité",
+  "item.tag.ability.cd": "Abilité",
+  "item.tag.ability.none": "Tu n'a pas d'abilités!",
+
+  "item.tag.passive_active": "Abilité passive",
+  "item.tag.passive_not_active": "Abilité passive",
+  "item.tag.passive.none": "u n'a pas d'abilités passive!",
+
+  "gamemode.building_mode": "              Mode Construction               ",
+  "gamemode.social_space": "              Espace social              ",
+  "gamemode.punch_to_start": "     tappe quelqu'un pour commencer le touche touche classique     ",
+  "gamemode.classic": "               touche touche classique %s               ",
+  "gamemode.infection": "              touche touche zombie %s              ",
+  "gamemode.murder": "               touche touche meurtrier %s               ",
+  "gamemode.crown": "                touche touche roi de la colline %s                ",
+  "gamemode.freeze": "              touche touche glassé %s               ",
+  "gamemode.infection_freeze": "        touche touche glassé zombie %s        ",
+  "gamemode.hot_potato": "               patate chaude %s               ",
+
+  "title.tp.safezone_exit_error": "tu ne peut pas sortir de la zone sûre",
+  "title.tp.safezone_enter_error": "tu ne peut pas entrer dans la zone sûre",
+  "title.tp.outside_map": "Tu étais en dehors de la map",
+  "title.tp.inside_blocks": "tu étais dans un bloc",
+
+  "title.frozen0": "mes oreilles sifflent...",
+  "title.frozen1": "l'aide est en chemain...",
+  "title.frozen2": "n'abandonne pas...",
+  "title.frozen3": "tu sera bientôt sauvé...",
+  "title.frozen4": "j'ai besoins d'aide !...",
+  "title.frozen5": "il fait froid !...",
+  "title.frozen6": "aidez moi !...",
+  "title.frozen7": "il reste encore une chance...",
+  "title.frozen8": "besoins d'aide ?..",
+  "title.frozen9": "tout vas bien se passer...",
+
+  "title.glowing": "Tu brilles",
+  "subtitle.glowing": "Tu est visible pour 5 secondes à travers toute la map",
+  "subtitle.glowing.tagger": "Tu peux voire tout le monde pour 5 secondes",
+  "subtitle.glowing.dead": "Tout le monde est visible pour 5 secondes",
+  "chat.glowing": "Brillance! tout le monde est visible à travers les murs!",
+  "chat.glowing.ability": "Brillance! tout le monde est visible à travers les murs! (activé par une abilité)",
+
+  "title.recieve_xp.1": "xp pour",
+  "title.recieve_xp.no_ability": " / x2 car tu n'a pas utilisé d'abilités",
+  "title.recieve_xp.2_one": "point",
+  "title.recieve_xp.2_two": "points",
+  "title.recieve_xp.2_many": "points",
+
+
+  "title.spectator": "tu es maintenant un spectateur",
+  "title.now_spectating": "en train de regareder ",
+
+  "notif.safezone": "⭐ tu es dans une zone sûr ⭐",
+
+  "title.round.60s": "60 secondes",
+  "title.round.60s.sub": "avant la fin de la partie",
+  "title.round.60s.effect": "2x de vitesse",
+  "title.round.60s.effect_sub": "pour le rechargement de ton abilité",
+  "title.round.60s.effect_sub.freeze": "pour le rechargement de ton abilité et le temps de gèle",
+
+  "title.round.30s": "30 secondes",
+  "title.round.30s.sub": "avant la fin de la partie",
+  "title.round.30s.effect": "brillance infinie",
+  "title.round.30s.effect_sub": "tout le monde est visible tout le temps",
+
+  "title.round.ends_in": "la manche se fini dans...",
+
+  "title.round.win": "VICTOIRE",
+  "title.round.win.sub_tagger": "tu a touché tout le monde!",
+  "title.round.win.sub_player": "tu es resté en vie pour toute la manche! bien joué!",
+
+  "title.round.loss": "PERDU",
+  "title.round.loss.sub": "tu pourras essayer la prochaine fois!"
+}

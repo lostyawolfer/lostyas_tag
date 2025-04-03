@@ -9,35 +9,35 @@
   "item.tag.menu": "Menu",
   "item.minecraft.goat_horn.none": "You don't have a goat horn!",
   
-  "menu.abilities.1": "From here to the stars",
-  "menu.abilities.1.desc": "Makes you fly up into the sky, as if you stepped on a beacon.",
+  "menu.ab.1": "From Here To The Stars",
+  "menu.ab.1.desc": "Makes you fly up into the sky, as if you stepped on a beacon.",
   
-  "menu.abilities.2": "Superspeed",
-  "menu.abilities.2.desc": "Glues you to the ground and lets you dash forward really fast.",
+  "menu.ab.2": "Superspeed",
+  "menu.ab.2.desc": "Glues you to the ground and lets you dash forward really fast.",
   
-  "menu.abilities.3": "Holy mantle",
-  "menu.abilities.3.desc": "Makes you temporarily invincible to one singular hit of a tagger.",
+  "menu.ab.3": "Holy Mantle",
+  "menu.ab.3.desc": "Makes you temporarily invincible to one singular hit of a tagger.",
   
-  "menu.abilities.4": "Invisibility",
-  "menu.abilities.4.desc": "Makes you invisible, and makes you invulnerable to any glowing effects.",
+  "menu.ab.4": "Invisibility",
+  "menu.ab.4.desc": "Makes you invisible, and makes you invulnerable to any glowing effects.",
   
-  "menu.abilities.5": "Glowing",
-  "menu.abilities.5.desc": "Activates the glowing event, but you don't glow.",
+  "menu.ab.5": "Glowing",
+  "menu.ab.5.desc": "Activates the glowing event, but you don't glow.",
   
-  "menu.abilities.6": "2.6 cycle",
-  "menu.abilities.6.desc": "Makes your ender pearl regenerate extra fast.",
+  "menu.ab.6": "2.6 cycle",
+  "menu.ab.6.desc": "Makes your ender pearl regenerate extra fast.",
 
-  "menu.abilities.7": "Dark arts",
-  "menu.abilities.7.desc": "Lets you fly in spectator mode for a split second.",
+  "menu.ab.7": "Dark Arts",
+  "menu.ab.7.desc": "Lets you fly in spectator mode for a split second.",
 
-  "menu.abilities.cd": "Cooldown",
-  "menu.abilities.use": "Use time",
-  "menu.abilities.sec_one": "second",
-  "menu.abilities.sec_two": "seconds",
-  "menu.abilities.sec_many": "seconds",
-  "menu.abilities.ticks_one": "tick",
-  "menu.abilities.ticks_two": "ticks",
-  "menu.abilities.ticks_many": "ticks",
+  "menu.ab.cd": "Cooldown",
+  "menu.ab.use": "Use time",
+  "menu.ab.sec_one": "second",
+  "menu.ab.sec_two": "seconds",
+  "menu.ab.sec_many": "seconds",
+  "menu.ab.ticks_one": "tick",
+  "menu.ab.ticks_two": "ticks",
+  "menu.ab.ticks_many": "ticks",
 
 
   "menu.passives.synergies": "SYNERGIES:",
@@ -46,7 +46,7 @@
   "menu.pa.1.desc": "WHEN NOT A TAGGER: higher base speed when there's a tagger in 20-block radius.\nWHEN A TAGGER: higher base speed.",
 
   "menu.pa.2": "Radar",
-  "menu.pa.2.desc": "WHEN NOT A TAGGER: every 3 seconds shows all invisible taggers via particles. Only you can see the particles.\nWHEN A TAGGER: every 10 seconds the nearest player gets glowing for half a second.",
+  "menu.pa.2.desc": "WHEN NOT A TAGGER: every 5 seconds shows all invisible taggers via particles. Only you can see the particles. Useful when the tagger is sneaking all the time.\nWHEN A TAGGER: every 15 seconds the nearest player to you gets glowing for half a second; if they are invisible, every 15 seconds shows them with particles only you can see.",
 
   "menu.pa.3": "Pearl Accelerator",
   "menu.pa.3.desc": "The cooldown of your ender pearl goes down faster by 1.5x.",
@@ -67,7 +67,7 @@
   "menu.pa.8.desc": "Makes beacons' levitation effect stronger.",
 
   "menu.pa.9": "Spy",
-  "menu.pa.9.desc": "WHEN NOT A TAGGER: when you stand without any movement for 5 seconds straight, gives you invisibility. It goes away if you move. When active, you sometimes emit half-transparent blue particles.\nWHEN A TAGGER: every 3 seconds spawns particles around invisible players. Only you can see the particles.",
+  "menu.pa.9.desc": "WHEN NOT A TAGGER: when you stand without any movement for 5 seconds straight, gives you invisibility. It goes away if you move. When active, you sometimes emit half-transparent blue particles.\nWHEN A TAGGER: glowing event is slightly more common.",
   
   "menu.pa.10": "Backpack",
   "menu.pa.10.desc": "unused",
@@ -203,13 +203,13 @@
   "gamemode.building_mode": "              building mode               ",
   "gamemode.social_space": "              social space              ",
   "gamemode.punch_to_start": "     punch to start classic tag     ",
-  "gamemode.classic": "               classic tag               ",
-  "gamemode.infection": "              infection tag              ",
-  "gamemode.murder": "               murder tag               ",
-  "gamemode.crown": "                crown tag                ",
-  "gamemode.freeze": "              freeze tag               ",
-  "gamemode.infection_freeze": "        infection freeze tag        ",
-  "gamemode.hot_potato": "               hot potato               ",
+  "gamemode.classic": "               classic tag %s               ",
+  "gamemode.infection": "              infection tag %s              ",
+  "gamemode.murder": "               murder tag %s               ",
+  "gamemode.crown": "                crown tag %s                ",
+  "gamemode.freeze": "              freeze tag %s               ",
+  "gamemode.infection_freeze": "        infection freeze tag %s        ",
+  "gamemode.hot_potato": "               hot potato %s               ",
 
   "title.tp.safezone_exit_error": "cannot exit safezone",
   "title.tp.safezone_enter_error": "cannot enter safezone",
@@ -230,11 +230,12 @@
   "title.glowing": "Glowing",
   "subtitle.glowing": "You are visible for 5 seconds",
   "subtitle.glowing.tagger": "You see everyone for 5 seconds",
-  "subtitle.glowing.dead": "Everyone is visible 5 сек.",
+  "subtitle.glowing.dead": "Everyone is visible for 5 seconds",
   "chat.glowing": "Glowing! Everyone is visible through walls!",
   "chat.glowing.ability": "Glowing! Everyone is visible through walls! (activated by an ability)",
 
   "title.recieve_xp.1": "xp for",
+  "title.recieve_xp.no_ability": " / x2 for not using an ability",
   "title.recieve_xp.2_one": "point",
   "title.recieve_xp.2_two": "points",
   "title.recieve_xp.2_many": "points",
@@ -243,5 +244,25 @@
   "title.spectator": "you are a spectator",
   "title.now_spectating": "now spectating ",
 
-  "notif.safezone": "⭐ you're in a safezone ⭐"
+  "notif.safezone": "⭐ you're in a safezone ⭐",
+
+  "title.round.60s": "60 seconds",
+  "title.round.60s.sub": "until round ends",
+  "title.round.60s.effect": "2x the speed",
+  "title.round.60s.effect_sub": "for ability cooldown",
+  "title.round.60s.effect_sub.freeze": "for ability cooldown and freeze time",
+
+  "title.round.30s": "30 seconds",
+  "title.round.30s.sub": "until round ends",
+  "title.round.30s.effect": "Infinite glowing",
+  "title.round.30s.effect_sub": "Everyone is visible at all times",
+
+  "title.round.ends_in": "round ends in...",
+
+  "title.round.win": "VICTORY",
+  "title.round.win.sub_tagger": "You caught everyone! Good job!",
+  "title.round.win.sub_player": "You stayed alive before round ended! Good job!",
+
+  "title.round.loss": "DEFEAT",
+  "title.round.loss.sub": "Good luck next time!"
 }
