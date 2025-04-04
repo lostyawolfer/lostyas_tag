@@ -44,8 +44,8 @@ execute if score @s points.reason.store matches ..-1 unless score @s points.reas
 execute if score @s points.reason.trigger matches 1.. unless score @s points.reason.store matches ..0 run scoreboard players set @s points.reason.anim 1
 execute if score @s points.reason.trigger matches 1.. unless score @s points.reason.store matches ..0 run scoreboard players operation @s points.reason.store = @s points.reason.trigger
 
-execute if score @s points.reason.trigger matches ..-1 run scoreboard players set @s points.reason.anim 1
-execute if score @s points.reason.trigger matches ..-1 run scoreboard players operation @s points.reason.store = @s points.reason.trigger
+execute if score @s points.reason.trigger matches ..-1 run scoreboard players set @s points.reason.anim2 1
+execute if score @s points.reason.trigger matches ..-1 run scoreboard players operation @s points.reason.store2 = @s points.reason.trigger
 
 
 

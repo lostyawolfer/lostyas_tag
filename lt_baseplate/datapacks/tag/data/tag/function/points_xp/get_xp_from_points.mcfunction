@@ -20,8 +20,8 @@ execute if score @s ab.current matches 0 if score temp server matches 1 run tell
 execute if score @s ab.current matches 0 if score temp server matches 2..4 run tellraw @s [{"text": "+", "color": "#7EFC20"}, {"score": {"name": "@s", "objective": "xp.recieve"}}, " ", {"translate": "title.recieve_xp.1"}, " ", {"score": {"name": "@s", "objective": "points"}}, " ", {"translate": "title.recieve_xp.2_two"}, {"translate": "title.recieve_xp.no_ability", "color": "#FFFF00"}]
 execute if score @s ab.current matches 0 if score temp server matches 5.. run tellraw @s [{"text": "+", "color": "#7EFC20"}, {"score": {"name": "@s", "objective": "xp.recieve"}}, " ", {"translate": "title.recieve_xp.1"}, " ", {"score": {"name": "@s", "objective": "points"}}, " ", {"translate": "title.recieve_xp.2_many"}, {"translate": "title.recieve_xp.no_ability", "color": "#FFFF00"}]
 
-scoreboard players set @s points.reason.anim 1
-scoreboard players set @s points.reason.store 0
+scoreboard players set @s points.reason.anim2 1
+scoreboard players set @s points.reason.store2 0
 
 scoreboard players operation @s points.title = @s points
 scoreboard players operation @s xp.recieve.title = @s xp.recieve

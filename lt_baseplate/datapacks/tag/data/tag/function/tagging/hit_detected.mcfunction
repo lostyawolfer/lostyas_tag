@@ -33,7 +33,8 @@ tellraw @a[scores = {logging = 1}] ["! log: ", {"selector": "@a[tag = hit_detect
 
 
 
-execute if entity @a[tag = hit_detect.giver, tag =!safezone, tag =!tagger] if entity @a[tag = hit_detect.taker, tag =!safezone, tag = tagger] run scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger 6
+execute if entity @a[tag = hit_detect.giver, tag =!safezone, tag =!tagger] if entity @a[tag = hit_detect.taker, tag =!safezone, tag = tagger] unless score game server matches 4 run scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger 6
+execute if entity @a[tag = hit_detect.taker, tag =!safezone, tag =!tagger] if entity @a[tag = hit_detect.giver, tag =!safezone, tag = tagger] if score game server matches 4 run scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger 6
 
 execute if score game server matches 0 if entity @a[tag = hit_detect.giver,               tag =!safezone] if entity @a[tag = hit_detect.taker,               tag =!invincible_one_time, tag =!safezone] run function tag:tagging/tag_give/default_start
 execute if score game server matches 0 if entity @a[tag = hit_detect.giver,               tag =!safezone] if entity @a[tag = hit_detect.taker,               tag = invincible_one_time, tag =!safezone] run function tag:tagging/tag_give/absorbed

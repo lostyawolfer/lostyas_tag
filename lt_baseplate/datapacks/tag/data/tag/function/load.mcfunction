@@ -131,7 +131,9 @@ scoreboard objectives add points.recieve dummy
 
 scoreboard objectives add points.reason.trigger dummy
 scoreboard objectives add points.reason.store dummy
+scoreboard objectives add points.reason.store2 dummy
 scoreboard objectives add points.reason.anim dummy
+scoreboard objectives add points.reason.anim2 dummy
 
 scoreboard objectives add xp.recieve dummy
 scoreboard objectives add xp.recieve.title dummy
