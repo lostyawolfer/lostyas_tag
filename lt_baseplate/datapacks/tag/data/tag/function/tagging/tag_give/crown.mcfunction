@@ -5,7 +5,7 @@ tag @a[tag = hit_detect.taker] remove tagger
 scoreboard players set @a[tag = hit_detect.taker] stat.tagger_time 1
 
 
-scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger 7
+scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger -7
 
 
 tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "yellow"}, {"translate": "chat.hit.crown"}, {"selector": "@a[tag = hit_detect.taker]", "color": "aqua"}]

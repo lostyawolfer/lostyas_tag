@@ -4,7 +4,7 @@ tag @a[tag = hit_detect.taker] add special
 scoreboard players set @a[tag = hit_detect.taker] effect.downed 900
 
 
-scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger 9
+scoreboard players set @a[tag = hit_detect.giver] points.reason.trigger -9
 
 
 tellraw @a [{"text": "", "color": "aqua"}, {"text": "🔥 ", "color": "gold"}, {"selector": "@a[tag = hit_detect.giver]", "color": "dark_green"}, {"translate": "chat.hit.freeze"}, {"selector": "@a[tag = hit_detect.taker]", "color": "dark_purple"}]
