@@ -1,17 +1,18 @@
 # constants
 scoreboard objectives add consts dummy
-scoreboard players set -1 consts -1
-scoreboard players set 0 consts 0
-scoreboard players set 1 consts 1
-scoreboard players set 2 consts 2
-scoreboard players set 3 consts 3
-scoreboard players set 5 consts 5
-scoreboard players set 8 consts 8
-scoreboard players set 10 consts 10
-scoreboard players set 20 consts 20
-scoreboard players set 60 consts 60
-scoreboard players set 100 consts 100
-scoreboard players set 1000 consts 1000
+    scoreboard players set -1 consts -1
+    scoreboard players set 0 consts 0
+    scoreboard players set 1 consts 1
+    scoreboard players set 2 consts 2
+    scoreboard players set 3 consts 3
+    scoreboard players set 5 consts 5
+    scoreboard players set 7 consts 7
+    scoreboard players set 8 consts 8
+    scoreboard players set 10 consts 10
+    scoreboard players set 20 consts 20
+    scoreboard players set 60 consts 60
+    scoreboard players set 100 consts 100
+    scoreboard players set 1000 consts 1000
 
 
 # effect scoreboards
