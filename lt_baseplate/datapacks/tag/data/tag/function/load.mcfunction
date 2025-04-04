@@ -125,8 +125,16 @@ scoreboard objectives add gh.unlocked_8 dummy
 
 
 scoreboard objectives add points dummy
+scoreboard objectives add points.digit_1 dummy
+scoreboard objectives add points.digit_2 dummy
+scoreboard objectives add points.digit_3 dummy
+scoreboard objectives add points.digit_4 dummy
 scoreboard objectives add points.title dummy
 scoreboard objectives add points.best dummy
+scoreboard objectives add points.best.digit_1 dummy
+scoreboard objectives add points.best.digit_2 dummy
+scoreboard objectives add points.best.digit_3 dummy
+scoreboard objectives add points.best.digit_4 dummy
 scoreboard objectives add points.recieve dummy
 
 scoreboard objectives add points.reason.trigger dummy

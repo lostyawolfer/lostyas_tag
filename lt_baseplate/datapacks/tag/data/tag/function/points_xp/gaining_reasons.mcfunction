@@ -2,7 +2,8 @@ execute unless score game server matches 1.. if score @s points.reason.trigger m
 execute unless score game server matches 1.. if score @s points.reason.trigger matches 1.. run return 1
 execute unless entity @a[tag = tagger, tag =!dead, tag =!safezone] if score @s points.reason.trigger matches 1.. run scoreboard players reset @s points.reason.trigger
 execute unless entity @a[tag = tagger, tag =!dead, tag =!safezone] if score @s points.reason.trigger matches 1.. run return 2
-
+execute unless entity @s[tag =!safezone] if score @s points.reason.trigger matches 1.. run scoreboard players reset @s points.reason.trigger
+execute unless entity @s[tag =!safezone] if score @s points.reason.trigger matches 1.. run return 3
 
 # bhop
 execute if score @s points.reason.trigger matches 1 run scoreboard players add @s points.recieve 1

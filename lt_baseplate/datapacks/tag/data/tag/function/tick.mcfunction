@@ -417,8 +417,8 @@ bossbar set tag:notif.safezone players @a[tag = safezone]
 
 execute if score game server matches 0.. run scoreboard players operation game_prev server = game server
 
-execute if score is-prod server matches 0 run function tag:misc/bossbar/dev
-execute if score is-prod server matches 1 run function tag:misc/bossbar/prod
+execute if score is-prod server matches 0 run function tag:misc/bossbar {color: "#056863", type: dev}
+execute if score is-prod server matches 1 run function tag:misc/bossbar {color: "#7a4d06", type: prod}
 
 # other functions
 scoreboard players add anim.fast server 1
@@ -682,8 +682,40 @@ execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run fu
 execute as @a[scores={xp.recieve=1..}] at @s run function tag:points_xp/animations/xp_recieve
 execute as @a[scores={xp.recieve=..-1}] at @s run function tag:points_xp/animations/xp_recieve
 
+
+execute as @a[nbt={OnGround:1b}, scores={stat.speed=150..}, tag=!dashed] run scoreboard players set @s points.reason.trigger 4
+execute as @a[nbt={OnGround:1b}, scores={stat.speed=150..}, tag=!dashed] run tag @s add dashed
+
+execute as @a[scores={stat.speed=..120}, tag=dashed] run tag @s remove dashed
+
 execute as @a[scores={points.reason.trigger=1..}] at @s run function tag:points_xp/gaining_reasons
 execute as @a[scores={points.reason.trigger=..-1}] at @s run function tag:points_xp/gaining_reasons
+
+
+
+
+execute as @a run scoreboard players operation @s points.digit_1 = @s points
+execute as @a run scoreboard players operation @s points.digit_2 = @s points
+execute as @a run scoreboard players operation @s points.digit_3 = @s points
+execute as @a run scoreboard players operation @s points.digit_4 = @s points
+execute as @a run scoreboard players operation @s points.digit_1 /= 1000 consts
+execute as @a run scoreboard players operation @s points.digit_2 /= 100 consts
+execute as @a run scoreboard players operation @s points.digit_2 %= 10 consts
+execute as @a run scoreboard players operation @s points.digit_3 /= 10 consts
+execute as @a run scoreboard players operation @s points.digit_3 %= 10 consts
+execute as @a run scoreboard players operation @s points.digit_4 %= 10 consts
+
+execute as @a run scoreboard players operation @s points.best.digit_1 = @s points.best
+execute as @a run scoreboard players operation @s points.best.digit_2 = @s points.best
+execute as @a run scoreboard players operation @s points.best.digit_3 = @s points.best
+execute as @a run scoreboard players operation @s points.best.digit_4 = @s points.best
+execute as @a run scoreboard players operation @s points.best.digit_1 /= 1000 consts
+execute as @a run scoreboard players operation @s points.best.digit_2 /= 100 consts
+execute as @a run scoreboard players operation @s points.best.digit_2 %= 10 consts
+execute as @a run scoreboard players operation @s points.best.digit_3 /= 10 consts
+execute as @a run scoreboard players operation @s points.best.digit_3 %= 10 consts
+execute as @a run scoreboard players operation @s points.best.digit_4 %= 10 consts
+
 
 execute as @a[tag=!dead] unless score @s screen_effect matches 250..268 run function tag:points_xp/gaining_animations
 execute as @a if score @s screen_effect matches 250..268 run scoreboard players reset @s points.reason.anim
