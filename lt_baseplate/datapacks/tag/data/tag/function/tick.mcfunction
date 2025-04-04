@@ -685,10 +685,10 @@ execute as @a[scores={xp.recieve=..-1}] at @s run function tag:points_xp/animati
 execute as @a[scores={points.reason.trigger=1..}] at @s run function tag:points_xp/gaining_reasons
 execute as @a[scores={points.reason.trigger=..-1}] at @s run function tag:points_xp/gaining_reasons
 
-execute as @a[tag=!dead] unless score @s screen_effect matches 262..264 run function tag:points_xp/gaining_animations
-execute as @a if score @s screen_effect matches 262..264 run scoreboard players reset @s points.reason.anim
-execute as @a if score @s screen_effect matches 262..264 run scoreboard players reset @s points.reason.store
-execute as @a if score @s screen_effect matches 262..264 run title @s actionbar ""
+execute as @a[tag=!dead] unless score @s screen_effect matches 250..268 run function tag:points_xp/gaining_animations
+execute as @a if score @s screen_effect matches 250..268 run scoreboard players reset @s points.reason.anim
+execute as @a if score @s screen_effect matches 250..268 run scoreboard players reset @s points.reason.store
+execute as @a if score @s screen_effect matches 250..268 run title @s actionbar ""
 
 execute as @a[scores={points.recieve=1..}] run function tag:points_xp/animations/points_recieve
 execute as @a[scores={points.recieve=..-1}] run function tag:points_xp/animations/points_recieve

@@ -46,7 +46,7 @@ execute if score @s anim.death matches 17 run scoreboard players set @s screen_e
 
 execute if score @s anim.death matches 101 run team join 002special @s
 execute if score @s anim.death matches 101 run tag @s add special
-execute if score @s anim.death matches 101 run scoreboard players set @a[tag = tagger] points.reason.trigger 10
+execute if score @s anim.death matches 101 run scoreboard players set @a[tag = tagger] points.reason.trigger -10
 #execute if score @s anim.death matches 101 run scoreboard players set @s ab.cd 0
 #execute if score @s anim.death matches 101 run scoreboard players set @s p.cd 0
 execute if score @s anim.death matches 101 run scoreboard players set @s effect.glowing 0
@@ -86,7 +86,7 @@ execute if score @s anim.death matches 117 run scoreboard players set @s screen_
 execute if score @s anim.death matches 117 run scoreboard players set @s anim.death 17
 
 
-title @s actionbar {"translate": "title.spectator", "color": "red"}
+title @s actionbar [{"text":"⌚ ","color":"gray"}, {"score":{"name":"@s","objective":"points"},"color":"gray"}, "  ", {"translate": "title.spectator", "color": "red"}]
 
 # execute unless score kill_timer.s server matches 0.. run title @s actionbar {"translate": "title.spectator", "color": "red"}
 # execute if score kill_timer.s server matches 61.. run title @s actionbar [{"translate": "title.spectator", "color": "red"}, "    ", {"text":"💣 ", "color":"green"}, {"score":{"name":"kill_timer.s","objective":"server"}, "color": "white"}]
