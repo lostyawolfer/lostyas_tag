@@ -17,6 +17,8 @@ stopsound @s * minecraft:music.overworld.grove
 stopsound @s * minecraft:music.overworld.jagged_peaks
 stopsound @s * minecraft:music.overworld.lush_caves
 stopsound @s * minecraft:music.overworld.meadow
+stopsound @s * minecraft:music.overworld.forest
+stopsound @s * minecraft:music.overworld.flower_forest
 stopsound @s * minecraft:music.overworld.old_growth_taiga
 stopsound @s * minecraft:music.overworld.snowy_slopes
 stopsound @s * minecraft:music.overworld.stony_peaks

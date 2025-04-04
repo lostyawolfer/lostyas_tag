@@ -19,6 +19,7 @@ title @a[tag = hit_detect.giver] subtitle [{"translate": "subtitle.hit.crown_you
 title @a[tag = hit_detect.taker] title [{"selector": "@a[tag = hit_detect.giver]", "color": "red", "bold": true}, {"translate": "title.hit.crown_other", "bold": false, "color": "dark_red"}]
 title @a[tag = hit_detect.taker] subtitle [{"translate": "subtitle.hit.crown_other_1", "color":"dark_aqua"}]
 
+execute as @a[tag = hit_detect.taker] at @s run scoreboard players add @s stat.get_tagged 1
 execute as @a[tag = hit_detect.taker] at @s run playsound minecraft:block.respawn_anchor.deplete master @s
 execute as @a[tag = hit_detect.giver] at @s run playsound minecraft:entity.player.levelup master @s
 

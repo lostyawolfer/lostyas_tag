@@ -42,6 +42,9 @@ scoreboard objectives add hit_detect.giver minecraft.custom:minecraft.damage_dea
 scoreboard objectives add hit_detect.taker minecraft.custom:minecraft.damage_taken
 
 scoreboard objectives add stat.speed dummy
+    scoreboard objectives add stat.speed.digit_1 dummy
+    scoreboard objectives add stat.speed.digit_2 dummy
+    scoreboard objectives add stat.speed.digit_3 dummy
 scoreboard objectives add stat.speed.calculate_new_x dummy
 scoreboard objectives add stat.speed.calculate_new_y dummy
 scoreboard objectives add stat.speed.calculate_new_z dummy
@@ -61,6 +64,8 @@ scoreboard objectives add stat.wasnt_selected_steak dummy
 scoreboard objectives add stat.current_hight dummy
 scoreboard objectives add stat.flew_in_ability minecraft.custom:minecraft.fly_one_cm
 scoreboard objectives add stat.xp dummy
+
+scoreboard objectives add stat.get_tagged dummy
 
 scoreboard objectives add p.cd.s dummy
 scoreboard objectives add p.cd dummy
@@ -120,6 +125,8 @@ scoreboard objectives add gh.unlocked_8 dummy
 
 
 scoreboard objectives add points dummy
+scoreboard objectives add points.title dummy
+scoreboard objectives add points.best dummy
 scoreboard objectives add points.recieve dummy
 
 scoreboard objectives add points.reason.trigger dummy
@@ -127,6 +134,7 @@ scoreboard objectives add points.reason.store dummy
 scoreboard objectives add points.reason.anim dummy
 
 scoreboard objectives add xp.recieve dummy
+scoreboard objectives add xp.recieve.title dummy
 
 scoreboard objectives add jump minecraft.custom:minecraft.jump
 scoreboard objectives add jump.bhop dummy

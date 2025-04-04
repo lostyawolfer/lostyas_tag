@@ -18,6 +18,7 @@ execute if score @s anim.death matches 1 run particle block{block_state:{Name:re
 execute if score @s anim.death matches 1 run particle flame ~ ~1 ~ .3 .5 .3 .1 10
 
 execute if score @s anim.death matches 1 unless score game server matches 7 run summon skeleton ~ ~ ~ {Tags:[death], NoAI:1b}
+#execute if score @s anim.death matches 1 unless score game server matches 7 run data modify entity @e[type=skeleton, tag=death, limit=1] {} merge from entity @s {}
 execute if score @s anim.death matches 1 unless score game server matches 7 run item replace entity @e[type=skeleton, tag=death] armor.head with paper
 execute if score @s anim.death matches 1 unless score game server matches 7 run kill @e[type=skeleton, tag=death]
 

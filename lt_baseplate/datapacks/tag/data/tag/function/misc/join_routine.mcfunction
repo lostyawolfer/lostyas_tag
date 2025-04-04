@@ -18,4 +18,7 @@ execute if score @s game_count < $server game_count run scoreboard players set @
 #execute if score @s game_count > $server game_count run 
 attribute @s minecraft:jump_strength base set 0.42
 
+scoreboard players add @s points.best 0
+scoreboard players add @s stat.get_tagged 0
+
 scoreboard players add @s player_list 0

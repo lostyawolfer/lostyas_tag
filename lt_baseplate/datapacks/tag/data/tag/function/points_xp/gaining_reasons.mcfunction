@@ -3,6 +3,7 @@ execute unless score game server matches 1.. if score @s points.reason.trigger m
 execute unless entity @a[tag = tagger, tag =!dead, tag =!safezone] if score @s points.reason.trigger matches 1.. run scoreboard players reset @s points.reason.trigger
 execute unless entity @a[tag = tagger, tag =!dead, tag =!safezone] if score @s points.reason.trigger matches 1.. run return 2
 
+
 # bhop
 execute if score @s points.reason.trigger matches 1 run scoreboard players add @s points.recieve 1
 execute if score @s points.reason.trigger matches 2 run scoreboard players add @s points.recieve 2
@@ -36,8 +37,16 @@ execute if score @s points.reason.trigger matches ..-1 run playsound entity.expe
 execute if score @s points.reason.store matches ..-1 unless score @s points.reason.trigger matches ..-1 run scoreboard players reset @s points.reason.trigger
 execute if score @s points.reason.store matches ..-1 unless score @s points.reason.trigger matches ..-1 run return 3
 
-scoreboard players operation @s points.reason.store = @s points.reason.trigger
-scoreboard players set @s points.reason.anim 10
+# scoreboard players operation @s points.reason.store = @s points.reason.trigger
+# scoreboard players set @s points.reason.anim 1
+
+
+execute if score @s points.reason.trigger matches 1.. unless score @s points.reason.store matches ..0 run scoreboard players set @s points.reason.anim 1
+execute if score @s points.reason.trigger matches 1.. unless score @s points.reason.store matches ..0 run scoreboard players operation @s points.reason.store = @s points.reason.trigger
+
+execute if score @s points.reason.trigger matches ..-1 run scoreboard players set @s points.reason.anim 1
+execute if score @s points.reason.trigger matches ..-1 run scoreboard players operation @s points.reason.store = @s points.reason.trigger
+
 
 
 scoreboard players reset @s points.reason.trigger

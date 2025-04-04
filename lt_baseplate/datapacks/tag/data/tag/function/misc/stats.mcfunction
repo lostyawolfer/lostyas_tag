@@ -44,3 +44,18 @@ scoreboard players operation @s stat.speed += @s stat.speed.calculate_difference
 execute store result score @s stat.speed.calculate_old_x run data get entity @s Pos[0] 100000
 execute store result score @s stat.speed.calculate_old_y run data get entity @s Pos[1] 100000
 execute store result score @s stat.speed.calculate_old_z run data get entity @s Pos[2] 100000
+
+
+
+
+
+scoreboard players operation @s stat.speed.digit_1 = @s stat.speed
+scoreboard players operation @s stat.speed.digit_2 = @s stat.speed
+scoreboard players operation @s stat.speed.digit_3 = @s stat.speed
+
+scoreboard players operation @s stat.speed.digit_1 /= 100 consts
+
+scoreboard players operation @s stat.speed.digit_2 /= 10 consts
+scoreboard players operation @s stat.speed.digit_2 %= 10 consts
+
+scoreboard players operation @s stat.speed.digit_3 %= 10 consts

@@ -1,6 +1,9 @@
 # generic stuff
 gamemode adventure @a[gamemode = survival]
 recipe give @a *
+#execute as @a unless score @s points.best matches -2147483648..2147483647 run scoreboard players add @s points.best 0
+execute as @a if score @s points > @s points.best run scoreboard players operation @s points.best = @s points
+
 
 # variables before functions
 execute store result score playercount server if entity @a
@@ -377,7 +380,7 @@ execute if score restart server matches 3 run stopsound @a * tag:round.30s
 execute if score restart server matches 3 run stopsound @a * tag:round.20s
 execute if score restart server matches 3 run stopsound @a * tag:round.finale
 execute if score restart server matches 3 run tellraw @a [{"text": "Game ended", "color": "yellow", "bold": true}]
-execute if score restart server matches 3 run playsound entity.wither.death master @a[tag=dead] 0 0 0 1 1 1
+execute if score restart server matches 3 as @a[tag=dead] at @s run playsound entity.wither.death master @s ~ ~ ~ 1000000 1 1
 execute if score restart server matches 1..5 run title @a[tag=dead] times 0 60 40
 execute if score restart server matches 3..5 run title @a[tag=dead] title [{"translate": "title.round.loss", "color": "red", "bold": true}]
 execute if score restart server matches 3..5 run title @a[tag=dead] subtitle [{"translate": "title.round.loss.sub", "color": "gray"}]
@@ -681,6 +684,11 @@ execute as @a[scores={xp.recieve=..-1}] at @s run function tag:points_xp/animati
 
 execute as @a[scores={points.reason.trigger=1..}] at @s run function tag:points_xp/gaining_reasons
 execute as @a[scores={points.reason.trigger=..-1}] at @s run function tag:points_xp/gaining_reasons
+
+execute as @a[tag=!dead] unless score @s screen_effect matches 262..264 run function tag:points_xp/gaining_animations
+execute as @a if score @s screen_effect matches 262..264 run scoreboard players reset @s points.reason.anim
+execute as @a if score @s screen_effect matches 262..264 run scoreboard players reset @s points.reason.store
+execute as @a if score @s screen_effect matches 262..264 run title @s actionbar ""
 
 execute as @a[scores={points.recieve=1..}] run function tag:points_xp/animations/points_recieve
 execute as @a[scores={points.recieve=..-1}] run function tag:points_xp/animations/points_recieve
