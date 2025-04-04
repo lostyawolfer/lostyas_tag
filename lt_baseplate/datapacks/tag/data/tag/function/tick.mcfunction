@@ -42,6 +42,44 @@ execute as @a[scores={tp.id=0}] store result score @s tp.id run function tag:tp_
 execute as @a at @s run function tag:misc/bhop
 
 
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..24] run scoreboard players add @s tagger_heartbeat 1
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s unless entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..24] run scoreboard players reset @s tagger_heartbeat
+scoreboard players set @a[scores={tagger_heartbeat=61..}] tagger_heartbeat 1
+
+
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=14..24] if score @s tagger_heartbeat matches 1 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .1 1 .1
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=14..24] if score @s tagger_heartbeat matches 8 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .1 1 .1
+
+
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=8..14] if score @s tagger_heartbeat matches 1 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .2 1 .2
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=8..14] if score @s tagger_heartbeat matches 6 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .2 1 .2
+
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=8..14] if score @s tagger_heartbeat matches 31 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .2 1 .2
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=8..14] if score @s tagger_heartbeat matches 36 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .2 1 .2
+
+
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..8] if score @s tagger_heartbeat matches 1 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..8] if score @s tagger_heartbeat matches 3 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..4] if score @s tagger_heartbeat matches 11 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..4] if score @s tagger_heartbeat matches 13 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..8] if score @s tagger_heartbeat matches 21 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..8] if score @s tagger_heartbeat matches 23 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..4] if score @s tagger_heartbeat matches 31 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..4] if score @s tagger_heartbeat matches 33 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..8] if score @s tagger_heartbeat matches 41 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..8] if score @s tagger_heartbeat matches 43 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..4] if score @s tagger_heartbeat matches 51 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..4] if score @s tagger_heartbeat matches 53 run playsound minecraft:block.note_block.basedrum player @s 0 0 0 .3 1 .3
+
+
+
+
+
 scoreboard players add random server 1
 execute if score random server matches 10.. run scoreboard players remove random server 10
 execute if score random server matches 10.. run scoreboard players remove random server 10

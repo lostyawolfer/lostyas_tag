@@ -145,7 +145,7 @@ scoreboard objectives add joined minecraft.custom:minecraft.leave_game
 
 
 scoreboard objectives add logging dummy
-
+scoreboard objectives add tagger_heartbeat dummy
 
 scoreboard objectives add game_count dummy
 

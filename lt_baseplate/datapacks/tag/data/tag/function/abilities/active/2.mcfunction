@@ -7,7 +7,7 @@ execute as @s[scores={ab.use.trigger=1..}] run playsound minecraft:entity.warden
 execute as @s[scores={ab.use.trigger=1..}] run particle minecraft:sonic_boom ~ ~1 ~ 0 .5 0 0 3
 execute as @s[scores={ab.use.trigger=1..}] run scoreboard players set @s ab.use.trigger 0
 
-execute as @s[scores={ab.use=1..}] run attribute @s gravity base set 1200
+execute as @s[scores={ab.use=1..}] run attribute @s gravity modifier add tag:superspeed 1200 add_value
 execute as @s[scores={ab.use=1..}] run scoreboard players set @s effect.speed 2
 execute as @s[scores={ab.use=1..}] run scoreboard players set @s jump.bhop2 100
 execute as @s[scores={ab.use=1..}] run scoreboard players set @s jump.bhop 100
@@ -17,5 +17,5 @@ execute as @s[scores={ab.use=1..}] run particle dust{color:63487, scale:1} ~ ~1 
 
 execute as @s[scores={ab.use=1..}] if score @s effect.strong_levitation matches 1.. run scoreboard players set @s ab.use 0
 
-execute as @s[scores={ab.use=-1}] run attribute @s gravity base set 0.08
+execute as @s[scores={ab.use=-1}] run attribute @s gravity modifier remove tag:superspeed
 execute as @s[scores={ab.use=-1}] run scoreboard players set @s ab.use -2
