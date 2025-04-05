@@ -13,7 +13,7 @@ execute if score @s game_count < $server game_count run tag @s remove tagger
 execute if score @s game_count < $server game_count run tag @s remove special
 execute if score @s game_count < $server game_count run tag @s remove dead
 execute if score @s game_count < $server game_count unless score game server matches -2..0 at @s run function tag:points_xp/get_xp_from_points
-execute if score game server matches -2..0 at @s run function tag:points_xp/get_xp_from_points
+execute if score game server matches -2..0 if score @s points matches 1.. at @s run function tag:points_xp/get_xp_from_points
 execute if score @s game_count < $server game_count run scoreboard players set @s[tag=!special] anim.death -14
 #execute if score @s game_count > $server game_count run 
 attribute @s minecraft:jump_strength base set 0.42

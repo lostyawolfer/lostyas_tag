@@ -8,7 +8,9 @@ scoreboard objectives add consts dummy
     scoreboard players set 5 consts 5
     scoreboard players set 7 consts 7
     scoreboard players set 8 consts 8
+    scoreboard players set 9 consts 9
     scoreboard players set 10 consts 10
+    scoreboard players set 15 consts 15
     scoreboard players set 20 consts 20
     scoreboard players set 60 consts 60
     scoreboard players set 100 consts 100
@@ -46,6 +48,15 @@ scoreboard objectives add stat.speed dummy
     scoreboard objectives add stat.speed.digit_1 dummy
     scoreboard objectives add stat.speed.digit_2 dummy
     scoreboard objectives add stat.speed.digit_3 dummy
+scoreboard objectives add stat.speed.iter_1 dummy
+scoreboard objectives add stat.speed.iter_2 dummy
+scoreboard objectives add stat.speed.iter_3 dummy
+scoreboard objectives add stat.speed.iter_4 dummy
+scoreboard objectives add stat.speed.iter_5 dummy
+scoreboard objectives add stat.speed.iter_6 dummy
+scoreboard objectives add stat.speed.iter_7 dummy
+scoreboard objectives add stat.speed.iter_8 dummy
+scoreboard objectives add stat.speed.iter_9 dummy
 scoreboard objectives add stat.speed.calculate_new_x dummy
 scoreboard objectives add stat.speed.calculate_new_y dummy
 scoreboard objectives add stat.speed.calculate_new_z dummy
@@ -166,6 +177,9 @@ scoreboard objectives add joined minecraft.custom:minecraft.leave_game
 
 scoreboard objectives add logging dummy
 scoreboard objectives add tagger_heartbeat dummy
+scoreboard objectives add gain_for_tagging_timer dummy
+scoreboard objectives add escape_timer dummy
+scoreboard objectives add fall_distance minecraft.custom:minecraft.fall_one_cm
 
 scoreboard objectives add game_count dummy
 

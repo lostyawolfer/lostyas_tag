@@ -1,0 +1,1 @@
+function tag:points_xp/get_xp_from_points
