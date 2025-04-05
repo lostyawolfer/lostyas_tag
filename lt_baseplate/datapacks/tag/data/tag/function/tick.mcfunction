@@ -23,7 +23,7 @@ scoreboard players operation taggers-percent server = all-taggers server
 scoreboard players operation taggers-percent server *= 100 consts
 scoreboard players operation taggers-percent server /= playercount server
 
-execute if score taggers-percent server matches ..16 if score game server matches 1..6 unless score game server matches 4 unless score tag.random_counter server matches -30.. unless score restart server matches 0..400 unless score kill_timer server matches -1..0 if entity @a[tag=!tagger, gamemode=adventure] if score playercount server matches 2.. run function tag:-/tag_randomize_add
+execute if score taggers-percent server matches ..15 if score game server matches 1..6 unless score game server matches 4 unless score tag.random_counter server matches -30.. unless score restart server matches 0..400 unless score kill_timer server matches -1..0 if entity @a[tag=!tagger, gamemode=adventure] if score playercount server matches 2.. run function tag:-/tag_randomize_add
 execute if score taggers-percent server matches ..30 if score game server matches 1..6 if score game server matches 4 unless score tag.random_counter server matches -30.. unless score restart server matches 0..400 unless score kill_timer server matches -1..0 if entity @a[tag=!tagger, gamemode=adventure] if score playercount server matches 2.. run function tag:-/tag_randomize_add
 
 execute unless score game server matches 4 if entity @a[tag=tagger, tag=!safezone] if entity @a[tag=!tagger, tag=!safezone] if score game server matches 1.. if score generic server matches 0 as @a[tag=!tagger, tag=!dead, tag=!safezone] unless score @s effect.downed matches 1.. run scoreboard players add @s points.recieve 1
