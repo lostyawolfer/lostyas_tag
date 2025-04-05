@@ -13,6 +13,7 @@ scoreboard objectives add consts dummy
     scoreboard players set 60 consts 60
     scoreboard players set 100 consts 100
     scoreboard players set 1000 consts 1000
+    scoreboard players set 7000 consts 7000
 
 
 # effect scoreboards

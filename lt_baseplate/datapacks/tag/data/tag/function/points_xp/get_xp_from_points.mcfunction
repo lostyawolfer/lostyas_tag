@@ -1,7 +1,8 @@
 scoreboard players operation @s xp.recieve = @s points
-scoreboard players operation @s xp.recieve /= 7 consts
 scoreboard players operation @s xp.recieve *= @s points
-scoreboard players operation @s xp.recieve /= 1000 consts
+scoreboard players operation @s xp.recieve /= 7000 consts
+scoreboard players operation @s xp.recieve += @s points
+scoreboard players operation @s xp.recieve /= 7 consts
 execute if score @s ab.current matches 0 run scoreboard players operation @s xp.recieve *= 2 consts
 
 scoreboard players operation @s points.recieve = @s points
