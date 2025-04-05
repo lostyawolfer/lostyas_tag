@@ -20,7 +20,7 @@ title @a[tag = hit_detect.taker] title [{"translate": "title.hit.default_you", "
 title @a[tag = hit_detect.taker] subtitle [{"translate": "subtitle.hit.default_other_1", "color":"dark_aqua"}, {"selector": "@a[tag = hit_detect.giver]", "color":"aqua", "bold": true}, {"translate": "subtitle.hit.default_other_2", "color":"dark_aqua"}]
 
 execute as @a[tag = hit_detect.taker] at @s run scoreboard players add @s stat.get_tagged 1
-execute as @a[tag = hit_detect.taker] at @s run function tag:points_xp/get_xp_from_points
+execute as @a[tag = hit_detect.taker] at @s unless score kill_timer server matches 1.. run function tag:points_xp/get_xp_from_points
 execute as @a[tag = hit_detect.taker] at @s run playsound minecraft:entity.elder_guardian.curse master @s
 execute as @a[tag = hit_detect.giver] at @s run playsound minecraft:entity.player.levelup master @s
 execute as @a[tag = hit_detect.giver] at @s run scoreboard players set @s effect.glowing 20
