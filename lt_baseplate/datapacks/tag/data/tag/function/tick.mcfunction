@@ -123,6 +123,7 @@ execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, scor
 execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, scores={escape_timer=40..}] at @s run scoreboard players reset @s escape_timer
 
 execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, scores={escape_timer=1..}] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..16] run scoreboard players reset @s escape_timer
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, scores={escape_timer=1..}] at @s unless entity @a[tag=tagger, gamemode=adventure, tag=!safezone] run scoreboard players reset @s escape_timer
 
 
 
@@ -167,6 +168,9 @@ execute if score game server matches 7 unless score kill_timer server matches -2
 execute if score restart server matches 1..347 run scoreboard players reset kill_timer
 execute if score kill_timer server matches -2147483648..2147483647 run scoreboard players remove kill_timer server 1
 
+
+execute if score game server matches 7 if score kill_timer server matches 1.. run scoreboard players set @a effect.glowing 1
+execute if score game server matches 7 if score kill_timer server matches 1.. run scoreboard players set e.glowing server -2000
 
 
 execute unless score game server matches 7 if score kill_timer server matches 1600 run scoreboard players set e.glowing server -3200

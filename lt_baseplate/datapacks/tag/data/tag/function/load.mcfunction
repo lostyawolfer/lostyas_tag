@@ -283,7 +283,7 @@ team add 013player_glow
 team modify 013player_glow color aqua
 team modify 013player_glow collisionRule never
 team modify 013player_glow friendlyFire true
-team modify 013player_glow nametagVisibility hideForOtherTeams
+team modify 013player_glow nametagVisibility always
 team modify 013player_glow seeFriendlyInvisibles true
 
 
