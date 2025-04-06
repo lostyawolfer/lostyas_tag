@@ -62,6 +62,7 @@ execute as @s[scores={ab.use=1}] run tp @s[scores={tp.id=9}] @e[type=armor_stand
 execute as @s[scores={ab.use=1}] run tp @s[scores={tp.id=10}] @e[type=armor_stand, limit=1, tag=ab.active.8, tag=player_id_10]
 execute as @s[scores={ab.use=1}] run particle reverse_portal ~ ~1 ~ 0 0 0 1 100 force @a
 execute as @s[scores={ab.use=1}] run playsound minecraft:entity.enderman.teleport player @a ~ ~ ~ 1 1
+execute as @s[scores={ab.use=1}] run effect give @s blindness 1 0 true
 execute as @s[scores={ab.use=1}] if score @s tp.id matches 1 run kill @e[type=armor_stand, tag=ab.active.8, tag=player_id_1]
 execute as @s[scores={ab.use=1}] if score @s tp.id matches 2 run kill @e[type=armor_stand, tag=ab.active.8, tag=player_id_2]
 execute as @s[scores={ab.use=1}] if score @s tp.id matches 3 run kill @e[type=armor_stand, tag=ab.active.8, tag=player_id_3]
@@ -131,16 +132,4 @@ execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_9] unless entity 
 execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_10] unless entity @a[scores={tp.id=10}, tag=!safezone] run kill @s
 
 
-
-# execute as @s[scores={ab.use=1..}] run attribute @s gravity modifier add tag:superspeed 1200 add_value
-# execute as @s[scores={ab.use=1..}] run scoreboard players set @s effect.speed 2
-# execute as @s[scores={ab.use=1..}] run scoreboard players set @s jump.bhop2 100
-# execute as @s[scores={ab.use=1..}] run scoreboard players set @s jump.bhop 100
-# execute as @s[scores={ab.use=1..}] run scoreboard players set @s jump.timer 100
-# execute as @s[scores={ab.use=1..}, nbt={OnGround:0b}] run scoreboard players add @s ab.use 1
-# execute as @s[scores={ab.use=1..}] run particle dust{color:63487, scale:1} ~ ~1 ~ .3 .5 .3 0 20
-
-# execute as @s[scores={ab.use=1..}] if score @s effect.strong_levitation matches 1.. run scoreboard players set @s ab.use 0
-
-# execute as @s[scores={ab.use=-1}] run attribute @s gravity modifier remove tag:superspeed
 execute as @s[scores={ab.use=-1}] run scoreboard players set @s ab.use -2
