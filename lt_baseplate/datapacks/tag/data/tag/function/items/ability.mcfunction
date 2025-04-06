@@ -464,7 +464,6 @@ execute if score @s effect.downed matches 1.. unless score @s ab.current matches
 
 
 
-execute if score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.use2.s matches 0 if score @s ab.cd matches 1.. run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 1
 execute if score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.use2.s matches 1 run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 1
 execute if score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.use2.s matches 2 run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 2
 execute if score @s effect.downed matches 1.. unless score @s ab.current matches 0 unless score @s ab.use matches 1.. if score @s ab.use2.s matches 3 run item replace entity @s container.1 with gray_dye[custom_model_data= 1, custom_name='{"translate": "item.tag.ability.cd", "italic": false, "color": "gray", "strikethrough": true}', custom_data={game: 1}] 3
