@@ -142,11 +142,11 @@ execute as @a[scores={stat.speed=..100}, tag=airdashed] run tag @s remove airdas
 
 
 execute as @a[scores={fall_distance=3700..}] at @s unless entity @s[tag=no_points] run scoreboard players set @s points.reason.trigger -5
-execute as @a[scores={fall_distance=3000..}] at @s unless score @s is_sneaking matches 1.. run damage @s .01 player_attack by @s
-execute as @a[scores={fall_distance=3000..}] at @s if score @s is_sneaking matches 1.. run damage @s .01 generic
+execute as @a[scores={fall_distance=3000..}] at @s unless score @s effect.downed matches 1.. unless score @s is_sneaking matches 1.. run damage @s .01 player_attack by @s
+execute as @a[scores={fall_distance=3000..}] at @s unless score @s effect.downed matches 1.. if score @s is_sneaking matches 1.. run damage @s .01 generic
 execute as @a[scores={fall_distance=3000..}] at @s run playsound entity.zombie.attack_wooden_door player @a ~ ~ ~
 execute as @a[scores={fall_distance=3000..}] at @s run particle cloud ~ ~1 ~ .3 .5 .3 .1 20 force @a
-execute as @a[scores={fall_distance=700..2999}] at @s unless score @s is_sneaking matches 1.. run damage @s .01 generic
+execute as @a[scores={fall_distance=700..2999}] at @s unless score @s effect.downed matches 1.. unless score @s is_sneaking matches 1.. run damage @s .01 generic
 execute as @a[scores={fall_distance=1..}] at @s run scoreboard players reset @s fall_distance
 
 
