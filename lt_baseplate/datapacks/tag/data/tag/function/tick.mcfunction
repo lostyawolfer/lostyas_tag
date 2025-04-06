@@ -42,10 +42,6 @@ execute if score no_taggers_time server matches 0 run scoreboard players reset n
 
 
 
-execute as @a[scores={is_sneaking=1..}] run attribute @s gravity modifier add tag:sneaking 0.7 add_multiplied_total
-execute as @a[scores={is_sneaking=0}] run attribute @s gravity modifier remove tag:sneaking
-
-
 execute unless score game server matches 4 if entity @a[tag=tagger, tag=!safezone] if entity @a[tag=!tagger, tag=!safezone] if score game server matches 1.. if score generic server matches 0 as @a[tag=!tagger, tag=!dead, tag=!safezone] unless score @s effect.downed matches 1.. run scoreboard players add @s points.recieve 1
 execute if score game server matches 4 if entity @a[tag=tagger, tag=!safezone] if entity @a[tag=!tagger, tag=!safezone] if score game server matches 1.. if score generic server matches 0 as @a[tag= tagger, tag=!dead, tag=!safezone] unless score @s effect.downed matches 1.. run scoreboard players add @s points.recieve 1
 execute if score game server matches 4 if entity @a[tag=tagger, tag=!safezone] if entity @a[tag=!tagger, tag=!safezone] if score game server matches 1.. if score generic server matches 10 as @a[tag= tagger, tag=!dead, tag=!safezone] unless score @s effect.downed matches 1.. run scoreboard players add @s points.recieve 1
