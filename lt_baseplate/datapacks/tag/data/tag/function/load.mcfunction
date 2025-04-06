@@ -93,6 +93,8 @@ scoreboard objectives add ab.cd.s dummy
 scoreboard objectives add ab.cd dummy
 scoreboard objectives add ab.use.s dummy
 scoreboard objectives add ab.use dummy
+scoreboard objectives add ab.use2.s dummy
+scoreboard objectives add ab.use2 dummy
 scoreboard objectives add ab.use.trigger minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add ab.current dummy
     scoreboard players set $product_type ab.current 1
@@ -114,6 +116,7 @@ scoreboard objectives add ab.unlocked_4 dummy
 scoreboard objectives add ab.unlocked_5 dummy
 scoreboard objectives add ab.unlocked_6 dummy
 scoreboard objectives add ab.unlocked_7 dummy
+scoreboard objectives add ab.unlocked_8 dummy
 
 scoreboard objectives add pa.unlocked_1 dummy
 scoreboard objectives add pa.unlocked_2 dummy

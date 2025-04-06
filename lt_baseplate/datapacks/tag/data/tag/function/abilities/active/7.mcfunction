@@ -1,5 +1,5 @@
 # dark arts
-execute as @s[scores={ab.use.trigger=1..}] run scoreboard players set @s ab.cd 1200
+execute as @s[scores={ab.use.trigger=1..}] run scoreboard players set @s ab.cd 1000
 execute as @s[scores={ab.use.trigger=1..}] unless score @s pa.current matches 5 run scoreboard players set @s ab.use 15
 execute as @s[scores={ab.use.trigger=1..}] if score @s pa.current matches 5 run scoreboard players set @s ab.use 20
 execute as @s[scores={ab.use.trigger=1..}] run particle dragon_breath ~ ~1 ~ .3 .5 .3 0 50

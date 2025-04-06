@@ -707,6 +707,7 @@ execute as @a[scores={ab.current=4}] at @s run function tag:abilities/active/4
 execute as @a[scores={ab.current=5}] at @s run function tag:abilities/active/5
 execute as @a[scores={ab.current=6}] at @s run function tag:abilities/active/6
 execute as @a[scores={ab.current=7}] at @s run function tag:abilities/active/7
+execute as @a[scores={ab.current=8}] at @s run function tag:abilities/active/8
 
 execute as @a[scores={pa.current=1}] at @s run function tag:abilities/passive/1
 execute as @a[scores={pa.current=2}] at @s run function tag:abilities/passive/2
@@ -717,6 +718,7 @@ execute as @a[scores={pa.current=6}] at @s run function tag:abilities/passive/6
 execute as @a[scores={pa.current=7}] at @s run function tag:abilities/passive/7
 execute as @a[scores={pa.current=8}] at @s run function tag:abilities/passive/8
 execute as @a[scores={pa.current=9}] at @s run function tag:abilities/passive/9
+execute as @a[scores={pa.current=10}] at @s run function tag:abilities/passive/10
 
 
 execute as @a unless score @s menu matches 0.. run scoreboard players set @s menu 0
