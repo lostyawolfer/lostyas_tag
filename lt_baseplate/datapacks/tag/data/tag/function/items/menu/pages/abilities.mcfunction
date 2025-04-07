@@ -6,6 +6,7 @@ execute if score @s menu matches 100 if score @s menu.selecting matches 5 if sco
 execute if score @s menu matches 100 if score @s menu.selecting matches 6 if score @s menu.trigger matches 1.. run function tag:items/menu/selector_check {product: ab, id: 6, price: 9, page: 110}
 execute if score @s menu matches 100 if score @s menu.selecting matches 7 if score @s menu.trigger matches 1.. run function tag:items/menu/selector_check {product: ab, id: 7, price: 17, page: 120}
 execute if score @s menu matches 100 if score @s menu.selecting matches 8 if score @s menu.trigger matches 1.. run function tag:items/menu/selector_check {product: ab, id: 8, price: 18, page: 120}
+execute if score @s menu matches 100 if score @s menu.selecting matches 9 if score @s menu.trigger matches 1.. run function tag:items/menu/selector_check {product: ab, id: 9, price: 18, page: 120}
 
 
 execute if score @s menu matches 110 run function tag:items/menu/items/product {product: ab, slot: 0, id: 1, price: 10, price_count: many, page: 110, command: 100}
@@ -19,7 +20,7 @@ execute if score @s menu matches 110 run function tag:items/menu/items/next_page
 execute if score @s menu matches 120 run function tag:items/menu/items/prev_page {points_to: 110}
 execute if score @s menu matches 120 run function tag:items/menu/items/product {product: ab, slot: 1, id: 7, price: 17, price_count: many, page: 120, command: 100}
 execute if score @s menu matches 120 run function tag:items/menu/items/product {product: ab, slot: 2, id: 8, price: 18, price_count: many, page: 120, command: 100}
-execute if score @s menu matches 120 run item replace entity @s container.3 with air
+execute if score @s menu matches 120 run function tag:items/menu/items/product {product: ab, slot: 3, id: 9, price: 18, price_count: many, page: 120, command: 100}
 execute if score @s menu matches 120 run item replace entity @s container.4 with air
 execute if score @s menu matches 120 run item replace entity @s container.5 with air
 execute if score @s menu matches 120 run item replace entity @s container.6 with air
@@ -34,3 +35,4 @@ execute if score @s menu.selecting matches 5 if score @s menu.trigger matches 1.
 execute if score @s menu.selecting matches 6 if score @s menu.trigger matches 1.. run function tag:items/menu/show_info {product: ab, id: 6, cd: 35, cd_format: sec, cd_count: many, use: 10, use_format: sec, use_count: many}
 execute if score @s menu.selecting matches 7 if score @s menu.trigger matches 1.. run function tag:items/menu/show_info {product: ab, id: 7, cd: 60, cd_format: sec, cd_count: many, use: 10, use_format: ticks, use_count: many}
 execute if score @s menu.selecting matches 8 if score @s menu.trigger matches 1.. run function tag:items/menu/show_info {product: ab, id: 8, cd: 90, cd_format: sec, cd_count: many, use: 90, use_format: sec, use_count: many}
+execute if score @s menu.selecting matches 9 if score @s menu.trigger matches 1.. run function tag:items/menu/show_info {product: ab, id: 9, cd: 70, cd_format: sec, cd_count: many, use: 3, use_format: sec, use_count: two}

@@ -117,6 +117,7 @@ scoreboard objectives add ab.unlocked_5 dummy
 scoreboard objectives add ab.unlocked_6 dummy
 scoreboard objectives add ab.unlocked_7 dummy
 scoreboard objectives add ab.unlocked_8 dummy
+scoreboard objectives add ab.unlocked_9 dummy
 
 scoreboard objectives add pa.unlocked_1 dummy
 scoreboard objectives add pa.unlocked_2 dummy

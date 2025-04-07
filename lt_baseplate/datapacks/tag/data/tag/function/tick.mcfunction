@@ -708,6 +708,7 @@ execute as @a[scores={ab.current=5}] at @s run function tag:abilities/active/5
 execute as @a[scores={ab.current=6}] at @s run function tag:abilities/active/6
 execute as @a[scores={ab.current=7}] at @s run function tag:abilities/active/7
 execute as @a[scores={ab.current=8}] at @s run function tag:abilities/active/8
+execute as @a[scores={ab.current=9}] at @s run function tag:abilities/active/9
 
 execute as @a[scores={pa.current=1}] at @s run function tag:abilities/passive/1
 execute as @a[scores={pa.current=2}] at @s run function tag:abilities/passive/2
