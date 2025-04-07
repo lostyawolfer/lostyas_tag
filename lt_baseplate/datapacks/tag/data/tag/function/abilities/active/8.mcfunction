@@ -30,7 +30,7 @@ execute as @s[scores={ab.use2=1}] run scoreboard players reset @s ab.use2
 
 execute as @s[scores={ab.use.trigger=1..}] unless score @s ab.use2 matches 1.. run tag @s add temp2
 execute as @s[scores={ab.use.trigger=1..}] unless score @s ab.use2 matches 1.. run scoreboard players set @s ab.use.trigger 0
-execute as @s[tag=temp2] run scoreboard players set @s ab.cd 1800
+execute as @s[tag=temp2] run scoreboard players set @s ab.cd 1300
 execute as @s[tag=temp2] run scoreboard players set @s ab.use2 1800
 execute as @s[tag=temp2] run playsound minecraft:block.enchantment_table.use player @a ~ ~ ~ 2 1
 execute as @s[tag=temp2] if score @s tp.id matches 1 run summon armor_stand ~ ~ ~ {Invisible: 1b, Tags: ["ab.active.8", "player_id_1"]}
