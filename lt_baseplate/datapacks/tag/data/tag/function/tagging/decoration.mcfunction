@@ -9,8 +9,11 @@ execute if entity @s[tag = tagger, tag = special] run tag @s remove special
 
 
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!001tagger] unless score @s is_sneaking matches 1 if score @s stat.tagger_time matches 3.. run team join 001tagger
+execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!001tagger] if score @s is_sneaking matches 1 if score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 3.. run team join 001tagger
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!011tagger] unless score @s is_sneaking matches 1 if score @s stat.tagger_time matches 2 run team join 011tagger
+execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!011tagger] if score @s is_sneaking matches 1 if score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 2 run team join 011tagger
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!021tagger] unless score @s is_sneaking matches 1 if score @s stat.tagger_time matches 1 run team join 021tagger
+execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!021tagger] if score @s is_sneaking matches 1 if score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 1 run team join 021tagger
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!001tagger_crouch] if score @s is_sneaking matches 1 unless score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 3.. run team join 001tagger_crouch
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!011tagger_crouch] if score @s is_sneaking matches 1 unless score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 2 run team join 011tagger_crouch
 execute if entity @s[tag = tagger,                tag =!safezone, gamemode = adventure, team =!021tagger_crouch] if score @s is_sneaking matches 1 unless score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 1 run team join 021tagger_crouch
@@ -22,8 +25,11 @@ execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adv
 execute if entity @s[tag =!tagger, tag =!special, tag =!safezone, gamemode = adventure, team =!013player_glow] if score @s effect.glowing matches 1.. run team join 013player_glow
 
 execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!001tagger] unless score @s is_sneaking matches 1 if score @s stat.tagger_time matches 3.. run team join 001tagger
+execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!001tagger] if score @s is_sneaking matches 1 if score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 3.. run team join 001tagger
 execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!011tagger] unless score @s is_sneaking matches 1 if score @s stat.tagger_time matches 2 run team join 011tagger
+execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!011tagger] if score @s is_sneaking matches 1 if score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 2 run team join 011tagger
 execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!021tagger] unless score @s is_sneaking matches 1 if score @s stat.tagger_time matches 1 run team join 021tagger
+execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!021tagger] if score @s is_sneaking matches 1 if score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 1 run team join 021tagger
 execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!001tagger_crouch] if score @s is_sneaking matches 1 unless score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 3.. run team join 001tagger_crouch
 execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!011tagger_crouch] if score @s is_sneaking matches 1 unless score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 2 run team join 011tagger_crouch
 execute if entity @s[tag = tagger,                tag = normal_player_decoration, team =!021tagger_crouch] if score @s is_sneaking matches 1 unless score @s effect.glowing matches 0.. if score @s stat.tagger_time matches 1 run team join 021tagger_crouch
