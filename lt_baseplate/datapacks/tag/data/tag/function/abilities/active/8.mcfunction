@@ -120,16 +120,16 @@ execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_10] at @s run par
 
 
 
-execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_1] unless entity @a[scores={tp.id=1}, tag=!safezone] run kill @s
-execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_2] unless entity @a[scores={tp.id=2}, tag=!safezone] run kill @s
-execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_3] unless entity @a[scores={tp.id=3}, tag=!safezone] run kill @s
-execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_4] unless entity @a[scores={tp.id=4}, tag=!safezone] run kill @s
-execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_5] unless entity @a[scores={tp.id=5}, tag=!safezone] run kill @s
-execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_6] unless entity @a[scores={tp.id=6}, tag=!safezone] run kill @s
-execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_7] unless entity @a[scores={tp.id=7}, tag=!safezone] run kill @s
-execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_8] unless entity @a[scores={tp.id=8}, tag=!safezone] run kill @s
-execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_9] unless entity @a[scores={tp.id=9}, tag=!safezone] run kill @s
-execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_10] unless entity @a[scores={tp.id=10}, tag=!safezone] run kill @s
+execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_1] unless entity @a[tag=player_id_1, scores={ab.cd=1..}, tag=!safezone] run kill @s
+execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_2] unless entity @a[tag=player_id_2, scores={ab.cd=1..}, tag=!safezone] run kill @s
+execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_3] unless entity @a[tag=player_id_3, scores={ab.cd=1..}, tag=!safezone] run kill @s
+execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_4] unless entity @a[tag=player_id_4, scores={ab.cd=1..}, tag=!safezone] run kill @s
+execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_5] unless entity @a[tag=player_id_5, scores={ab.cd=1..}, tag=!safezone] run kill @s
+execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_6] unless entity @a[tag=player_id_6, scores={ab.cd=1..}, tag=!safezone] run kill @s
+execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_7] unless entity @a[tag=player_id_7, scores={ab.cd=1..}, tag=!safezone] run kill @s
+execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_8] unless entity @a[tag=player_id_8, scores={ab.cd=1..}, tag=!safezone] run kill @s
+execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_9] unless entity @a[tag=player_id_9, scores={ab.cd=1..}, tag=!safezone] run kill @s
+execute as @e[type=armor_stand, tag=ab.active.8, tag=player_id_10] unless entity @a[tag=player_id_10, scores={ab.cd=1..}, tag=!safezone] run kill @s
 
 
 execute as @s[scores={ab.use=-1}] run scoreboard players set @s ab.use -2

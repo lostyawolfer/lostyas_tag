@@ -1,6 +1,26 @@
 playsound minecraft:block.bell.use master @a ~ ~ ~ 99999 2
 playsound minecraft:block.bell.use master @a ~ ~ ~ 99999 1.5
 execute store result score @s tp.id run function tag:tp_back/get_id {scoreboard: tp.id}
+tag @s remove player_id_1
+tag @s remove player_id_2
+tag @s remove player_id_3
+tag @s remove player_id_4
+tag @s remove player_id_5
+tag @s remove player_id_6
+tag @s remove player_id_7
+tag @s remove player_id_8
+tag @s remove player_id_9
+tag @s remove player_id_10
+execute if score @s tp.id matches 1 run tag @s add player_id_1
+execute if score @s tp.id matches 2 run tag @s add player_id_2
+execute if score @s tp.id matches 3 run tag @s add player_id_3
+execute if score @s tp.id matches 4 run tag @s add player_id_4
+execute if score @s tp.id matches 5 run tag @s add player_id_5
+execute if score @s tp.id matches 6 run tag @s add player_id_6
+execute if score @s tp.id matches 7 run tag @s add player_id_7
+execute if score @s tp.id matches 8 run tag @s add player_id_8
+execute if score @s tp.id matches 9 run tag @s add player_id_9
+execute if score @s tp.id matches 10 run tag @s add player_id_10
 attribute @s block_interaction_range base set 7
 attribute @s fall_damage_multiplier base set 0
 clear @s
