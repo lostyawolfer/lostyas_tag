@@ -8,7 +8,7 @@ execute if score @s tp.timer matches 2 unless block ~ ~ ~ air unless block ~ ~ ~
 execute if score @s tp.timer matches 3.. run function tag:tp_back/player_to_stand/in_blocks
 
 
-
+execute if entity @s[gamemode = adventure] if block ~ ~1 ~ #tag:forbidden_to_stand_on run function tag:tp_back/player_to_stand/outside_map
 execute if entity @s[gamemode = adventure] if block ~ ~ ~ #tag:forbidden_to_stand_on run function tag:tp_back/player_to_stand/outside_map
 execute if entity @s[gamemode = adventure] if block ~ ~-.1 ~ #tag:forbidden_to_stand_on run function tag:tp_back/player_to_stand/outside_map
 
