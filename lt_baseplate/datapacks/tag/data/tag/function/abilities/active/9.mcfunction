@@ -41,7 +41,7 @@ execute as @s[tag=ab.active.9] at @s as @a unless score @s effect.downed matches
 execute as @s[tag=ab.active.9] at @s run scoreboard players add @a[scores={effect.downed=1..}] effect.downed 1
 execute as @s[tag=ab.active.9] at @s run scoreboard players add @a[scores={effect.glowing=1..}] effect.glowing 1
 execute as @s[tag=ab.active.9] at @s run scoreboard players add @a[scores={effect.invisibility=1..}] effect.invisibility 1
-execute as @s[tag=ab.active.9] at @s run scoreboard players add @a[scores={effect.strong_levitation=1..}] effect.strong_levitation 1
+execute as @s[tag=ab.active.9] at @s run scoreboard players add @a[scores={effect.strong_levitation=1..}, tag=!ab.active.9] effect.strong_levitation 1
 execute as @s[tag=ab.active.9] at @s run worldborder warning distance 2147000000
 execute as @s[tag=ab.active.9] at @s run effect give @a weakness 10 50 true
 execute as @s[tag=ab.active.9] at @s run scoreboard players add @a[tag=!ab.active.9, scores={ab.use=1..}] ab.use 1
