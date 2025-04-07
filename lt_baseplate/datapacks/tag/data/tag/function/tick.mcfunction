@@ -61,8 +61,8 @@ execute as @a[scores={tp.id=0}] store result score @s tp.id run function tag:tp_
 execute as @a at @s run function tag:misc/bhop
 
 
-execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..32] unless score game server matches 4 run scoreboard players add @s tagger_heartbeat 1
-execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s unless entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..32] run scoreboard players reset @s tagger_heartbeat
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..32] unless score game server matches 4 if score game server matches 1.. run scoreboard players add @s tagger_heartbeat 1
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s unless entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..32] unless score game server matches 1.. run scoreboard players reset @s tagger_heartbeat
 scoreboard players set @a[scores={tagger_heartbeat=61..}] tagger_heartbeat 1
 
 
@@ -107,9 +107,10 @@ execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @
 
 execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..8] run tag @s add close_to_tagger
 
-execute as @a[gamemode=!adventure, tag=!normal_player_decoration] run tag @s remove close_to_tagger
+execute as @a[gamemode=!adventure, tag=!normal_player_decoration] if score game server matches 1.. run tag @s remove close_to_tagger
 execute as @a[tag=tagger] run tag @s remove close_to_tagger
 execute as @a[tag=safezone] run tag @s remove close_to_tagger
+execute unless score game server matches 1.. run tag @a remove close_to_tagger
 
 execute as @a[tag=tagger] run tag @s remove close_to_tagger
 
