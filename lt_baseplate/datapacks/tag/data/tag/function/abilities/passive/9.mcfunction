@@ -1,4 +1,9 @@
 scoreboard players set @s pa.active 0
+execute as @s[tag=!safezone, gamemode=adventure, tag=!tagger, scores={pa.ability_specific.counter=..20}] run scoreboard players set @s pa.active -5
+execute as @s[tag=!safezone, gamemode=adventure, tag=!tagger, scores={pa.ability_specific.counter=20..}] run scoreboard players set @s pa.active -4
+execute as @s[tag=!safezone, gamemode=adventure, tag=!tagger, scores={pa.ability_specific.counter=40..}] run scoreboard players set @s pa.active -3
+execute as @s[tag=!safezone, gamemode=adventure, tag=!tagger, scores={pa.ability_specific.counter=60..}] run scoreboard players set @s pa.active -2
+execute as @s[tag=!safezone, gamemode=adventure, tag=!tagger, scores={pa.ability_specific.counter=80..}] run scoreboard players set @s pa.active -1
 
 
 execute as @s[tag=!safezone, gamemode=adventure, tag=!tagger] unless score @s stat.speed matches 0 run scoreboard players set @s pa.ability_specific.counter 0

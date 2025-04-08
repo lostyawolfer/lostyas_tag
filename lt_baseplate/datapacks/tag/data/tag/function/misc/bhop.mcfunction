@@ -68,8 +68,10 @@ execute if score @s jump matches 1.. if score @s jump.bhop2 matches 49.. if bloc
 execute if score @s jump matches 1.. run scoreboard players remove @s jump 1
 
 # remove bhop
-execute if score @s jump.timer matches 1.. if entity @s[nbt={OnGround:1b}] run scoreboard players remove @s jump.timer 6
-execute if score @s jump.timer matches 1.. if score @s stat.speed matches 0 if entity @s[nbt={OnGround:1b}] run scoreboard players remove @s jump.timer 20
+execute if score @s jump.timer matches 1.. if entity @s[nbt={OnGround:1b}] unless score @s pa.current matches 10 run scoreboard players remove @s jump.timer 6
+execute if score @s jump.timer matches 1.. if entity @s[nbt={OnGround:1b}] if score @s pa.current matches 10 run scoreboard players remove @s jump.timer 3
+execute if score @s jump.timer matches 1.. if score @s stat.speed matches 0 if entity @s[nbt={OnGround:1b}] unless score @s pa.current matches 10 run scoreboard players remove @s jump.timer 20
+execute if score @s jump.timer matches 1.. if score @s stat.speed matches 0 if entity @s[nbt={OnGround:1b}] if score @s pa.current matches 10 run scoreboard players remove @s jump.timer 6
 execute if score @s jump.timer matches ..-1 run scoreboard players set @s jump.timer 0
 execute if score @s jump.timer matches 1.. run scoreboard players remove @s jump.timer 1
 
@@ -79,8 +81,10 @@ execute if score @s jump.bhop matches ..0 run attribute @s sneaking_speed base s
 execute if score @s jump.bhop matches ..0 run scoreboard players set @s jump.bhop 0
 execute if score @s jump.timer matches 0 run scoreboard players set @s jump.bhop 0
 execute if score @s jump.timer matches 0 run attribute @s movement_speed base set .15
-execute if score @s jump.timer matches 1..40 if score @s jump.bhop matches 21.. run scoreboard players remove @s jump.bhop 20
-execute if score @s jump.timer matches 1..40 if score @s jump.bhop matches 1.. run scoreboard players remove @s jump.bhop 3
+execute if score @s jump.timer matches 1..40 if score @s jump.bhop matches 21.. unless score @s pa.current matches 10 run scoreboard players remove @s jump.bhop 20
+execute if score @s jump.timer matches 1..40 if score @s jump.bhop matches 21.. if score @s pa.current matches 10 run scoreboard players remove @s jump.bhop 15
+execute if score @s jump.timer matches 1..40 if score @s jump.bhop matches 1.. unless score @s pa.current matches 10 run scoreboard players remove @s jump.bhop 3
+execute if score @s jump.timer matches 1..40 if score @s jump.bhop matches 1.. if score @s pa.current matches 10 run scoreboard players remove @s jump.bhop 2
 execute if score @s jump.timer matches 0 run scoreboard players set @s jump.bhop2 0
 execute if score @s jump.timer matches 31..40 if score @s jump.bhop2 matches 25..49 run scoreboard players set @s jump.bhop2 15
 execute if score @s jump.timer matches 31..40 if score @s jump.bhop2 matches 50..74 run scoreboard players set @s jump.bhop2 20

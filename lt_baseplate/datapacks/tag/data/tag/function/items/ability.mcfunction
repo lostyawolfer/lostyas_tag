@@ -15,6 +15,9 @@ execute if score @s ab.use2 matches 0.. run scoreboard players remove @s[gamemod
 execute if score @s ab.use2 matches 0.. run scoreboard players remove @s[gamemode =!adventure, tag =!safezone, tag = normal_player_decoration] ab.use2 1
 
 
+
+execute if score game server matches ..0 if score @s ab.cd matches 20.. run scoreboard players set @s ab.cd 20
+
 # ab.use.s = ab.use / 20
 scoreboard players operation @s ab.use.s = @s ab.use
 scoreboard players remove @s ab.use.s 1

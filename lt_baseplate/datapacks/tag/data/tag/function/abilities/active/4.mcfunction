@@ -1,6 +1,6 @@
 # invis
 execute as @s[scores={ab.use.trigger=1..}] run scoreboard players set @s ab.cd 720
-execute as @s[scores={ab.use.trigger=1..}] run scoreboard players set @s ab.use 140
+execute as @s[scores={ab.use.trigger=1..}] run scoreboard players set @s ab.use 100
 execute as @s[scores={ab.use.trigger=1..}] unless score @s effect.invisibility matches 1.. run particle cloud ~ ~1 ~ .3 .5 .3 .1 50
 execute as @s[scores={ab.use.trigger=1..}] run playsound minecraft:ambient.underwater.enter player @s
 execute as @s[scores={ab.use.trigger=1..}] run playsound minecraft:ambient.underwater.loop player @s ~ ~ ~ 2

@@ -57,8 +57,32 @@ execute if score playercount_old server > playercount server run function tag:mi
 
 
 execute as @a[scores={tp.id=0}] store result score @s tp.id run function tag:tp_back/get_id {scoreboard: tp.id}
-
 execute as @a at @s run function tag:misc/bhop
+
+
+
+# abilities
+execute as @a[scores={ab.current=1}] at @s run function tag:abilities/active/1
+execute as @a[scores={ab.current=2}] at @s run function tag:abilities/active/2
+execute as @a[scores={ab.current=3}] at @s run function tag:abilities/active/3
+execute as @a[scores={ab.current=4}] at @s run function tag:abilities/active/4
+execute as @a[scores={ab.current=5}] at @s run function tag:abilities/active/5
+execute as @a[scores={ab.current=6}] at @s run function tag:abilities/active/6
+execute as @a[scores={ab.current=7}] at @s run function tag:abilities/active/7
+execute as @a[scores={ab.current=8}] at @s run function tag:abilities/active/8
+execute as @a[scores={ab.current=9}] at @s run function tag:abilities/active/9
+
+execute as @a[scores={pa.current=1}] at @s run function tag:abilities/passive/1
+execute as @a[scores={pa.current=2}] at @s run function tag:abilities/passive/2
+execute as @a[scores={pa.current=3}] at @s run function tag:abilities/passive/3
+execute as @a[scores={pa.current=4}] at @s run function tag:abilities/passive/4
+execute as @a[scores={pa.current=5}] at @s run function tag:abilities/passive/5
+execute as @a[scores={pa.current=6}] at @s run function tag:abilities/passive/6
+execute as @a[scores={pa.current=7}] at @s run function tag:abilities/passive/7
+execute as @a[scores={pa.current=8}] at @s run function tag:abilities/passive/8
+execute as @a[scores={pa.current=9}] at @s run function tag:abilities/passive/9
+execute as @a[scores={pa.current=10}] at @s run function tag:abilities/passive/10
+
 
 
 execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..32] if score game server matches 1.. unless score game server matches 4 run scoreboard players add @s tagger_heartbeat 1
@@ -700,27 +724,6 @@ execute as @a[scores={ab.use=1..}] if entity @s[tag = safezone] run scoreboard p
 execute as @a[scores={ab.use=1..}, tag=dead] run scoreboard players set @s ab.use 0
 #execute as @a[scores={ab.cd=1..}, tag=dead] run scoreboard players set @s ab.cd 0
 
-
-execute as @a[scores={ab.current=1}] at @s run function tag:abilities/active/1
-execute as @a[scores={ab.current=2}] at @s run function tag:abilities/active/2
-execute as @a[scores={ab.current=3}] at @s run function tag:abilities/active/3
-execute as @a[scores={ab.current=4}] at @s run function tag:abilities/active/4
-execute as @a[scores={ab.current=5}] at @s run function tag:abilities/active/5
-execute as @a[scores={ab.current=6}] at @s run function tag:abilities/active/6
-execute as @a[scores={ab.current=7}] at @s run function tag:abilities/active/7
-execute as @a[scores={ab.current=8}] at @s run function tag:abilities/active/8
-execute as @a[scores={ab.current=9}] at @s run function tag:abilities/active/9
-
-execute as @a[scores={pa.current=1}] at @s run function tag:abilities/passive/1
-execute as @a[scores={pa.current=2}] at @s run function tag:abilities/passive/2
-execute as @a[scores={pa.current=3}] at @s run function tag:abilities/passive/3
-execute as @a[scores={pa.current=4}] at @s run function tag:abilities/passive/4
-execute as @a[scores={pa.current=5}] at @s run function tag:abilities/passive/5
-execute as @a[scores={pa.current=6}] at @s run function tag:abilities/passive/6
-execute as @a[scores={pa.current=7}] at @s run function tag:abilities/passive/7
-execute as @a[scores={pa.current=8}] at @s run function tag:abilities/passive/8
-execute as @a[scores={pa.current=9}] at @s run function tag:abilities/passive/9
-execute as @a[scores={pa.current=10}] at @s run function tag:abilities/passive/10
 
 
 execute as @a unless score @s menu matches 0.. run scoreboard players set @s menu 0

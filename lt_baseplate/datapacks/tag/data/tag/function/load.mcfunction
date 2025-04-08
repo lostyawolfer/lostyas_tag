@@ -103,7 +103,10 @@ scoreboard objectives add pa.active dummy
 scoreboard objectives add pa.current dummy
     scoreboard players set $product_type pa.current 2
 scoreboard objectives add pa.ability_specific.jump minecraft.custom:minecraft.jump
-scoreboard objectives add pa.ability_specific.counter minecraft.custom:minecraft.jump
+scoreboard objectives add pa.ability_specific.dealt_damage minecraft.custom:minecraft.damage_dealt
+scoreboard objectives add pa.ability_specific.counter dummy
+scoreboard objectives add pa.ability_specific.counter.s dummy
+
 
 scoreboard objectives add menu dummy
 scoreboard objectives add menu.selecting dummy
