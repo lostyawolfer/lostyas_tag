@@ -144,10 +144,10 @@ execute unless score game server matches 1.. run tag @a remove close_to_tagger
 execute as @a[tag=tagger] run tag @s remove close_to_tagger
 
 
-execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, tag=close_to_tagger] at @s unless entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..48] run scoreboard players add @s escape_timer 1
-execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, tag=close_to_tagger] at @s unless entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..48] run tag @s remove close_to_tagger
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, tag=close_to_tagger] at @s unless entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..52] run scoreboard players add @s escape_timer 1
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, tag=close_to_tagger] at @s unless entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..52] run tag @s remove close_to_tagger
 
-execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, scores={escape_timer=1..}] at @s unless entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..32] run scoreboard players add @s escape_timer 1
+execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, scores={escape_timer=1..}] at @s unless entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..40] run scoreboard players add @s escape_timer 1
 
 execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, scores={escape_timer=40..}] at @s run scoreboard players set @s points.reason.trigger -1
 execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, scores={escape_timer=40..}] at @s run scoreboard players reset @s escape_timer
