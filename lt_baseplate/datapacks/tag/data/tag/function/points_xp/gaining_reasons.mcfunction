@@ -36,6 +36,8 @@ execute if score @s points.reason.trigger matches -8 unless score @s gain_for_ta
 execute if score @s points.reason.trigger matches -9 run scoreboard players add @s points.recieve 60
 execute if score @s points.reason.trigger matches -10 run scoreboard players add @s points.recieve 200
 execute if score @s points.reason.trigger matches -11 run scoreboard players add @s points.recieve 60
+# chaos, chaos!
+execute if score @s points.reason.trigger matches -12 run scoreboard players add @s points.recieve 60
 
 
 
@@ -61,7 +63,16 @@ execute if score @s points.reason.trigger matches ..-1 if score @s points.reason
 
 
 execute if score @s points.reason.trigger matches -7 run scoreboard players set @s gain_for_tagging_timer 100
+execute if score @s points.reason.trigger matches -7 run scoreboard players add @s gain_for_tagging_timer2 1
 execute if score @s points.reason.trigger matches -8 run scoreboard players set @s gain_for_tagging_timer 100
+execute if score @s points.reason.trigger matches -8 run scoreboard players add @s gain_for_tagging_timer2 1
 
 
 scoreboard players reset @s points.reason.trigger
+
+
+execute if score @s gain_for_tagging_timer matches ..60 run scoreboard players reset @s gain_for_tagging_timer2
+
+execute if score @s gain_for_tagging_timer2 matches 20.. run scoreboard players set @s gain_for_tagging_timer2 4
+execute if score @s gain_for_tagging_timer2 matches 5 run scoreboard players set @s points.reason.trigger -12
+execute if score @s gain_for_tagging_timer2 matches 5 run scoreboard players add @s gain_for_tagging_timer2 1

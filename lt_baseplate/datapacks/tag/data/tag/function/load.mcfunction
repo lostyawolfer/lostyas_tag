@@ -191,6 +191,7 @@ scoreboard objectives add joined minecraft.custom:minecraft.leave_game
 scoreboard objectives add logging dummy
 scoreboard objectives add tagger_heartbeat dummy
 scoreboard objectives add gain_for_tagging_timer dummy
+scoreboard objectives add gain_for_tagging_timer2 dummy
 scoreboard objectives add escape_timer dummy
 scoreboard objectives add fall_distance minecraft.custom:minecraft.fall_one_cm
 

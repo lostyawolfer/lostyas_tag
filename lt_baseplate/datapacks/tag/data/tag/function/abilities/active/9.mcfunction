@@ -15,10 +15,11 @@ execute as @s[scores={ab.use.trigger=1..}] unless score @s ab.use2 matches 1.. r
 execute as @s[scores={ab.use.trigger=1..}] unless score @s ab.use2 matches 1.. run scoreboard players set @s ab.use.trigger 0
 execute as @s[tag=temp2] run scoreboard players set @s ab.cd 1400
 execute as @s[tag=temp2] run scoreboard players set @s ab.use2 20
-execute as @s[tag=temp2] run effect give @a[tag=!temp2] slow_falling 2 0 true
-execute as @s[tag=temp2] run playsound minecraft:block.conduit.deactivate master @s ~ ~ ~ 20 0 1
+execute as @s[tag=temp2] run effect give @a[tag=!temp2, gamemode=adventure] slow_falling 2 0 true
+execute as @s[tag=temp2] run playsound minecraft:block.conduit.deactivate master @a ~ ~ ~ 20 0 1
+execute as @s[tag=temp2] run playsound minecraft:block.beacon.deactivate master @a ~ ~ ~ 20 0 1
 execute as @s[tag=temp2] at @s run particle nautilus ~ ~1 ~ 0 0 0 1 100 force @a
-execute as @s[tag=temp2] at @s run effect give @a[tag=!temp2] slowness 10 2 true
+execute as @s[tag=temp2] at @s run effect give @a[tag=!temp2, gamemode=adventure] slowness 10 2 true
 execute as @s[tag=temp2] at @s run effect give @a darkness 2 2 true
 execute as @s[tag=temp2] run tag @s remove temp2
 
@@ -30,9 +31,9 @@ execute as @s[scores={ab.use2=1..}] unless entity @s[gamemode=adventure, tag=!sa
 execute as @s[scores={ab.use2=1..}] unless entity @s[gamemode=adventure, tag=!safezone] run scoreboard players reset @s ab.use2
 
 
-execute as @s[tag=ab.active.9] at @s run effect give @a[tag=!ab.active.9] blindness 10 0 true
-execute as @s[tag=ab.active.9] at @s run effect give @a[tag= ab.active.9] darkness 2 50 true
-execute as @s[tag=ab.active.9] at @s run effect give @a[tag=!ab.active.9] slowness 10 50 true
+execute as @s[tag=ab.active.9] at @s run effect give @a[tag=!ab.active.9, gamemode=adventure] blindness 10 0 true
+execute as @s[tag=ab.active.9] at @s run effect give @a[tag= ab.active.9, gamemode=adventure] darkness 2 50 true
+execute as @s[tag=ab.active.9] at @s run effect give @a[tag=!ab.active.9, gamemode=adventure] slowness 10 50 true
 execute as @s[tag=ab.active.9] at @s as @a unless score @s effect.downed matches 1.. run scoreboard players add @s[tag=!ab.active.9] ab.cd 1
 execute as @s[tag=ab.active.9] at @s as @a unless score @s effect.downed matches 1.. run scoreboard players set @s[tag=!ab.active.9, scores={ab.cd=..5}] ab.cd 5
 execute as @s[tag=ab.active.9] at @s if score kill_timer server matches ..600 unless score game server matches 7 run scoreboard players add @a[tag=!ab.active.9] ab.cd 1
@@ -43,14 +44,15 @@ execute as @s[tag=ab.active.9] at @s run scoreboard players add @a[scores={effec
 execute as @s[tag=ab.active.9] at @s run scoreboard players add @a[scores={effect.invisibility=1..}] effect.invisibility 1
 execute as @s[tag=ab.active.9] at @s run scoreboard players add @a[scores={effect.strong_levitation=1..}, tag=!ab.active.9] effect.strong_levitation 1
 execute as @s[tag=ab.active.9] at @s run worldborder warning distance 2147000000
-execute as @s[tag=ab.active.9] at @s run effect give @a weakness 10 50 true
+execute as @s[tag=ab.active.9] at @s run effect give @a[gamemode=adventure] weakness 10 50 true
 execute as @s[tag=ab.active.9] at @s run scoreboard players add @a[tag=!ab.active.9, scores={ab.use=1..}] ab.use 1
 execute as @s[tag=ab.active.9] at @s run scoreboard players add @a[tag=!ab.active.9, scores={ab.use2=1..}] ab.use2 1
-execute as @s[tag=ab.active.9] as @a[tag=!ab.active.9] at @s run tp @s @s
+execute as @s[tag=ab.active.9] as @a[tag=!ab.active.9, gamemode=adventure] at @s run tp @s @s
 
 
 
 execute as @s[scores={ab.use=-1}] run playsound minecraft:block.conduit.activate player @a ~ ~ ~ 20 1 1
+execute as @s[scores={ab.use=-1}] run playsound minecraft:block.beacon.activate player @a ~ ~ ~ 20 1 1
 execute as @s[scores={ab.use=-1}] run particle reverse_portal ~ ~1 ~ 0 0 0 1 100 force @a
 execute as @s[scores={ab.use=-1}] run effect clear @a blindness
 execute as @s[scores={ab.use=-1}] run effect clear @a slowness
