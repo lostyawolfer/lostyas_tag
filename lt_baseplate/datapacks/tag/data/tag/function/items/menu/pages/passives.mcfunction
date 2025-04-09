@@ -8,6 +8,7 @@ execute if score @s menu matches 200 if score @s menu.selecting matches 7 if sco
 execute if score @s menu matches 200 if score @s menu.selecting matches 8 if score @s menu.trigger matches 1.. run function tag:items/menu/selector_check {product: pa, id: 8, price: 20, page: 220}
 execute if score @s menu matches 200 if score @s menu.selecting matches 9 if score @s menu.trigger matches 1.. run function tag:items/menu/selector_check {product: pa, id: 9, price: 25, page: 220}
 execute if score @s menu matches 200 if score @s menu.selecting matches 10 if score @s menu.trigger matches 1.. run function tag:items/menu/selector_check {product: pa, id: 10, price: 13, page: 220}
+execute if score @s menu matches 200 if score @s menu.selecting matches 11 if score @s menu.trigger matches 1.. run function tag:items/menu/selector_check {product: pa, id: 11, price: 26, page: 220}
 
 
 execute if score @s menu matches 210 run function tag:items/menu/items/product {product: pa, slot: 0, id: 1, price: 17, price_count: many, page: 210, command: 200}
@@ -23,7 +24,7 @@ execute if score @s menu matches 220 run function tag:items/menu/items/product {
 execute if score @s menu matches 220 run function tag:items/menu/items/product {product: pa, slot: 2, id: 8, price: 20, price_count: many, page: 220, command: 200}
 execute if score @s menu matches 220 run function tag:items/menu/items/product {product: pa, slot: 3, id: 9, price: 25, price_count: many, page: 220, command: 200}
 execute if score @s menu matches 220 run function tag:items/menu/items/product {product: pa, slot: 4, id: 10, price: 13, price_count: many, page: 220, command: 200}
-execute if score @s menu matches 220 run item replace entity @s container.5 with air
+execute if score @s menu matches 220 run function tag:items/menu/items/product {product: pa, slot: 5, id: 11, price: 26, price_count: many, page: 220, command: 200}
 execute if score @s menu matches 220 run item replace entity @s container.6 with air
 
 
@@ -37,3 +38,4 @@ execute if score @s menu.selecting matches 7 if score @s menu.trigger matches 1.
 execute if score @s menu.selecting matches 8 if score @s menu.trigger matches 1.. run function tag:items/menu/show_info {product: pa, id: 8,    cd: 0, cd_format: 0, cd_count: 0, use: 0, use_format: 0, use_count: 0}
 execute if score @s menu.selecting matches 9 if score @s menu.trigger matches 1.. run function tag:items/menu/show_info {product: pa, id: 9,    cd: 0, cd_format: 0, cd_count: 0, use: 0, use_format: 0, use_count: 0}
 execute if score @s menu.selecting matches 10 if score @s menu.trigger matches 1.. run function tag:items/menu/show_info {product: pa, id: 10,  cd: 0, cd_format: 0, cd_count: 0, use: 0, use_format: 0, use_count: 0}
+execute if score @s menu.selecting matches 11 if score @s menu.trigger matches 1.. run function tag:items/menu/show_info {product: pa, id: 11,  cd: 0, cd_format: 0, cd_count: 0, use: 0, use_format: 0, use_count: 0}

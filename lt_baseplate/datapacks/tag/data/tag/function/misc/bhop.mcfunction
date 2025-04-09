@@ -62,7 +62,7 @@ execute if score @s jump matches 1.. unless block ~ ~2 ~ air unless block ~ ~2 ~
 
 execute if score @s jump matches 1.. if score @s jump.bhop2 matches 10..24 if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players set @s points.reason.trigger 1
 execute if score @s jump matches 1.. if score @s jump.bhop2 matches 25..49 if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players set @s points.reason.trigger 2
-execute if score @s jump matches 1.. if score @s jump.bhop2 matches 49.. if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players set @s points.reason.trigger 3
+execute if score @s jump matches 1.. if score @s jump.bhop2 matches 50.. if block ~ ~2 ~ air if score @s stat.speed matches 20.. run scoreboard players set @s points.reason.trigger 3
 
 #execute if score @s jump matches 1.. run playsound jump player @a ~ ~ ~ .5
 execute if score @s jump matches 1.. run scoreboard players remove @s jump 1

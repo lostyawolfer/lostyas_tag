@@ -71,6 +71,9 @@ execute as @a[scores={ab.current=6}] at @s run function tag:abilities/active/6
 execute as @a[scores={ab.current=7}] at @s run function tag:abilities/active/7
 execute as @a[scores={ab.current=8}] at @s run function tag:abilities/active/8
 execute as @a[scores={ab.current=9}] at @s run function tag:abilities/active/9
+execute as @a[scores={ab.current=10}] at @s run function tag:abilities/active/10
+execute as @a[scores={ab.current=11}] at @s run function tag:abilities/active/11
+execute as @a[scores={ab.current=12}] at @s run function tag:abilities/active/12
 
 execute as @a[scores={pa.current=1}] at @s run function tag:abilities/passive/1
 execute as @a[scores={pa.current=2}] at @s run function tag:abilities/passive/2
@@ -82,6 +85,8 @@ execute as @a[scores={pa.current=7}] at @s run function tag:abilities/passive/7
 execute as @a[scores={pa.current=8}] at @s run function tag:abilities/passive/8
 execute as @a[scores={pa.current=9}] at @s run function tag:abilities/passive/9
 execute as @a[scores={pa.current=10}] at @s run function tag:abilities/passive/10
+execute as @a[scores={pa.current=11}] at @s run function tag:abilities/passive/11
+execute as @a[scores={pa.current=12}] at @s run function tag:abilities/passive/12
 
 
 
@@ -152,15 +157,15 @@ execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special, scor
 
 
 
-execute as @a[nbt={OnGround:1b}, scores={stat.speed=150..200}, tag=!dashed] unless score @s fall_distance matches 500.. unless score @s stat.vertical_speed matches ..-50 run scoreboard players set @s points.reason.trigger 4
-execute as @a[nbt={OnGround:1b}, scores={stat.speed=150..200}, tag=!dashed] unless score @s fall_distance matches 500.. unless score @s stat.vertical_speed matches ..-50 run tag @s add dashed
+execute as @a[nbt={OnGround:1b}, scores={stat.speed=150..200}, tag=!dashed, gamemode=adventure] unless score @s fall_distance matches 500.. unless score @s stat.vertical_speed matches ..-50 run scoreboard players set @s points.reason.trigger 4
+execute as @a[nbt={OnGround:1b}, scores={stat.speed=150..200}, tag=!dashed, gamemode=adventure] unless score @s fall_distance matches 500.. unless score @s stat.vertical_speed matches ..-50 run tag @s add dashed
 
 execute as @a[scores={stat.speed=..120}, tag=dashed] run tag @s remove dashed
 
 
 
-execute as @a[nbt={OnGround:0b}, scores={stat.speed.iter_1=180..250}, tag=!airdashed] at @s if block ~ ~-1 ~ air if block ~ ~-2 ~ air if score @s stat.vertical_speed matches -110.. run scoreboard players set @s points.reason.trigger 7
-execute as @a[nbt={OnGround:0b}, scores={stat.speed.iter_1=180..250}, tag=!airdashed] at @s if block ~ ~-1 ~ air if block ~ ~-2 ~ air if score @s stat.vertical_speed matches -110.. run tag @s add airhopped
+execute as @a[nbt={OnGround:0b}, scores={stat.speed.iter_1=180..250}, tag=!airdashed, gamemode=adventure] at @s if block ~ ~-1 ~ air if block ~ ~-2 ~ air if score @s stat.vertical_speed matches -110.. run scoreboard players set @s points.reason.trigger 7
+execute as @a[nbt={OnGround:0b}, scores={stat.speed.iter_1=180..250}, tag=!airdashed, gamemode=adventure] at @s if block ~ ~-1 ~ air if block ~ ~-2 ~ air if score @s stat.vertical_speed matches -110.. run tag @s add airhopped
 
 execute as @a[scores={stat.speed=..100}, tag=airdashed] run tag @s remove airdashed
 

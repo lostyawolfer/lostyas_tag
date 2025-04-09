@@ -104,6 +104,7 @@ scoreboard objectives add pa.current dummy
     scoreboard players set $product_type pa.current 2
 scoreboard objectives add pa.ability_specific.jump minecraft.custom:minecraft.jump
 scoreboard objectives add pa.ability_specific.dealt_damage minecraft.custom:minecraft.damage_dealt
+scoreboard objectives add pa.ability_specific.pearl_thrown minecraft.used:minecraft.ender_pearl
 scoreboard objectives add pa.ability_specific.counter dummy
 scoreboard objectives add pa.ability_specific.counter.s dummy
 
@@ -121,6 +122,9 @@ scoreboard objectives add ab.unlocked_6 dummy
 scoreboard objectives add ab.unlocked_7 dummy
 scoreboard objectives add ab.unlocked_8 dummy
 scoreboard objectives add ab.unlocked_9 dummy
+scoreboard objectives add ab.unlocked_10 dummy
+scoreboard objectives add ab.unlocked_11 dummy
+scoreboard objectives add ab.unlocked_12 dummy
 
 scoreboard objectives add pa.unlocked_1 dummy
 scoreboard objectives add pa.unlocked_2 dummy
@@ -132,6 +136,8 @@ scoreboard objectives add pa.unlocked_7 dummy
 scoreboard objectives add pa.unlocked_8 dummy
 scoreboard objectives add pa.unlocked_9 dummy
 scoreboard objectives add pa.unlocked_10 dummy
+scoreboard objectives add pa.unlocked_11 dummy
+scoreboard objectives add pa.unlocked_12 dummy
 
 scoreboard objectives add gh.unlocked_1 dummy
 scoreboard objectives add gh.unlocked_2 dummy
