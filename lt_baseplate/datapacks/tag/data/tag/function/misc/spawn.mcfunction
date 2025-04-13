@@ -31,14 +31,17 @@ execute if score @s anim.death matches -14 run title @s actionbar ""
 execute if score @s anim.death matches -14 run title @s title ""
 execute if score @s anim.death matches -14 run title @s subtitle ""
 execute if score @s anim.death matches -35..-15 run scoreboard players set @s screen_effect 263
-execute if score @s anim.death matches -35..-16 run tp @s @s
-execute if score @s anim.death matches -35..-16 run tp @s ~ ~ ~
+execute if score @s anim.death matches -38..-16 run tp @s @s
+execute if score @s anim.death matches -38..-16 run tp @s ~ ~ ~
+execute if score @s anim.death matches -38..-16 run tp @s @n[type=armor_stand, tag=spawn, distance=..1]
 execute if score @s anim.death matches -15 run function tag:misc/spawntp
 execute if score @s anim.death matches -15 run scoreboard players set @s[scores={ab.use=1..}] ab.use 0
 execute if score @s anim.death matches -15 run scoreboard players set @s[scores={ab.cd=2..}] ab.cd 1
 execute if score @s anim.death matches -15 run scoreboard players set @s[scores={p.cd=2..}] p.cd 1
 execute if score @s anim.death matches -15 run scoreboard players set @s[scores={gh.cd=2..}] gh.cd 1
-execute if score @s anim.death matches -36 run effect give @s blindness 1 0 true
+execute if score @s anim.death matches -37..-36 run effect give @s blindness 2 0 true
+execute if score @s anim.death matches -38 run effect clear @s blindness
+execute if score @s anim.death matches -38 run effect give @s blindness 1 0 true
 execute if score @s anim.death matches -15 run tag @s add normal_player_decoration
 execute if score @s anim.death matches -36..-15 run gamemode spectator @s
 execute if score @s anim.death matches -37 run gamemode adventure @s
