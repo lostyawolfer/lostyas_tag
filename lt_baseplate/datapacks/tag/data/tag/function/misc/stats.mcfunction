@@ -23,6 +23,7 @@ scoreboard players operation @s stat.speed.iter_2 = @s stat.speed.iter_1
 
 scoreboard players set @s stat.speed.iter_1 0
 scoreboard players set @s stat.vertical_speed 0
+scoreboard players set @s stat.horizontal_speed 0
 
 scoreboard players operation @s stat.speed.calculate_difference_x = @s stat.speed.calculate_new_x
 scoreboard players operation @s stat.speed.calculate_difference_x -= @s stat.speed.calculate_old_x
@@ -33,15 +34,18 @@ scoreboard players operation @s stat.speed.calculate_difference_y -= @s stat.spe
 scoreboard players operation @s stat.speed.calculate_difference_z = @s stat.speed.calculate_new_z
 scoreboard players operation @s stat.speed.calculate_difference_z -= @s stat.speed.calculate_old_z
 
+scoreboard players operation @s stat.speed.calculate_difference_x /= 1000 consts
+scoreboard players operation @s stat.speed.calculate_difference_y /= 1000 consts
+scoreboard players operation @s stat.speed.calculate_difference_z /= 1000 consts
+
 scoreboard players operation @s stat.vertical_speed += @s stat.speed.calculate_difference_y
 
 execute if score @s stat.speed.calculate_difference_x matches ..-1 run scoreboard players operation @s stat.speed.calculate_difference_x *= -1 consts
 execute if score @s stat.speed.calculate_difference_y matches ..-1 run scoreboard players operation @s stat.speed.calculate_difference_y *= -1 consts
 execute if score @s stat.speed.calculate_difference_z matches ..-1 run scoreboard players operation @s stat.speed.calculate_difference_z *= -1 consts
 
-scoreboard players operation @s stat.speed.calculate_difference_x /= 1000 consts
-scoreboard players operation @s stat.speed.calculate_difference_y /= 1000 consts
-scoreboard players operation @s stat.speed.calculate_difference_z /= 1000 consts
+scoreboard players operation @s stat.horizontal_speed += @s stat.speed.calculate_difference_x
+scoreboard players operation @s stat.horizontal_speed += @s stat.speed.calculate_difference_z
 
 scoreboard players operation @s stat.speed.iter_1 += @s stat.speed.calculate_difference_x
 scoreboard players operation @s stat.speed.iter_1 += @s stat.speed.calculate_difference_y

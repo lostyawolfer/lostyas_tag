@@ -1,11 +1,7 @@
-execute unless score game server matches 1.. if score @s points.reason.trigger matches 1.. run scoreboard players reset @s points.reason.trigger
-execute unless score game server matches 1.. if score @s points.reason.trigger matches 1.. run return 1
-execute unless entity @a[tag = tagger, tag =!dead, tag =!safezone] if score @s points.reason.trigger matches 1.. run scoreboard players reset @s points.reason.trigger
-execute unless entity @a[tag = tagger, tag =!dead, tag =!safezone] if score @s points.reason.trigger matches 1.. run return 2
-execute unless entity @s[tag =!safezone] if score @s points.reason.trigger matches 1.. run scoreboard players reset @s points.reason.trigger
-execute unless entity @s[tag =!safezone] if score @s points.reason.trigger matches 1.. run return 3
-execute if entity @s[tag=no_points] if score @s points.reason.trigger matches 1.. run scoreboard players reset @s points.reason.trigger
-execute if entity @s[tag=no_points] if score @s points.reason.trigger matches 1.. run return 4
+execute unless score game server matches 1.. if score @s points.reason.trigger matches 1..999 run scoreboard players add @s points.reason.trigger 1000
+execute unless entity @a[tag = tagger, tag =!dead, tag =!safezone] if score @s points.reason.trigger matches 1..999 run scoreboard players add @s points.reason.trigger 1000
+execute unless entity @s[tag =!safezone] if score @s points.reason.trigger matches 1..999 run scoreboard players add @s points.reason.trigger 1000
+execute if entity @s[tag=no_points] if score @s points.reason.trigger matches 1..999 run scoreboard players add @s points.reason.trigger 1000
 
 
 # bhop
@@ -41,7 +37,8 @@ execute if score @s points.reason.trigger matches -12 run scoreboard players add
 
 
 
-execute if score @s points.reason.trigger matches 1.. run playsound entity.experience_orb.pickup master @s ~ ~ ~ .25 2 .25
+execute if score @s points.reason.trigger matches 1..999 run playsound entity.experience_orb.pickup master @s ~ ~ ~ .25 2 .25
+execute if score @s points.reason.trigger matches 1000.. run playsound entity.player.attack.crit master @s ~ ~ ~ .25 2 .25
 execute if score @s points.reason.trigger matches ..-1 unless score @s points.reason.trigger matches -8..-7 run playsound entity.experience_orb.pickup master @s ~ ~ ~ 1 1.7 1
 execute if score @s points.reason.trigger matches ..-1 if score @s points.reason.trigger matches -8..-7 unless score @s gain_for_tagging_timer matches 1.. run playsound entity.experience_orb.pickup master @s ~ ~ ~ 1 1.7 1
 

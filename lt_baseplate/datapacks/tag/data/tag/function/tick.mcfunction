@@ -164,10 +164,10 @@ execute as @a[scores={stat.speed=..120}, tag=dashed] run tag @s remove dashed
 
 
 
-execute as @a[nbt={OnGround:0b}, scores={stat.speed.iter_1=180..250}, tag=!airdashed, gamemode=adventure] at @s if block ~ ~-1 ~ air if block ~ ~-2 ~ air if score @s stat.vertical_speed matches -110.. run scoreboard players set @s points.reason.trigger 7
-execute as @a[nbt={OnGround:0b}, scores={stat.speed.iter_1=180..250}, tag=!airdashed, gamemode=adventure] at @s if block ~ ~-1 ~ air if block ~ ~-2 ~ air if score @s stat.vertical_speed matches -110.. run tag @s add airdashed
+execute as @a[nbt={OnGround:0b}, scores={stat.horizontal_speed=200..}, tag=!airdashed, gamemode=adventure] at @s if block ~ ~-1 ~ air if block ~ ~-2 ~ air run scoreboard players set @s points.reason.trigger 7
+execute as @a[nbt={OnGround:0b}, scores={stat.horizontal_speed=200..}, tag=!airdashed, gamemode=adventure] at @s if block ~ ~-1 ~ air if block ~ ~-2 ~ air run tag @s add airdashed
 
-execute as @a[scores={stat.speed=..70}, tag=airdashed] run tag @s remove airdashed
+execute as @a[scores={stat.horizontal_speed=..70}, tag=airdashed] run tag @s remove airdashed
 
 
 
@@ -812,6 +812,19 @@ execute as @a[scores = {effect.downed = -30..}, gamemode = adventure] at @s run 
 # variables after functions
 execute store result score playercount_old server if entity @a
 execute store result score taggers_old server if entity @a[tag=tagger]
+
+
+
+execute as @a if score @s screen_animation matches 1.. run scoreboard players add @s screen_animation.counter 1
+execute as @a if score @s screen_animation matches 1.. run scoreboard players operation @s screen_effect = @s screen_animation
+execute as @a if score @s screen_animation matches 1.. run scoreboard players operation @s screen_effect *= 1000 consts
+execute as @a if score @s screen_animation matches 1.. run scoreboard players operation @s screen_effect += @s screen_animation.counter
+
+execute as @a if score @s screen_effect matches 1001 at @s run playsound tag:events.bad_weather master @s ~ ~ ~ 1 1 1
+
+execute as @a if score @s screen_animation.counter matches 172.. run scoreboard players reset @s screen_animation
+execute as @a if score @s screen_animation.counter matches 172.. run scoreboard players reset @s screen_animation.counter
+
 
 
 

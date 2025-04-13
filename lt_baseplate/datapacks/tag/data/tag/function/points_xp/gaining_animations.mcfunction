@@ -52,6 +52,15 @@ execute if score @s points.reason.store2 matches -10 if entity @s[tag=no_points]
 execute if score @s points.reason.store2 matches -11 if entity @s[tag=no_points] run function tag:points_xp/animations/points_cant_gain/gaining_animations_macro_blue {amount: "+60⌚", translate: "ᴜɴꜰʀᴏᴢᴇ", spacing: "                 "}
 execute if score @s points.reason.store2 matches -12 if entity @s[tag=no_points] run function tag:points_xp/animations/points_cant_gain/gaining_animations_macro_blue {amount: "+60⌚", translate: "ᴄʜᴀᴏꜱ, ᴄʜᴀᴏꜱ!", spacing: "             "}
 
+execute if score @s points.reason.store matches 1001 unless score @s points.reason.store2 matches ..0 if entity @s[tag=no_points] run function tag:points_xp/animations/points_cant_gain/gaining_animations_macro_training {amount: "+1⌚", translate: "ʙʜᴏᴘ", spacing: "                   "}
+execute if score @s points.reason.store matches 1002 unless score @s points.reason.store2 matches ..0 if entity @s[tag=no_points] run function tag:points_xp/animations/points_cant_gain/gaining_animations_macro_training {amount: "+2⌚", translate: "ʙʜᴏᴘ", spacing: "                   "}
+execute if score @s points.reason.store matches 1003 unless score @s points.reason.store2 matches ..0 if entity @s[tag=no_points] run function tag:points_xp/animations/points_cant_gain/gaining_animations_macro_training {amount: "+3⌚", translate: "ʙʜᴏᴘ", spacing: "                   "}
+execute if score @s points.reason.store matches 1004 unless score @s points.reason.store2 matches ..0 if entity @s[tag=no_points] run function tag:points_xp/animations/points_cant_gain/gaining_animations_macro_training {amount: "+2⌚", translate: "ᴅᴀꜱʜ", spacing: "                   "}
+execute if score @s points.reason.store matches 1005 unless score @s points.reason.store2 matches ..0 if entity @s[tag=no_points] run function tag:points_xp/animations/points_cant_gain/gaining_animations_macro_training {amount: "+1⌚", translate: "ᴄʟᴏꜱᴇ ᴛᴏ ᴀ ᴛᴀɢɢᴇʀ", spacing: "          "}
+execute if score @s points.reason.store matches 1006 unless score @s points.reason.store2 matches ..0 if entity @s[tag=no_points] run function tag:points_xp/animations/points_cant_gain/gaining_animations_macro_training {amount: "+5⌚", translate: "ᴅɪꜱʀᴇꜱᴘᴇᴄᴛ", spacing: "               "}
+execute if score @s points.reason.store matches 1007 unless score @s points.reason.store2 matches ..0 if entity @s[tag=no_points] run function tag:points_xp/animations/points_cant_gain/gaining_animations_macro_training {amount: "+5⌚", translate: "ᴀɪʀᴅᴀꜱʜ", spacing: "                 "}
+
+
 
 
 

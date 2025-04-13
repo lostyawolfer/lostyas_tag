@@ -68,6 +68,7 @@ scoreboard objectives add stat.speed.calculate_difference_y dummy
 scoreboard objectives add stat.speed.calculate_difference_z dummy
 
 scoreboard objectives add stat.vertical_speed dummy
+scoreboard objectives add stat.horizontal_speed dummy
 
 scoreboard objectives add stat.tagger_time dummy
 scoreboard objectives add stat.tagger_time.total dummy
@@ -196,6 +197,9 @@ scoreboard objectives add escape_timer dummy
 scoreboard objectives add fall_distance minecraft.custom:minecraft.fall_one_cm
 
 scoreboard objectives add game_count dummy
+
+scoreboard objectives add screen_animation dummy
+scoreboard objectives add screen_animation.counter dummy
 
 
 # bossbars
