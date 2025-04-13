@@ -1,0 +1,268 @@
+{  
+  "item.effect.generic": "Видимість: звичайна",
+  "item.effect.invisible": "Видимість: невидимий",
+  "item.effect.invisible.item": "Видимість: невидимий, але твій предмет в руці видно",
+  "item.effect.glowing": "Видимість: підсвічуєшся крізь стіни",
+  "item.effect.glowing_tagger": "Видимість: кеч завжди підсвічуєшся, але може присісти, щоб стати невидимим",
+  "item.effect.glowing_invisible": "Видимість: підсвічуєшся, не дивлячись на невидимість",
+
+  "item.tag.menu": "Меню",
+  "item.minecraft.goat_horn.none": "У тебе немає козячого рогу!",
+  
+  "menu.ab.1": "Любитель ракет",
+  "menu.ab.1.desc": "Підкидає тебе в повітря, ніби ти наступив на маяк.",
+  
+  "menu.ab.2": "Супершвидкість",
+  "menu.ab.2.desc": "Приклеює тебе до землі і дає швидко і далеко прослизнути вперед.",
+  
+  "menu.ab.3": "Свята мантія",
+  "menu.ab.3.desc": "Ти стаєш тимчасово невразливим на 1 удар кеча.",
+  
+  "menu.ab.4": "Невидимість",
+  "menu.ab.4.desc": "Робить тебе невидимим, а також дає невразливість до будь-якого підсвічування. Не забудь прибрати предмет із руки!",
+  
+  "menu.ab.5": "Підсвітка",
+  "menu.ab.5.desc": "Активує підсвічування для всіх, крім користувача.",
+  
+  "menu.ab.6": "Цикл 2.6",
+  "menu.ab.6.desc": "Твої ендер-перли відновлюються космічно швидко протягом використання. За 10 секунд встигнеш кинути 4!",
+
+  "menu.ab.7": "Гіперпростір",
+  "menu.ab.7.desc": "Дає тобі на долю секунди політати в режимі спостерігача.",
+
+  "menu.ab.cd": "Кулдаун",
+  "menu.ab.use": "Час використання",
+  "menu.ab.sec_one": "секунда",
+  "menu.ab.sec_two": "секунди",
+  "menu.ab.sec_many": "секунд",
+  "menu.ab.ticks_one": "тік",
+  "menu.ab.ticks_two": "тіка",
+  "menu.ab.ticks_many": "тіків",
+
+
+  "menu.pa.synergies": "СИНЕРГІЇ:",
+
+  "menu.pa.1": "Водний прискорювач",
+  "menu.pa.1.desc": "КОЛИ НЕ кеч: збільшена базова швидкість, у разі якщо в радіусі 20 блоків від тебе є кеч.\nКОЛИ КЕЧ: збільшена базова швидкість.",
+
+  "menu.pa.2": "Радар",
+  "menu.pa.2.desc": "КОЛИ НЕ КЕЧ: кожні 5 секунд створює навколо кеча кілька частинок, видимих тільки тобі. Корисно, коли кеч постійно сидить на шифті.\nЯКЩО КЕЧ: кожні 15 секунд підсвічує на півсекунди найближчого гравця, якщо він невидимий, замість підсвічування створює частки, видимі тільки тобі.",
+
+  "menu.pa.3": "Розгін перлів",
+  "menu.pa.3.desc": "Прискорення кулдауну ендер-перлів у 1,5 раза.",
+
+  "menu.pa.4": "Розгін здатності",
+  "menu.pa.4.desc": "Прискорення кулдауну здатності в 1,5 раза.",
+
+  "menu.pa.5": "Подовжувач здатності",
+  "menu.pa.5.desc": "Подовжує час використання твоєї здатності. Якщо це до неї не застосовується - посилює її якимось іншим способом.",
+
+  "menu.pa.6": "Чарівний пендель",
+  "menu.pa.6.desc": "КОЛИ НЕ КЕЧ: коли заряджена здатність, тобі видають палицю на віддачу 2.\nКОЛИ КЕЧ: марна.",
+
+  "menu.pa.7": "Стрибунець",
+  "menu.pa.7.desc": "Коли ти перебуваєш поруч із будь-якою конструкцією заввишки 2,5 блока або нижче, тобі видається ефект стрибучості, якого вистачить рівно на те, щоб на неї застрибнути.",
+
+  "menu.pa.8": "Льотчик",
+  "menu.pa.8.desc": "Посилює ефект підкидання маяка.",
+
+  "menu.pa.9": "Шпигун",
+  "menu.pa.9.desc": "КОЛИ НЕ КЕЧ: якщо стоїш нерухомо првідягом 5 секунд, отримуєш ефект невидимості, який спадає за найменшого руху. Поки невидимий, з'являються напівпрозорі блакитні частинки.\nЯКЩО КЕЧ: робить подію \"«Підсвічування\" трохи частішою.",
+  
+  "menu.pa.10": "Портфель",
+  "menu.pa.10.desc": "Дозволяє накопичувати до двох ендер-перлин, які можна використовувати поспіль.",
+
+  "menu.pa.11": "Контузія",
+  "menu.pa.11.desc": "СТАНДАРТНИЙ РЕЖИМ: коли ти передаєш кеч будь-кому, на 1 секунду дає йому сильний ефект уповільнення, а також закриває його здібність і ендер-перли на 3 секунди. Додавання кулдауну не стакається (якщо у нього і так здатність і/або перли мають кулдаун вищий за 3, нічого не станеться).\nВІРУС: відновлює тобі перл і здатність на 1 секунду. пУБІЙЦЯ: те саме, що і вірус.\nКОРОНА: те саме, що і стандартний, тільки застосовується, коли ти забираєш корону.\nЗАМОРОЗКА: блокує здатність і перли на 3 секунди після розморожування; знімає 5 секунд з лічильника життя жертви.\nЗАРАЖУЮЧА ЗАМОРОЗКА: те саме, що й заморозка.\nГАРЯЧА КАРТОПЛЯ: те саме, що і стандартний.",
+
+
+  "menu.close": "Закрити меню",
+  "menu.back": "В головне меню",
+  "menu.next": "Наступна сторінка",
+  "menu.prev": "Попередня сторінка",
+  "menu.select": "Вибрати",
+  "menu.ab.deselect": "Прибрати абілку?",
+  "menu.pa.deselect": "Прибрати пасивку?",
+  "menu.buy": "Купити",
+  "menu.buy.price_one": "рівень",
+  "menu.buy.price_two": "рівня",
+  "menu.buy.price_many": "рівнів",
+  "menu.buy.insufficient_funds": "Недостатньо коштів на рахунку!",
+  "menu.buy.insufficient_funds.desc": "Повернися, коли будеш... багатшим.",
+  "menu.ab": "Абілки",
+  "menu.pa": "Пасивки",
+  "menu.gh": "Козячі роги",
+  
+  "chat.ab.select": "вибрав абілку",
+  "chat.ab.deselect": "прибрав абілку",
+
+  "chat.pa.select": "вибрав пасивку",
+  "chat.pa.deselect": "прибрав пасивку",
+
+
+  "chat.hit.default": " передав ",
+  "subtitle.hit.default_you": "ти",
+  "subtitle.hit.default_you_1": "тому що ",
+  "subtitle.hit.default_other_1": "тому що ",
+  "subtitle.hit.default_you_2": " так сказав",
+  "subtitle.hit.default_other_2": " так сказав",
+  "title.hit.default_you": "Ти КЕЧ!",  
+  "title.hit.default_other": " тепер кеч!",  
+  
+  "chat.hit.infect": " заразив ",
+  "subtitle.hit.infect_you": "тебе",
+  "subtitle.hit.infect_you_1": "від ",
+  "subtitle.hit.infect_other_1": "від ",
+  "subtitle.hit.infect_you_2": "!",
+  "subtitle.hit.infect_other_2": "!",
+  "title.hit.infect_you": "ти ЗАРАЖЕНИЙ!",  
+  "title.hit.infect_other": " був заражений",
+
+  "chat.hit.murder": " вбив ",
+  "subtitle.hit.murder_you": "ти",
+  "subtitle.hit.murder_you_1": "вбивця ",
+  "subtitle.hit.murder_other_1": "",
+  "subtitle.hit.murder_you_2": "",
+  "subtitle.hit.murder_other_2": " безжально тебе вбив",
+  "title.hit.murder_you": "Вам ГАПЛИК!",  
+  "title.hit.murder_other": " був вбитий!",
+  
+  "chat.hit.crown": " забрав корону у ",
+  "subtitle.hit.crown_you": "ти",
+  "subtitle.hit.crown_you_1": " забрав її у ",
+  "subtitle.hit.crown_other_1": "у тебе її вкрали, плачемо всім селом",
+  "subtitle.hit.crown_you_2": "",
+  "subtitle.hit.crown_other_2": "",
+  "title.hit.crown_you": "Ти забрав КОРОНУ!",  
+  "title.hit.crown_other": " з КОРОНОЮ!",
+  
+  "chat.hit.freeze": " заморозив ",
+  "subtitle.hit.freeze_you": "тобою",
+  "subtitle.hit.freeze_you_1": "",
+  "subtitle.hit.freeze_other_1": "",
+  "subtitle.hit.freeze_you_2": "",
+  "subtitle.hit.freeze_other_2": " тебе заморозив",
+  "title.hit.freeze_you": "ти ЗАМОРОЖЕНИЙ!",  
+  "title.hit.freeze_other": " заморожений!",
+
+  "chat.hit.unfreeze": " разморозив ",
+  "subtitle.hit.unfreeze_you": "тебе",
+  "subtitle.hit.unfreeze_you_1": "дякую ",
+  "subtitle.hit.unfreeze_other_1": "дякую, ",
+  "subtitle.hit.unfreeze_you_2": "!!",
+  "subtitle.hit.unfreeze_other_2": "",
+  "title.hit.unfreeze_you": "ти РОЗМОРОЖЕНИЙ!",  
+  "title.hit.unfreeze_other": " был розморожений!",
+
+  "chat.hit.generic": " став кечом з волі гри",
+  "subtitle.hit.generic_you": "гра",
+  "subtitle.hit.generic_you_1": "тому що ",
+  "subtitle.hit.generic_other_1": "тому що ",
+  "subtitle.hit.generic_you_2": " так сказав",
+  "subtitle.hit.generic_other_2": " так сказав",
+  "title.hit.generic_you": "ти кеч!",  
+  "title.hit.generic_other": " кеч!",
+  
+  "chat.hit.infection_freeze": " заражений обмороженням",
+  "subtitle.hit.infection_freeze_you": "заморозка",
+  "subtitle.hit.infection_freeze_you_1": "тому що ",
+  "subtitle.hit.infection_freeze_other_1": "тому що ",
+  "subtitle.hit.infection_freeze_you_2": " так сказав",
+  "subtitle.hit.infection_freeze_other_2": " так сказав",
+  "title.hit.infection_freeze_you": "ти ЗАРАЖЕНИЙ!",  
+  "title.hit.infection_freeze_other": " був заражений!",
+
+  "chat.hit.hot_potato": " передав ",
+  "subtitle.hit.hot_potato_you": "ти",
+  "subtitle.hit.hot_potato_you_1": "тому що ",
+  "subtitle.hit.hot_potato_other_1": "тому що ",
+  "subtitle.hit.hot_potato_you_2": " так сказав",
+  "subtitle.hit.hot_potato_other_2": " так сказав",
+  "title.hit.hot_potato_you": "Ти КЕЧ!",
+  "title.hit.hot_potato_other": " кеч!",
+
+  
+  "subtitle.choosing_random": "кручу-верчу, петуха вибрати хочу...",
+  "chat.choosing_random": "вибираю кеча на рандом...",
+  
+  "chat.dead": " вмер",
+  "chat.dead.hot_potato": " взірвався",
+  "chat.dead.downed": " заморожений до смерті",
+  
+  "sidebar.now_online": "онлайн",
+  
+  "item.tag.ability": "абілка",
+  "item.tag.ability.use": "абілка",
+  "item.tag.ability.cd": "абілка",
+  "item.tag.ability.none": "У тебе нема абілок!",
+
+  "item.tag.passive_active": "Пасивка",
+  "item.tag.passive_not_active": "Пасивка",
+  "item.tag.passive.none": "У тебе нема пасивки!",
+  
+  "gamemode.building_mode": "             будівництво             ",
+  "gamemode.social_space": "             social space             ",
+  "gamemode.punch_to_start": "         вдар щоб почати         ",
+  "gamemode.classic": "             класичний %s             ",
+  "gamemode.infection": "                вірус %s                ",
+  "gamemode.murder": "               вбивця %s               ",
+  "gamemode.crown": "               корона %s               ",
+  "gamemode.freeze": "             заморозка %s             ",
+  "gamemode.infection_freeze": "        вірусна заморозка %s        ",
+  "gamemode.hot_potato": "         гаряча картопля %s         ",
+
+  "title.tp.safezone_exit_error": "не можна вийти із сейфзони",
+  "title.tp.safezone_enter_error": "не можна зайти в сейфзону",
+  "title.tp.outside_map": "ти опинився за картою",
+  "title.tp.inside_blocks": "ти був в блоках",
+
+  "title.frozen0": "аж вуха заклало...",
+  "title.frozen1": "бєтмєн в дорозі...",
+  "title.frozen2": "не здавайся...",
+  "title.frozen3": "тебе врятують...",
+  "title.frozen4": "хтось допоможе...",
+  "title.frozen5": "я замерз...",
+  "title.frozen6": "допоможіть...",
+  "title.frozen7": "ще є надія...",
+  "title.frozen8": "не все втрачено...",
+  "title.frozen9": "не переживай...",
+
+  "title.glowing": "Підсвічування",
+  "subtitle.glowing": "тебе видно наступні 5 сек.",
+  "subtitle.glowing.tagger": "ти бачиш усіх наступні 5 сек.",
+  "subtitle.glowing.dead": "Усіх видно наступні 5 сек.",
+  "chat.glowing": "Підсвічування! Усіх видно крізь стіни!",
+  "chat.glowing.ability": "Підсвічування! Усіх видно крізь стіни! (визвана абілкою)",
+
+  "title.recieve_xp.1": "досвіду за",
+  "title.recieve_xp.no_ability": " / x2 за відсутності абілки",
+  "title.recieve_xp.2_one": "бал",
+  "title.recieve_xp.2_two": "бала",
+  "title.recieve_xp.2_many": "балів",
+
+
+  "title.spectator": "ти глядач",
+  "title.now_spectating": "зараз спостерігаю за ",
+
+  "notif.safezone": "⭐ ти в сейфзоні ⭐",
+
+  "title.round.60s": "60 секунд",
+  "title.round.60s.sub": "до закінчення раунду",
+  "title.round.60s.effect": "x2 швидкість",
+  "title.round.60s.effect_sub": "кулдауна абілки",
+  "title.round.60s.effect_sub.freeze": "заморожування і кулдауна абілки",
+
+  "title.round.30s": "30 секунд",
+  "title.round.30s.sub": "до закінчення раунду",
+  "title.round.30s.effect": "∞ підвічування",
+  "title.round.30s.effect_sub": "усіх завжди видно крізь стіни",
+
+  "title.round.ends_in": "раунд закінчиться через...",
+
+  "title.round.win": "ПЕРЕМОГА",
+  "title.round.win.sub_tagger": "Наздогнав усіх, кого можна.",
+  "title.round.win.sub_player": "Гра на витримку.",
+
+  "title.round.loss": "ПОРАЗКА",
+  "title.round.loss.sub": "Наступна гра буде кращою!"
+}
