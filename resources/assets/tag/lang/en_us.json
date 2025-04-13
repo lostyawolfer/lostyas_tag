@@ -16,7 +16,7 @@
   "menu.ab.2.desc": "Glues you to the ground and lets you dash forward really fast.",
   
   "menu.ab.3": "Holy Mantle",
-  "menu.ab.3.desc": "Makes you temporarily invincible to one singular hit of a tagger.",
+  "menu.ab.3.desc": "Makes you temporarily invincible to one singular hit of a tagger. Literally a totem of untagging.",
   
   "menu.ab.4": "Invisibility",
   "menu.ab.4.desc": "Makes you invisible, and makes you invulnerable to any glowing effects.",
@@ -29,6 +29,14 @@
 
   "menu.ab.7": "Dark Arts",
   "menu.ab.7.desc": "Lets you fly in spectator mode for a split second.",
+
+  "menu.ab.8": "Portable Teleporter",
+  "menu.ab.8.desc": "On first use, lets you set up a teleporter. While it is set up, when used, teleports you to it. To not confuse with others' teleporters, on top of yours only you can see green particles.",
+
+  "menu.ab.9": "Time Stop",
+  "menu.ab.9.desc": "Lets you stop cooldown timers, blind and stop everyone, even in mid-air. Cannot tag while a timestop is ongoing.",
+
+
 
   "menu.ab.cd": "Cooldown",
   "menu.ab.use": "Use time",
@@ -58,7 +66,7 @@
   "menu.pa.5.desc": "Makes your ability usage last longer. If not applicable to your ability, will make it stronger in some other way.",
 
   "menu.pa.6": "Knock Em Out",
-  "menu.pa.6.desc": "WHEN NOT A TAGGER: when your ability is charged, you get a knockback 2 stick.\nWHEN A TAGGER: useless.",
+  "menu.pa.6.desc": "WHEN NOT A TAGGER: you get a knockback 3 stick.\nWHEN A TAGGER: your reach to players is increased 2,5x.",
 
   "menu.pa.7": "Bouncy Ball",
   "menu.pa.7.desc": "Lets you jump up to 2.5 blocks high when needed (when you are near a 1.5, 2 or 2.5 block high construction).",
@@ -69,11 +77,14 @@
   "menu.pa.9": "Spy",
   "menu.pa.9.desc": "WHEN NOT A TAGGER: when you stand without any movement for 5 seconds straight, gives you invisibility. It goes away if you move. When active, you sometimes emit half-transparent blue particles.\nWHEN A TAGGER: glowing event is slightly more common.",
   
-  "menu.pa.10": "Backpack",
-  "menu.pa.10.desc": "unused",
+  "menu.pa.10": "Adrenaline",
+  "menu.pa.10.desc": "Your bunnyhop speedup is accumulated in just 3 jumps. The penalty for slowing down is more lenient.",
 
-  "menu.pa.11": "Concussion",
-  "menu.pa.11.desc": "unused",
+  "menu.pa.11": "Backpack",
+  "menu.pa.11.desc": "Lets you store up to 2 ender pearls simultaneously, for the price of the cooldown being 20 seconds.",
+
+  "menu.pa.12": "Concussion",
+  "menu.pa.12.desc": "unused",
 
 
   "menu.close": "Close menu",
@@ -200,7 +211,7 @@
   "item.tag.passive_not_active": "Passive ability",
   "item.tag.passive.none": "You don't have a passive ability!",
   
-  "gamemode.building_mode": "              building mode               ",
+  "gamemode.building_mode": "                  lobby                   ",
   "gamemode.social_space": "              social space              ",
   "gamemode.punch_to_start": "     punch to start classic tag     ",
   "gamemode.classic": "               classic tag %s               ",

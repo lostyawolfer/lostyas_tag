@@ -29,12 +29,19 @@
             "tag:death/d.piano_riff",
             "tag:death/d.raahh",
             "tag:death/d.sad_sponge_bob",
-            "tag:death/d.sad_sponge_bob_2"
+            "tag:death/d.sad_sponge_bob_2",
+            "tag:death/d.smw"
         ]
     },
     "death_main": {
         "sounds": [
             "tag:death/aaa.death_main"
+        ]
+    },
+
+    "events.bad_weather": {
+        "sounds": [
+            "tag:events/bad_weather"
         ]
     },
 
