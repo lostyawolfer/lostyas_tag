@@ -1,8 +1,8 @@
-/lt_playground/
-/lt_playground_winter/
+#/lt_playground/
+#/lt_playground_winter/
 *_nether/
 *_the_end/
-/plugins/
+#/plugins/
 /config
 
 */advancements/
