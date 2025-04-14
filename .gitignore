@@ -49,7 +49,7 @@ plugins/OpLogin
 #*.jar
 *desktop.ini
 
-/eula.txt
+#/eula.txt
 /.console_history
 /banned-ips.json
 /banned-players.json
