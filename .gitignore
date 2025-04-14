@@ -44,7 +44,7 @@ resources/*.zip
 
 *.thanos
 *session.lock
-*.jar
+#*.jar
 *desktop.ini
 
 /eula.txt
