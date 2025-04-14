@@ -42,6 +42,8 @@ resources/*.zip
 */advancements
 */playerdata
 
+plugins/OpLogin
+
 *.thanos
 *session.lock
 #*.jar
