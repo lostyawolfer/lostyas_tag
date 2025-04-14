@@ -89,3 +89,17 @@ scoreboard players operation @s stat.speed.digit_2 /= 10 consts
 scoreboard players operation @s stat.speed.digit_2 %= 10 consts
 
 scoreboard players operation @s stat.speed.digit_3 %= 10 consts
+
+
+
+
+scoreboard players operation @s stat.get_tagged.digit_1 = @s stat.get_tagged
+scoreboard players operation @s stat.get_tagged.digit_2 = @s stat.get_tagged
+scoreboard players operation @s stat.get_tagged.digit_3 = @s stat.get_tagged
+
+scoreboard players operation @s stat.get_tagged.digit_1 /= 100 consts
+
+scoreboard players operation @s stat.get_tagged.digit_2 /= 10 consts
+scoreboard players operation @s stat.get_tagged.digit_2 %= 10 consts
+
+scoreboard players operation @s stat.get_tagged.digit_3 %= 10 consts

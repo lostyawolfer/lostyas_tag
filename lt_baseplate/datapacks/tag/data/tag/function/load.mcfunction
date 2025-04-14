@@ -79,6 +79,9 @@ scoreboard objectives add stat.flew_in_ability minecraft.custom:minecraft.fly_on
 scoreboard objectives add stat.xp dummy
 
 scoreboard objectives add stat.get_tagged dummy
+    scoreboard objectives add stat.get_tagged.digit_1 dummy
+    scoreboard objectives add stat.get_tagged.digit_2 dummy
+    scoreboard objectives add stat.get_tagged.digit_3 dummy
 
 scoreboard objectives add p.cd.s dummy
 scoreboard objectives add p.cd dummy
