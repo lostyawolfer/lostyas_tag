@@ -36,6 +36,8 @@ desktop.ini
 *-backup
 wepif.yml
 
+resources/*.zip
+
 */stats
 */advancements
 */playerdata
