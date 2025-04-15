@@ -217,6 +217,12 @@ bossbar set tag:notif.safezone visible true
 bossbar set tag:notif.safezone max 1
 bossbar set tag:notif.safezone value 0
 
+bossbar add tag:event ""
+bossbar set tag:event visible false
+bossbar set tag:event max 1
+bossbar set tag:event value 0
+
+
 
 
 # teams

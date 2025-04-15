@@ -88,7 +88,7 @@ execute as @a[scores={pa.current=10}] at @s run function tag:abilities/passive/1
 execute as @a[scores={pa.current=11}] at @s run function tag:abilities/passive/11
 execute as @a[scores={pa.current=12}] at @s run function tag:abilities/passive/12
 
-
+execute as @a unless score @s pa.current matches 0.. run scoreboard players set @s pa.current 0
 
 execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s if entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..32] if score game server matches 1.. unless score game server matches 4 run scoreboard players add @s tagger_heartbeat 1
 execute as @a[tag=!tagger, gamemode=adventure, tag=!safezone, tag=!special] at @s unless entity @a[tag=tagger, gamemode=adventure, tag=!safezone, distance=..32] unless score game server matches 1.. run scoreboard players reset @s tagger_heartbeat
@@ -507,6 +507,8 @@ execute unless score playercount server matches 1.. run scoreboard players set g
 
 bossbar set tag:notif.safezone players @a[tag = safezone]
 
+bossbar set tag:event players @a
+
 execute if score game server matches 0.. run scoreboard players operation game_prev server = game server
 
 execute if score is-prod server matches 0 run function tag:misc/bossbar {color: "#056863", type: dev}
@@ -708,6 +710,7 @@ execute as @a unless score @s tp.id matches 1..16 run function tag:tp_back/get_i
 
 # events
 function tag:events/glowing
+function tag:events/bad_weather
 
 
 
@@ -815,15 +818,24 @@ execute store result score taggers_old server if entity @a[tag=tagger]
 
 
 
+
+
+
+
+execute as @a if score @s screen_animation.counter matches 245.. run scoreboard players reset @s screen_animation
+execute as @a if score @s screen_animation.counter matches 245.. run effect clear @s blindness
+execute as @a if score @s screen_animation.counter matches 245.. run effect give @s blindness 1 0 true
+execute as @a if score @s screen_animation.counter matches 245.. run scoreboard players reset @s screen_animation.counter
+
+
 execute as @a if score @s screen_animation matches 1.. run scoreboard players add @s screen_animation.counter 1
+execute as @a if score @s screen_animation matches 1.. run effect give @s blindness 2 0 true
 execute as @a if score @s screen_animation matches 1.. run scoreboard players operation @s screen_effect = @s screen_animation
 execute as @a if score @s screen_animation matches 1.. run scoreboard players operation @s screen_effect *= 1000 consts
 execute as @a if score @s screen_animation matches 1.. run scoreboard players operation @s screen_effect += @s screen_animation.counter
 
 execute as @a if score @s screen_effect matches 1001 at @s run playsound tag:events.bad_weather master @s ~ ~ ~ 1 1 1
 
-execute as @a if score @s screen_animation.counter matches 172.. run scoreboard players reset @s screen_animation
-execute as @a if score @s screen_animation.counter matches 172.. run scoreboard players reset @s screen_animation.counter
 
 
 

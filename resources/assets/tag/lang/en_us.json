@@ -275,5 +275,11 @@
   "title.round.win.sub_player": "You stayed alive before round ended! Good job!",
 
   "title.round.loss": "DEFEAT",
-  "title.round.loss.sub": "Good luck next time!"
+  "title.round.loss.sub": "Good luck next time!",
+
+
+  "event.danger_approaching": "DANGER APPROACHING",
+
+  "event.bad_weather.name": "there's a disaster going on.",
+  "event.bad_weather.desc": "stay indoors."
 }

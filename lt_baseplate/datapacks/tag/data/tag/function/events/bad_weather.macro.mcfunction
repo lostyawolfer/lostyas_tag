@@ -1,0 +1,3 @@
+$execute if score e.bad_weather server matches 300.. unless entity @e[type=armor_stand, tag=bad_weather.$(id), tag=bad_weather] run summon armor_stand 0 0 0 {Tags:["bad_weather.$(id)", "bad_weather"], Invisible: 1b}
+$execute as @a[scores={tp.id=$(id)}] at @s run spreadplayers ~ ~ 0 4 false @e[type=armor_stand, tag=bad_weather.$(id), tag=bad_weather]
+$execute as @a[scores={tp.id=$(id)}] at @s if entity @e[type=armor_stand, tag=bad_weather.$(id), distance=..1] run function tag:events/bad_weather.lightning

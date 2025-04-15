@@ -44,6 +44,11 @@
             "tag:events/bad_weather"
         ]
     },
+    "events.danger_approaching": {
+        "sounds": [
+            "tag:events/danger_approaching"
+        ]
+    },
 
     "round.intro": {
         "sounds": [

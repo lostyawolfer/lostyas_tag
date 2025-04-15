@@ -62,6 +62,11 @@ execute if score game server matches 1.. unless score game server matches 4 if e
 execute if score game server matches 1.. unless score game server matches 4 if entity @s[tag = tagger] unless score @s effect.invisibility matches 2.. if score @s is_sneaking matches 1 run scoreboard players set @s effect.invisibility 1
 
 execute if score game server matches 1.. if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] unless score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/play
+
+execute if score game server matches 1.. if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] if score @s nbs_win_t matches 0.. run function tag_music:tag_youre_it/stop
+execute if score game server matches 1.. if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] if score @s nbs_proceedtot_t matches 0.. run function tag_music:tag_youre_it/stop
+execute if score game server matches 1.. if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] if score @s screen_animation.counter matches 0.. run function tag_music:tag_youre_it/stop
+
 execute if score game server matches 1.. if entity @s[tag = tagger, tag =!safezone, gamemode = adventure] run tag @s add nbs_tagyoureit
 execute if score game server matches 1.. if entity @s[tag =!tagger] if score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/stop
 execute if score game server matches 1.. if entity @s[gamemode =!adventure] if score @s nbs_tagyoureit_t matches -1.. run function tag_music:tag_youre_it/stop

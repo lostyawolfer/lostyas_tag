@@ -273,5 +273,11 @@
   "title.round.win.sub_player": "Гра на витримку.",
 
   "title.round.loss": "ЗРАДА",
-  "title.round.loss.sub": "Наступна гра буде кращою!"
+  "title.round.loss.sub": "Наступна гра буде кращою!",
+
+
+  "event.danger_approaching": "НАБЛИЖАЄТЬСЯ НЕБЕЗПЕКА",
+
+  "event.bad_weather.name": "повітряна тривога.",
+  "event.bad_weather.desc": "пройдіть в найближче укриття."
 }

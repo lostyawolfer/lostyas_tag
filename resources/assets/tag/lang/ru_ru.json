@@ -274,5 +274,11 @@
   "title.round.win.sub_player": "Игра на выдержку.",
 
   "title.round.loss": "ПОРАЖЕНИЕ",
-  "title.round.loss.sub": "Удачи в следующий раз!"
+  "title.round.loss.sub": "Удачи в следующий раз!",
+
+
+  "event.danger_approaching": "ПРИБЛИЖАЕТСЯ ОПАСНОСТЬ",
+
+  "event.bad_weather.name": "происходит стихийное бедствие.",
+  "event.bad_weather.desc": "оставайтесь под крышей."
 }

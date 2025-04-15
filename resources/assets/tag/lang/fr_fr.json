@@ -272,5 +272,11 @@
   "title.round.win.sub_player": "tu es resté en vie pour toute la manche! bien joué!",
 
   "title.round.loss": "PERDU",
-  "title.round.loss.sub": "tu pourras essayer la prochaine fois!"
+  "title.round.loss.sub": "tu pourras essayer la prochaine fois!",
+
+
+  "event.danger_approaching": "DANGER APPROCHANT",
+
+  "event.bad_weather.name": "une catastrophe est en cours.",
+  "event.bad_weather.desc": "restez à l'interieur."
 }
