@@ -7,7 +7,9 @@ execute unless score @s effect.strong_levitation matches ..8 run tellraw @a[scor
 execute unless score @s effect.invisibility matches 1.. unless score @s effect.strong_levitation matches ..8 run playsound entity.firework_rocket.blast_far player @a ~ ~.1 ~
 execute unless score @s effect.invisibility matches 1.. unless score @s effect.strong_levitation matches ..8 run playsound entity.firework_rocket.launch player @a ~ ~.1 ~
 
-execute unless score @s effect.invisibility matches 1.. unless score @s effect.strong_levitation matches ..8 run particle flash ~ ~ ~ 0 0 0 0 1
+execute if score @s effect.invisibility matches 1.. unless score @s effect.strong_levitation matches ..8 run playsound entity.firework_rocket.blast_far player @a ~ ~.1 ~ .5 .8
+
+execute unless score @s effect.strong_levitation matches ..8 run particle flash ~ ~ ~ 0 0 0 0 1
 
 
 execute unless score e.glowing server matches 0.. unless score @s effect.strong_levitation matches 1.. run scoreboard players remove e.glowing server 2

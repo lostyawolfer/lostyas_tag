@@ -3,7 +3,11 @@ gamemode adventure @a[gamemode = survival]
 recipe give @a *
 #execute as @a unless score @s points.best matches -2147483648..2147483647 run scoreboard players add @s points.best 0
 execute as @a if score @s points > @s points.best run scoreboard players operation @s points.best = @s points
+execute as @e[type=item, nbt={PickupDelay:40s}] run data modify entity @s Age set value 5990
+execute as @e[type=item, nbt={PickupDelay:40s}] run data modify entity @s PickupDelay set value 100
 
+
+#execute at Lostya run particle minecraft:firework ~ ~ ~ 0 0 0 1 20
 
 # variables before functions
 execute store result score playercount server if entity @a
@@ -695,7 +699,6 @@ function tag:misc/player_sidebar
 function tag:tp_back/create_stands
 
 function tag:map_specific/lt_playground
-execute as @a run function tag:misc/screens
 # execute as @a at @s run function tag:misc/anticheat
 
 item replace entity @a[gamemode = adventure] player.cursor with air
@@ -739,26 +742,22 @@ execute as @a[tag =!safezone] if score @s menu matches 1.. run clear @s warped_f
 execute as @a[tag =!safezone] if score @s menu matches 1.. run scoreboard players set @s menu 0
 #execute as @a if score @s menu matches 0 run clear @s warped_fungus_on_a_stick[!custom_data={menu: 1}]
 
+execute as @a[scores={ab.use=1..}] if score @s ab.current matches 4 run scoreboard players set @s effect.glowing 0
 execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/ender_pearl
 execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/ability
 execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/goat_horn
 execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/passive
-execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/effect
 execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/tagger_stick
 
 execute as @a[gamemode = adventure] at @s run function tag:items/menu/main
 
 
-execute as @a[gamemode = adventure] at @s run function tag:tagging/decoration_screens
 
 execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:items/ender_pearl
 execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:items/ability
-execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:items/effect
-execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:tagging/decoration_screens
 
 execute as @a[scores={xp.recieve=1..}] at @s run function tag:points_xp/animations/xp_recieve
 execute as @a[scores={xp.recieve=..-1}] at @s run function tag:points_xp/animations/xp_recieve
-
 
 
 
@@ -803,6 +802,13 @@ execute as @a[scores={points.recieve=..-1}] run function tag:points_xp/animation
 
 
 
+
+execute as @a[gamemode = adventure, scores = {menu = 0}] at @s run function tag:items/effect
+execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:items/effect
+
+execute as @a[gamemode = adventure] at @s run function tag:tagging/decoration_screens
+execute as @a[gamemode =!adventure, tag = normal_player_decoration] at @s run function tag:tagging/decoration_screens
+
 execute as @a[scores = {effect.glowing = 0..}, gamemode = adventure] at @s run function tag:effects/glowing
 execute as @a[scores = {effect.strong_levitation = 0..}] at @s run function tag:effects/strong_levitation
 execute as @a[scores = {effect.freeze = 0..}, gamemode = adventure] at @s run function tag:effects/freeze
@@ -830,6 +836,7 @@ execute as @a if score @s screen_animation.counter matches 245.. run scoreboard 
 
 execute as @a if score @s screen_animation matches 1.. run scoreboard players add @s screen_animation.counter 1
 execute as @a if score @s screen_animation matches 1.. run effect give @s blindness 2 0 true
+execute as @a if score @s screen_animation matches 1.. run tp @s @s
 execute as @a if score @s screen_animation matches 1.. run scoreboard players operation @s screen_effect = @s screen_animation
 execute as @a if score @s screen_animation matches 1.. run scoreboard players operation @s screen_effect *= 1000 consts
 execute as @a if score @s screen_animation matches 1.. run scoreboard players operation @s screen_effect += @s screen_animation.counter
@@ -846,3 +853,9 @@ execute as @a if score @s screen_effect matches 1001 at @s run playsound tag:eve
 # execute as @a at @s if block ~ ~-.1 ~ sandstone unless score @s anim.death matches -200.. run tag @s[gamemode=adventure] add dead
 
 # item replace entity @a[gamemode = adventure] container.2 with minecraft:ender_pearl[minecraft:use_cooldown={seconds:15, cooldown_group: "ender_pearl"}, minecraft:use_remainder={id: "heart_of_the_sea"}]
+
+
+
+
+
+execute as @a run function tag:misc/screens

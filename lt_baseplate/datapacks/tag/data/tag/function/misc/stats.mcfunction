@@ -78,6 +78,7 @@ execute if score @s stat.speed.iter_1 matches 0 if score @s stat.speed.iter_2 ma
 # scoreboard players operation @s stat.speed = @s stat.speed.iter_1
 
 
+execute if score @s stat.speed matches 1000.. run scoreboard players set @s stat.speed 999
 
 scoreboard players operation @s stat.speed.digit_1 = @s stat.speed
 scoreboard players operation @s stat.speed.digit_2 = @s stat.speed
@@ -103,3 +104,4 @@ scoreboard players operation @s stat.get_tagged.digit_2 /= 10 consts
 scoreboard players operation @s stat.get_tagged.digit_2 %= 10 consts
 
 scoreboard players operation @s stat.get_tagged.digit_3 %= 10 consts
+
