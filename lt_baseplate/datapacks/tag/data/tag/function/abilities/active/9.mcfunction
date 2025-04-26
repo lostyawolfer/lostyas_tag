@@ -20,7 +20,7 @@ execute as @s[tag=temp2] run playsound minecraft:block.conduit.deactivate master
 execute as @s[tag=temp2] run playsound minecraft:block.beacon.deactivate master @a ~ ~ ~ 20 0 1
 execute as @s[tag=temp2] at @s run particle nautilus ~ ~1 ~ 0 0 0 1 100 force @a
 execute as @s[tag=temp2] at @s run effect give @a[tag=!temp2, gamemode=adventure] slowness 10 2 true
-execute as @s[tag=temp2] at @s run effect give @a darkness 2 2 true
+execute as @s[tag=temp2] at @s run effect give @a darkness 3 0 true
 execute as @s[tag=temp2] run tag @s remove temp2
 
 
