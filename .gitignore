@@ -2,8 +2,14 @@
 #/lt_playground_winter/
 *_nether/
 *_the_end/
-#/plugins/
-/config
+plugins/*.jar
+config/
+server.jar
+bukkit.yml
+spigot.yml
+eula.txt
+debug.log
+server.properties
 
 */advancements/
 */data/
@@ -21,12 +27,12 @@
 */uid.dat
 
 
-# Ignore VSCode directory and all its contents
-/.vscode/
+# Ignore VSCode directories and all their contents
+.vscode/
 # Windows-only files
 desktop.ini
 # Build directory
-/build/
+build/
 # Machine-custom environment
 /.env
 
@@ -42,24 +48,22 @@ resources/*.zip
 */advancements
 */playerdata
 
-plugins/OpLogin
-
 *.thanos
 *session.lock
 #*.jar
 *desktop.ini
 
-#/eula.txt
+eula.txt
 /.console_history
-/banned-ips.json
-/banned-players.json
-/commands.yml
-/permissions.yml
-/version_history.json
-/usercache.json
-/whitelist.json
-/ops.json
-/help.yml
+banned-ips.json
+banned-players.json
+commands.yml
+permissions.yml
+version_history.json
+usercache.json
+whitelist.json
+ops.json
+help.yml
 
 /versions
 /libraries
@@ -99,6 +103,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+__pyache__/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

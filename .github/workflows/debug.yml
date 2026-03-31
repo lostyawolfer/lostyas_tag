@@ -1,0 +1,59 @@
+name: Debug
+
+on:
+  push:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run bindownload.py
+        run: python bindownload.py -vvvvv ALL
+
+      - name: Run build.py
+        run: python build.py
+
+      - name: Prepare debug artifacts
+        run: |
+          mkdir -p artifacts
+          cp build/tag-respack.zip artifacts/
+          python - <<'PY'
+          from pathlib import Path
+
+          server_properties = Path("server.properties")
+          lines = server_properties.read_text(encoding="utf-8").splitlines()
+          resource_pack_lines = [
+              line for line in lines
+              if line.startswith("resource-pack")
+          ]
+
+          content = "\n".join([
+              "# Debug Build Artifacts",
+              "",
+              "This artifact contains the generated resource pack ZIP and the relevant `server.properties` entries.",
+              "",
+              "```properties",
+              *resource_pack_lines,
+              "```",
+              "",
+          ])
+
+          Path("artifacts/README.md").write_text(content, encoding="utf-8")
+          PY
+
+      - name: Upload debug artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-build
+          path: artifacts/
+          if-no-files-found: error

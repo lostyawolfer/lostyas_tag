@@ -61,9 +61,12 @@ def zip_folder(indir, outfile, *, compression_ratio=9):
                 log.debug(f'\t\tFile "{arcname}"')
                 zip.write(infile, str(arcname))
 
+        info = zip.infolist()
+
+    with zipfile.ZipFile(outfile, mode='r') as zip:
         assert zip.testzip() is None, 'ZIP integrity failure'
 
-        return zip.infolist()
+    return info
 
 
 def hash_dir(dir: str | pth.Path, *,

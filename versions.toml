@@ -1,16 +1,16 @@
 [servercore_papermc]
 game_version = '1.21.3'
-core_version = '80'
+core_version = '83'
 name_format = 'server.jar'
-url = 'https://api.papermc.io/v2/projects/paper/versions/1.21.3/builds/80/downloads/paper-1.21.3-80.jar'
-hash = 'SHA256:ea8ac3f813abee88f3be3a7d3ae3d1b744542cbbd534bc427ed673f26a24e504'
+url = 'https://fill-data.papermc.io/v1/objects/87e973e1d338e869e7fdbc4b8fadc1579d7bb0246a0e0cf6e5700ace6c8bc17e/paper-1.21.3-83.jar'
+hash = 'SHA256:87e973e1d338e869e7fdbc4b8fadc1579d7bb0246a0e0cf6e5700ace6c8bc17e'
 
 
 [doors_reloaded]
 subdir = 'plugins'
 version = '1.3.1'
 name_format = 'doorsreloaded-{version}.jar'
-url = 'https://mc-plugins.net/_cdn/plugins/bukkit-spigot/DoorsReloaded_1.3.1.jar'
+url = 'https://api.spiget.org/v2/resources/91722/versions/437678/download/proxy' # spigotmc.org API, bypasses cloudflare bot protection
 hash = 'SHA256:be9f9a21a3f3911a101784b0599f9aebd2035062e0673c9ac8e959794c454c70'
 
 #url = 'https://www.spigotmc.org/resources/doors-reloaded.91722/download?version=437678'
@@ -27,12 +27,12 @@ hash = 'SHA256:be9f9a21a3f3911a101784b0599f9aebd2035062e0673c9ac8e959794c454c70'
 #url = 'https://github.com/gecolay/GSit/releases/download/1.12.0/GSit-1.12.0.jar'
 #hash = 'SHA256:620979a464634557066a7087edcc0fd8d46beed0e8f8d161c6112f5ef295a342'
 
-[luckperms]
-subdir = 'plugins'
-version = '5.4.149'
-name_format = 'luckperms-{version}.jar'
-url = 'https://download.luckperms.net/1566/bukkit/loader/LuckPerms-Bukkit-5.4.149.jar'
-hash = 'SHA256:e327db3ee76fa118c99abb63522197c1322a584cf56f6d770f6df4f34f49d4ce'
+#[luckperms]
+#subdir = 'plugins'
+#version = '5.5.38'
+#name_format = 'luckperms-{version}.jar'
+#url = 'https://download.luckperms.net/1626/bukkit/loader/LuckPerms-Bukkit-5.5.38.jar'
+#hash = 'SHA256:ac04752a98008cada3c04fc647a90075e79f0f50ddd30e5118a3234d692c9677'
 
 [knockbacksync]
 subdir = 'plugins'
@@ -42,10 +42,10 @@ url = 'https://cdn.modrinth.com/data/wGTbjSTq/versions/Opfse1ML/knockbacksync-fa
 
 [multiversecore]
 subdir = 'plugins'
-version = '4.3.14'
+version = '5.5.3'
 name_format = 'multiversecore-{version}.jar'
-url = 'https://cdn.modrinth.com/data/3wmN97b8/versions/jbQopAkk/multiverse-core-4.3.14.jar'
-hash = 'SHA256:27630e97c68612f2ccd1af729055528e22887923cce6f6cecc34e45583e5ae11'
+url = 'https://cdn.modrinth.com/data/3wmN97b8/versions/68aSO5t5/multiverse-core-5.5.3.jar'
+hash = 'SHA256:4528e3bb08b5ebf255ed9dd5698b286abf4b84f6c13c33b8bf753a40d9adcafb'
 
 #[pistonmotd]
 # subdir = 'plugins'
@@ -54,23 +54,53 @@ hash = 'SHA256:27630e97c68612f2ccd1af729055528e22887923cce6f6cecc34e45583e5ae11'
 #url = ''
 #hash = 'SHA256:'
 
-[tablist]
-subdir = 'plugins'
-version = '5.7.7'
-name_format = 'tablist-{version}.jar'
-url = 'https://github.com/montlikadani/TabList/releases/download/v5.7.7/TabList-bukkit-v5.7.7.jar'
-hash = 'SHA256:86fd01aae58b2ebac7dee9c77078ea5dbb9742c425fe0afd6cdae6121f2a79f9'
+# mentioned as not needed
+# reccomended switch to "TAB", becasue "tablist" is unmaintained. https://modrinth.com/plugin/tab-was-taken
+#[tablist]
+#subdir = 'plugins'
+#version = '5.7.7'
+#name_format = 'tablist-{version}.jar'
+#url = 'https://github.com/montlikadani/TabList/releases/download/v5.7.7/TabList-bukkit-v5.7.7.jar'
+#hash = 'SHA256:86fd01aae58b2ebac7dee9c77078ea5dbb9742c425fe0afd6cdae6121f2a79f9'
 
 [viaversion]
 subdir = 'plugins'
-version = '5.1.1'
+version = '5.7.2'
 name_format = 'viaversion-{version}.jar'
-url = 'https://cdn.modrinth.com/data/P1OZGk5p/versions/ffAFJrjN/ViaVersion-5.1.1.jar'
-hash = 'SHA256:4e42e83a391d545cf0add4d38e8517479215c7f3b763c68c75fdf80fdf3d2c59'
+url = 'https://cdn.modrinth.com/data/P1OZGk5p/versions/zHujnINO/ViaVersion-5.7.2.jar'
+hash = 'SHA256:388fcca02b0a58936d092a9ddf8f2b7838bb5d7cee57e21abb30e08dbfebf26c'
 
 [worldedit]
 subdir = 'plugins'
-version = '7.3.9'
+version = '7.3.18'
 name_format = 'worldedit-{version}.jar'
-url = 'https://cdn.modrinth.com/data/1u6JkXh5/versions/Bu1zaaoc/worldedit-bukkit-7.3.9.jar'
-hash = 'SHA256:75df26f120ff424e62cba3a6e41b3b4e496251d5613b3c55c5f35b96bd8fd57c'
+url = 'https://cdn.modrinth.com/data/1u6JkXh5/versions/XlUIRmF8/worldedit-bukkit-7.3.18.jar'
+hash = 'SHA256:712c87c66c053df4570f7405bc14179ee59d78856e26f04acfb2ac3709e01241'
+
+[skinsrestorer]
+subdir = 'plugins'
+version = '15.11.0'
+name_format = 'skinsrestorer-{version}.jar'
+url = 'https://cdn.modrinth.com/data/TsLS8Py5/versions/HLNmZIYy/SkinsRestorer.jar'
+hash = 'SHA256:a8bb1301df38acef755b9f12fd93ad21acbbb50ac6e85179f2e52eae78a9ae9a'
+
+[fakeplayer]
+subdir = 'plugins'
+version = '0.13.3'
+name_format = 'fakeplayer-{version}.jar'
+url = 'https://cdn.modrinth.com/data/TcyhRi9n/versions/1EZzdLbk/fakeplayer-0.3.13.jar'
+hash = 'SHA256:3b5fa7260206fb47a6f15b30505a4f13c40a71bf6ad1f63b856bc73153df1b50'
+
+[grimac]
+subdir = 'plugins'
+version = '2.3.73'
+name_format = 'grimac-{version}.jar'
+url = 'https://cdn.modrinth.com/data/LJNGWSvH/versions/1FIGlM6Q/grimac-bukkit-2.3.73.jar'
+hash = 'SHA256:a095331a8ba47286b27bdb9b51f0d35ae4a227632a2c50b25cedba85439f1810'
+
+[commandapi]
+subdir = 'plugins'
+version = '11.1.0'
+name_format = 'commandapi-{version}.jar'
+url = 'https://cdn.modrinth.com/data/ExxvCi0y/versions/jKB5ZyW7/CommandAPI-11.1.0-Paper.jar'
+hash = 'SHA256:6bf3d97d03e0a13cfbde290102cfccdc935981680015e482678eda18dc38ec0a'

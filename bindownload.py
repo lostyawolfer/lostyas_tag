@@ -6,10 +6,11 @@ remote urls, as provided by the spec file.
 """
 
 import argparse
+import concurrent.futures
 import hashlib
 import logging
 import pathlib as pth
-import shutil
+import threading
 import sys
 import tomllib as toml
 from urllib import request
@@ -17,7 +18,9 @@ from urllib import request
 DEFAULTS = {
     'spec': 'versions.toml',
     'loglevel': 'INFO',
-    'rootdir': '.'
+    'rootdir': '.',
+    'parallel_downloads': 5,
+    'chunk_size': 1024 * 256,
 }
 
 log = logging.getLogger(__name__)
@@ -26,6 +29,71 @@ logging.basicConfig(level=logging.ERROR)
 
 class DLError(Exception):
     pass
+
+
+class ProgressTracker:
+    def __init__(self, total_files):
+        self.total_files = total_files
+        self.completed_files = 0
+        self.downloaded_bytes = 0
+        self.total_bytes = 0
+        self.known_size_files = 0
+        self.unknown_size_files = 0
+        self._lock = threading.Lock()
+
+    def register_file_size(self, size):
+        with self._lock:
+            if size is None:
+                self.unknown_size_files += 1
+            else:
+                self.total_bytes += size
+                self.known_size_files += 1
+            self._render_locked()
+
+    def advance(self, chunk_size):
+        with self._lock:
+            self.downloaded_bytes += chunk_size
+            self._render_locked()
+
+    def mark_completed(self):
+        with self._lock:
+            self.completed_files += 1
+            self._render_locked()
+            if self.completed_files >= self.total_files:
+                print(file=sys.stderr, flush=True)
+
+    def print_message(self, message):
+        with self._lock:
+            print('\r' + ' ' * 120 + '\r', end='', file=sys.stderr)
+            print(message, file=sys.stderr, flush=True)
+            self._render_locked()
+
+    def _render_locked(self):
+        width = 30
+        has_reliable_total = (
+            self.unknown_size_files == 0 and
+            self.total_bytes > 0 and
+            self.downloaded_bytes <= self.total_bytes
+        )
+
+        if has_reliable_total:
+            ratio = min(self.downloaded_bytes / self.total_bytes, 1.0)
+            filled = int(width * ratio)
+            bar = '#' * filled + '-' * (width - filled)
+            bytes_part = f'{human_size(self.downloaded_bytes)} / {human_size(self.total_bytes)}'
+        else:
+            ratio = 1.0 if self.total_files == 0 else self.completed_files / self.total_files
+            filled = int(width * ratio)
+            bar = '#' * filled + '-' * (width - filled)
+            bytes_part = f'{human_size(self.downloaded_bytes)} downloaded'
+            if self.total_bytes > 0:
+                bytes_part += f' | known total {human_size(self.total_bytes)}+'
+
+        files_part = f'files {self.completed_files}/{self.total_files}'
+        print(f'\rDownloading [{bar}] {bytes_part} | {files_part}',
+              end='',
+              file=sys.stderr,
+              flush=True)
 
 
 def human_size(size):
@@ -44,7 +112,7 @@ def spec_targets(parsed_spec):
     """Get target names out of parsed spec."""
     return list(parsed_spec)
 
-def download(parsed_spec, target_name, rootdir):
+def download(parsed_spec, target_name, rootdir, *, progress=None):
     """
     reads parsed spec (as returned by `load_spec`),
     reads url of the target name (given as [mytarget] in TOML),
@@ -67,35 +135,45 @@ def download(parsed_spec, target_name, rootdir):
         # imitate CURL
         'User-Agent': 'curl/8.11.0'
     })
-    req = request.urlopen(reqobj)               # open url as file-like
+    with request.urlopen(reqobj) as req:               # open url as file-like
+        content_length = req.headers.get('Content-Length')
+        total_size = int(content_length) if content_length is not None else None
+        if progress is not None:
+            progress.register_file_size(total_size)
 
-    # Construct file name
-    fmt = target.get('name_format')
-    log.debug(f'Fmt is "{fmt}"')
-    if fmt:             # Try from format
-        filename = fmt.format(**target)
-        log.debug(f'Constructed filename "{filename}"')
-    else:               # Or use from server
-        filename = req.headers.get_filename()    # get filename as provided by server
-        # sanitize filename to avoid injections
-        filename = pth.Path(filename).name
-        log.debug(f'Got filename from server "{filename}"')
+        # Construct file name
+        fmt = target.get('name_format')
+        log.debug(f'Fmt is "{fmt}"')
+        if fmt:             # Try from format
+            filename = fmt.format(**target)
+            log.debug(f'Constructed filename "{filename}"')
+        else:               # Or use from server
+            filename = req.headers.get_filename()    # get filename as provided by server
+            # sanitize filename to avoid injections
+            filename = pth.Path(filename).name
+            log.debug(f'Got filename from server "{filename}"')
 
-    # construct file path from two parts
-    outname = outdir.joinpath(filename)
-    log.debug(f'Constructed out filename "{outname}"')
-    
-    # finally download it
-    with open(outname, 'wb') as outfile:
-        # same as
-        # outfile.write(req.read())
-        shutil.copyfileobj(req, outfile)
-        size = outfile.tell()       # returns bytes written
-        log.debug(f'Downloaded {outname} ({human_size(size)})')
+        # construct file path from two parts
+        outname = outdir.joinpath(filename)
+        log.debug(f'Constructed out filename "{outname}"')
+
+        # finally download it
+        with open(outname, 'wb') as outfile:
+            while chunk := req.read(DEFAULTS['chunk_size']):
+                outfile.write(chunk)
+                if progress is not None:
+                    progress.advance(len(chunk))
+            size = outfile.tell()       # returns bytes written
+            log.debug(f'Downloaded {outname} ({human_size(size)})')
     
     hash = target.get('hash')        # will resort to None if not provided
-    if hash and not verify_hash(hash, open(outname, 'rb')):
-        raise DLError(f'Hash check failure. Expected {hash}')
+    if hash:
+        with open(outname, 'rb') as fileobj:
+            if not verify_hash(hash, fileobj):
+                raise DLError(f'Hash check failure. Expected {hash}')
+
+    if progress is not None:
+        progress.mark_completed()
 
     return size
 
@@ -193,6 +271,22 @@ if __name__ == '__main__':
         targets = spec_targets(spec)
     log.info(f'Using targets: {" ".join(targets)}')
 
-    for target in targets:
-        size = download(spec, target, rootdir)
-        log.info(f'Got {target}\t{human_size(size)}')
+    progress = ProgressTracker(len(targets))
+
+    def download_one(target):
+        size = download(spec, target, rootdir, progress=progress)
+        progress.print_message(f'INFO: {target} {human_size(size)}')
+        return size
+
+    with concurrent.futures.ThreadPoolExecutor(
+            max_workers=DEFAULTS['parallel_downloads']) as executor:
+        future_map = {
+            executor.submit(download_one, target): target
+            for target in targets
+        }
+        for future in concurrent.futures.as_completed(future_map):
+            target = future_map[future]
+            try:
+                future.result()
+            except Exception as e:
+                raise DLError(f'Failed to download {target}: {e}') from e

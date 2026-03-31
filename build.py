@@ -1,28 +1,33 @@
 #!/usr/bin/env python3
 """Builds server-side and client-side, including assets."""
 
-# TODO:
-# - add comments into cfg file
-# - cfg file template processing
-
-import argparse
 import configparser
 import hashlib
+import http.client
 import io
 import logging
 import pathlib as pth
+import secrets
+import ssl
 import sys
-from tools.common import zip_folder
 import types
+import urllib.parse
 import uuid
 
+from tools.common import zip_folder
+
 log = logging.getLogger(__name__)
-# TODO: Set custom logging format for INFO level
-logging.basicConfig(level=logging.ERROR)
+logging.basicConfig(level=logging.INFO, format='%(message)s')
 
 DEFAULTS = types.SimpleNamespace(
     serverprops='server.properties.in',
+    serverprops_out='server.properties',
     respack_dir='resources',
+    build_dir='build',
+    zip_name='tag-respack.zip',
+    compression_ratio=9,
+    catbox_url='https://catbox.moe/user/api.php',
+    upload_chunk_size=1024 * 1024,
 )
 
 
@@ -38,8 +43,8 @@ def file_hash(file, *, algo='sha1'):
 
 
 def properties_escape(string):
-    replacements = {        # rely on dict insertion order
-        '\\': '\\\\',       # first escape \ with \\
+    replacements = {
+        '\\': '\\\\',
         '=': '\\=',
         ':': '\\:',
         '\n': '\\u000A',
@@ -50,13 +55,96 @@ def properties_escape(string):
     return string
 
 
+def print_progress(label, sent, total):
+    width = 30
+    ratio = 1.0 if total == 0 else min(max(sent / total, 0.0), 1.0)
+    filled = int(width * ratio)
+    bar = '#' * filled + '-' * (width - filled)
+    percent = ratio * 100
+    print(f'\r{label}: [{bar}] {percent:6.2f}% ({sent}/{total} bytes)',
+          end='',
+          file=sys.stderr,
+          flush=True)
+    if sent >= total:
+        print(file=sys.stderr, flush=True)
+
+
+def upload_to_catbox(file, *, userhash=None, endpoint=DEFAULTS.catbox_url):
+    file = pth.Path(file)
+    parsed = urllib.parse.urlparse(endpoint)
+    if parsed.scheme != 'https':
+        raise RuntimeError(f'Unsupported Catbox endpoint scheme: {parsed.scheme}')
+
+    boundary = f'----CodexCatboxBoundary{secrets.token_hex(16)}'
+
+    def field_part(name, value):
+        return (
+            f'--{boundary}\r\n'
+            f'Content-Disposition: form-data; name="{name}"\r\n\r\n'
+            f'{value}\r\n'
+        ).encode('utf-8')
+
+    prefix = io.BytesIO()
+    prefix.write(field_part('reqtype', 'fileupload'))
+    if userhash:
+        prefix.write(field_part('userhash', userhash))
+    prefix.write(
+        (
+            f'--{boundary}\r\n'
+            f'Content-Disposition: form-data; name="fileToUpload"; '
+            f'filename="{file.name}"\r\n'
+            'Content-Type: application/zip\r\n\r\n'
+        ).encode('utf-8'))
+    prefix = prefix.getvalue()
+    suffix = f'\r\n--{boundary}--\r\n'.encode('utf-8')
+
+    file_size = file.stat().st_size
+    total_size = len(prefix) + file_size + len(suffix)
+    sent = 0
+
+    conn = http.client.HTTPSConnection(parsed.netloc, context=ssl.create_default_context())
+    try:
+        conn.putrequest('POST', parsed.path or '/')
+        conn.putheader('Content-Type', f'multipart/form-data; boundary={boundary}')
+        conn.putheader('Content-Length', str(total_size))
+        conn.putheader('User-Agent', 'lostyas-tag-build/0.1')
+        conn.endheaders()
+
+        conn.send(prefix)
+        sent += len(prefix)
+        print_progress('Uploading', sent, total_size)
+
+        with open(file, 'rb') as fin:
+            while chunk := fin.read(DEFAULTS.upload_chunk_size):
+                conn.send(chunk)
+                sent += len(chunk)
+                print_progress('Uploading', sent, total_size)
+
+        conn.send(suffix)
+        sent += len(suffix)
+        print_progress('Uploading', sent, total_size)
+
+        response = conn.getresponse()
+        payload = response.read().decode('utf-8', errors='replace').strip()
+    finally:
+        conn.close()
+
+    if response.status >= 400:
+        raise RuntimeError(f'Catbox upload failed with HTTP {response.status}: {payload}')
+
+    result = urllib.parse.urlparse(payload)
+    if result.scheme not in {'http', 'https'} or not result.netloc:
+        raise RuntimeError(f'Catbox returned unexpected response: {payload!r}')
+
+    return payload
+
+
 __CFG_FAKE_SECTION = '__FAKE_SECTION__'
 
 
 def read_config(file):
-    # fake section name
     data = f'[{__CFG_FAKE_SECTION}]\n'
-    with open(file) as f:
+    with open(file, encoding='utf-8') as f:
         data += f.read()
 
     cfg = configparser.ConfigParser(comment_prefixes=['#', '!'],
@@ -68,13 +156,12 @@ def read_config(file):
 def write_config(cfg, file, *, with_spaces=False):
     buf = io.StringIO()
     cfg.write(buf, space_around_delimiters=with_spaces)
-    buf.seek(0)  # rewind buffer to initial
+    buf.seek(0)
 
     lines = buf.readlines()
-    # strip fake section
-    lines = [line for line in lines if not line == f'[{__CFG_FAKE_SECTION}]\n']
+    lines = [line for line in lines if line != f'[{__CFG_FAKE_SECTION}]\n']
 
-    with open(file, 'w') as fout:
+    with open(file, 'w', encoding='utf-8') as fout:
         data = ''.join(lines)
         return fout.write(data)
 
@@ -83,18 +170,13 @@ def build_config(tpl_file, out_file=None, entries=None):
     entries = dict() if entries is None else entries
 
     tpl_file = pth.Path(tpl_file)
-
-    # when out_file not provided, generate its name by stripping latest extension
     if out_file is None:
         out_file = tpl_file.stem
-        log.debug(f'Config out_file: "{out_file}"')
 
     out_file = pth.Path(out_file)
-
     cfg = read_config(tpl_file)
 
     section = cfg[__CFG_FAKE_SECTION]
-    # patch entries
     for k, v in entries.items():
         section[k] = properties_escape(v) if isinstance(v, str) else v
 
@@ -102,21 +184,18 @@ def build_config(tpl_file, out_file=None, entries=None):
 
 
 def build_respack_config(
-        respack_zip,  # our archive
-        respack_url,  # url to be formatted
-        respack_prompt=None,  # message
+        respack_zip,
+        respack_url,
+        respack_prompt=None,
         respack_uuid=None,
         *,
-        tpl_file=DEFAULTS.serverprops):
-
-    # first get sha1 hashsum for archive
+        tpl_file=DEFAULTS.serverprops,
+        out_file=DEFAULTS.serverprops_out):
     sha = file_hash(respack_zip)
 
-    if respack_uuid is None:  # generate ourselves
-        # use sha1 hashsum as uuid seed
+    if respack_uuid is None:
         seed = f'sha1.{sha}'
-        respack_uuid = uuid.uuid5(uuid.NAMESPACE_OID, seed)
-        respack_uuid = str(respack_uuid)  # need to be hyphenated-uuid-format
+        respack_uuid = str(uuid.uuid5(uuid.NAMESPACE_OID, seed))
 
     entries = {
         'resource-pack': respack_url,
@@ -126,74 +205,32 @@ def build_respack_config(
     if respack_prompt is not None:
         entries['resource-pack-prompt'] = respack_prompt
 
-    # write it into config using template
-    build_config(tpl_file=tpl_file, out_file=None, entries=entries)
+    build_config(tpl_file=tpl_file, out_file=out_file, entries=entries)
 
 
-def build_respack(respack_url,
-                  zip_fpath,
-                  respack_dir=DEFAULTS.respack_dir,
-                  respack_prompt=None,
-                  tpl_file=DEFAULTS.serverprops):
-    """
-    Compress respack_dir into zip_fpath.
-    Then build server.properties for it,
-    assuming respack will be hosted at respack_url.
-    Optional respack_prompt is exactly as used in server.properties directly.
-    """
-    zip_fpath = pth.Path(zip_fpath)
-    # Compress with 0 ratio for faster decompression on clients
-    zip_folder(respack_dir, zip_fpath, compression_ratio=0)
+def build_respack():
+    build_dir = pth.Path(DEFAULTS.build_dir)
+    build_dir.mkdir(exist_ok=True)
 
-    build_respack_config(zip_fpath,
-                         respack_url=respack_url,
-                         respack_prompt=respack_prompt,
-                         tpl_file=tpl_file)
+    zip_fpath = build_dir / DEFAULTS.zip_name
 
+    log.info(f'Archiving {DEFAULTS.respack_dir}/ -> {zip_fpath}')
+    zip_folder(DEFAULTS.respack_dir, zip_fpath,
+               compression_ratio=DEFAULTS.compression_ratio)
 
-def build_from_args(argv=sys.argv):
-    progname, *argv = argv
+    log.info('Uploading ZIP to Catbox')
+    respack_url = upload_to_catbox(zip_fpath)
+    log.info(f'Catbox URL: {respack_url}')
 
-    parser = argparse.ArgumentParser(
-        prog=progname,
-        description=__doc__,
-        usage=None,      # auto-generated by default
-        epilog=None,     # Text at the bottom of help
-        )
+    log.info(f'Writing {DEFAULTS.serverprops_out}')
+    build_respack_config(zip_fpath, respack_url)
 
-    parser.add_argument('--respack-url', '--url', required=True,
-        dest='url', action='store',
-        help='URL where respack will be placed')
-    
-    parser.add_argument('-i', '--respack-dir',
-        dest='indir', default=DEFAULTS.respack_dir, action='store', type=pth.Path,
-        help='Path to respack directory to archive')
-
-    parser.add_argument('-o', '--out', required=True,
-        dest='outpath', action='store', type=pth.Path,
-        help='Path to respack zip, where it will be placed')
-    
-    parser.add_argument('--respack-prompt',
-        dest='prompt', action='store', default=None,
-        help='Respack prompt (or defaults to server.properties.in value)')
-    
-    parser.add_argument('--template', 
-        dest='tpl_file', action='store', type=pth.Path,
-        default=DEFAULTS.serverprops,
-        help='server.properties.in template file')
-    
-    cfg = parser.parse_args()
-    log.debug(f'Parsed args:\n{vars(cfg)}')
-
-    return build_respack(
-        respack_url=cfg.url,
-        respack_dir=cfg.indir,
-        zip_fpath=cfg.outpath,
-        respack_prompt=cfg.prompt,
-        tpl_file=cfg.tpl_file
-    )
+    return {
+        'zip_path': zip_fpath,
+        'resource_pack_url': respack_url,
+        'server_properties_path': pth.Path(DEFAULTS.serverprops_out),
+    }
 
 
 if __name__ == '__main__':
-    log.setLevel(logging.DEBUG)
-    build_from_args()
+    build_respack()

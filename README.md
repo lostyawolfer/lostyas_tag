@@ -1,5 +1,5 @@
 ![logo alpha](logo_alpha.png)
-### minecraft: 1.21.3 // core: papermc 1.21.3 #80 // java 21
+### minecraft: 1.21.3 // core: papermc 1.21.3 #83 // java 21
 a minigame about chasing people around. this is an early alpha, most of the stuff requires admin interaction to happen
 
 pls contribute i write code like garbage
@@ -7,7 +7,7 @@ pls contribute i write code like garbage
 
 # build instructions
 after cloning the repo,
-1. launch bindownload.py with python3
+1. launch bindownload.py and build.py with python3
 2. open cmd in the folder that you cloned the repo into
 3. `java -Xmx1G -Xms1G -jar server.jar nogui`
 4. open the newly created file "eula.txt" and accept minecraft's EULA
